@@ -1,0 +1,33 @@
+{
+  "name": "strandeiland",
+  "version": "1.0.0",
+  "description": "In the coming years, a completely new neighborhood will be created on the east side of Amsterdam: Strandeiland. Ambitions are high: the neighborhood must be energy-generating, greener than the first version of IJburg, residents must be able to live pleasantly with each other and equality of opportunity must be improved.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RainbowJM/strandeiland.git"
+  },
+  "keywords": [
+    "web",
+    "application"
+  ],
+  "author": "Jevona, Keisha, Laiba, Hilal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RainbowJM/strandeiland/issues"
+  },
+  "homepage": "https://github.com/RainbowJM/strandeiland#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "request": "^2.88.2",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
