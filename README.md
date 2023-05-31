@@ -15,6 +15,8 @@ De komende jaren ontstaat een compleet nieuwe wijk aan de oostkant van Amsterdam
 ## Live link 
 Hier is het live prototype te zien:
 
+**Nog deployen**
+
 
 
 ## Inhoudsopgave
@@ -50,7 +52,7 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 
 ## Functionaliteiten 
 
-
+**Nog niet af**
 
 
 
