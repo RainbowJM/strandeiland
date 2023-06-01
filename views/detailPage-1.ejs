@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <%- include('./partials/head');  %>
-  <link rel="stylesheet" type="text/css" href="../public/css/detail-page.css" /></head>
 <body>
     <header>
         <%- include('./partials/header');  %>
@@ -66,24 +65,26 @@
         <!-- chat -->
         <section class="chat">
             <h2>Chat</h2>
-            <div class="you">
-                <h3>Bobby Brown</h3>
-                <img src="" alt="">
+            <section class="chat-messages">
+                <div class="you">
+                    <h3>Bobby Brown</h3>
+                    <img src="" alt="">
+                    <input type="text">
+                </div>
+                <div class="other">
+                    <h3>Helen Algazzi</h3>
+                    <img src="" alt="">
+                    <input type="text">
+                </div>
+                <div class="you">
+                    <h3>Bobby Brown</h3>
+                    <img src="" alt="">
+                    <input type="text">
+                </div> 
+    
                 <input type="text">
-            </div>
-            <div class="other">
-                <h3>Helen Algazzi</h3>
-                <img src="" alt="">
-                <input type="text">
-            </div>
-            <div class="you">
-                <h3>Bobby Brown</h3>
-                <img src="" alt="">
-                <input type="text">
-            </div> 
-
-            <input type="text">
-            <button></button>
+                <button></button>
+            </section>
         </section>
 
     </main>

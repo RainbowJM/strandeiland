@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/detailPage-1', (req, res) => {
+    res.render('detailPage-1');
+});
+
 
 io.on('connection', (socket) => {
     console.log(`user ${socket.id} connected`)

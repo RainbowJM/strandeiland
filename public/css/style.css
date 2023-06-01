@@ -13,7 +13,7 @@
 }
 
 body{
-    background-color: pink;
+    background-color: lightgray;
 }
 
 header{
@@ -27,6 +27,21 @@ h1, h2, a{
 
 
 
+/* detailpage hilal */
+
+
+/* chat */
+.chat {
+    width: 30vw;
+    height: 30vh;
+    background-color: white;
+}
+
+.chat-messages{
+    background-color: #FFE700;
+    padding: 2em;
+
+}
 
 footer{
 
