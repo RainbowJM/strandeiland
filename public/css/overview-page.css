@@ -1,0 +1,60 @@
+:root {
+    --yellow: #ffe700;
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #009ce0;
+    --light-grey: #f0f0eb;
+    --dark-grey: #333333;
+
+
+    --font: 'Poppins', sans-serif;
+}
+
+main {
+    margin: 20px;
+}
+
+.slogan-container {
+    width:100%;
+    height: fit-content;
+    height: fit-content;
+    background: url('../images/intro-pic.png');
+    background-position: 25% 45%;
+    padding: 1em;
+}
+.slogan-container h1 {
+    position: relative;
+    font-weight: 700;
+    color: var(--white);
+    padding: 2em;
+}
+
+.slogan-container h1 span {
+display:block;
+width: fit-content;
+padding: 5px;
+margin: 10px 0;
+}
+
+.slogan-container span:nth-child(1) {
+   background-color: var(--blue);
+   color: var(--white);
+    transform: rotate(5deg);
+}
+
+.slogan-container span:nth-child(2) {
+   background-color: var(--yellow);
+   color: var(--black);
+  transform: translateX(-20%)
+}
+
+.slogan-container span:nth-child(3) {
+   background-color: var(--white);
+   color: var(--black);
+}
+
+.slogan-container span:nth-child(4) {
+   background-color: var(--black);
+   color: var(--white);
+   transform: rotate(-5deg);
+}
