@@ -67,12 +67,20 @@ main {
 /************************/
 /* IDEA'S OVERWIEW LIST */
 /************************/
-
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* max-width: 1200px; */
+    max-width: 75em;
+    margin: 20px auto;
+    gap: 20px;
+}
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     gap: 20px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    max-width: 75em;
     margin: 20px auto;
 }
 
@@ -137,3 +145,26 @@ color: var(--white);
 /* .statistics li:nth-child(2) {
     text-align: right;
 } */
+
+
+/****************/
+/* LATEST IDEAS */
+/****************/
+.latest-container {
+    max-width: 900px;
+    background-color: var(--white);
+    height: fit-content;
+}
+
+
+/* Filter  */
+.filter-menu {
+    display: none;
+    width: 38em;
+    padding: 1em;
+
+}
+
+.filter-menu.show-filter {
+    display: block;
+}
