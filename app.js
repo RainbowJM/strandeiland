@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
 });
 
 
+app.get('/formulier', (req, res) => {
+    res.render('formulier');
+});
+
+
 io.on('connection', (socket) => {
     console.log(`user ${socket.id} connected`)
 

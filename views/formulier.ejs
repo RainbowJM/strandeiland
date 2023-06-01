@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head');  %>
+</head>
+<body>
+    <header>
+        <%- include('./partials/header');  %>
+    </header>
+
+<h1>Voorstel</h1>
+
+<form action="/formulier" method="post" enctype="application/x-www-form-urlencoded">
+
+    <fieldset>
+        <label for="titel">Titel</label>
+        <textarea name="titel" id="titel" cols="30" rows="10" placeholder="Geef uw voorstel een titel"required></textarea>
+    
+        <label for="beschrijving">Voorstel beschrijving</label>
+        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw voorstel zo duidelijk mogelijk"required></textarea>
+    
+        <label for="thema">Thema's</label>
+            <ul>
+                <li><label><input type="radio" name="thema" value="1" required><span>Strand</span></label></li>
+                <li><label><input type="radio" name="thema" value="2"><span>Huis</span></label></li>
+                <li><label><input type="radio" name="thema" value="3"><span>Centrum</span></label></li>
+            </ul>
+    
+
+
+
+    </fieldset>
+   
+
+    <input type="submit" value="Versturen" id="versturen">
+
+</form>
+
+
+
+
+
+</body>
+</html>
