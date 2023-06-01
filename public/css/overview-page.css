@@ -14,14 +14,19 @@ main {
     margin: 20px;
 }
 
+
+/***********/
+/* SLOGAN  */
+/***********/
 .slogan-container {
-    width:100%;
+    width: 100%;
     height: fit-content;
     height: fit-content;
     background: url('../images/intro-pic.png');
     background-position: 25% 45%;
     padding: 1em;
 }
+
 .slogan-container h1 {
     position: relative;
     font-weight: 700;
@@ -30,31 +35,105 @@ main {
 }
 
 .slogan-container h1 span {
-display:block;
-width: fit-content;
-padding: 5px;
-margin: 10px 0;
+    display: block;
+    width: fit-content;
+    padding: 5px;
+    margin: 10px 0;
 }
 
 .slogan-container span:nth-child(1) {
-   background-color: var(--blue);
-   color: var(--white);
+    background-color: var(--blue);
+    color: var(--white);
     transform: rotate(5deg);
 }
 
 .slogan-container span:nth-child(2) {
-   background-color: var(--yellow);
-   color: var(--black);
-  transform: translateX(-20%)
+    background-color: var(--yellow);
+    color: var(--black);
+    transform: translateX(-20%)
 }
 
 .slogan-container span:nth-child(3) {
-   background-color: var(--white);
-   color: var(--black);
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .slogan-container span:nth-child(4) {
-   background-color: var(--black);
-   color: var(--white);
-   transform: rotate(-5deg);
+    background-color: var(--black);
+    color: var(--white);
+    transform: rotate(-5deg);
 }
+
+/************************/
+/* IDEA'S OVERWIEW LIST */
+/************************/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.thumbnail-container {
+    background-color: var(--white);
+}
+
+.thumbnail-container img {
+    width: 100%;
+
+}
+
+.thumbnail-container figure {
+    position: relative;
+}
+
+.thumbnail-container figcaption {
+    background-color: var(--yellow);
+    color: var(--black);
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.thumbnail-container:nth-child(2) figcaption{
+background-color: var(--blue);
+color: var(--white);
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.user-info li:nth-child(2) {
+  text-align: right;
+}
+
+
+.thumbnail-container article {
+    padding: 1em;
+    
+}
+
+.thumbnail-container article h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
+
+.statistics span {
+   font-weight: bold;
+}
+/* .statistics li:nth-child(2) {
+    text-align: right;
+} */
