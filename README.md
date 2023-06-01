@@ -29,7 +29,7 @@ Hier is het live prototype te zien:
   * [Repository clone](#repository-clone)
   * [Dependencies](#dependencies)
   * [server](#server)
-- [License](#license)
+- [Licentie](#licentie)
 
 
 
@@ -50,7 +50,11 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 
 
 ## Functionaliteiten 
-- 
+- Voorstellen kunnen filtreren op populariteit
+- Voorstellen kunnen filtreren van oud tot nieuw
+- Voorstellen kunnen filtreren op thema's
+- Het formulier van voorstel opslaan in localstorage
+- Een real time chat, zodat de gebruikers tot elkaar kunnen praten 
 
 
 
@@ -99,7 +103,7 @@ $ npm run dev
 
 
 
-## License
+## Licentie
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
