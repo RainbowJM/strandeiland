@@ -49,10 +49,8 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 3. Als projectmanager van de gemeente, wil ik voorstellen van toekomstige bewoners kunnen filteren op thema's, zodat ik per thema kan bekijken of er ideeën bijzitten die kunnen bijdragen aan een lagere ecologische footprint, of betere sociale cohesie van de wijk.
 
 
-
 ## Functionaliteiten 
-
-**Nog niet af**
+- 
 
 
 
@@ -95,7 +93,7 @@ $ npm install
 De server opstarten:
 
 ```bash
-$ npm run start:dev
+$ npm run dev
 ```
 
 
