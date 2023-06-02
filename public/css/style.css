@@ -41,194 +41,6 @@ li {
 
 
 
-/* detailpage hilal */
-
-
-/* chat */
-.chat {
-    width: 25em;
-    background-color: white;
-    position: relative;
-    margin-left: 30vw;
-    margin-top: 15vh;
-}
-
-.chat h2 {
-    padding: .2em 1em;
-}
-
-.chat-messages{
-    background-color: #FFE700;
-    padding: 2em;    
-    height: 60vh;
-}
-
-
-.you {
-    position: absolute;
-    right: 1em;
-}
-
-.you:nth-of-type(1){
-    bottom: 5em;
-}
-
-.you:nth-of-type(2){
-    top: 1em;
-}
-
-
-.you p {
-    background-color: white;
-    padding:.5em;
-    border-radius: 2em;
-}
-
-.other {
-    position: absolute;
-    left: 1em;
-    top: 35%;
-}
-
-
-.chat h3{
-  font-family: arial; 
-  font-size: .9em; 
-}
-
-
-.other p {
-    background-color: white;
-    padding:.5em;
-    border-radius: 2em;
-}
-
-.other input {
-    border-radius: 2em;
-    width: 100%;
-    height: 2.5em;
-}
-
-.send {
-    width: 3em;
-    height: 3em;
-    background-color: gray;
-    border-radius: 5em;
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-    border: none;
-    
-}
-
-
-.chat-bericht {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
-    width: 80%;
-    height: 3em;
-    border-radius: 2em;
-    border: none;
-    padding: 0 2em;
-}
-
-footer {
-    background-color: var(--dark-grey);
-}
-
-/* detailpage hilal */
-
-
-/* chat */
-.chat {
-    width: 25em;
-    background-color: white;
-    position: relative;
-    margin-left: 30vw;
-    margin-top: 15vh;
-}
-
-.chat h2 {
-    padding: .2em 1em;
-}
-
-.chat-messages{
-    background-color: #FFE700;
-    padding: 2em;    
-    height: 60vh;
-}
-
-
-.you {
-    position: absolute;
-    right: 1em;
-}
-
-.you:nth-of-type(1){
-    bottom: 5em;
-}
-
-.you:nth-of-type(2){
-    top: 1em;
-}
-
-
-.you p {
-    background-color: white;
-    padding:.5em;
-    border-radius: 2em;
-}
-
-.other {
-    position: absolute;
-    left: 1em;
-    top: 35%;
-}
-
-
-.chat h3{
-  font-family: arial; 
-  font-size: .9em; 
-}
-
-
-.other p {
-    background-color: white;
-    padding:.5em;
-    border-radius: 2em;
-}
-
-.other input {
-    border-radius: 2em;
-    width: 100%;
-    height: 2.5em;
-}
-
-.send {
-    width: 3em;
-    height: 3em;
-    background-color: gray;
-    border-radius: 5em;
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-    border: none;
-    
-}
-
-
-.chat-bericht {
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
-    width: 80%;
-    height: 3em;
-    border-radius: 2em;
-    border: none;
-    padding: 0 2em;
-}
-
 nav.inlog-container a {
     display: inline-block;
     padding: 2px;
@@ -271,10 +83,6 @@ nav.navigation-links ul li {
 nav.navigation-links a {
    text-align: center;
     color: var(--dark-grey)
-}
-
-footer {
-    background-color: var(--dark-grey);
 }
 
 
@@ -354,4 +162,9 @@ nav.navigation-links a {
     nav.navigation-links {
    display: block;
     }
+}
+
+
+footer {
+    background-color: var(--dark-grey);
 }
