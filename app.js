@@ -25,6 +25,12 @@ app.get("/chat", (req, res) => {
   });
 });
 
+app.get("/detailPage-1", (req, res) => {
+  res.render("detailPage-1", {
+    title: "detail",
+  });
+});
+
 app.get("/form", (req, res) => {
   res.render("form", {
     title: "Formulier",
