@@ -20,9 +20,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/chat', (req, res) => {
-    res.render('chat');
+    res.render('chat',{
+        title: 'Chat'
+    });
 });
-
 
 io.on('connection', (socket) => {
     console.log(`user ${socket.id} connected`)
