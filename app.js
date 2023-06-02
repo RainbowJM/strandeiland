@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index',{
+        title: 'Wensen'
+    });
 });
 
 
@@ -43,5 +45,5 @@ io.on('connection', (socket) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}.`);
+    console.log(`Example app listening on  http://localhost:${port}`);
 });
