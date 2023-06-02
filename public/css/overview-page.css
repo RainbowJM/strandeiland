@@ -75,9 +75,10 @@ main {
     margin: 20px auto;
     gap: 20px;
 }
+
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     /* max-width: 1200px; */
     max-width: 75em;
@@ -107,9 +108,19 @@ main {
     font-weight: bold;
 }
 
-.thumbnail-container:nth-child(2) figcaption{
-background-color: var(--blue);
-color: var(--white);
+.thumbnail-container:nth-child(2) figcaption {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.thumbnail-container:nth-child(3) figcaption {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.thumbnail-container:nth-child(4) figcaption {
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .user-info {
@@ -118,14 +129,28 @@ color: var(--white);
 }
 
 .user-info li:nth-child(2) {
-  text-align: right;
+    text-align: right;
 }
 
 
 .thumbnail-container article {
     padding: 1em;
-    
+
 }
+.thumbnail-container article p {
+    position: relative;
+}
+
+.thumbnail-container article p::before {
+   content: '';
+   width: 100%;
+   height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(transparent 10px, white);
+}
+
 
 .thumbnail-container article h2 {
     font-size: 1.5em;
@@ -140,8 +165,9 @@ color: var(--white);
 }
 
 .statistics span {
-   font-weight: bold;
+    font-weight: bold;
 }
+
 /* .statistics li:nth-child(2) {
     text-align: right;
 } */
@@ -151,20 +177,50 @@ color: var(--white);
 /* LATEST IDEAS */
 /****************/
 .latest-container {
-    max-width: 900px;
+    max-width: 56.25em;
+    /* 900px */
     background-color: var(--white);
     height: fit-content;
 }
 
+.latest-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 
-/* Filter  */
+.lines {
+    margin-top: 6px;
+    margin-left:2.5em; /* 40px */
+}
+
+.dot {
+    width: 0.8em; /* 13px */
+    height: 0.8em; /* 13px */
+    background-color: var(--dark-grey);
+    border-radius: 50%;
+}
+
+.line {
+    width: 2px;
+    height: 6em; /* 100px */
+    background-color: var(--dark-grey);
+}
+/**********/
+/* FILTER */
+/**********/
 .filter-menu {
     display: none;
-    width: 38em;
+    width: 100%;
     padding: 1em;
-
+    background-color: var(--white);
+  grid-column: span 2;
 }
 
 .filter-menu.show-filter {
     display: block;
+}
+
+.thema-btn {
+    margin: 0 auto;
 }
