@@ -11,6 +11,7 @@
 
 <h1>Voorstel</h1>
 
+<div class="form-container">
 <form action="/formulier" method="post" enctype="application/x-www-form-urlencoded">
 
     <fieldset>
@@ -20,12 +21,19 @@
         <label for="beschrijving">Voorstel beschrijving</label>
         <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw voorstel zo duidelijk mogelijk"required></textarea>
     
-        <label for="thema">Thema's</label>
-            <ul>
-                <li><label><input type="radio" name="thema" value="1" required><span>Strand</span></label></li>
-                <li><label><input type="radio" name="thema" value="2"><span>Huis</span></label></li>
-                <li><label><input type="radio" name="thema" value="3"><span>Centrum</span></label></li>
-            </ul>
+        <label for="thema" >Thema's</label>
+        <select name="thema" id="thema">
+            <option value="" disabled selected hidden>Selecteer één thema</option>
+            <option value="strand">Strand</option>
+            <option value="huis">Huis</option>
+            <option value="centrum">Centrum</option>
+        </select>
+
+        <label for="afbeelding" >Afbeelding</label>
+        <div class="file-input-container">
+        <input type="file" id="file" name="file">
+        
+    </div>
 
     </fieldset>
    
@@ -33,6 +41,7 @@
     <input type="submit" value="Versturen" id="versturen">
 
 </form>
+</div>
 
 
 

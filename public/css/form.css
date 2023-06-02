@@ -1,23 +1,75 @@
-body{
-    background-color: pink;
-}
-
-header{
-
-}
-
-
-h1, h2, a{
-
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 
+:root {
+    --yellow: #ffe700;
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #009ce0;
+    --light-grey: #f0f0eb;
+    --dark-grey: #333333;
+    --gray: #E9E9E9;
+    --font: 'Poppins', sans-serif;
+}
+h1{
+    text-align: center;
+    margin-bottom: 1em;
+}
 
-footer{
+.form-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  form {
+    width: 50%; /* Adjust the width as needed */
+  }
 
+fieldset {
+    background-color: var(--white); 
+    display: flex;
+    flex-direction: column;
+    border-style: none;
+    margin-bottom: 20px;
+
+}
+
+  
+  fieldset label,
+  fieldset textarea,
+  fieldset select,
+  fieldset .file-input-container {
+    margin-bottom: 10px; 
+  }
+
+  input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--gray);
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 
 
+#versturen {
+    background-color: var(--black); /* Set the background color */
+    color: var(--white); /* Set the text color */
+    padding: 10px 20px; /* Set the padding */
+    font-size: 16px; /* Set the font size */
+    border: none; /* Remove the border */
+   /* Add border radius */
+    cursor: pointer; /* Add a cursor pointer */
 
+   
+  }
+  
