@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index',{
+        title: 'Wensen'
+    });
 });
 
 app.get('/chat', (req, res) => {
