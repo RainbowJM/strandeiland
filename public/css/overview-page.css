@@ -87,6 +87,23 @@ main {
 
 .thumbnail-container {
     background-color: var(--white);
+    
+}
+
+.thumbnail-container:hover{
+    animation: hover-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes hover-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .thumbnail-container img {
@@ -135,6 +152,7 @@ main {
 
 .thumbnail-container article {
     padding: 1em;
+    color: var(--black);
 
 }
 .thumbnail-container article p {
@@ -181,6 +199,7 @@ main {
     /* 900px */
     background-color: var(--white);
     height: fit-content;
+    margin-top: 20px;
 }
 
 .latest-wrapper {
@@ -205,6 +224,24 @@ main {
     width: 2px;
     height: 6em; /* 100px */
     background-color: var(--dark-grey);
+    margin-left: 5.3px;
+}
+
+.latest-ideas {
+    
+    margin-left: 0.7em; /* 12px */
+}
+
+.latest-idea{
+    width:  20em; /* 400px */
+    height: fit-content;
+    padding: 1em;
+    background-color: var(--white);
+    box-shadow: 0 2px 2px 0 #eeeeee40;
+    box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.0944602);
+    margin-bottom: 10px;
+
+
 }
 /**********/
 /* FILTER */
@@ -224,3 +261,19 @@ main {
 .thema-btn {
     margin: 0 auto;
 }
+
+/* Responsive */
+@media  screen and (max-width: 55em) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-menu {
+        grid-column: span 1;
+    }
+}
+    
