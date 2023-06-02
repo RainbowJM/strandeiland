@@ -40,5 +40,5 @@ io.on('connection', (socket) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}.`);
+    console.log(`Example app listening on  http://localhost:${port}`);
 });
