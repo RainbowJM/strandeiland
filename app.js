@@ -17,17 +17,21 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/chat', (req, res) => {
+    res.render('chat');
+});
+
 
 io.on('connection', (socket) => {
     console.log(`user ${socket.id} connected`)
 
-    socket.emit('history', history)
+    // socket.emit('history', history)
 
     socket.on('message', (message) => {
-        while (history.length > historySize) {
-            history.shift()
-        }
-        history.push(message)
+        // while (history.length > historySize) {
+        //     history.shift()
+        // }
+        // history.push(message)
 
         io.emit('message', message)
     })
@@ -37,6 +41,6 @@ io.on('connection', (socket) => {
     })
 });
 
-app.listen(port, () => {
+http.listen(port, () => {
     console.log(`Example app listening on  http://localhost:${port}`);
 });
