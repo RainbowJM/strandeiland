@@ -1,18 +1,37 @@
-/* detailpage hilal */
+:root {
+    --yellow: #ffe700;
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #009ce0;
+    --light-grey: #f0f0eb;
+    --dark-grey: #333333;
+    --font: 'Poppins', sans-serif;
+}
+
+main {
+    margin: 20px;
+}
 
 
-/* chat */
+/***********/
+/* CHAT  */
+/***********/
 .chat {
     width: 25em;
     background-color: white;
     position: relative;
-    margin-left: 30vw;
-    margin-top: 15vh;
+    right: 1em;
 }
 
 .chat h2 {
     padding: .2em 1em;
 }
+
+.chat h3{
+    font-family: var(--font); 
+    font-size: .6em; 
+    margin: 0;
+  }
 
 .chat-messages{
     background-color: #FFE700;
@@ -20,7 +39,7 @@
     height: 60vh;
 }
 
-
+/* your msg */
 .you {
     position: absolute;
     right: 1em;
@@ -34,23 +53,49 @@
     top: 1em;
 }
 
+.you img {
+    background-color: gray;
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+}
 
-.you p {
+.you div p {
     background-color: white;
     padding:.5em;
     border-radius: 2em;
+    margin-right: .5em;
+    font-family: var(--font);
 }
 
+.you div:last-of-type {
+    display: flex;
+}
+
+.you h3 {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+
+/* other */
 .other {
     position: absolute;
     left: 1em;
-    top: 35%;
+    top: 44%;
+}
+
+.other img {
+    background-color: gray;
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
 }
 
 
-.chat h3{
-  font-family: arial; 
-  font-size: .9em; 
+.other div:last-of-type {
+    display: flex;
 }
 
 
@@ -58,6 +103,8 @@
     background-color: white;
     padding:.5em;
     border-radius: 2em;
+    font-family: var(--font); 
+    margin-left: .5em;
 }
 
 .other input {
@@ -74,10 +121,8 @@
     position: absolute;
     bottom: 1em;
     right: 1em;
-    border: none;
-    
+    border: none;   
 }
-
 
 .chat-bericht {
     position: absolute;

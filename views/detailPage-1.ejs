@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <%- include('./partials/head');  %>
+    <%- include('./partials/head');  %>
+    <link rel="stylesheet" href="/css/detail-page.css">
+
 <body>
     <header>
         <%- include('./partials/header');  %>
-        <link rel="stylesheet" href="/public/css/detail-page.css">
-
     </header>
-    
+
     <main>
         <!-- <a href="#">Terug</a> -->
 
@@ -70,21 +71,27 @@
             <section class="chat-messages">
                 <div class="you">
                     <h3>Bobby Brown</h3>
-                    <img src="" alt="">
-                    <p>vertel!</p>
+                    <div>
+                        <p>vertel!</p>
+                        <img src="/images/bob.jpeg" alt="bob">
+                    </div>
                 </div>
                 <div class="other">
                     <h3>Helen Algazzi</h3>
-                    <img src="" alt="">
-                    <p>Ik wou heb hebben over deze wens</p>
+                    <div>
+                        <img src="/images/helen.jpeg" alt="helen">
+                        <p>Ik wou heb hebben over deze wens</p>
+                    </div>
                 </div>
                 <div class="you">
                     <h3>Bobby Brown</h3>
-                    <img src="" alt="">
-                    <p>Wat vinden jullie?</p>
-                </div> 
-    
-                <input type="text" class="chat-bericht">
+                    <div>
+                        <p>Wat vinden jullie?</p>
+                        <img src="/images/bob.jpeg" alt="bob">
+                    </div>
+                </div>
+
+                <input type="text" class="chat-bericht" placeholder="Stuur een bericht">
                 <button class="send"></button>
             </section>
         </section>
@@ -96,4 +103,5 @@
         <%- include('./partials/footer');  %>
     </footer>
 </body>
+
 </html>
