@@ -87,6 +87,23 @@ main {
 
 .thumbnail-container {
     background-color: var(--white);
+    
+}
+
+.thumbnail-container:hover{
+    animation: hover-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes hover-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .thumbnail-container img {
@@ -135,6 +152,7 @@ main {
 
 .thumbnail-container article {
     padding: 1em;
+    color: var(--black);
 
 }
 .thumbnail-container article p {
@@ -243,3 +261,19 @@ main {
 .thema-btn {
     margin: 0 auto;
 }
+
+/* Responsive */
+@media  screen and (max-width: 55em) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-menu {
+        grid-column: span 1;
+    }
+}
+    

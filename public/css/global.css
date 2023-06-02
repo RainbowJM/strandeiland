@@ -116,7 +116,7 @@ nav.navigation-links a {
     color: var(--dark-grey)
 }
 
-@media (min-width: 44em){
+@media (min-width: 50em){
     nav.navigation-links {
    display: block;
     }
