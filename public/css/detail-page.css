@@ -70,6 +70,7 @@ main {
 }
 .doe-mee button {
     height: 3em;
+    cursor: pointer;
 }
 
 /* helpende -----------------------------------------------------------------------------------------*/
@@ -105,6 +106,8 @@ main {
     border-radius: 5em;
     background-color: var(--white);
     margin-right: .5em;
+    cursor: pointer;
+
 }
 
 .helpende h3{
@@ -174,13 +177,13 @@ main {
 }
 
 /* chat ------------------------------------------------------------------------------------------------- */
-.chat{
+.chat {
     grid-column-start: 1;
     grid-row-start: 2;
     max-width: 40em;
     height: 40em;
     border: .5em solid var(--dark-grey);
-    margin-top: 10em;
+    margin-top: 8em;
     display: grid;
     place-content: center;
 }
