@@ -65,8 +65,6 @@ main {
 
 /* helpende -----------------------------------------------------------------------------------------*/
 .helpende {
-    /* grid-column-start: 2; */
-    /* grid-row-start: 1; */
     margin: 3em 0 0 1em;
 }
 
@@ -74,15 +72,30 @@ main {
     background-color: var(--blue);
     margin-bottom: 1em;
     padding: 1em;
+    height: 8em;
+    position: relative;
+    cursor: pointer;
+
 }
 
 .helpende h2 {
-    color: var(--light-grey);
+    color: var(--black);
     margin-bottom: .5em;
+    transform: rotate(-90deg);
+    font-size: 12px;
+    position: absolute;
+    left: -1em;
+    top: 45%;
+}
+
+.helpende div:nth-of-type(1) h2:nth-of-type(1){
+    left: -2.8em;
+
 }
 
 .helpende div ul {
     display: flex;
+    margin: 1em 0 0 2em;
 }
 
 .helpende div ul li {
@@ -119,7 +132,7 @@ main {
 
 /* hoogtepunten --------------------------------------------------------------------------------------- */
 .hoogtepunten {
-    background-color: var(--yellow);
+    background-color: var(--white);
     padding: 2em;
     margin: 3em 0 0 1em;
 }
@@ -129,7 +142,7 @@ main {
 }
 
 .hoogtepunten ul li {
-    background-color: var(--white);
+    background-color: var(--light-grey);
     margin:0 0 1em 0;
     padding: 1em;
 }
@@ -160,8 +173,9 @@ main {
 }
 
 .doe-mee button:hover{
-    background-color: var(--blue);
+    background-color: var(--yellow);
     transition: .5s;
+    color: var(--black);
 }
 
 /* chat ------------------------------------------------------------------------------------------------- */
@@ -218,8 +232,20 @@ main {
 
     .helpende {
         position: fixed;
-        transform: translateX(87%);
+        right: 0;
+        transform: translateX(95%);
     }
+
+    .helpende-item.active {
+        transform: translateX(-75%);
+        transition: transform 0.3s ease-out;
+    }
+
+    /* .helpende div h2 {
+        transform: rotate(-90deg);
+        position: absolute;
+        left: 1em;
+    } */
 }
 
 
