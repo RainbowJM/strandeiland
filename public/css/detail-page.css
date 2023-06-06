@@ -48,15 +48,15 @@ main {
     max-width: 45vw;
 }
 
-.wens p:nth-of-type(1){
+.wens p:nth-of-type(1) {
     margin: .5em 0;
 }
 
-.wens p:nth-of-type(2){
+.wens p:nth-of-type(2) {
     margin: .5em 0;
 }
 
-.wens p:nth-of-type(3){
+.wens p:nth-of-type(3) {
     margin: 1.5em 0 .3em 0;
     color: gray;
 }
@@ -68,7 +68,7 @@ main {
     margin: 3em 0 0 1em;
 }
 
-.helpende > div {
+.helpende>div {
     background-color: var(--blue);
     margin-bottom: 1em;
     padding: 1em;
@@ -88,7 +88,7 @@ main {
     top: 45%;
 }
 
-.helpende div:nth-of-type(1) h2:nth-of-type(1){
+.helpende div:nth-of-type(1) h2:nth-of-type(1) {
     left: -2.8em;
 
 }
@@ -112,21 +112,60 @@ main {
     cursor: pointer;
 }
 
-.helpende h3{
+.helpende h3 {
     font-size: 14px;
-    margin-top: .5em;
+    margin-top: .9em;
 }
-.helpende h4{
+
+.helpende h4 {
     font-size: 12px;
 }
 
-#ambassadeurs ul li {
-    margin-right: 3em;
+
+#ambassadeurs ul {
+    margin-top: 1.5em;
 }
 
-#ambassadeurs img{
-    width: 4em;
-    height: 4em;
+#ambassadeurs ul li {
+    margin-right: 1em;
+}
+
+#ambassadeurs img {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+#helpers img {
+    width: 3em;
+    height: 3em;
+}
+
+#helpers ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: scroll;
+    margin: 1.5em 0 0 2em;
+}
+
+#helpers ul li {
+    display: flex;
+    margin: .3em;
+}
+
+#steuners ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .2em 0 0 2em;
+    max-width: 90%;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+#steuners ul li {
+    display: flex;
+    margin: .3em;
 }
 
 
@@ -143,25 +182,43 @@ main {
 
 .hoogtepunten ul li {
     background-color: var(--light-grey);
-    margin:0 0 1em 0;
+    margin: 0 0 1em 0;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.hoogtepunten ul li div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5em;
 }
 
 .hoogtepunten img {
     width: 2em;
     height: 2em;
     border-radius: 5em;
+
+    margin-right: 1em;
+}
+
+.hoogtepunten h3 {
+    margin-top: 0;
+}
+
+.hoogtepunten p {
+    margin: 0;
 }
 
 /* doe mee --------------------------------------------------------------------------------------- */
-.doe-mee{
+.doe-mee {
     margin-top: 1em;
     display: flex;
     /* justify-content: space-between; */
-    padding: 0 ;
-} 
+    padding: 0;
+}
 
-.doe-mee button{
+.doe-mee button {
     background-color: var(--black);
     color: var(--white);
     padding: 0 1em;
@@ -172,7 +229,7 @@ main {
     cursor: pointer;
 }
 
-.doe-mee button:hover{
+.doe-mee button:hover {
     background-color: var(--yellow);
     transition: .5s;
     color: var(--black);
@@ -184,14 +241,14 @@ main {
     grid-row-start: 2; */
     max-width: 40em;
     height: 20em;
-    border: .5em solid var(--dark-grey);
+    border: .5em solid var(--yellow);
     margin-top: 2em;
     display: grid;
     place-content: center;
 }
 
 
-@media (width < 50em){
+@media (width < 50em) {
     main {
         display: grid;
         grid-template-columns: 1fr;
@@ -200,12 +257,12 @@ main {
     }
 
 
-    main > div {
+    main>div {
         display: contents;
     }
 
     .wens {
-        order:-1;
+        order: -1;
         padding: 1.5em;
         width: 100%;
 
@@ -241,11 +298,14 @@ main {
         transition: transform 0.3s ease-out;
     }
 
-    /* .helpende div h2 {
-        transform: rotate(-90deg);
-        position: absolute;
-        left: 1em;
-    } */
+    #ambassadeurs ul {
+        display: flex;
+        max-width: 90%;
+        /* Set the maximum height for 2 rows */
+        max-height: 100%;
+        overflow: scroll;
+
+    }
 }
 
 
