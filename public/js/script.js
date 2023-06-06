@@ -4,6 +4,15 @@ const input = document.querySelector("input");
 const filterMenu = document.querySelector(".filter-menu");
 const themaFilterBtn = document.querySelector(".thema-btn");
 const themeSelect = document.getElementById("thema");
+// Aside pop out
+const asideItems = document.querySelectorAll('.helpende-item');
+
+asideItems.forEach((asideItem) => {
+  asideItem.addEventListener('click', () => {
+    console.log('click')
+      asideItem.classList.toggle('active');
+  });
+});
 
 themaFilterBtn.addEventListener("click", () => {
   filterMenu.classList.toggle("show-filter");
@@ -46,3 +55,4 @@ function displaySelectedOption(selectElement) {
   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
   selectElement.value = selectedOption;
 }
+
