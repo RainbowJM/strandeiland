@@ -9,14 +9,317 @@
 }
 
 main {
-    margin: 20px;
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: auto; */
 }
+
+.terug {
+    margin: 3em 0 0 5vw;
+
+}
+
+.terug a {
+    color: var(--black);
+    font: var(--font);
+    /* grid-row-start: 1;
+    grid-column-start: 1; */
+}
+
+
+/* wens -----------------------------------------------------------------------------------------*/
+.wens {
+    /* grid-column-start: 1;
+    grid-row-start: 1; */
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    padding: 3em;
+    margin-top: 3em;
+}
+
+.wens h1 {
+    max-width: 20em;
+}
+
+.wens img {
+    max-width: 45vw;
+}
+
+.wens p:nth-of-type(1) {
+    margin: .5em 0;
+}
+
+.wens p:nth-of-type(2) {
+    margin: .5em 0;
+}
+
+.wens p:nth-of-type(3) {
+    margin: 1.5em 0 .3em 0;
+    color: gray;
+}
+
+
+
+/* helpende -----------------------------------------------------------------------------------------*/
+.helpende {
+    margin: 3em 0 0 1em;
+}
+
+.helpende>div {
+    background-color: var(--blue);
+    margin-bottom: 1em;
+    padding: 1em;
+    height: 8em;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.helpende h2 {
+    color: var(--black);
+    margin-bottom: .5em;
+    transform: rotate(-90deg);
+    font-size: 12px;
+    position: absolute;
+    left: -1em;
+    top: 45%;
+}
+
+.helpende div:nth-of-type(1) h2:nth-of-type(1) {
+    left: -2.8em;
+
+}
+
+.helpende div ul {
+    display: flex;
+    margin: 1em 0 0 2em;
+}
+
+.helpende div ul li {
+    display: flex;
+    margin-right: .5em;
+}
+
+.helpende img {
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+    background-color: var(--white);
+    margin-right: .5em;
+    cursor: pointer;
+}
+
+.helpende h3 {
+    font-size: 14px;
+    margin-top: .9em;
+}
+
+.helpende h4 {
+    font-size: 12px;
+}
+
+
+#ambassadeurs ul {
+    margin-top: 1.5em;
+}
+
+#ambassadeurs ul li {
+    margin-right: 1em;
+}
+
+#ambassadeurs img {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+#helpers img {
+    width: 3em;
+    height: 3em;
+}
+
+#helpers ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: scroll;
+    margin: 1.5em 0 0 2em;
+}
+
+#helpers ul li {
+    display: flex;
+    margin: .3em;
+}
+
+#steuners ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .2em 0 0 2em;
+    max-width: 90%;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+#steuners ul li {
+    display: flex;
+    margin: .3em;
+}
+
+
+/* hoogtepunten --------------------------------------------------------------------------------------- */
+.hoogtepunten {
+    background-color: var(--white);
+    padding: 2em;
+    margin: 3em 0 0 1em;
+}
+
+.hoogtepunten h2 {
+    margin-bottom: 1em;
+}
+
+.hoogtepunten ul li {
+    background-color: var(--light-grey);
+    margin: 0 0 1em 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.hoogtepunten ul li div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5em;
+}
+
+.hoogtepunten img {
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+
+    margin-right: 1em;
+}
+
+.hoogtepunten h3 {
+    margin-top: 0;
+}
+
+.hoogtepunten p {
+    margin: 0;
+}
+
+/* doe mee --------------------------------------------------------------------------------------- */
+.doe-mee {
+    margin-top: 1em;
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 0;
+}
+
+.doe-mee button {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 1em;
+    border: none;
+    margin-right: .5em;
+    /* min-width:10em ; */
+    height: 3em;
+    cursor: pointer;
+}
+
+.doe-mee button:hover {
+    background-color: var(--yellow);
+    transition: .5s;
+    color: var(--black);
+}
+
+/* chat ------------------------------------------------------------------------------------------------- */
+.chat {
+    /* grid-column-start: 1;
+    grid-row-start: 2; */
+    max-width: 40em;
+    height: 20em;
+    border: .5em solid var(--yellow);
+    margin-top: 2em;
+    display: grid;
+    place-content: center;
+}
+
+
+@media (width < 50em) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em 3em 1em 1em;
+        /* overflow-x: hidden; */
+    }
+
+
+    main>div {
+        display: contents;
+    }
+
+    .wens {
+        order: -1;
+        padding: 1.5em;
+        width: 100%;
+
+    }
+
+    .wens img {
+        max-width: 70vw;
+    }
+
+    .doe-mee {
+        order: -1;
+        padding: 0;
+        max-width: 80vw;
+    }
+
+
+    .hoogtepunten {
+        order: -1;
+        padding: 1em;
+        margin: 3em 0;
+        max-height: 50vh;
+        overflow: scroll;
+    }
+
+    .helpende {
+        position: fixed;
+        right: 0;
+        transform: translateX(95%);
+    }
+
+    .helpende-item.active {
+        transform: translateX(-75%);
+        transition: transform 0.3s ease-out;
+    }
+
+    #ambassadeurs ul {
+        display: flex;
+        max-width: 90%;
+        /* Set the maximum height for 2 rows */
+        max-height: 100%;
+        overflow: scroll;
+
+    }
+}
+
+
+
+
+
+
+
 
 
 /***********/
 /* CHAT  */
 /***********/
-.chat {
+/* .chat {
     width: 25em;
     background-color: white;
     position: relative;
@@ -39,7 +342,6 @@ main {
     height: 60vh;
 }
 
-/* your msg */
 .you {
     position: absolute;
     right: 1em;
@@ -79,7 +381,6 @@ main {
 }
 
 
-/* other */
 .other {
     position: absolute;
     left: 1em;
@@ -133,7 +434,7 @@ main {
     border-radius: 2em;
     border: none;
     padding: 0 2em;
-}
+} */
 
 /* detailpage hilal */
 /* chat */
