@@ -1,11 +1,15 @@
-const filterMenu = document.querySelector(".filter-menu");
-const themaFilterBtn = document.querySelector(".thema-btn");
+const filterMenu = document.querySelector(".filter-theme-menu");
+const filterBtns = document.querySelectorAll(".theme-btn, .sorting-btn");
 const themeSelect = document.getElementById("thema");
 
 
-themaFilterBtn.addEventListener("click", () => {
-  filterMenu.classList.toggle("show-filter");
-});
+filterBtns.forEach((button) =>{
+  button.addEventListener('click', (e)=>{
+    e.preventDefault()
+    filterMenu.classList.toggle("show-filter");
+  })
+})
+
 
 themeSelect.addEventListener("change", function () {
   displaySelectedOption(themeSelect);

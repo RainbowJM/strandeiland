@@ -297,7 +297,12 @@ main {
 /**********/
 /* FILTER */
 /**********/
-.filter-menu {
+main form {
+    position: relative;
+}
+.filter-theme-menu {
+    position: absolute;
+    z-index: 2;
     display: none;
     width: 100%;
     padding: 1em;
@@ -305,11 +310,11 @@ main {
     grid-column: span 2;
 }
 
-.filter-menu.show-filter {
+.filter-theme-menu.show-filter {
     display: block;
 }
 
-.thema-btn {
+.theme-btn {
     margin: 0 auto;
 }
 
