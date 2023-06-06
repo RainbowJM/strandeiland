@@ -22,8 +22,3 @@ themeSelect.addEventListener("change", function () {
   displaySelectedOption(themeSelect);
 });
 
-
-function displaySelectedOption(selectElement) {
-  let selectedOption = selectElement.options[selectElement.selectedIndex].text;
-  selectElement.value = selectedOption;
-}
