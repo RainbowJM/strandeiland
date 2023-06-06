@@ -25,10 +25,13 @@
     <!--  -->
     <form>
       <fieldset>
-        <button class="theme-btn">Thema </button>
-        <button class="sorting-btn">Sorteren</button>
+        <div class="tab">
+          <button class="tablinks">Thema </button>
+          <button class="tablinks">Sorteren</button>
+        </div>
 
-        <article class="filter-theme-menu">
+
+        <article id="theme" class="tabcontent ">
           <ul>
             <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
             <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
@@ -40,10 +43,20 @@
             <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
             <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
             <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label></li>
+            <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label>
+            </li>
             <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
             <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
             <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
+          </ul>
+        </article>
+
+        <article id="sorting" class="tabcontent">
+          <ul>
+            <li><label><input type="checkbox" name="sort" value="recent"><span>Meest Recente</span></label></li>
+            <li><label><input type="checkbox" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
+            <li><label><input type="checkbox" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
+            <li><label><input type="checkbox" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
           </ul>
         </article>
       </fieldset>

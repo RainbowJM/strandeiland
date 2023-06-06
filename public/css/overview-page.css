@@ -300,6 +300,20 @@ main {
 main form {
     position: relative;
 }
+.tabcontent {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 100%;
+    padding: 1em;
+    background-color: var(--white);
+    grid-column: span 2;
+}
+
+.tabcontent.hide {
+    display: none;
+}
+
 .filter-theme-menu {
     position: absolute;
     z-index: 2;
@@ -310,13 +324,13 @@ main form {
     grid-column: span 2;
 }
 
-.filter-theme-menu.show-filter {
+/* .filter-theme-menu.show-filter {
     display: block;
 }
 
 .theme-btn {
     margin: 0 auto;
-}
+} */
 
 /* Responsive */
 @media screen and (max-width: 55em) {
