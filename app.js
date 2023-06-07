@@ -5,6 +5,8 @@ const path = require("path");
 const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
+const historySize = 100;
+let history = [];
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -40,17 +42,20 @@ app.get("/form", (req, res) => {
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected`);
 
-  // socket.emit('history', history)
+  socket.emit("history", history);
 
   socket.on("message", (message) => {
-    console.log("socket in")
-    console.log('socket', message)
-    // while (history.length > historySize) {
-    //     history.shift()
-    // }
-    // history.push(message)
+    console.log("socket in");
+    console.log("socket", message);
+    while (history.length > historySize) {
+      history.shift();
+    }
+    history.push(message);
 
-    io.emit("message", message);
+    io.emit("message", {
+      message: message.message,
+      time: message.time,
+    });
   });
 
   socket.on("disconnect", () => {

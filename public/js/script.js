@@ -14,8 +14,9 @@ const filterSortBtn = document.querySelector(".filter-sort-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
 
 console.log("tabs", tabs);
-
-toggleFilterMenu();
+if (tabs) {
+  toggleFilterMenu();
+}
 
 if (submitMessage) {
   submitMessage.addEventListener("click", (event) => {
@@ -54,82 +55,77 @@ asideItems.forEach((asideItem) => {
     console.log("click");
     asideItem.classList.toggle("active");
   });
+});
 
+if (themeFilterBtn) {
+  themeFilterBtn.addEventListener("click", () => {
+    filterMenu.classList.toggle("show-filter");
+  });
+}
+
+if (themeSelect) {
   themeSelect.addEventListener("change", function () {
     displaySelectedOption(themeSelect);
   });
+}
 
-  if (themeFilterBtn) {
-    themeFilterBtn.addEventListener("click", () => {
-      filterMenu.classList.toggle("show-filter");
-    });
-  }
+socket.on("message", (message) => {
+  add(message.message, message.time);
+});
 
-  if (themeSelect) {
-    themeSelect.addEventListener("change", function () {
-      displaySelectedOption(themeSelect);
-    });
-  }
-
-  socket.on("message", (message) => {
+socket.on("history", (history) => {
+  history.forEach((message) => {
     add(message.message, message.time);
   });
+});
 
-  socket.on("history", (history) => {
-    history.forEach((message) => {
-      add(message.message, message.time);
-    });
-  });
-
-  function add(message, time) {
-    console.log("app.js", message);
-    messages.appendChild(
-      Object.assign(document.createElement("li"), {
-        // className: styling,
-        innerHTML: `<section id='message'>
+function add(message, time) {
+  console.log("app.js", message);
+  messages.appendChild(
+    Object.assign(document.createElement("li"), {
+      // className: styling,
+      innerHTML: `<section id='message'>
     <span class="message">${message}</span>
     <span class="time">${time}</span> 
     </section>`,
-      })
-    );
-    // Scroll to the bottom of the chat.
-    messages.scrollTop = messages.scrollHeight;
-  }
+    })
+  );
+  // Scroll to the bottom of the chat.
+  messages.scrollTop = messages.scrollHeight;
+}
 
-  function displaySelectedOption(selectElement) {
-    let selectedOption =
-      selectElement.options[selectElement.selectedIndex].text;
-    selectElement.value = selectedOption;
-  }
+function displaySelectedOption(selectElement) {
+  let selectedOption = selectElement.options[selectElement.selectedIndex].text;
+  selectElement.value = selectedOption;
+}
 
-  // ------------------ filter menu ------------------
-  function toggleFilterMenu() {
-    tabs.forEach((tab) => {
-      const target = document.querySelector(tab.dataset.filterTarget);
-      tab.addEventListener("click", (e) => {
-        e.preventDefault();
-        tabContents.forEach((tabContent) =>
-          tabContent.classList.remove("active")
-        );
-        target.classList.add("active");
-      });
-
-      filterThemeBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        target.classList.remove("active");
-        console.log("form submitted");
-      });
-      filterSortBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        target.classList.remove("active");
-        console.log("form submitted");
-      });
-
-      closeFilterBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        target.classList.remove("active");
-        console.log("form submitted");
-      });
+// ------------------ filter menu ------------------
+function toggleFilterMenu() {
+  tabs.forEach((tab) => {
+    const target = document.querySelector(tab.dataset.filterTarget);
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+      tabContents.forEach((tabContent) =>
+        tabContent.classList.remove("active")
+      );
+      target.classList.add("active");
     });
-  }
-});
+
+    filterThemeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      target.classList.remove("active");
+      console.log("form submitted");
+    });
+    filterSortBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      target.classList.remove("active");
+      console.log("form submitted");
+    });
+
+    closeFilterBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      target.classList.remove("active");
+      console.log("form submitted");
+    });
+  });
+}
