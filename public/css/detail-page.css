@@ -16,7 +16,7 @@ main {
 }
 
 .terug {
-    margin: 3em 0 0 5vw;
+    margin: 3em 0 1em 5vw;
 
 }
 
@@ -37,7 +37,7 @@ main {
     flex-direction: column;
     width: 45vw;
     padding: 3em;
-    margin-top: 3em;
+    /* margin-top: 3em; */
 }
 
 .wens h1 {
@@ -65,7 +65,7 @@ main {
 
 /* helpende -----------------------------------------------------------------------------------------*/
 .helpende {
-    margin: 3em 0 0 1em;
+    margin: 0 0 0 1em;
 }
 
 .helpende>div {
@@ -84,7 +84,7 @@ main {
     transform: rotate(-90deg);
     font-size: 12px;
     position: absolute;
-    left: -1em;
+    left: -.8em;
     top: 45%;
 }
 
@@ -290,7 +290,7 @@ main {
     .helpende {
         position: fixed;
         right: 0;
-        transform: translateX(95%);
+        transform: translateX(91%);
     }
 
     .helpende-item.active {

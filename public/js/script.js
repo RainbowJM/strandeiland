@@ -17,7 +17,22 @@
 //   selectElement.value = selectedOption;
 // }
 
+// Hamburger menu
+const theMenuButton = document.querySelector(".menuButton");
+const theNav = document.querySelector(".navigation-links");
+const theImage = document.querySelector(".menuContainer img");
 
+
+theMenuButton.addEventListener("click", toggleMenu);
+
+// Toggle function
+function toggleMenu() {
+    theNav.classList.toggle("open");
+    theMenuButton.classList.toggle("menuOpen");
+    console.log("open")
+    theImage.classList.toggle("menuOpen");
+
+}
 
 
 // Aside pop out
