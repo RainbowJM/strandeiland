@@ -43,6 +43,8 @@ io.on("connection", (socket) => {
   // socket.emit('history', history)
 
   socket.on("message", (message) => {
+    console.log("socket in")
+    console.log('socket', message)
     // while (history.length > historySize) {
     //     history.shift()
     // }

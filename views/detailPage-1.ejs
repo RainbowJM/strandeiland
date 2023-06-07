@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head');  %>
-    <link rel="stylesheet" href="/css/detail-page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%- include('./partials/head'); %>
+        <link rel="stylesheet" href="/css/detail-page.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
     <header>
-        <%- include('./partials/header');  %>
+        <%- include('./partials/header'); %>
     </header>
 
     <div class="terug">
@@ -47,8 +48,16 @@
             </section>
 
             <!-- chat -->
-            <section class="chat">
-                <h2>chat area</h2>
+            <section id="chat">
+                <h2>Chat</h2>
+                <span id="spacing"></span>
+                <ul></ul>
+                <p id="typing"></p>
+                <form class="message-input">
+                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
+                    <button type="submit" id="message-button"><span
+                            class="material-symbols-outlined">Send</span></button>
+                </form>
             </section>
         </div>
 
@@ -223,44 +232,14 @@
             </section>
         </div>
 
-
-
-        <!-- <section class="chat">
-            <h2>Chat</h2>
-            <section class="chat-messages">
-                <div class="you">
-                    <h3>Bobby Brown</h3>
-                    <div>
-                        <p>vertel!</p>
-                        <img src="/images/bob.jpeg" alt="bob">
-                    </div>
-                </div>
-                <div class="other">
-                    <h3>Helen Algazzi</h3>
-                    <div>
-                        <img src="/images/helen.jpeg" alt="helen">
-                        <p>Ik wou heb hebben over deze wens</p>
-                    </div>
-                </div>
-                <div class="you">
-                    <h3>Bobby Brown</h3>
-                    <div>
-                        <p>Wat vinden jullie?</p>
-                        <img src="/images/bob.jpeg" alt="bob">
-                    </div>
-                </div>
-
-                <input type="text" class="chat-bericht" placeholder="Stuur een bericht">
-                <button class="send"></button>
-            </section>
-        </section> -->
-
     </main>
 
     <!-- footer -->
     <footer>
-        <%- include('./partials/footer');  %>
+        <%- include('./partials/footer'); %>
     </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
