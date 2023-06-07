@@ -1,32 +1,50 @@
-// const filterMenu = document.querySelector(".filter-menu");
-// const themaFilterBtn = document.querySelector(".thema-btn");
-// const themeSelect = document.getElementById("thema");
+const tabs = document.querySelectorAll('[data-filter-target]');
+const tabContents = document.querySelectorAll('[data-filter-content]');
+const filterThemeBtn = document.querySelector('.filter-theme-btn');
+const filterSortBtn = document.querySelector('.filter-sort-btn');
+const closeFilterBtn = document.querySelector('.close-filter')
+
+console.log('tabs', tabs)
+const themeSelect = document.getElementById("thema");
+
+toggleFilterMenu();
+// ------------------ filter menu ------------------
+function toggleFilterMenu(){
+
+  tabs.forEach(tab => {
+    const target = document.querySelector(tab.dataset.filterTarget);
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+   tabContents.forEach(tabContent => tabContent.classList.remove('active'));
+   target.classList.add('active');
+    })
+  
+    filterThemeBtn.addEventListener('click', (e) => {
+     e.preventDefault();
+      target.classList.remove('active');
+      console.log('form submitted')
+
+    }
+    )
+    filterSortBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      target.classList.remove('active');
+      console.log('form submitted')
+    })
+
+    
+    closeFilterBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      target.classList.remove('active');
+      console.log('form submitted')
+    })
+  })
 
 
-// themaFilterBtn.addEventListener("click", () => {
-//   filterMenu.classList.toggle("show-filter");
-// });
-
-// themeSelect.addEventListener("change", function () {
-//   displaySelectedOption(themeSelect);
-// });
+}
 
 
-// function displaySelectedOption(selectElement) {
-//   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
-//   selectElement.value = selectedOption;
-// }
-
-
-
-
-// Aside pop out
-const asideItems = document.querySelectorAll('.helpende-item');
-
-asideItems.forEach((asideItem) => {
-    asideItem.addEventListener('click', () => {
-      console.log('click')
-        asideItem.classList.toggle('active');
-    });
+themeSelect.addEventListener("change", function () {
+  displaySelectedOption(themeSelect);
 });
 
