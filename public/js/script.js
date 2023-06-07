@@ -1,20 +1,35 @@
-const filterMenu = document.querySelector(".filter-theme-menu");
-const themeFilterBtns = document.querySelector(".theme-btn");
-const sortingBtn = document.querySelector(".sorting-btn")
+const tabs = document.querySelectorAll('[data-filter-target]');
+const tabContents = document.querySelectorAll('[data-filter-content]');
+const filterThemeBtn = document.querySelector('.filter-theme-btn');
+const filterSortBtn = document.querySelector('.filter-sort-btn');
+
+
+console.log('tabs', tabs)
 const themeSelect = document.getElementById("thema");
 
-function filteringTab (evt, filterItem){
-  let i, tabcontent, tablinks;
-  tabcontent = document.querySelectorAll('.tabcontent');
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.add('hide')
-    
-  }
-  tablinks = document.querySelectorAll('tablinks')
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace('active', '');
-    
-  }
+toggleFilterMenu();
+// ------------------ filter menu ------------------
+function toggleFilterMenu(){
+
+  tabs.forEach(tab => {
+    const target = document.querySelector(tab.dataset.filterTarget);
+    tab.addEventListener('click', () => {;
+   tabContents.forEach(tabContent => tabContent.classList.remove('active'));
+   target.classList.add('active');
+    })
+  
+    filterThemeBtn.addEventListener('click', (e) => {
+     e.preventDefault();
+      target.classList.remove('active');
+    }
+    )
+    filterSortBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      target.classList.remove('active');
+      console.log('form submitted')
+    }
+    )
+  })
 }
 
 

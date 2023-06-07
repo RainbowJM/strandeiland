@@ -10,6 +10,10 @@
     --font: 'Poppins', sans-serif;
 }
 
+body {
+    overflow: auto;
+}
+
 main {
     margin: 20px;
     /* overflow: hidden; */
@@ -71,7 +75,8 @@ main {
 .content {
     /* width: 100%; */
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-template-columns: 1fr;
     /* max-width: 1200px; */
     max-width: 75em;
     margin: 20px auto;
@@ -114,7 +119,8 @@ main {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     max-width: 75em;
     margin: 20px auto;
@@ -299,8 +305,23 @@ main {
 /**********/
 main form {
     position: relative;
+    max-width: 75em;
+    margin: 20px auto;
 }
-.tabcontent {
+
+form a {
+    display: inline-block;
+    padding: .5em 1em;
+    background-color: var(--black);
+    color: var(--white);
+
+}
+
+form a:hover {
+    background-color: var(--blue);
+}
+
+[data-filter-content] {
     position: absolute;
     z-index: 2;
     display: none;
@@ -310,27 +331,10 @@ main form {
     grid-column: span 2;
 }
 
-.tabcontent.hide {
-    display: none;
-}
-
-.filter-theme-menu {
-    position: absolute;
-    z-index: 2;
-    display: none;
-    width: 100%;
-    padding: 1em;
-    background-color: var(--white);
-    grid-column: span 2;
-}
-
-/* .filter-theme-menu.show-filter {
+.active[data-filter-content] {
     display: block;
 }
 
-.theme-btn {
-    margin: 0 auto;
-} */
 
 /* Responsive */
 @media screen and (max-width: 55em) {

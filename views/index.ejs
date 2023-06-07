@@ -25,43 +25,54 @@
     <!--  -->
     <form>
       <fieldset>
-        <div class="tab">
-          <button class="tablinks">Thema </button>
-          <button class="tablinks">Sorteren</button>
-        </div>
+        <ul>
+          <li data-filter-target="#theme">Thema</li>
+          <li data-filter-target="#sorting">Sorteren</li>
+        </ul>
+      
 
 
-        <article id="theme" class="tabcontent ">
-          <ul>
-            <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="Winkels"><span>Winkels</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="natuur"><span>Natuur</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="milieu"><span>Milieu</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="jeugd"><span>Jeugd</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label>
-            </li>
-            <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
-            <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
-          </ul>
-        </article>
+        <section class="filter-content">
+          <article id="theme"  data-filter-content>
+            <ul>
+              <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="Winkels"><span>Winkels</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="natuur"><span>Natuur</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="milieu"><span>Milieu</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="jeugd"><span>Jeugd</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label>
+              </li>
+              <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
+              <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
+            </ul>
 
-        <article id="sorting" class="tabcontent">
-          <ul>
-            <li><label><input type="checkbox" name="sort" value="recent"><span>Meest Recente</span></label></li>
-            <li><label><input type="checkbox" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
-            <li><label><input type="checkbox" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
-            <li><label><input type="checkbox" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
-          </ul>
-        </article>
-      </fieldset>
+            <button class="filter-theme-btn"  type="submit">Toon resultaten</button>
+          </article>
+          
+          <article id="sorting"  data-filter-content>
+            <ul>
+              <li><label><input type="checkbox" name="sort" value="recent"><span>Meest Recente</span></label></li>
+              <li><label><input type="checkbox" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
+              <li><label><input type="checkbox" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
+              <li><label><input type="checkbox" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
+            </ul>
+
+            <button class="filter-sort-btn"  type="submit">Toon resultaten</button>
+          </article>
+         
+
+          
+        </section>
+ </fieldset>
 
 
+<a href="/form">Wens aanmaken</a>
 
     </form>
 
@@ -81,7 +92,7 @@
 
 
 
-            <a href="#">
+            <a href="/detailpage-1">
 
               <article>
 
@@ -379,7 +390,7 @@
 
       </div>
 
-      <aside class="latest-container">
+      <!-- <aside class="latest-container">
         <h2>Laatste ideeën</h2>
 
         <div class="latest-wrapper">
@@ -414,7 +425,7 @@
             </article>
         </div>
       </aside>
-
+ -->
 
 
   </main>
