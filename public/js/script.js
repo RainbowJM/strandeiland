@@ -1,13 +1,9 @@
 // ------------------ variables -------------------------------------------------------
-
-const socket = io();
-
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
-
-
+const socket = io();
 let last;
 
 console.log("tabs", tabs);
