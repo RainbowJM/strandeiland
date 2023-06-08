@@ -27,8 +27,14 @@ app.get("/chat", (req, res) => {
   });
 });
 
-app.get("/detailPage-1", (req, res) => {
-  res.render("detailPage-1", {
+app.get('/sent', (req, res) => {
+    res.render('sent',{
+        title: 'Bevesting',
+    })
+});
+  
+app.get('/detailPage-1', (req, res) => {
+    res.render('detailPage-1',{
     title: "detail",
   });
 });

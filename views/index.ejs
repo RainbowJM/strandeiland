@@ -25,16 +25,16 @@
     <!--  -->
     <form>
       <fieldset>
+        <button class="close-filter">Close filter</button>
         <ul>
           <li data-filter-target="#theme">Filteren op thema</li>
           <li data-filter-target="#sorting">Sorteren</li>
         </ul>
 
-        <button class="close-filter">Close filter</button>
 
         <section class="filter-content">
           <article id="theme" data-filter-content>
-            <ul>
+            <ul class="theme-filter-items"> 
               <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
               <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
               <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
@@ -56,11 +56,11 @@
           </article>
 
           <article id="sorting" data-filter-content>
-            <ul>
-              <li><label><input type="checkbox" name="sort" value="recent"><span>Meest Recente</span></label></li>
-              <li><label><input type="checkbox" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
-              <li><label><input type="checkbox" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
-              <li><label><input type="checkbox" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
+            <ul class="sorting-filter-items">
+              <li><label><input type="radio" name="sort" value="recent"><span>Meest Recente</span></label></li>
+              <li><label><input type="radio" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
+              <li><label><input type="radio" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
+              <li><label><input type="radio" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
             </ul>
 
             <button class="filter-sort-btn" type="submit">Toon resultaten</button>
@@ -69,6 +69,8 @@
 
 
         </section>
+
+        <p class="selected-filter-items">Hello</p>
       </fieldset>
 
 
