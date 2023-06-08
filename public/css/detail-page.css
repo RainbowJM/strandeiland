@@ -167,7 +167,7 @@ main {
 .pinned {
     background-color: var(--white);
     padding: 2em;
-    margin: 3em 0 0 1em;
+    margin: 1em 0 0 1em;
 }
 
 .pinned h2 {
@@ -229,19 +229,6 @@ main {
     color: var(--black);
 }
 
-/* chat ------------------------------------------------------------------------------------------------- */
-.chat {
-    /* grid-column-start: 1;
-    grid-row-start: 2; */
-    max-width: 40em;
-    height: 20em;
-    border: .5em solid var(--yellow);
-    margin-top: 2em;
-    display: grid;
-    place-content: center;
-}
-
-
 @media (width < 50em) {
     main {
         display: grid;
@@ -267,7 +254,6 @@ main {
     }
 
     .join {
-        order: -1;
         padding: 0;
         max-width: 80vw;
     }

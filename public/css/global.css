@@ -109,7 +109,6 @@ nav.navigation-links {
     padding: 10px;
     overflow: hidden;
     transition: height 0.3s ease;
-    position: absolute;
     background-color: var(--white);
     z-index: 1000;
     border-bottom: solid var(--dark-grey) 1px;
@@ -161,6 +160,7 @@ nav.navigation-links a {
       }
       nav.navigation-links {
         padding: 0;
+        position: absolute;
       }
 
     nav.navigation-links ul {

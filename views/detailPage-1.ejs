@@ -4,6 +4,7 @@
 <head>
     <%- include('./partials/head'); %>
         <link rel="stylesheet" href="/css/detail-page.css">
+        <link rel="stylesheet" href="/css/chat.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -38,20 +39,18 @@
                     jongeren op IJburg lijkt mij dit de plek in Amsterdam
                     voor een bruisend nieuw skatepark.
                 </p>
-            </section>
-
-            <!-- join -->
-            <section class="join">
-                <button>Steunen</button>
-                <button>Help mee</button>
-                <button>Word ambassadeur</button>
+                <!-- join -->
+                <section class="join">
+                    <button>Steunen</button>
+                    <button>Help mee</button>
+                    <button>Word ambassadeur</button>
+                </section>
             </section>
 
             <!-- chat -->
             <section id="chat">
                 <h2>Chat</h2>
-                <span id="spacing"></span>
-                <ul></ul>
+                <ul class="chat-section"></ul>
                 <p id="typing"></p>
                 <form class="message-input">
                     <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
