@@ -45,7 +45,7 @@ if (submitMessage) {
       });
 
       // Add the message to the chat.
-      add(input.value, hour, socket.id);
+      add(input.value, hour, socket.id, true);
 
       input.value = "";
     }
@@ -81,13 +81,13 @@ if (theMenuButton) {
 
 socket.on("message", (message) => {
   if (message.id != socket.id) {
-    add(message.message, message.time);
+    add(message.message, message.time, message.id);
   }
 });
 
 socket.on("history", (history) => {
   history.forEach((message) => {
-    add(message.message, message.time);
+    add(message.message, message.time, message.id);
   });
 });
 
@@ -135,11 +135,21 @@ function toggleFilterMenu() {
   });
 }
 
-function add(message, time, id) {
-  console.log("app.js", message);
+function add(message, time, id, self) {
+  let styling = "";
+
+  // Add styling to the message if you are the sender.
+  if (self) {
+    styling = "self";
+  } else {
+    if (last == id) {
+      styling = "multiple";
+    }
+  }
+
   messages.appendChild(
     Object.assign(document.createElement("li"), {
-      // className: styling,
+      className: styling,
       innerHTML: `<section id='message'>
     <span class="message">${message}</span>
     <span class="time">${time}</span> 

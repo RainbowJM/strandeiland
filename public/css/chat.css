@@ -1,8 +1,8 @@
 #chat {
   height: 20em;
   position: relative;
-  /* background-color: var(--yellow); */
-  border: 0.5em solid var(--yellow);
+  background-color: var(--white);
+  /* border: 0.5em solid var(--yellow); */
   margin-top: 2em;
   display: flex;
   flex-direction: column;
@@ -42,4 +42,66 @@ form button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+#chat li {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#chat li #name {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+#chat li.self #name,
+#chat li.multiple #name {
+  display: none;
+}
+
+#chat li #message {
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 0 25px 25px 25px;
+  width: 40%;
+  padding: 10px 25px;
+  height: 5em;
+  font-size: medium;
+  word-wrap: break-word;
+}
+
+#chat li #message span::first-letter {
+  text-transform: uppercase;
+}
+
+#chat li.self #message {
+  background: var(--white);
+  border-radius: 25px 0 25px 25px;
+  margin-left: auto;
+  border: 1.5px solid var(--yellow);
+  color: var(--black);
+}
+
+#chat li #message p {
+  word-break: break-word;
+  display: inline;
+  margin: 0;
+  text-align: start;
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+}
+
+#chat li #message .time {
+  color: var(--white);
+  font-size: smaller;
+  float: right;
+}
+
+#chat li.self #message .time {
+  color: var(--black);
 }
