@@ -1,20 +1,13 @@
 // ------------------ variables -------------------------------------------------------
+
 const socket = io();
-const messages = document.querySelector("section ul");
-const submitMessage = document.querySelector("#message-button");
-const input = document.querySelector("#message-input");
-const filterMenu = document.querySelector(".filter-menu");
-const themeFilterBtn = document.querySelector(".thema-btn");
-const themeSelect = document.getElementById("thema");
-const theMenuButton = document.querySelector(".menuButton");
-const theNav = document.querySelector(".navigation-links");
-const theImage = document.querySelector(".menuContainer img");
-const asideItems = document.querySelectorAll(".helping-item");
-const tabs = document.querySelectorAll("[data-filter-target]");
-const tabContents = document.querySelectorAll("[data-filter-content]");
-const filterThemeBtn = document.querySelector(".filter-theme-btn");
-const filterSortBtn = document.querySelector(".filter-sort-btn");
-const closeFilterBtn = document.querySelector(".close-filter");
+
+import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
+import { toggleFilterMenu } from "./modules/filter.js";
+import { toggleMenu } from "./modules/navigationMenu.js";
+
+
+
 let last;
 
 console.log("tabs", tabs);
@@ -25,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectedOption = document.querySelector(".selected-option");
   const dropdownMenu = document.getElementById("themeDropdownMenu");
   const localStorageKey = "formData";
+  console.log("selectedOption", selectedOption);
 
   selectedOption.addEventListener("click", function () {
     dropdownMenu.classList.toggle("show");
@@ -135,8 +129,7 @@ if (themeSelect) {
 }
 
 // filter menu
-toggleFilterMenu();
-// previewFilterItems();
+
 
 if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
@@ -163,42 +156,42 @@ function displaySelectedOption(selectElement) {
   selectElement.value = selectedOption;
 }
 // hamburger
-function toggleMenu() {
-  theNav.classList.toggle("open");
-  theMenuButton.classList.toggle("menuOpen");
-  console.log("open");
-  theImage.classList.toggle("menuOpen");
-}
+// function toggleMenu() {
+//   theNav.classList.toggle("open");
+//   theMenuButton.classList.toggle("menuOpen");
+//   console.log("open");
+//   theImage.classList.toggle("menuOpen");
+// }
 
-function toggleFilterMenu() {
-  tabs.forEach((tab) => {
-    const target = document.querySelector(tab.dataset.filterTarget);
-    tab.addEventListener("click", (e) => {
-      e.preventDefault();
-      tabContents.forEach((tabContent) =>
-        tabContent.classList.remove("active")
-      );
-      target.classList.add("active");
-    });
+// function toggleFilterMenu() {
+//   tabs.forEach((tab) => {
+//     const target = document.querySelector(tab.dataset.filterTarget);
+//     tab.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       tabContents.forEach((tabContent) =>
+//         tabContent.classList.remove("active")
+//       );
+//       target.classList.add("active");
+//     });
 
-    filterThemeBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      target.classList.remove("active");
-      console.log("form submitted");
-    });
-    filterSortBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      target.classList.remove("active");
-      console.log("form submitted");
-    });
+//     filterThemeBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       target.classList.remove("active");
+//       console.log("form submitted");
+//     });
+//     filterSortBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       target.classList.remove("active");
+//       console.log("form submitted");
+//     });
 
-    closeFilterBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      target.classList.remove("active");
-      console.log("form submitted");
-    });
-  });
-}
+//     closeFilterBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       target.classList.remove("active");
+//       console.log("form submitted");
+//     });
+//   });
+// }
 
 function add(message, time, id, self) {
   let styling = "";
