@@ -293,7 +293,7 @@ main {
         transform: translateX(91%);
     }
 
-    .helpende-item.active {
+    .helping-item.active {
         transform: translateX(-75%);
         transition: transform 0.3s ease-out;
     }

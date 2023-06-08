@@ -1,3 +1,5 @@
+// ------------------ variables -------------------------------------------------------
+
 const filterMenu = document.querySelector(".filter-menu");
 const themaFilterBtn = document.querySelector(".thema-btn");
 const themeSelect = document.getElementById("thema");
@@ -13,24 +15,31 @@ const closeFilterBtn = document.querySelector('.close-filter');
 
 console.log('tabs', tabs)
 
-asideItems.forEach((asideItem) => {
-  asideItem.addEventListener('click', () => {
-    console.log('click')
+// ------------------ logic -------------------------------------------------------
+if (asideItems.length > 0) {
+  asideItems.forEach((asideItem) => {
+    asideItem.addEventListener('click', () => {
+      console.log('click')
       asideItem.classList.toggle('active');
+    });
   });
-});
+}
 
-theMenuButton.addEventListener("click", toggleMenu);
+if (theMenuButton) {
+  theMenuButton.addEventListener("click", toggleMenu);
+}
 
-themaFilterBtn.addEventListener("click", () => {
-  filterMenu.classList.toggle("show-filter");
-});
+if (themaFilterBtn) {
+  themaFilterBtn.addEventListener("click", () => {
+    filterMenu.classList.toggle("show-filter");
+  });
+}
 
-themeSelect.addEventListener("change", function () {
-  displaySelectedOption(themeSelect);
-});
-
-
+if (themeSelect) {
+  themeSelect.addEventListener("change", function () {
+    displaySelectedOption(themeSelect);
+  });
+}
 
 
 function displaySelectedOption(selectElement) {
@@ -39,7 +48,9 @@ function displaySelectedOption(selectElement) {
 }
 
 
-// Toggle function
+
+// ------------------ functions -------------------------------------------------------
+// hamburger
 function toggleMenu() {
     theNav.classList.toggle("open");
     theMenuButton.classList.toggle("menuOpen");
@@ -47,9 +58,8 @@ function toggleMenu() {
     theImage.classList.toggle("menuOpen");
 }
 
-
+// filter menu
 toggleFilterMenu();
-// ------------------ filter menu ------------------
 function toggleFilterMenu(){
 
   tabs.forEach(tab => {
