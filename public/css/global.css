@@ -52,6 +52,7 @@ header {
     height: auto;
 }
 
+
 /* First nav */
 nav.inlog-container {
     width: 100%;
@@ -69,7 +70,6 @@ nav.inlog-container ul {
 nav.inlog-container li {
     display: inline;
     margin: 0 5px;
-
 }
 
 nav.inlog-container a {
@@ -80,24 +80,49 @@ nav.inlog-container a {
 }
 
 /* Logo */
-
 header img {
     width: 4em;
     height: 4em;
 }
 
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1em;
+  position: absolute;
+  right: .1em;
+}
+
+.menuButton span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #000; 
+  margin-bottom: 6px;
+}
+
 /* Second Nav */
 nav.navigation-links {
     width: 100%;
-    height: auto;
+    height: 0;
     padding: 10px;
-   display: none;
-}
+    overflow: hidden;
+    transition: height 0.3s ease;
+    position: absolute;
+    background-color: var(--white);
+    z-index: 1000;
+    border-bottom: solid var(--dark-grey) 1px;
+  }
+
+nav.navigation-links.open {
+    height: fit-content;
+  }
 
 nav.navigation-links ul {
     display: flex;
     flex-direction: row;
-  
+
     gap: .5em;
     align-items: center;
     width: 100%;
@@ -105,19 +130,57 @@ nav.navigation-links ul {
 }
 
 nav.navigation-links ul li {
-
     text-align: center;
-    width:90%;
+    width: 90%;
     height: 100%;
 }
 
 nav.navigation-links a {
-   text-align: center;
+    text-align: center;
     color: var(--dark-grey)
 }
 
-@media (min-width: 50em){
+
+@media (min-width: 50em) {
     nav.navigation-links {
-   display: block;
+      display: block;
+      height: auto;
+      transition: transform 0.3s ease-out;
+      overflow: visible;
     }
-}
+  
+    header div {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 50em) {
+      button.menuButton{
+        margin-top: 1em;
+      }
+      nav.navigation-links {
+        padding: 0;
+      }
+
+    nav.navigation-links ul {
+        flex-direction: column; 
+        margin-top: 1em;
+        z-index: 1000;
+      }
+
+      nav.navigation-links ul li:nth-of-type(1) {
+        display: none;
+      }
+
+      nav.navigation-links ul li {
+        margin-bottom: 1em ;
+      }
+
+      header div img {
+        width: 4em;
+        height: 4em;
+        margin:.8em 0 0 .8em;
+      }
+
+  }
