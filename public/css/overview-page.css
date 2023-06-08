@@ -278,15 +278,31 @@ form a {
 
 }
 
+/* Filter buttons */
+
+.filter-content button[type="submit"]{
+    margin-top: .5em;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+
+
 form a:hover {
     background-color: var(--blue);
 }
+
 
 [data-filter-content] {
     position: absolute;
     z-index: 2;
     display: none;
-    width: 100%;
+    /* width: 100%; */
+    width: fit-content;
     padding: 1em;
     background-color: var(--white);
     grid-column: span 2;
@@ -295,6 +311,40 @@ form a:hover {
 .active[data-filter-content] {
     display: block;
 }
+.theme-filter-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+
+
+}
+.theme-filter-items li{
+    display: flex;
+    background-color: var(--light-grey);
+  width: 100%;
+  height: 100%;
+/* padding: .5em; */
+}
+
+.theme-filter-items input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.theme-filter-items span{
+    display: inline-block;
+padding: .5em;
+width: 138px;
+}
+
+
+
+input:checked+span {
+    background-color: var(--black);
+    color: var(--white);
+    padding: .5em;
+}
+
 
 
 /* Responsive */
@@ -319,6 +369,7 @@ form a:hover {
         grid-column: span 3;
     }
 
+  
     /* .grid-container .thumbnail-container {
         flex: 0 0 100%;
         width: 100%;
@@ -344,4 +395,10 @@ form a:hover {
     }
 
 
+}
+
+@media screen and (max-width: 40em) {
+    .theme-filter-items {
+        grid-template-columns: 1fr 1fr;
+    }
 }
