@@ -155,43 +155,6 @@ function displaySelectedOption(selectElement) {
   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
   selectElement.value = selectedOption;
 }
-// hamburger
-// function toggleMenu() {
-//   theNav.classList.toggle("open");
-//   theMenuButton.classList.toggle("menuOpen");
-//   console.log("open");
-//   theImage.classList.toggle("menuOpen");
-// }
-
-// function toggleFilterMenu() {
-//   tabs.forEach((tab) => {
-//     const target = document.querySelector(tab.dataset.filterTarget);
-//     tab.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       tabContents.forEach((tabContent) =>
-//         tabContent.classList.remove("active")
-//       );
-//       target.classList.add("active");
-//     });
-
-//     filterThemeBtn.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       target.classList.remove("active");
-//       console.log("form submitted");
-//     });
-//     filterSortBtn.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       target.classList.remove("active");
-//       console.log("form submitted");
-//     });
-
-//     closeFilterBtn.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       target.classList.remove("active");
-//       console.log("form submitted");
-//     });
-//   });
-// }
 
 function add(message, time, id, self) {
   let styling = "";
@@ -218,16 +181,3 @@ function add(message, time, id, self) {
   messages.scrollTop = messages.scrollHeight;
   last = id;
 }
-
-// function previewFilterItems(){
-//   console.log('filter items');
-//   const filterItems = document.querySelectorAll('.theme-filter-items li, .sorting-filter-items li');
-//   let selectedFilterItems = [];
-//   console.log('filter items', filterItems);
-//   filterItems.forEach(filterItem => {
-//     filterItem.addEventListener('click', (e) => {
-
-//       e.preventDefault();
-//     })
-//   })
-// }
