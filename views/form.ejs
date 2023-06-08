@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head');  %>
+  <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <header>
+        <%- include('./partials/header');  %>
+    </header>
+
+<h1>Voorstel</h1>
+
+<div class="form-container">
+<form action="/formulier" method="post" enctype="application/x-www-form-urlencoded">
+
+    <fieldset>
+        <label for="titel">Titel</label>
+        <input type="text" id="titel" name="titel"
+        placeholder="Geef uw voorstel een titel"required>
+    
+        <label for="beschrijving" >Voorstel beschrijving</label>
+        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw voorstel zo duidelijk mogelijk"required></textarea>
+        
+        <label for="thema">Thema's</label>
+       
+
+
+
+        <div class="dropdown">
+            <div class="selected-option">Selecteer de passende thema's</div>
+                <div class="dropdown-menu" id="themeDropdownMenu">
+                    <label><input type="checkbox" value="Sport">Sport</label>
+                    <label><input type="checkbox" value="Recreatie">Recreatie</label>
+                    <label><input type="checkbox" value="Verkeer">Verkeer</label>
+                    <label><input type="checkbox" value="Winkels">Winkels</label>
+                    <label><input type="checkbox" value="Natuur">Natuur</label>
+                    <label><input type="checkbox" value="Milieu">Milieu</label>
+                    <label><input type="checkbox" value="Jeugd">Jeugd</label>
+                    <label><input type="checkbox" value="Veiligheid">Veiligheid</label>
+                    <label><input type="checkbox" value="Cultuur">Cultuur</label>
+                    <label><input type="checkbox" value="Huisvesting">Huisvesting</label>
+                    <label><input type="checkbox" value="Infrastructuur">Infrastructuur</label>
+                    <label><input type="checkbox" value="Overig">Overig</label>
+                    <label><input type="checkbox" value="Strand">Strand</label>
+                    <label><input type="checkbox" value="Onderwijs">Onderwijs</label>
+                </div>
+            </div>
+
+        
+        <label for="afbeelding" >Afbeelding</label>
+        <div class="file-input-container">
+        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+        <p>Selecteer een bestand</p>
+        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" required>
+        
+    </div>
+
+    </fieldset>
+
+    <input type="submit" value="Versturen" id="versturen">
+
+</form>
+</div>
+
+
+
+
+
+</body>
+</html>

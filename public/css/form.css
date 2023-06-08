@@ -1,75 +1,213 @@
+/* Reset CSS */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-
-:root {
-    --yellow: #ffe700;
-    --white: #ffffff;
-    --black: #000000;
-    --blue: #009ce0;
-    --light-grey: #f0f0eb;
-    --dark-grey: #333333;
-    --gray: #E9E9E9;
-    --font: 'Poppins', sans-serif;
-}
-h1{
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-.form-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  form {
-    width: 50%; /* Adjust the width as needed */
-  }
-
-fieldset {
-    background-color: var(--white); 
-    display: flex;
-    flex-direction: column;
-    border-style: none;
-    margin-bottom: 20px;
-
-}
-
-  
-  fieldset label,
-  fieldset textarea,
-  fieldset select,
-  fieldset .file-input-container {
-    margin-bottom: 10px; 
-  }
-
-  input[type="text"],
-textarea,
-select {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--gray);
-  border-radius: 4px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Color Variables */
+:root {
+  --yellow: #ffe700;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #009ce0;
+  --light-grey: #f0f0eb;
+  --dark-grey: #333333;
+  --gray: #E9E9E9;
+  --font: 'Poppins', sans-serif;
+}
 
+/* Placeholder Styling */
+textarea#beschrijving::placeholder,
+textarea#titel::placeholder {
+  font-style: var(--font);
+}
 
+/* Heading Styling */
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* Form Container Styling */
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Form Styling */
+form {
+  width: 50%;
+}
+
+/* Fieldset Styling */
+fieldset {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/* Label, Textarea, Select, and File Input Container Styling */
+fieldset label,
+fieldset textarea,
+fieldset .file-input-container {
+  margin-bottom: 10px;
+  width: 75%;
+  position: relative;
+  left: 15%;
+}
+
+/* Focus Styling */
+fieldset label:focus,
+fieldset textarea:focus,
+fieldset .file-input-container:focus {
+  outline: none;
+  box-shadow: 0 0 4px var(--black);
+}
+
+/* Label Styling */
+fieldset label {
+  font-weight: bold;
+  font-size: 1em;
+  font-family: var(--font);
+}
+
+/* Input, Textarea, and Select Styling */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--gray);
+  box-sizing: border-box;
+  border: none;
+}
+
+#titel{
+    margin-bottom: 10px;
+    width: 75%;
+    position: relative;
+    left: 15%;
+
+}
+/* Submit Button Styling */
 #versturen {
-    background-color: var(--black); /* Set the background color */
-    color: var(--white); /* Set the text color */
-    padding: 10px 20px; /* Set the padding */
-    font-size: 16px; /* Set the font size */
-    border: none; /* Remove the border */
-   /* Add border radius */
-    cursor: pointer; /* Add a cursor pointer */
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
-   
-  }
+
+.dropdown {
+  margin-bottom: 10px;
+  width: 75%;
+  position: relative;
+  left: 15%;
+}
+
+.selected-option {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: white;
+  min-width: 200px;
+  border: border;
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.dropdown-menu label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu label input[type="checkbox"] {
+  display: none;
+}
+
+.dropdown-menu label input[type="checkbox"] + span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color:white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-menu label input[type="checkbox"]:checked + span {
   
+  color: #fff;
+}
+
+.dropdown-menu label input[type="checkbox"]:checked + span:hover {
+  background-color: #1e87d6;
+}
+
+.show {
+  display: block;
+}
+
+/* Style the file input */
+.file-input-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.file-input-container label {
+  display: block;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.file-input-container input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.dropdown-menu.open + label[for="file"],
+.dropdown-menu.open + .file-input-container {
+  display: none;
+}
+
+
+.file-input-container {
+    background-color: var(--gray);
+
+    height: 10em;
+}
+
+img{
+    width: 5em;
+    height: 4.5em;
+    align-items: center;
+}
+p{
+
+    margin-left: 1em;
+    margin-top: 1em;
+    color: var(--black);
+}

@@ -20,8 +20,9 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/formulier', (req, res) => {
-    res.render('formulier');
+app.get('/form', (req, res) => {
+    res.render('form',{
+        title: 'Formulier'});
 });
 
 

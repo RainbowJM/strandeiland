@@ -1,16 +1,26 @@
-const filterMenu = document.querySelector(".filter-menu");
-const themaFilterBtn = document.querySelector(".thema-btn");
-
-themaFilterBtn.addEventListener("click", () => {
-  filterMenu.classList.toggle("show-filter");
+document.addEventListener("DOMContentLoaded", function() {
+  const selectedOption = document.querySelector(".selected-option");
+  const dropdownMenu = document.getElementById("themeDropdownMenu");
+  
+  selectedOption.addEventListener("click", function() {
+    dropdownMenu.classList.toggle("show");
+  });
+  
+  function updateThemes() {
+    const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
+    const selectedThemes = [];
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            selectedThemes.push(checkbox.value);
+        }
+    });
+    selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
+  }
+  
+  const themeCheckboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", updateThemes);
+  });
 });
 
-function displaySelectedOption(selectElement) {
-  var selectedOption = selectElement.options[selectElement.selectedIndex].text;
-  selectElement.value = selectedOption;
-}
 
-var themeSelect = document.getElementById("thema");
-themeSelect.addEventListener("change", function () {
-  displaySelectedOption(themeSelect);
-});
