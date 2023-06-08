@@ -96,6 +96,7 @@ if (themeSelect) {
 
 // filter menu
 toggleFilterMenu();
+// previewFilterItems();
 
 
 // ------------------ functions -------------------------------------------------------
@@ -142,3 +143,17 @@ function toggleFilterMenu(){
     })
   })
 }
+
+
+// function previewFilterItems(){  
+//   console.log('filter items');
+//   const filterItems = document.querySelectorAll('.theme-filter-items li, .sorting-filter-items li');
+//   let selectedFilterItems = [];
+//   console.log('filter items', filterItems);
+//   filterItems.forEach(filterItem => { 
+//     filterItem.addEventListener('click', (e) => {
+
+//       e.preventDefault();
+//     })
+//   })
+// }
