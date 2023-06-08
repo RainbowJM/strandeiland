@@ -19,6 +19,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get('/sent', (req, res) => {
+    res.render('sent',{
+        title: 'Bevesting',
+    })
+});
+  
 app.get('/detailPage-1', (req, res) => {
     res.render('detailPage-1',{
     title: "detail",

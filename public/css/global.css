@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
 :root {
     --yellow: #ffe700;
     --white: #ffffff;
@@ -15,8 +13,6 @@
     --blue: #009ce0;
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
-
-
     --font: 'Poppins', sans-serif;
 }
 
