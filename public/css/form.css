@@ -304,3 +304,18 @@ p{
     color: var(--white);
   }
 
+
+
+  .terug-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  .terug-btn img {
+    width: 20px;
+  }
+
+  .terug-btn p {
+    font-size: 10px;
+    margin-left: 5px; /* Add some spacing between the image and text */
+  }

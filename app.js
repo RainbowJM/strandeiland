@@ -25,6 +25,11 @@ app.get('/form', (req, res) => {
         title: 'Formulier'});
 });
 
+app.get('/sent', (req, res) => {
+    res.render('sent',{
+        title: 'Bevesting'});
+});
+
 
 io.on('connection', (socket) => {
     console.log(`user ${socket.id} connected`)
