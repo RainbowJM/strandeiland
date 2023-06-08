@@ -21,8 +21,6 @@
   </div>
 
   <main>
-
-    <!--  -->
     <form>
       <fieldset>
         <button class="close-filter">Close filter</button>
@@ -30,7 +28,6 @@
           <li data-filter-target="#theme">Filteren op thema</li>
           <li data-filter-target="#sorting">Sorteren</li>
         </ul>
-
 
         <section class="filter-content">
           <article id="theme" data-filter-content>
@@ -45,13 +42,11 @@
               <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
               <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
               <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label>
-              </li>
+              <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label></li>
               <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
               <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
               <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
             </ul>
-
             <button class="filter-theme-btn" type="submit">Toon resultaten</button>
           </article>
 
@@ -65,17 +60,10 @@
 
             <button class="filter-sort-btn" type="submit">Toon resultaten</button>
           </article>
-
-
-
         </section>
-
         <p class="selected-filter-items">Hello</p>
       </fieldset>
-
-
       <a href="/form">Wens aanmaken</a>
-
     </form>
 
     <div class="content">
@@ -89,11 +77,7 @@
           <%- include('./partials/thumbnail.ejs') %>
           <%- include('./partials/thumbnail.ejs') %>
           <%- include('./partials/thumbnail.ejs') %>
-
-
-
         </div>
-
       </div>
 
       <h2> 2.500 resultaten</h2>
@@ -101,15 +85,14 @@
         <%- include('./partials/thumbnail.ejs') %>
         <%- include('./partials/thumbnail.ejs') %>
         <%- include('./partials/thumbnail.ejs') %>
-
-
+        <%- include('./partials/thumbnail.ejs') %>
+        <%- include('./partials/thumbnail.ejs') %>
       </div>
-
-
-
   </main>
 
-  <%- include('./partials/footer.ejs') %>
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
 </body>
 
 </html>
