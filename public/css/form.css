@@ -106,60 +106,86 @@ textarea {
 
 
 .dropdown {
-  margin-bottom: 10px;
-  width: 75%;
-  position: relative;
-  left: 15%;
-}
-
-.selected-option {
-  cursor: pointer;
-  padding: 10px;
-  background-color: #f1f1f1;
-  color: #333;
-  border: none;
-}
+    margin-bottom: 10px;
+    width: 75%;
+    position: relative;
+    left: 15%;
+  }
+  
+  .selected-option {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    position: relative;
+    font-family: var(--font);
+  }
+  
+  .selected-option .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #333 transparent transparent transparent;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
 
 .dropdown-menu {
-  display: none;
-  background-color: white;
-  min-width: 200px;
-  border: border;
-  padding: 10px;
-  max-height: 150px;
-  overflow-y: auto;
+    font-family: var(--font);
+    display: none;
+    background-color: var(--light-grey);
+    min-width: 200px;
+    border: border;
+    max-height: 150px;
+    overflow-y: auto;
 }
 
+/* hier kan ik de text veranderen, hier komt gelijk te styling van de buttons */
 .dropdown-menu label {
-  display: inline-block;
+  /* display: inline-block; */
   margin-right: 10px;
   margin-bottom: 10px;
+  font-weight: normal;
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  text-wrap: wrap;
+  height: 2em;
+  width: 50%;
+  text-align: center;
 }
+
+.dropdown-menu label:hover{
+    background-color: var(--dark-grey);
+    color: var(--white);
+
+    border-radius: 4px;
+    border: 1px solid var(--black);
+
+}
+
+
 
 .dropdown-menu label input[type="checkbox"] {
   display: none;
+
 }
 
-.dropdown-menu label input[type="checkbox"] + span {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color:white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.dropdown-menu label input[type="checkbox"]:checked + span {
-  
-  color: #fff;
-}
-
-.dropdown-menu label input[type="checkbox"]:checked + span:hover {
-  background-color: #1e87d6;
-}
 
 .show {
   display: block;
+ 
 }
+
+
+
 
 /* Style the file input */
 .file-input-container {
@@ -186,11 +212,6 @@ textarea {
   left: 0;
   top: 0;
   cursor: pointer;
-}
-
-.dropdown-menu.open + label[for="file"],
-.dropdown-menu.open + .file-input-container {
-  display: none;
 }
 
 
