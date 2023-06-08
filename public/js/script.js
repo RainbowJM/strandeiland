@@ -2,7 +2,7 @@ const tabs = document.querySelectorAll('[data-filter-target]');
 const tabContents = document.querySelectorAll('[data-filter-content]');
 const filterThemeBtn = document.querySelector('.filter-theme-btn');
 const filterSortBtn = document.querySelector('.filter-sort-btn');
-const closeFilterBtn = document.querySelector('.close-filter')
+const closeFilterBtn = document.querySelector('.close-filter');
 
 console.log('tabs', tabs)
 const themeSelect = document.getElementById("thema");
