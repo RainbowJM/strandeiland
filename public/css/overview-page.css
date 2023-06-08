@@ -254,7 +254,7 @@ main form {
     margin: 20px auto;
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: end;
 }
 form fieldset {
    flex-grow: 2;
@@ -263,6 +263,7 @@ form fieldset {
 form fieldset > ul{
 display: flex;
 gap: 20px;
+/* flex-wrap: wrap; */
 }
 
 form fieldset>ul li {
@@ -288,9 +289,14 @@ form a {
     padding: 1em;
     width: 100%;
     text-align: center;
+    font-family: var(--font);
+    font-weight: bold;
 }
 
-
+.filter-content button[type="submit"]:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
 
 form a:hover {
     background-color: var(--blue);
@@ -315,10 +321,15 @@ form a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 10px;
-
-
 }
-.theme-filter-items li{
+
+.sorting-filter-items {
+    display: grid;
+   
+    gap: 10px;
+}
+.theme-filter-items li,
+.sorting-filter-items li{
     display: flex;
     background-color: var(--light-grey);
   width: 100%;
@@ -326,17 +337,22 @@ form a:hover {
 /* padding: .5em; */
 }
 
-.theme-filter-items input[type="checkbox"]{
+.theme-filter-items input[type="checkbox"], 
+.sorting-filter-items input[type="radio"]{
     appearance: none;
     -webkit-appearance: none;
 }
 
-.theme-filter-items span{
+.theme-filter-items span,
+.sorting-filter-items span{
     display: inline-block;
 padding: .5em;
 width: 138px;
 }
 
+.sorting-filter-items span {
+   width: 20em; 
+}
 
 
 input:checked+span {
@@ -345,6 +361,10 @@ input:checked+span {
     padding: .5em;
 }
 
+/* Sorting */
+#sorting {
+    transform: translateX(55%);
+}
 
 
 /* Responsive */
@@ -401,4 +421,8 @@ input:checked+span {
     .theme-filter-items {
         grid-template-columns: 1fr 1fr;
     }
+
+        #sorting {
+            transform: translateX(0%);
+        }
 }
