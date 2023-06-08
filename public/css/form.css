@@ -17,12 +17,14 @@
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
-}
+} 
 
 /* Placeholder Styling */
 textarea#beschrijving::placeholder,
 textarea#titel::placeholder {
   font-style: var(--font);
+    color: var(--dark-grey);
+    font-size: 15px;
 }
 
 /* Heading Styling */
@@ -59,7 +61,7 @@ fieldset .file-input-container {
   margin-bottom: 10px;
   width: 75%;
   position: relative;
-  left: 15%;
+  left: 5%;
 }
 
 /* Focus Styling */
@@ -69,6 +71,13 @@ fieldset .file-input-container:focus {
   outline: none;
   box-shadow: 0 0 4px var(--black);
 }
+
+input#titel::placeholder {
+    font-family: var(--font);
+    color: var(--dark-grey);
+    font-size: 15px;
+  }
+  
 
 /* Label Styling */
 fieldset label {
@@ -91,7 +100,7 @@ textarea {
     margin-bottom: 10px;
     width: 75%;
     position: relative;
-    left: 15%;
+    left: 5%;
 
 }
 /* Submit Button Styling */
@@ -104,22 +113,28 @@ textarea {
   cursor: pointer;
 }
 
+textarea#beschrijving::placeholder {
+   font-family: var(--font);
+   color: var(--dark-grey);
+  }
 
 .dropdown {
     margin-bottom: 10px;
     width: 75%;
     position: relative;
-    left: 15%;
+    left: 5%;
   }
   
   .selected-option {
     cursor: pointer;
     padding: 10px;
-    background-color: #f1f1f1;
-    color: #333;
+    background-color: var(--gray);
+    color: var(--dark-grey);
     border: none;
     position: relative;
     font-family: var(--font);
+    font-size: 15px;
+    font-weight: normal;
   }
   
   .selected-option .arrow {
@@ -139,7 +154,7 @@ textarea {
 .dropdown-menu {
     font-family: var(--font);
     display: none;
-    background-color: var(--light-grey);
+    background-color: var(--gray);
     min-width: 200px;
     border: border;
     max-height: 150px;
@@ -165,7 +180,7 @@ textarea {
 .dropdown-menu label:hover{
     background-color: var(--dark-grey);
     color: var(--white);
-
+ 
     border-radius: 4px;
     border: 1px solid var(--black);
 
@@ -192,6 +207,7 @@ textarea {
   position: relative;
   display: inline-block;
   margin-top: 10px;
+
 }
 
 .file-input-container label {
@@ -202,6 +218,7 @@ textarea {
   padding: 10px;
   border: none;
   border-radius: 4px;
+    font-family: var(--font);
 }
 
 .file-input-container input[type="file"] {
@@ -219,16 +236,57 @@ textarea {
     background-color: var(--gray);
 
     height: 10em;
+  
 }
 
 img{
     width: 5em;
     height: 4.5em;
-    align-items: center;
+    position: relative;
+    left: 40%;
+    top: 15%;
 }
 p{
-
+    position: relative;
+    left: 29%;
+    top: 10%;
+    font-family: var(--font);
     margin-left: 1em;
     margin-top: 1em;
     color: var(--black);
+    font-size: 16px;
 }
+
+
+#links label{
+    font-size:15px;
+    font-weight: bold;
+    
+}
+
+.linkjes{
+    position: relative;
+    left: 5%;
+    margin-top: 30px;
+
+}
+.linkjes a {
+    padding: 5px 10px;
+    background-color: var(--gray);
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-family: var(--font);
+    
+  }
+  
+  .linkjes a:last-child {
+    margin-right: 0;
+  }
+  
+  .linkjes a:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
