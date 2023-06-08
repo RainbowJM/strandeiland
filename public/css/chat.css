@@ -1,36 +1,44 @@
 #chat {
   height: 20em;
   position: relative;
-  border: .5em solid var(--yellow);
+  /* background-color: var(--yellow); */
+  border: 0.5em solid var(--yellow);
   margin-top: 2em;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 }
 
-#spacing {
-  flex-grow: 1;
+#chat h2{
+text-align: center;
+}
+
+.chat-section {
+  overflow-y: scroll;
+  height: 67%;
 }
 
 form {
+  position: absolute;
   bottom: 0;
+  width: 100%;
+  margin: 0 1em 0.5em 1em;
 }
+
 form input[type="text"] {
   font-family: Poppins, system-ui;
   background: #f5f7fb;
   border: none;
   border-radius: 25px;
-  width: 90%;
-  padding: 15px 25px;
-  /* bottom: 0; */
+  width: 80%;
+  padding: 15px 20px;
 }
 
 form button {
   height: 50px;
   width: 50px;
-  border: solid 2px #f3907c;
+  /* background-color: var(--yellow); */
+  border: solid 2px var(--yellow);
   border-radius: 50%;
-  display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
