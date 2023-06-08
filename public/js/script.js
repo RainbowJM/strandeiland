@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function updateThemes() {
     const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
+    console.log('checkboxes',checkboxes);
     const selectedThemes = [];
     checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
