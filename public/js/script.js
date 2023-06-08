@@ -6,7 +6,7 @@ const closeFilterBtn = document.querySelector('.close-filter');
 
 console.log('tabs', tabs)
 const themeSelect = document.getElementById("thema");
-
+console.log('themeSelect', themeSelect)
 toggleFilterMenu();
 // ------------------ filter menu ------------------
 function toggleFilterMenu(){
