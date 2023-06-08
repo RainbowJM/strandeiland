@@ -14,8 +14,10 @@ const filterSortBtn = document.querySelector('.filter-sort-btn');
 const closeFilterBtn = document.querySelector('.close-filter');
 
 console.log('tabs', tabs)
+console.log('themeSelect', themeSelect)
 
 // ------------------ logic -------------------------------------------------------
+
 if (asideItems.length > 0) {
   asideItems.forEach((asideItem) => {
     asideItem.addEventListener('click', () => {
@@ -41,15 +43,15 @@ if (themeSelect) {
   });
 }
 
+// filter menu
+toggleFilterMenu();
 
+
+// ------------------ functions -------------------------------------------------------
 function displaySelectedOption(selectElement) {
   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
   selectElement.value = selectedOption;
 }
-
-
-
-// ------------------ functions -------------------------------------------------------
 // hamburger
 function toggleMenu() {
     theNav.classList.toggle("open");
@@ -58,8 +60,6 @@ function toggleMenu() {
     theImage.classList.toggle("menuOpen");
 }
 
-// filter menu
-toggleFilterMenu();
 function toggleFilterMenu(){
 
   tabs.forEach(tab => {
@@ -90,6 +90,4 @@ function toggleFilterMenu(){
       console.log('form submitted')
     })
   })
-
-
 }
