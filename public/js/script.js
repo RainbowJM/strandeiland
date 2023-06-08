@@ -1,12 +1,15 @@
+// ------------------ variables -------------------------------------------------------
 const socket = io();
 const messages = document.querySelector("section ul");
+const submitMessage = document.querySelector("#message-button");
+const input = document.querySelector("#message-input");
 const filterMenu = document.querySelector(".filter-menu");
 const themeFilterBtn = document.querySelector(".thema-btn");
 const themeSelect = document.getElementById("thema");
-// Aside pop out
-const asideItems = document.querySelectorAll(".helpende-item");
-const submitMessage = document.querySelector("#message-button");
-const input = document.querySelector("#message-input");
+const theMenuButton = document.querySelector(".menuButton");
+const theNav = document.querySelector(".navigation-links");
+const theImage = document.querySelector(".menuContainer img");
+const asideItems = document.querySelectorAll(".helping-item");
 const tabs = document.querySelectorAll("[data-filter-target]");
 const tabContents = document.querySelectorAll("[data-filter-content]");
 const filterThemeBtn = document.querySelector(".filter-theme-btn");
@@ -15,6 +18,10 @@ const closeFilterBtn = document.querySelector(".close-filter");
 let last;
 
 console.log("tabs", tabs);
+console.log("themeSelect", themeSelect);
+
+// ------------------ logic -------------------------------------------------------
+
 if (tabs) {
   toggleFilterMenu();
 }
@@ -45,13 +52,6 @@ if (submitMessage) {
   });
 }
 
-asideItems.forEach((asideItem) => {
-  asideItem.addEventListener("click", () => {
-    console.log("click");
-    asideItem.classList.toggle("active");
-  });
-});
-
 if (themeFilterBtn) {
   themeFilterBtn.addEventListener("click", () => {
     filterMenu.classList.toggle("show-filter");
@@ -63,6 +63,21 @@ if (themeSelect) {
     displaySelectedOption(themeSelect);
   });
 }
+
+if (asideItems.length > 0) {
+  asideItems.forEach((asideItem) => {
+    asideItem.addEventListener("click", () => {
+      console.log("click");
+      asideItem.classList.toggle("active");
+    });
+  });
+}
+
+if (theMenuButton) {
+  theMenuButton.addEventListener("click", toggleMenu);
+}
+
+// ------------------ sockets -------------------------------------------------------
 
 socket.on("message", (message) => {
   if (message.id != socket.id) {
@@ -76,28 +91,20 @@ socket.on("history", (history) => {
   });
 });
 
-function add(message, time, id) {
-  console.log("app.js", message);
-  messages.appendChild(
-    Object.assign(document.createElement("li"), {
-      // className: styling,
-      innerHTML: `<section id='message'>
-    <span class="message">${message}</span>
-    <span class="time">${time}</span> 
-    </section>`,
-    })
-  );
-  // Scroll to the bottom of the chat.
-  messages.scrollTop = messages.scrollHeight;
-  last = id;
-}
+// ------------------ functions -------------------------------------------------------
 
 function displaySelectedOption(selectElement) {
   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
   selectElement.value = selectedOption;
 }
+// hamburger
+function toggleMenu() {
+  theNav.classList.toggle("open");
+  theMenuButton.classList.toggle("menuOpen");
+  console.log("open");
+  theImage.classList.toggle("menuOpen");
+}
 
-// ------------------ filter menu ------------------
 function toggleFilterMenu() {
   tabs.forEach((tab) => {
     const target = document.querySelector(tab.dataset.filterTarget);
@@ -126,4 +133,20 @@ function toggleFilterMenu() {
       console.log("form submitted");
     });
   });
+}
+
+function add(message, time, id) {
+  console.log("app.js", message);
+  messages.appendChild(
+    Object.assign(document.createElement("li"), {
+      // className: styling,
+      innerHTML: `<section id='message'>
+    <span class="message">${message}</span>
+    <span class="time">${time}</span> 
+    </section>`,
+    })
+  );
+  // Scroll to the bottom of the chat.
+  messages.scrollTop = messages.scrollHeight;
+  last = id;
 }
