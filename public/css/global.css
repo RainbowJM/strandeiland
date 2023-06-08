@@ -52,6 +52,7 @@ header {
     height: auto;
 }
 
+
 /* First nav */
 nav.inlog-container {
     width: 100%;
@@ -108,6 +109,10 @@ nav.navigation-links {
     padding: 10px;
     overflow: hidden;
     transition: height 0.3s ease;
+    position: absolute;
+    background-color: var(--white);
+    z-index: 1000;
+    border-bottom: solid var(--dark-grey) 1px;
   }
 
 nav.navigation-links.open {
@@ -134,8 +139,6 @@ nav.navigation-links a {
     text-align: center;
     color: var(--dark-grey)
 }
-
-
 
 
 @media (min-width: 50em) {
