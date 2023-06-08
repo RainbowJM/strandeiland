@@ -40,20 +40,23 @@ app.get("/form", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log(`user ${socket.id} connected`);
+  console.log("user connected");
 
   socket.emit("history", history);
 
   socket.on("message", (message) => {
-    console.log("socket in");
-    console.log("socket", message);
+    // Add the message to the history.
     while (history.length > historySize) {
+      // Remove the oldest message.
       history.shift();
     }
+    // Add the message to the history.
     history.push(message);
 
+    // Emit the message to all connected users.
     io.emit("message", {
       message: message.message,
+      id: socket.id,
       time: message.time,
     });
   });

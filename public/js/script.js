@@ -12,6 +12,7 @@ const tabContents = document.querySelectorAll("[data-filter-content]");
 const filterThemeBtn = document.querySelector(".filter-theme-btn");
 const filterSortBtn = document.querySelector(".filter-sort-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
+let last;
 
 console.log("tabs", tabs);
 if (tabs) {
@@ -37,14 +38,8 @@ if (submitMessage) {
       });
 
       // Add the message to the chat.
-      add(input.value, hour);
+      add(input.value, hour, socket.id);
 
-      //         if (input.value.charAt(0).toUpperCase() + input.value.slice(1) === currentWordEng) {
-      //             correct = true;
-      //         }
-      //         socket.emit('answer', correct)
-
-      //         // Clear the input field.
       input.value = "";
     }
   });
@@ -70,7 +65,9 @@ if (themeSelect) {
 }
 
 socket.on("message", (message) => {
-  add(message.message, message.time);
+  if (message.id != socket.id) {
+    add(message.message, message.time);
+  }
 });
 
 socket.on("history", (history) => {
@@ -79,7 +76,7 @@ socket.on("history", (history) => {
   });
 });
 
-function add(message, time) {
+function add(message, time, id) {
   console.log("app.js", message);
   messages.appendChild(
     Object.assign(document.createElement("li"), {
@@ -92,6 +89,7 @@ function add(message, time) {
   );
   // Scroll to the bottom of the chat.
   messages.scrollTop = messages.scrollHeight;
+  last = id;
 }
 
 function displaySelectedOption(selectElement) {
