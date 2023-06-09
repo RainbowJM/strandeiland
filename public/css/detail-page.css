@@ -161,7 +161,7 @@ main {
 .pinned {
     background-color: var(--white);
     padding: 2em;
-    margin: 1em 0 0 1em;
+    margin: 1em 0 0 0;
 }
 
 .pinned h2 {
