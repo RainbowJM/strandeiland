@@ -3,9 +3,9 @@
   position: relative;
   background-color: var(--white);
   /* border: 0.5em solid var(--yellow); */
-  margin-top: 2em;
   display: flex;
   flex-direction: column;
+  margin: 0 0 0 1em;
 }
 
 #chat h2{
