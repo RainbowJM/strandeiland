@@ -28,6 +28,15 @@ app.use(bodyParser.json());
 //   res.send(data);
 // });
 
+app.get('/suggestions', async (req, res) => {
+  const {data, error} = await supabase
+      .from('suggestion')
+      .select()
+  res.send(data);
+});
+
+
+
 app.get("/", (req, res) => {
   res.render("index", {
     title: "Wensen",
