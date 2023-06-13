@@ -271,6 +271,10 @@ form fieldset>ul li {
     padding: .5rem 1rem;
 }
 
+form fieldset>ul li:hover {
+    cursor: pointer;
+}
+
 form a {
     display: inline-block;
     padding: .5em 1em;
@@ -302,8 +306,7 @@ form a:hover {
     background-color: var(--blue);
 }
 
-
-[data-filter-content] {
+#sorting, #theme {
     position: absolute;
     z-index: 2;
     display: none;
@@ -312,11 +315,36 @@ form a:hover {
     padding: 1em;
     background-color: var(--white);
     grid-column: span 2;
+    cursor: pointer;
 }
 
-.active[data-filter-content] {
+
+
+#theme.show-filter-menu {
     display: block;
 }
+
+#sorting.show-filter-menu {
+    display: block;
+}
+/* .active[data-filter-content] {
+    display: block;
+} */
+/* 
+[data-filter-content] {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 100%;
+    width: fit-content;
+    padding: 1em;
+    background-color: var(--white);
+    grid-column: span 2;
+}
+*/
+.active[data-filter-content] {
+    display: block;
+} 
 .theme-filter-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 

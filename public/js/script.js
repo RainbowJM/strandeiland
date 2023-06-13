@@ -1,12 +1,12 @@
 // ------------------ variables -------------------------------------------------------
-import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
+import { messages, submitMessage, input, filterThemeBtn, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
 const socket = io();
 let last;
 
-console.log("tabs", tabs);
+
 console.log("themeSelect", themeSelect);
 
 // ------------------ logic -------------------------------------------------------
@@ -82,8 +82,9 @@ if (asideItems.length > 0) {
   });
 }
 
-if (tabs) {
+if (filterThemeBtn) {
   toggleFilterMenu();
+  // closeAll()
 }
 
 if (submitMessage) {

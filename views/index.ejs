@@ -25,8 +25,8 @@
       <fieldset>
         <button class="close-filter">Close filter</button>
         <ul>
-          <li data-filter-target="#theme">Filteren op thema</li>
-          <li data-filter-target="#sorting">Sorteren</li>
+          <li class="theme-btn" data-filter-target="#theme">Filteren op thema</li>
+          <li class="sort-btn" data-filter-target="#sorting">Sorteren</li>
         </ul>
 
         <section class="filter-content">
@@ -47,7 +47,7 @@
               <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
               <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
             </ul>
-            <button class="filter-theme-btn" type="submit">Toon resultaten</button>
+            <button class="filter-theme-results-btn" type="submit">Toon resultaten</button>
           </article>
 
           <article id="sorting" data-filter-content>
@@ -58,12 +58,12 @@
               <li><label><input type="radio" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
             </ul>
 
-            <button class="filter-sort-btn" type="submit">Toon resultaten</button>
+            <button class="filter-sort-results-btn" type="submit">Toon resultaten</button>
           </article>
         </section>
         <p class="selected-filter-items">Hello</p>
       </fieldset>
-      <a href="/form">Wens aanmaken</a>
+      <a href="/form">Deel je wens</a>
     </form>
 
     <div class="content">
