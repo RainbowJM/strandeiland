@@ -28,7 +28,7 @@ main {
 /* wish -----------------------------------------------------------------------------------------*/
 .wish {
     background-color: var(--white);
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     width: 45vw;
     padding: 3em;
@@ -41,7 +41,7 @@ main {
 }
 
 .wish img {
-    max-width: 45vw;
+    max-width: 38vw;
 }
 
 .wish p:nth-of-type(1) {
@@ -91,8 +91,8 @@ main {
     display: flex;
     flex-direction: column;
     display: grid;
-    grid-auto-rows: minmax(max-content, 2fr);
-    gap: 1em;
+    grid-auto-rows: minmax(max-content, 45vh);
+    gap: 4em;
 }
 
 .joiners>div {
@@ -119,11 +119,10 @@ main {
 
 }
 
-.joiners > div {
+/* .joiners > div {
     display: flex;
     flex-direction: column;
-    /* margin: 1em 0 15em 2em; */
-}
+} */
 
 .joiners div ul li {
     display: flex;
@@ -153,7 +152,7 @@ main {
 }
 
 #ambassador ul {
-    margin-top: 1.5em;
+    margin-top: 1em;
 }
 
 #ambassador ul li {
@@ -170,9 +169,9 @@ main {
 }
 
 /* helpers */
-#helpers{
-    margin-top: 5em;
-}
+/* #helpers{
+    margin-top: 1em;
+} */
 
 #helpers > h3 {
     font-size: 14px;
@@ -187,7 +186,7 @@ main {
 }
 
 #helpers ul {
-    margin-top: 1.5em;
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
     /* max-height: 20vh; */
@@ -206,7 +205,7 @@ main {
 
 /* sharers */
 #sharers {
-    margin-top: 1.5em;
+    margin-top: 2.5em;
 }
 
 #sharers > h3 {
@@ -217,11 +216,11 @@ main {
 }
 
 #sharers ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: var(--white);
-
+    margin-top: 1em;
+    padding: 1em;
 }
 
 #sharers ul li {
@@ -230,9 +229,37 @@ main {
 }
 
 #sharers ul li img {
-    height: 3em;
-    width: 3em;
+    height: 4em;
+    width: 4em;
 }
+
+.box {
+    display: none;
+    position: absolute;
+    background-color:var(--white);
+    padding: 10px;
+    height: 4em;
+    width: 10em;
+  }
+  
+  li:hover .box {
+    display: block;
+    margin-left: 4em;
+  }
+
+  .box h3{
+    background-color: var(--yellow);
+    font-size: 14px;
+    width: max-content;
+    padding: 0 .2em;
+  }
+
+  .box a{
+    color: var(--black);
+    text-decoration: underline;
+    font-size: 10px;
+  }
+
 
 
 
@@ -254,22 +281,18 @@ main {
         max-width: 70vw;
     }
 
+
     .joiners {
         grid-column-start: 1;
         grid-row-start: 3;
+        gap: 0;
     }
 
-
-    #ambassador ul {
-        display: flex;
-        /* max-width: 90%;
-        max-height: 100%; */
-        overflow: scroll;
-
+    .joiners  {
+        margin-top: 2em;
     }
 
-    #helpers ul{
-        margin: 0 0 0 2em;
-    }
+  
+
 }
 
