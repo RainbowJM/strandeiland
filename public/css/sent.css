@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Variables */
+:root {
+  --yellow: #ffe700;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #009ce0;
+  --light-grey: #f0f0eb;
+  --dark-grey: #333333;
+  --gray: #E9E9E9;
+  --font: 'Poppins', sans-serif;
+} 
+  main {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    height: 70vh;
+
+  }
+  
+  .sent {
+    display: inline-block;
+  }
+  
+  .sent h1 span {
+    display: block;
+    width: fit-content;
+    padding: 5px;
+    margin: 10px 0;
+  }
+  
+  .sent span:nth-child(1) {
+    background-color: var(--blue);
+    color: var(--white);
+    transform: rotate(5deg);
+  }
+  
+  .sent span:nth-child(2) {
+    background-color: var(--yellow);
+    color: var(--black);
+    transform: translateX(-20%);
+  }
+  
+  .sent span:nth-child(3) {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  
+  .sent span:nth-child(4) {
+    background-color: var(--black);
+    color: var(--white);
+    transform: rotate(-5deg);
+    width: max-content;
+    
+  }
+  

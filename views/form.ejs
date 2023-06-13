@@ -8,44 +8,80 @@
     <header>
         <%- include('./partials/header');  %>
     </header>
+    <!-- <div class="terug-btn">
+        <a href="next_page.html">
+            <img src="/images/terug.png" alt="Terug">
+            <p>Terug</p>
+          </a>
+    </div> -->
+<h1>Wens</h1>
 
-<h1>Voorstel</h1>
+
+
 
 <div class="form-container">
-<form action="/formulier" method="post" enctype="application/x-www-form-urlencoded">
+<form action="/form" method="post" enctype="application/x-www-form-urlencoded">
 
     <fieldset>
         <label for="titel">Titel</label>
-        <textarea name="titel" id="titel" cols="30" rows="10" placeholder="Geef uw voorstel een titel"required></textarea>
+        <input type="text" id="titel" name="titel"
+        placeholder="Geef uw voorstel een titel"required>
     
-        <label for="beschrijving">Voorstel beschrijving</label>
+        <label for="beschrijving" >Beschrijving</label>
         <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw voorstel zo duidelijk mogelijk"required></textarea>
-    
-        <label for="thema" >Thema's</label>
-        <select name="thema" id="thema">
-            <option value="" disabled selected hidden>Selecteer één thema</option>
-            <option value="strand">Strand</option>
-            <option value="huis">Huis</option>
-            <option value="centrum">Centrum</option>
-        </select>
+        
+        <label for="thema">Thema's</label>
+       
+        <fieldset class="dropdown">
+            <div class="selected-option">Selecteer de passende thema's <span class="arrow"></span></div>
+        <div class="dropdown-container" id="themeDropdownMenu">
 
+            <ul class="dropdown-menu" >
+                <li><label><input type="checkbox" value="Sport">Sport</label></li>
+                <li><label><input type="checkbox" value="Recreatie">Recreatie</label></li>
+                <li><label><input type="checkbox" value="Verkeer">Verkeer</label></li>
+                <li><label><input type="checkbox" value="Winkels">Winkels</label></li>
+                <li><label><input type="checkbox" value="Natuur">Natuur</label></li>
+                <li><label><input type="checkbox" value="Milieu">Milieu</label></li>
+                <li><label><input type="checkbox" value="Jeugd">Jeugd</label></li>
+                <li><label><input type="checkbox" value="Veiligheid">Veiligheid</label></li>
+                <li><label><input type="checkbox" value="Cultuur">Cultuur</label></li>
+                <li><label><input type="checkbox" value="Huisvesting">Huisvesting</label></li>
+                <li><label><input type="checkbox" value="Infrastructuur">Infrastructuur</label></li>
+                <li><label><input type="checkbox" value="Strand">Strand</label></li>
+                <li><label><input type="checkbox" value="Onderwijs">Onderwijs</label></li>
+                <li><label><input type="checkbox" value="Overig">Overig</label></li>
+            </ul>
+        </div>
+        </fieldset>
+
+        
         <label for="afbeelding" >Afbeelding</label>
         <div class="file-input-container">
-        <input type="file" id="file" name="file">
+        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+        <p>Selecteer een bestand</p>
+        <input type="file" id="afbeelding" name="file" accept="image/jpeg, image/png, image/jpg" required>
         
     </div>
 
+    <div id="links">
+        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+        <div class='linkjes'>
+            <a href="https://unsplash.com/">Unsplash</a>
+            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+            <a href="https://pixabay.com/nl/">Pixabay</a>
+        </div>
+    </div>
     </fieldset>
-   
 
-    <input type="submit" value="Versturen" id="versturen">
+    <input type="submit" value="Voorstel aanmaken" id="versturen">
 
 </form>
 </div>
 
-
-
-
+<footer>
+    <%- include('./partials/footer'); %>
+</footer>
 
 </body>
 </html>

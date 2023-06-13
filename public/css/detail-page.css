@@ -12,51 +12,45 @@ main {
     padding: 0 5vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: auto; */
 }
 
 .terug {
-    margin: 3em 0 0 5vw;
+    margin: 3em 0 1em 5vw;
 
 }
 
 .terug a {
     color: var(--black);
     font: var(--font);
-    /* grid-row-start: 1;
-    grid-column-start: 1; */
 }
 
 
-/* wens -----------------------------------------------------------------------------------------*/
-.wens {
-    /* grid-column-start: 1;
-    grid-row-start: 1; */
+/* wish -----------------------------------------------------------------------------------------*/
+.wish {
     background-color: var(--white);
     display: flex;
     flex-direction: column;
     width: 45vw;
     padding: 3em;
-    margin-top: 3em;
 }
 
-.wens h1 {
+.wish h1 {
     max-width: 20em;
 }
 
-.wens img {
+.wish img {
     max-width: 45vw;
 }
 
-.wens p:nth-of-type(1) {
+.wish p:nth-of-type(1) {
     margin: .5em 0;
 }
 
-.wens p:nth-of-type(2) {
+.wish p:nth-of-type(2) {
     margin: .5em 0;
 }
 
-.wens p:nth-of-type(3) {
+.wish p:nth-of-type(3) {
     margin: 1.5em 0 .3em 0;
     color: gray;
 }
@@ -64,11 +58,11 @@ main {
 
 
 /* helpende -----------------------------------------------------------------------------------------*/
-.helpende {
-    margin: 3em 0 0 1em;
+.joiners {
+    margin: 0 0 0 1em;
 }
 
-.helpende>div {
+.joiners>div {
     background-color: var(--blue);
     margin-bottom: 1em;
     padding: 1em;
@@ -78,32 +72,24 @@ main {
 
 }
 
-.helpende h2 {
-    color: var(--black);
+.joiners h2 {
+    color: var(--white);
     margin-bottom: .5em;
-    transform: rotate(-90deg);
     font-size: 12px;
     position: absolute;
-    left: -1em;
-    top: 45%;
 }
 
-.helpende div:nth-of-type(1) h2:nth-of-type(1) {
-    left: -2.8em;
-
-}
-
-.helpende div ul {
+.joiners div ul {
     display: flex;
     margin: 1em 0 0 2em;
 }
 
-.helpende div ul li {
+.joiners div ul li {
     display: flex;
     margin-right: .5em;
 }
 
-.helpende img {
+.joiners img {
     width: 2em;
     height: 2em;
     border-radius: 5em;
@@ -112,25 +98,27 @@ main {
     cursor: pointer;
 }
 
-.helpende h3 {
+.joiners h3 {
     font-size: 14px;
     margin-top: .9em;
+    color: var(--white);
 }
 
-.helpende h4 {
+.joiners h4 {
     font-size: 12px;
+    color: var(--white);
 }
 
 
-#ambassadeurs ul {
+#ambassador ul {
     margin-top: 1.5em;
 }
 
-#ambassadeurs ul li {
+#ambassador ul li {
     margin-right: 1em;
 }
 
-#ambassadeurs img {
+#ambassador img {
     width: 3.5em;
     height: 3.5em;
 }
@@ -154,33 +142,33 @@ main {
     margin: .3em;
 }
 
-#steuners ul {
+#sharers ul {
     display: flex;
     flex-wrap: wrap;
-    margin: .2em 0 0 2em;
+    margin: 1em 0 0 2em;
     max-width: 90%;
-    max-height: 100%;
+    max-height: 80%;    
     overflow: scroll;
 }
 
-#steuners ul li {
+#sharers ul li {
     display: flex;
     margin: .3em;
 }
 
 
-/* hoogtepunten --------------------------------------------------------------------------------------- */
-.hoogtepunten {
+/* pinned --------------------------------------------------------------------------------------- */
+.pinned {
     background-color: var(--white);
     padding: 2em;
-    margin: 3em 0 0 1em;
+    margin: 1em 0 0 0;
 }
 
-.hoogtepunten h2 {
+.pinned h2 {
     margin-bottom: 1em;
 }
 
-.hoogtepunten ul li {
+.pinned ul li {
     background-color: var(--light-grey);
     margin: 0 0 1em 0;
     padding: 1em;
@@ -188,13 +176,13 @@ main {
     flex-direction: column;
 }
 
-.hoogtepunten ul li div {
+.pinned ul li div {
     display: flex;
     flex-direction: row;
     margin-bottom: .5em;
 }
 
-.hoogtepunten img {
+.pinned img {
     width: 2em;
     height: 2em;
     border-radius: 5em;
@@ -202,23 +190,23 @@ main {
     margin-right: 1em;
 }
 
-.hoogtepunten h3 {
+.pinned h3 {
     margin-top: 0;
 }
 
-.hoogtepunten p {
+.pinned p {
     margin: 0;
 }
 
-/* doe mee --------------------------------------------------------------------------------------- */
-.doe-mee {
+/* join --------------------------------------------------------------------------------------- */
+.join {
     margin-top: 1em;
     display: flex;
     /* justify-content: space-between; */
     padding: 0;
 }
 
-.doe-mee button {
+.join button {
     background-color: var(--black);
     color: var(--white);
     padding: 0 1em;
@@ -229,24 +217,11 @@ main {
     cursor: pointer;
 }
 
-.doe-mee button:hover {
+.join button:hover {
     background-color: var(--yellow);
     transition: .5s;
     color: var(--black);
 }
-
-/* chat ------------------------------------------------------------------------------------------------- */
-.chat {
-    /* grid-column-start: 1;
-    grid-row-start: 2; */
-    max-width: 40em;
-    height: 20em;
-    border: .5em solid var(--yellow);
-    margin-top: 2em;
-    display: grid;
-    place-content: center;
-}
-
 
 @media (width < 50em) {
     main {
@@ -261,25 +236,24 @@ main {
         display: contents;
     }
 
-    .wens {
+    .wish {
         order: -1;
         padding: 1.5em;
         width: 100%;
 
     }
 
-    .wens img {
+    .wish img {
         max-width: 70vw;
     }
 
-    .doe-mee {
-        order: -1;
+    .join {
         padding: 0;
         max-width: 80vw;
     }
 
 
-    .hoogtepunten {
+    .pinned {
         order: -1;
         padding: 1em;
         margin: 3em 0;
@@ -287,23 +261,42 @@ main {
         overflow: scroll;
     }
 
-    .helpende {
+    .joiners {
         position: fixed;
         right: 0;
-        transform: translateX(95%);
+        transform: translateX(91%);
     }
 
-    .helpende-item.active {
+    .helping-item.active {
         transform: translateX(-75%);
         transition: transform 0.3s ease-out;
     }
 
-    #ambassadeurs ul {
+    #ambassador ul {
         display: flex;
         max-width: 90%;
-        /* Set the maximum height for 2 rows */
         max-height: 100%;
         overflow: scroll;
+
+    }
+
+    #helpers ul{
+        margin: 0 0 0 2em;
+    }
+
+
+    .joiners h2 {
+        transform: rotate(-90deg);
+        left: -.8em;
+        top: 45%;
+    }
+
+    .joiners div {
+        padding: .3em 0 0 2em;
+    }
+
+    .joiners div:nth-of-type(1) h2:nth-of-type(1) {
+        left: -2.8em;
 
     }
 }
