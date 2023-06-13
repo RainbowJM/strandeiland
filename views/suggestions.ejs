@@ -31,21 +31,12 @@
 
         <section class="filter-content">
           <article id="theme" data-filter-content>
+           
             <ul class="theme-filter-items"> 
-              <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="Winkels"><span>Winkels</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="natuur"><span>Natuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="milieu"><span>Milieu</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="jeugd"><span>Jeugd</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
+               <% themes.forEach(theme => { %>
+            <li><label><input type="checkbox" name="theme" value="sport"><span><%= theme.label %></span></label></li>
+            <% }) %>
+
             </ul>
             <button class="filter-theme-btn" type="submit">Toon resultaten</button>
           </article>
@@ -71,6 +62,9 @@
       <div class="latest-ideas">
         <h2>Recent wensen</h2>
         <div class="scroll-snap">
+       
+
+
           <%- include('./partials/thumbnail.ejs') %>
           <%- include('./partials/thumbnail.ejs') %>
           <%- include('./partials/thumbnail.ejs') %>
@@ -81,7 +75,51 @@
       </div>
 
       <h2> 2.500 resultaten</h2>
-      <div class="grid-container">      
+      <div class="grid-container">
+          <% suggestions.forEach(suggestion => { %>
+            <section class="thumbnail container">
+              <figure>
+                <h2>hey</h2>
+                <img src="<%= suggestion.img%> " alt="Vanuit het natuur">
+                <figcaption>
+                  <%= suggestion.thema%>
+                </figcaption>
+              </figure>
+          
+          
+          
+              <a href="/detailpage-1">
+          
+                <article>
+          
+                  <ul class="user-info">
+                    <li>Pieter van der baas</li>
+                    <li>
+                      <%= suggestion.created_at %>
+                    </li>
+                  </ul>
+          
+                  <h2>
+                    <%= suggestion.title %>
+                  </h2>
+                  <p>
+                    <%= suggestion.descr %> %>
+                  </p>
+          
+                  <ul class="statistics">
+                    <li><span>Reaction:</span>
+                      <%= suggestion.reaction %>
+                    </li>
+                    <li> <span> Delers:</span>
+                      <%= suggestion.amount_vote%>
+                    </li>
+                  </ul>
+                </article>
+              </a>
+          
+            </section>
+            <% }) %>
+        
         <%- include('./partials/thumbnail.ejs') %>
         <%- include('./partials/thumbnail.ejs') %>
         <%- include('./partials/thumbnail.ejs') %>

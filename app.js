@@ -29,10 +29,20 @@ app.use(bodyParser.json());
 // });
 
 app.get('/suggestions', async (req, res) => {
-  const {data, error} = await supabase
-      .from('suggestion')
+  const {data: themeData,  themeError} = await supabase
+      .from('thema')
       .select()
-  res.send(data);
+
+  const { data: suggestionsData, error: suggestionsError } = await supabase
+    .from( 'suggestion')
+    .select()
+    console.log(suggestionsData)
+    
+  res.render('suggestions',{
+    title: 'wensen',
+    themes: themeData,
+    suggestions: suggestionsData
+  });
 });
 
 
