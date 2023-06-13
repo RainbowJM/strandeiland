@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
@@ -5,6 +6,10 @@ const path = require("path");
 const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(
+    'https://yyufywjwwwmgfjmenluv.supabase.co',
+    `${process.env.SUPABASE_KEY}`);
 const historySize = 100;
 let history = [];
 
@@ -15,7 +20,15 @@ app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// app.get('/thema', async (req, res) => {
+//   const {data, error} = await supabase
+//       .from('thema')
+//       .select()
+//   res.send(data);
+// });
+
 app.get("/", (req, res) => {
+
   res.render("index", {
     title: "Wensen",
   });
