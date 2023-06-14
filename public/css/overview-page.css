@@ -97,8 +97,8 @@ main {
 
 .latest-ideas .scroll-snap {
 
-
     display: flex;
+    height: 43em;
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     /* width: 100vw; */
     gap: 20px;
@@ -112,9 +112,9 @@ main {
 
     flex: 0 0 485px;
     width: 485px;
-    height: 600px;
+    /* height: 600px; */
     scroll-snap-align: start;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .grid-container {
@@ -230,12 +230,14 @@ main {
 
 .statistics {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
+    place-items: center;
 }
 
 .statistics span {
     font-weight: bold;
+    margin-right: .2em;
 }
 
 /* .statistics li:nth-child(2) {
@@ -254,7 +256,7 @@ main form {
     margin: 20px auto;
     display: flex;
     flex-direction: row;
-    align-items: end;
+    align-items: center;
 }
 form fieldset {
    flex-grow: 2;
@@ -266,12 +268,33 @@ gap: 20px;
 /* flex-wrap: wrap; */
 }
 
-form fieldset>ul li {
+/* form fieldset>ul li {
     background-color: var(--white);
     padding: .5rem 1rem;
 }
 
 form fieldset>ul li:hover {
+    cursor: pointer;
+} */
+
+form fieldset>ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+form fieldset>ul li span {
+    display: inline-block;
+   
+}
+form fieldset>ul li span:nth-of-type(1) { 
+    font-weight: bold;
+}
+form fieldset>ul li span:nth-of-type(2) {
+    background-color: var(--white);
+    padding: .5rem 1rem;
+}
+
+form fieldset>ul li span:nth-of-type(2):hover {
     cursor: pointer;
 }
 
@@ -391,7 +414,7 @@ input:checked+span {
 
 /* Sorting */
 #sorting {
-    transform: translateX(55%);
+    transform: translateX(33%);
 }
 
 

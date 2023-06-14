@@ -25,8 +25,18 @@
       <fieldset>
         <button class="close-filter">Close filter</button>
         <ul>
-          <li class="theme-btn" data-filter-target="#theme">Filteren op thema</li>
-          <li class="sort-btn" data-filter-target="#sorting">Sorteren</li>
+          <li class="theme-btn" data-filter-target="#theme">
+            <span> <b>Filtreren op:</b></span>
+            <span>Thema <i class="fa-solid fa-angle-down"></i></span>
+          </li>
+          <li class="sort-btn" data-filter-target="#sorting">
+            <span>Sorteren op:</span>
+            <span>Meest recente</span>
+          </li>
+          <li>
+            <label for="search">Zoek op trefwoord</label>
+          <input type="text" name="search" id="search">
+          </li>
         </ul>
 
         <section class="filter-content">
@@ -63,7 +73,7 @@
         </section>
         <p class="selected-filter-items">Hello</p>
       </fieldset>
-      <a href="/form">Deel je wens</a>
+      <a href="/form">Maak een wens!</a>
     </form>
 
     <div class="content">
