@@ -236,13 +236,15 @@ main {
     position: absolute;
     background-color:var(--white);
     padding: 10px;
-    height: 4em;
+    height: 3.8em;
     width: 10em;
   }
   
   li:hover .box {
     display: block;
-    margin-left: 4em;
+    margin-left: 13em;
+    z-index: 10000;
+ 
   }
 
   .box h3{
