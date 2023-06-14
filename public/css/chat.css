@@ -5,7 +5,7 @@
   /* border: 0.5em solid var(--yellow); */
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 1em;
+  /* margin: 0 0 0 1em; */
   grid-column-start: 1;
 }
 
@@ -67,8 +67,8 @@ form button {
 #chat li #message {
   color: var(--white);
   background: var(--blue);
-  border-radius: 0 25px 25px 25px;
-  width: 40%;
+  border-radius: 25px;
+  width: 100%;
   padding: 10px 25px;
   height: 5em;
   font-size: medium;
@@ -81,7 +81,7 @@ form button {
 
 #chat li.self #message {
   background: var(--white);
-  border-radius: 25px 0 25px 25px;
+  border-radius: 25px;
   margin-left: auto;
   border: 1.5px solid var(--yellow);
   color: var(--black);
