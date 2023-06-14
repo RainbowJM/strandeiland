@@ -24,3 +24,15 @@ self.addEventListener('install', event => {
     );
 });
 
+self.addEventListener('activate', event => {
+    console.log('Activating service worker')
+    event.waitUntil(
+        caches.keys()
+            .then(names => {
+                return Promise.all(names
+                    .filter(name => name !== cacheName && name !== runtimeCacheName)
+                    .map(key => caches.delete(key)))
+            })
+    )
+});
+
