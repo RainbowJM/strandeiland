@@ -58,6 +58,12 @@ app.get("/form", (req, res) => {
   });
 });
 
+app.get("/offline", (req, res) => {
+  res.render("offline", {
+    title: "Offline",
+  });
+});
+
 io.on("connection", (socket) => {
   console.log("user connected");
 

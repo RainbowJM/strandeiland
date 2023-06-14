@@ -8,7 +8,8 @@ const assets = [
     '/css/global.css',
     '/css/overview-page.css',
     '/css/sent.css',
-    '/img/favicon.ico',
+    '/css/offline.css',
+    '/images/favicon.ico',
     '/offline',
 ];
 
