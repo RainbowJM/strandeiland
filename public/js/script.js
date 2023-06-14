@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const localStorageKey = "formData";
   console.log("selectedOption", selectedOption);
 
-  selectedOption.addEventListener("click", function () {
-    dropdownMenu.classList.toggle("show");
-  });
-
+  if (selectedOption){
+    selectedOption.addEventListener("click", function () {
+      dropdownMenu.classList.toggle("show");
+    });
+  }
+  
   function updateFormData() {
     const checkboxes = document.querySelectorAll(
       "#themeDropdownMenu input[type='checkbox']"
