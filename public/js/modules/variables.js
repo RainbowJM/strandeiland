@@ -1,4 +1,4 @@
-const messages = document.querySelector("section ul");
+const messages = document.querySelector("#chat ul");
 const submitMessage = document.querySelector("#message-button");
 const input = document.querySelector("#message-input");
 const filterMenu = document.querySelector(".filter-menu");
