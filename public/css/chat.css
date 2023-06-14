@@ -2,10 +2,8 @@
   height: 20em;
   position: relative;
   background-color: var(--white);
-  /* border: 0.5em solid var(--yellow); */
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 1em;
   grid-column-start: 1;
 }
 
@@ -27,18 +25,19 @@ form {
 
 form input[type="text"] {
   font-family: Poppins, system-ui;
-  background: #f5f7fb;
+  background: var(--light-grey);
   border: none;
   border-radius: 25px;
-  width: 80%;
+  width: 90%;
   padding: 15px 20px;
 }
 
 form button {
   height: 50px;
   width: 50px;
-  /* background-color: var(--yellow); */
-  border: solid 2px var(--yellow);
+  background: var(--blue);
+  border: none;
+  /* border: solid 2px var(--yellow); */
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -61,18 +60,19 @@ form button {
 
 #chat li.self #name,
 #chat li.multiple #name {
+  background-color: var(--yellow);
   display: none;
 }
 
 #chat li #message {
-  color: var(--white);
-  background: var(--blue);
-  border-radius: 0 25px 25px 25px;
-  width: 40%;
+  background: var(--light-grey);
+  border-radius: 25px;
+  width: 97%;
   padding: 10px 25px;
   height: 5em;
   font-size: medium;
   word-wrap: break-word;
+  margin: 0 10px 0 10px;
 }
 
 #chat li #message span::first-letter {
@@ -80,11 +80,11 @@ form button {
 }
 
 #chat li.self #message {
-  background: var(--white);
-  border-radius: 25px 0 25px 25px;
+  background: var(--light-grey);
+  border-radius: 25px;
   margin-left: auto;
-  border: 1.5px solid var(--yellow);
-  color: var(--black);
+  /* border: 1.5px solid var(--yellow); */
+  margin: 0 10px 0 10px;
 }
 
 #chat li #message p {
@@ -98,11 +98,12 @@ form button {
 }
 
 #chat li #message .time {
-  color: var(--white);
   font-size: smaller;
   float: right;
+  color: var(--dark-grey);
 }
 
 #chat li.self #message .time {
-  color: var(--black);
+  color: var(--dark-grey);
+
 }

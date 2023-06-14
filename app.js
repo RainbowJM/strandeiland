@@ -28,7 +28,6 @@ app.use(bodyParser.json());
 // });
 
 app.get("/", (req, res) => {
-
   res.render("index", {
     title: "Wensen",
   });
@@ -48,7 +47,7 @@ app.get('/sent', (req, res) => {
   
 app.get('/detailPage-1', (req, res) => {
     res.render('detailPage-1',{
-    title: "detail",
+    title: "Detail",
   });
 });
 
