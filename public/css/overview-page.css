@@ -105,6 +105,8 @@ main {
     scroll-snap-type: x mandatory;
     overflow-x: auto;
     overflow-y: hidden;
+    /* max-width: 45em; */
+    min-width: 25em;
 }
 
 .latest-ideas .thumbnail-container {
@@ -258,14 +260,16 @@ main form {
     flex-direction: row;
     align-items: center;
 }
+
 form fieldset {
-   flex-grow: 2;
-   border: none;
+    flex-grow: 2;
+    border: none;
 }
-form fieldset > ul{
-display: flex;
-gap: 20px;
-/* flex-wrap: wrap; */
+
+form fieldset>ul {
+    display: flex;
+    gap: 20px;
+    /* flex-wrap: wrap; */
 }
 
 /* form fieldset>ul li {
@@ -284,11 +288,14 @@ form fieldset>ul li {
 
 form fieldset>ul li span {
     display: inline-block;
-   
+
 }
-form fieldset>ul li span:nth-of-type(1) { 
+
+form fieldset>ul li span:nth-of-type(1) {
     font-weight: bold;
+    margin-bottom: .2em;
 }
+
 form fieldset>ul li span:nth-of-type(2) {
     background-color: var(--white);
     padding: .5rem 1rem;
@@ -296,6 +303,19 @@ form fieldset>ul li span:nth-of-type(2) {
 
 form fieldset>ul li span:nth-of-type(2):hover {
     cursor: pointer;
+}
+
+form fieldset>ul li:nth-of-type(3) label {
+    background-color: var(--white);
+    padding: .4rem 1rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+input[name="search"] {
+    width: 20em;
+    padding: .5em 1em;
+    border: none;
 }
 
 form a {
@@ -308,7 +328,7 @@ form a {
 
 /* Filter buttons */
 
-.filter-content button[type="submit"]{
+.filter-content button[type="submit"] {
     margin-top: .5em;
     background-color: var(--black);
     color: var(--white);
@@ -325,11 +345,14 @@ form a {
     cursor: pointer;
 }
 
+
+
 form a:hover {
     background-color: var(--blue);
 }
 
-#sorting, #theme {
+#sorting,
+#theme {
     position: absolute;
     z-index: 2;
     display: none;
@@ -350,6 +373,7 @@ form a:hover {
 #sorting.show-filter-menu {
     display: block;
 }
+
 /* .active[data-filter-content] {
     display: block;
 } */
@@ -367,42 +391,44 @@ form a:hover {
 */
 .active[data-filter-content] {
     display: block;
-} 
+}
+
 .theme-filter-items {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
 .sorting-filter-items {
     display: grid;
-   
+
     gap: 10px;
 }
+
 .theme-filter-items li,
-.sorting-filter-items li{
+.sorting-filter-items li {
     display: flex;
     background-color: var(--light-grey);
-  width: 100%;
-  height: 100%;
-/* padding: .5em; */
+    width: 100%;
+    height: 100%;
+    /* padding: .5em; */
 }
 
-.theme-filter-items input[type="checkbox"], 
-.sorting-filter-items input[type="radio"]{
+.theme-filter-items input[type="checkbox"],
+.sorting-filter-items input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
 }
 
 .theme-filter-items span,
-.sorting-filter-items span{
+.sorting-filter-items span {
     display: inline-block;
-padding: .5em;
-width: 138px;
+    padding: .5em;
+    width: 138px;
 }
 
 .sorting-filter-items span {
-   width: 20em; 
+    width: 20em;
 }
 
 
@@ -417,6 +443,13 @@ input:checked+span {
     transform: translateX(33%);
 }
 
+.close-filter {
+    background-color: none;
+    border: none;
+    font-family: var(--font);
+    text-decoration: underline;
+    line-height: 1.5;
+}
 
 /* Responsive */
 @media screen and (max-width: 55em) {
@@ -440,7 +473,7 @@ input:checked+span {
         grid-column: span 3;
     }
 
-  
+
     /* .grid-container .thumbnail-container {
         flex: 0 0 100%;
         width: 100%;
@@ -469,11 +502,25 @@ input:checked+span {
 }
 
 @media screen and (max-width: 40em) {
+    main form {
+            flex-direction: column;
+        }
+    main form > fieldset ul{
+        flex-direction: column;
+    }
     .theme-filter-items {
         grid-template-columns: 1fr 1fr;
     }
 
-        #sorting {
-            transform: translateX(0%);
-        }
+    #sorting {
+        transform: translatey(-33%);
+    }
+
+    #theme {
+        transform: translatey(-42%);
+    }
+
+    .latest-ideas .thumbnail-container {
+        width: 16em;
+    }
 }
