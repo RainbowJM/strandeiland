@@ -157,7 +157,7 @@ socket.on("message", (message) => {
 
 socket.on("history", (history) => {
   history.forEach((message) => {
-    add(message.message, message.time, message.id);
+    add(message.message, message.name, message.time, message.id);
   });
 });
 
