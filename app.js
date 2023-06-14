@@ -80,6 +80,7 @@ io.on("connection", (socket) => {
     // Emit the message to all connected users.
     io.emit("message", {
       message: message.message,
+      name: message.name,
       id: socket.id,
       time: message.time,
     });

@@ -107,3 +107,17 @@ form button {
   color: var(--dark-grey);
 
 }
+
+#chat li #message img {
+  height: 3em;
+  width: 3em;
+}
+
+img {
+  width: 2em;
+  height: 2em;
+  border-radius: 5em;
+  background-color: var(--white);
+  margin-right: 0.5em;
+  cursor: pointer;
+}

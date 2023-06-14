@@ -1,5 +1,15 @@
 // ------------------ variables -------------------------------------------------------
-import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
+import {
+  messages,
+  submitMessage,
+  input,
+  tabs,
+  filterMenu,
+  themeFilterBtn,
+  themeSelect,
+  asideItems,
+  theMenuButton,
+} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -16,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const localStorageKey = "formData";
   console.log("selectedOption", selectedOption);
 
-  if (selectedOption){
+  if (selectedOption) {
     selectedOption.addEventListener("click", function () {
       dropdownMenu.classList.toggle("show");
     });
   }
-  
+
   function updateFormData() {
     const checkboxes = document.querySelectorAll(
       "#themeDropdownMenu input[type='checkbox']"
@@ -93,25 +103,26 @@ if (submitMessage) {
     event.preventDefault();
 
     // Get the current time.
-    const date = new Date().toLocaleString("nl-NL",{
+    const date = new Date().toLocaleString("nl-NL", {
       weekday: "short",
       day: "numeric",
       month: "short",
       year: "numeric",
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
     });
 
     if (input.value) {
       // Emit the message to all connected users.
       socket.emit("message", {
         message: input.value,
-        // name: nameTitle.textContent,
+        // name has to be fetch from database
+        name: "Jane Doe:",
         time: date,
       });
 
       // Add the message to the chat.
-      add(input.value, date, socket.id, true);
+      add(input.value, 'Jane Doe:', date, socket.id, true);
 
       input.value = "";
     }
@@ -132,7 +143,6 @@ if (themeSelect) {
 
 // filter menu
 
-
 if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
 }
@@ -141,7 +151,7 @@ if (theMenuButton) {
 
 socket.on("message", (message) => {
   if (message.id != socket.id) {
-    add(message.message, message.time, message.id);
+    add(message.message, message.name, message.time, message.id);
   }
 });
 
@@ -158,7 +168,7 @@ function displaySelectedOption(selectElement) {
   selectElement.value = selectedOption;
 }
 
-function add(message, time, id, self) {
+function add(message, name, time, id, self) {
   let styling = "";
 
   // Add styling to the message if you are the sender.
@@ -174,9 +184,11 @@ function add(message, time, id, self) {
     Object.assign(document.createElement("li"), {
       className: styling,
       innerHTML: `<section id='message'>
-    <span class="message">${message}</span>
-    <span class="time">${time}</span> 
-    </section>`,
+      <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+      <p class="name">${name}</p> 
+      <span class="message">${message}</span>
+      <span class="time">${time}</span> 
+      </section>`,
     })
   );
   // Scroll to the bottom of the chat.
