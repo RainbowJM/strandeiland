@@ -11,7 +11,7 @@
 main {
     padding: 0 5vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 
 .terug {
@@ -28,9 +28,8 @@ main {
 /* wish -----------------------------------------------------------------------------------------*/
 .wish {
     background-color: var(--white);
-    /* display: flex; */
     flex-direction: column;
-    width: 45vw;
+    width: 100%;
     padding: 3em;
     margin-bottom: 1em;
 
@@ -91,13 +90,15 @@ main {
     display: flex;
     flex-direction: column;
     display: grid;
-    grid-auto-rows: minmax(max-content, 45vh);
-    gap: 4em;
+    /* grid-auto-rows: minmax(max-content, 45vh); */
+    grid-auto-rows: max-content;
+
+    gap: 2em;
 }
 
 .joiners>div {
-    margin-bottom: 1em;
-    height: 8em;
+    /* margin-bottom: 1em; */
+    /* height: 10em; */
     position: relative;
     cursor: pointer;
 }
@@ -118,11 +119,6 @@ main {
     font-weight: lighter;
 
 }
-
-/* .joiners > div {
-    display: flex;
-    flex-direction: column;
-} */
 
 .joiners div ul li {
     display: flex;
@@ -204,9 +200,9 @@ main {
 }
 
 /* sharers */
-#sharers {
+/* #sharers {
     margin-top: 2.5em;
-}
+} */
 
 #sharers > h3 {
     font-size: 14px;
@@ -217,7 +213,7 @@ main {
 
 #sharers ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: var(--white);
     margin-top: 1em;
     padding: 1em;
@@ -226,11 +222,13 @@ main {
 #sharers ul li {
     display: flex;
     margin: .3em;
+    justify-content: center;
+    align-items: center;
 }
 
 #sharers ul li img {
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
 }
 
 .box {
