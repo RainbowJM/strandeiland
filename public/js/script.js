@@ -93,9 +93,13 @@ if (submitMessage) {
     event.preventDefault();
 
     // Get the current time.
-    const hour = new Date().toLocaleTimeString("nl-NL", {
+    const date = new Date().toLocaleString("nl-NL",{
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
       hour: "2-digit",
-      minute: "2-digit",
+      minute: "2-digit"
     });
 
     if (input.value) {
@@ -103,11 +107,11 @@ if (submitMessage) {
       socket.emit("message", {
         message: input.value,
         // name: nameTitle.textContent,
-        time: hour,
+        time: date,
       });
 
       // Add the message to the chat.
-      add(input.value, hour, socket.id, true);
+      add(input.value, date, socket.id, true);
 
       input.value = "";
     }
