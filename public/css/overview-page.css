@@ -111,7 +111,6 @@ main {
 
 .latest-ideas .thumbnail-container {
     /* scroll-snap-align: start; */
-
     flex: 0 0 485px;
     width: 485px;
     /* height: 600px; */
@@ -503,11 +502,13 @@ input:checked+span {
 
 @media screen and (max-width: 40em) {
     main form {
-            flex-direction: column;
-        }
-    main form > fieldset ul{
         flex-direction: column;
     }
+
+    main form>fieldset ul {
+        flex-direction: column;
+    }
+
     .theme-filter-items {
         grid-template-columns: 1fr 1fr;
     }
