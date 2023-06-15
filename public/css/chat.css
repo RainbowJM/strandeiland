@@ -113,7 +113,7 @@ form button {
   width: 3em;
 }
 
-img {
+img.avatar{
   width: 2em;
   height: 2em;
   border-radius: 5em;
