@@ -1,4 +1,3 @@
-
 const selectedOption = document.querySelector(".selected-option");
 const dropdownMenu = document.getElementById("themeDropdownMenu");
 const localStorageKey = "formData";
