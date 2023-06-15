@@ -117,12 +117,12 @@ if (submitMessage) {
       socket.emit("message", {
         message: input.value,
         // name has to be fetch from database
-        name: "Jane Doe:",
+        name: "Jane Doe",
         time: date,
       });
 
       // Add the message to the chat.
-      add(input.value, 'Jane Doe:', date, socket.id, true);
+      add(input.value, 'Jane Doe', date, socket.id);
 
       input.value = "";
     }
@@ -168,26 +168,16 @@ function displaySelectedOption(selectElement) {
   selectElement.value = selectedOption;
 }
 
-function add(message, name, time, id, self) {
-  let styling = "";
-
-  // Add styling to the message if you are the sender.
-  if (self) {
-    styling = "self";
-  } else {
-    if (last == id) {
-      styling = "multiple";
-    }
-  }
-
+function add(message, name, time, id) {
   messages.appendChild(
     Object.assign(document.createElement("li"), {
-      className: styling,
       innerHTML: `<section id='message'>
       <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+      <div class="message-name-time">
       <p class="name">${name}</p> 
       <span class="message">${message}</span>
       <span class="time">${time}</span> 
+      </div>
       </section>`,
     })
   );

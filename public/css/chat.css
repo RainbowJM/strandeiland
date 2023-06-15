@@ -56,10 +56,6 @@ form button {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 8px;
-}
-
-#chat li.self #name,
-#chat li.multiple #name {
   background-color: var(--yellow);
   display: none;
 }
@@ -73,6 +69,12 @@ form button {
   font-size: medium;
   word-wrap: break-word;
   margin: 0 10px 0 10px;
+  display: flex;
+}
+
+div.message-name-time{
+  display: flex;
+  flex-direction: column;
 }
 
 #chat li #message span::first-letter {
@@ -94,30 +96,26 @@ form button {
   text-align: start;
   font-weight: bold;
   font-size: medium;
-  font-style: italic;
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 0.05em;
 }
 
 #chat li #message .time {
   font-size: smaller;
   float: right;
-  color: var(--dark-grey);
+  color: grey;
+  font-style: italic;
 }
 
 #chat li.self #message .time {
-  color: var(--dark-grey);
+  color: grey;
 
-}
-
-#chat li #message img {
-  height: 3em;
-  width: 3em;
 }
 
 img.avatar{
-  width: 2em;
-  height: 2em;
+  height: 4em;
+  width: 4em;
   border-radius: 5em;
-  background-color: var(--white);
   margin-right: 0.5em;
-  cursor: pointer;
 }
