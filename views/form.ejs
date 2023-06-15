@@ -40,7 +40,9 @@
 
 
         <fieldset class="dropdown">
-            <div class="selected-option">Selecteer de passende thema's <span class="arrow"></span></div>
+            <div class="selected-option" id="selectedOption">
+                Selecteer de passende thema's
+            </div>
         <div class="dropdown-container" id="themeDropdownMenu">
 
             <ul class="dropdown-menu" >
@@ -61,26 +63,50 @@
             </ul>
         </div>
         </fieldset>
-
         
-        <label for="afbeelding" >Afbeelding</label>
-        <div class="file-input-container">
-        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
-        <p>Selecteer een bestand</p>
-        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" required>
+
+            <!-- <fieldset> -->
+
+
+
+      
+            <label for="afbeelding" >Afbeelding</label>
+
+            <p class="hierarchy">Link</p>
+    
+            <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+            <div id="imagePreview"></div>
+         
+
+            <label for="or">Of</label>
+
+                <p class="hierarchy">Bestand</p>
+
+                <div class="file-input-container">
+                <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                <p>Selecteer een bestand</p>
+                <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" >
+                </div>
+                <div id="customImagePreview"></div>
+                <p id="selectedFileName">Geen bestand geselecteerd</p>
         
-    </div>
+   
+            <!-- </fieldset> -->
+        
+            <!-- <fieldset> -->
+                <div id="links">
+                <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                <div class='linkjes'>
+                    <a href="https://unsplash.com/">Unsplash</a>
+                    <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                    <a href="https://pixabay.com/nl/">Pixabay</a>
+                </div>
+        
+                
+            <!-- </fieldset> -->
+           
 
-    <div id="links">
-
-        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
-        <div class='linkjes'>
-            <a href="https://unsplash.com/">Unsplash</a>
-            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
-            <a href="https://pixabay.com/nl/">Pixabay</a>
-        </div>
        
-     
 
 
 

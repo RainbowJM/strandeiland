@@ -57,7 +57,9 @@ fieldset {
 /* Label, Textarea, Select, and File Input Container Styling */
 fieldset label,
 fieldset textarea,
-fieldset .file-input-container {
+fieldset .file-input-container,
+#imageLink
+ {
   margin-bottom: 10px;
   width: 75%;
   position: relative;
@@ -73,12 +75,14 @@ fieldset .dropdown-menu label{
 /* Focus Styling */
 fieldset label:focus,
 fieldset textarea:focus,
-fieldset .file-input-container:focus {
+fieldset .file-input-container:focus
+ {
   outline: none;
   box-shadow: 0 0 4px var(--black);
 }
 
-input#titel::placeholder {
+input#titel::placeholder, 
+#imageLink::placeholder{
     font-family: var(--font);
     color: var(--dark-grey);
     font-size: 15px;
@@ -90,6 +94,17 @@ fieldset label {
   font-size: 1em;
   font-family: var(--font);
 }
+
+fieldset input[type="text"],
+fieldset input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--gray);
+  box-sizing: border-box;
+  border: none;
+}
+
+
 
 /* Input, Textarea, and Select Styling */
 input[type="text"],
@@ -142,23 +157,35 @@ textarea#beschrijving::placeholder {
     font-family: var(--font);
     font-size: 15px;
     font-weight: normal;
+    display: flex;
+    align-items: center;
   }
-  
-  .selected-option .arrow {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 5px 5px 0 5px;
-    border-color: #333 transparent transparent transparent;
+  .selected-option::after {
+    content: "\2304";
     position: absolute;
-    top: calc(50% - 2.5px);
+    top: 50%;
     right: 10px;
     transform: translateY(-50%);
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold; /* Add this line */
+    line-height: 1;
+    transition: transform 0.2s ease-in-out;
   }
+  
+  .selected-option.open::after {
+    content: "×";
+    font-size: 18px; /* Adjust the font size as needed */
+    
+    transform: translateY(-50%);
+    line-height: 1;
+  }
+  
+  
+  
   
   .dropdown-container {
     display: none;
+    margin-top: 10px;
   }
 
 .dropdown-menu {
@@ -168,23 +195,18 @@ textarea#beschrijving::placeholder {
     background-color: var(--gray);
     min-width: 200px;
     border: border;
-    /* max-height: 150px; */
     overflow-y: auto;
     padding: 10px;
     gap: 10px;
 }
 
-/* hier kan ik de text veranderen, hier komt gelijk te styling van de buttons */
+
 .dropdown-menu li {
     align-items: center;
-    
-  /* display: inline-block; */
-  /* margin-right: 10px;
-  margin-bottom: 10px; */
+  
   font-weight: normal;
   background-color: var(--white);
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
+
   word-wrap: wrap;
   height: 2em;
   width: 100%;
@@ -253,6 +275,17 @@ textarea#beschrijving::placeholder {
   
 }
 
+p#selectedFileName {
+  position: relative;
+  left: 3%;
+  margin-top: 10px;
+  font-family: var(--font);
+  color: var(--black);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
 img{
     width: 5em;
     height: 4.5em;
@@ -271,6 +304,13 @@ p{
     font-size: 16px;
 }
 
+.hierarchy{
+    position: relative;
+    left: 3%;
+
+    font-size: 15px;
+ 
+}
 
 #links label{
     font-size:15px;
@@ -306,6 +346,10 @@ p{
 
 
 
+
+
+/* terug button, nog niet klaar */
+
   .terug-btn {
     display: flex;
     align-items: center;
@@ -319,3 +363,11 @@ p{
     font-size: 10px;
     margin-left: 5px; /* Add some spacing between the image and text */
   }
+
+
+
+
+
+
+
+  /* even hier de image preview container hier stylen */
