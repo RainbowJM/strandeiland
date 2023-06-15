@@ -1,15 +1,5 @@
 // ------------------ variables -------------------------------------------------------
-import {
-  messages,
-  submitMessage,
-  input,
-  tabs,
-  filterMenu,
-  themeFilterBtn,
-  themeSelect,
-  asideItems,
-  theMenuButton,
-} from "./modules/variables.js";
+import {messages,submitMessage,input,tabs,filterMenu,themeFilterBtn,themeSelect,asideItems,theMenuButton,typingElement} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -129,6 +119,23 @@ if (submitMessage) {
   });
 }
 
+if (input) {
+  input.addEventListener('input', event => {
+      event.preventDefault();
+      // Emit the typing event.
+      socket.emit('typing', {
+          name: 'Jane Doe',
+          typing: true
+      })
+      setTimeout(() => {
+          socket.emit('typing', {
+              name: 'Jane Doe',
+              typing: false
+          })
+      }, 3000)
+  });
+}
+
 if (themeFilterBtn) {
   themeFilterBtn.addEventListener("click", () => {
     filterMenu.classList.toggle("show-filter");
@@ -160,6 +167,29 @@ socket.on("history", (history) => {
     add(message.message, message.name, message.time, message.id);
   });
 });
+
+socket.on('typing', (typing) => {
+  let names = []
+
+  // Get the names of the users that are typing.
+  typing.forEach((client) => {
+      if (client[1] != socket.id) {
+          // Add the name to the list.
+          names.push(client[0])
+      }
+  })
+
+  if (names.length == 0) {
+      // Empty indicator
+      typingElement.innerHTML = ""
+  } else if (names.length == 1) {
+      // Fill the typing indicator with text
+      typingElement.innerHTML = `💬${names[0]} is sending a message...`
+  } else {
+      // Fill the typing indicator with text
+      typingElement.innerHTML = `💬${names.slice(0, -1).join(", ")} and ${names.slice(-1)} are sending a message...`
+  }
+})
 
 // ------------------ functions -------------------------------------------------------
 

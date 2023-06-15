@@ -13,7 +13,8 @@ const tabContents = document.querySelectorAll("[data-filter-content]");
 const filterThemeBtn = document.querySelector(".filter-theme-btn");
 const filterSortBtn = document.querySelector(".filter-sort-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
+const typingElement = document.querySelector('#typing');
 
 export { messages, submitMessage, input, filterMenu, themeFilterBtn, 
     themeSelect, theMenuButton, theNav, theImage, asideItems, tabs, 
-    tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn }
+    tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement }
