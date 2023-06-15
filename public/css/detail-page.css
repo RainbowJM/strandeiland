@@ -1,0 +1,447 @@
+:root {
+    --yellow: #ffe700;
+    --white: #ffffff;
+    --black: #000000;
+    --blue: #009ce0;
+    --light-grey: #f0f0eb;
+    --dark-grey: #333333;
+    --font: 'Poppins', sans-serif;
+}
+
+main {
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.terug {
+    margin: 3em 0 1em 5vw;
+
+}
+
+.terug a {
+    color: var(--black);
+    font: var(--font);
+}
+
+
+/* wish -----------------------------------------------------------------------------------------*/
+.wish {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    padding: 3em;
+}
+
+.wish h1 {
+    max-width: 20em;
+}
+
+.wish img {
+    max-width: 45vw;
+}
+
+.wish p:nth-of-type(1) {
+    margin: .5em 0;
+}
+
+.wish p:nth-of-type(2) {
+    margin: .5em 0;
+}
+
+.wish p:nth-of-type(3) {
+    margin: 1.5em 0 .3em 0;
+    color: gray;
+}
+
+
+
+/* helpende -----------------------------------------------------------------------------------------*/
+.joiners {
+    margin: 0 0 0 1em;
+}
+
+.joiners>div {
+    background-color: var(--blue);
+    margin-bottom: 1em;
+    padding: 1em;
+    height: 8em;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.joiners h2 {
+    color: var(--white);
+    margin-bottom: .5em;
+    font-size: 12px;
+    position: absolute;
+}
+
+.joiners div ul {
+    display: flex;
+    margin: 1em 0 0 2em;
+}
+
+.joiners div ul li {
+    display: flex;
+    margin-right: .5em;
+}
+
+.joiners img {
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+    background-color: var(--white);
+    margin-right: .5em;
+    cursor: pointer;
+}
+
+.joiners h3 {
+    font-size: 14px;
+    margin-top: .9em;
+    color: var(--white);
+}
+
+.joiners h4 {
+    font-size: 12px;
+    color: var(--white);
+}
+
+
+#ambassador ul {
+    margin-top: 1.5em;
+}
+
+#ambassador ul li {
+    margin-right: 1em;
+}
+
+#ambassador img {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+#helpers img {
+    width: 3em;
+    height: 3em;
+}
+
+#helpers ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: scroll;
+    margin: 1.5em 0 0 2em;
+}
+
+#helpers ul li {
+    display: flex;
+    margin: .3em;
+}
+
+#sharers ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0 0 2em;
+    max-width: 90%;
+    max-height: 80%;    
+    overflow: scroll;
+}
+
+#sharers ul li {
+    display: flex;
+    margin: .3em;
+}
+
+
+/* pinned --------------------------------------------------------------------------------------- */
+.pinned {
+    background-color: var(--white);
+    padding: 2em;
+    margin: 1em 0 0 1em;
+}
+
+.pinned h2 {
+    margin-bottom: 1em;
+}
+
+.pinned ul li {
+    background-color: var(--light-grey);
+    margin: 0 0 1em 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.pinned ul li div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5em;
+}
+
+.pinned img {
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+
+    margin-right: 1em;
+}
+
+.pinned h3 {
+    margin-top: 0;
+}
+
+.pinned p {
+    margin: 0;
+}
+
+/* join --------------------------------------------------------------------------------------- */
+.join {
+    margin-top: 1em;
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 0;
+}
+
+.join button {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0 1em;
+    border: none;
+    margin-right: .5em;
+    /* min-width:10em ; */
+    height: 3em;
+    cursor: pointer;
+}
+
+.join button:hover {
+    background-color: var(--yellow);
+    transition: .5s;
+    color: var(--black);
+}
+
+/* chat ------------------------------------------------------------------------------------------------- */
+.chat {
+    /* grid-column-start: 1;
+    grid-row-start: 2; */
+    max-width: 40em;
+    height: 20em;
+    border: .5em solid var(--yellow);
+    margin-top: 2em;
+    display: grid;
+    place-content: center;
+}
+
+
+@media (width < 50em) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em 3em 1em 1em;
+        /* overflow-x: hidden; */
+    }
+
+
+    main>div {
+        display: contents;
+    }
+
+    .wish {
+        order: -1;
+        padding: 1.5em;
+        width: 100%;
+
+    }
+
+    .wish img {
+        max-width: 70vw;
+    }
+
+    .join {
+        order: -1;
+        padding: 0;
+        max-width: 80vw;
+    }
+
+
+    .pinned {
+        order: -1;
+        padding: 1em;
+        margin: 3em 0;
+        max-height: 50vh;
+        overflow: scroll;
+    }
+
+    .joiners {
+        position: fixed;
+        right: 0;
+        transform: translateX(91%);
+    }
+
+    .helping-item.active {
+        transform: translateX(-75%);
+        transition: transform 0.3s ease-out;
+    }
+
+    #ambassador ul {
+        display: flex;
+        max-width: 90%;
+        max-height: 100%;
+        overflow: scroll;
+
+    }
+
+    #helpers ul{
+        margin: 0 0 0 2em;
+    }
+
+
+    .joiners h2 {
+        transform: rotate(-90deg);
+        left: -.8em;
+        top: 45%;
+    }
+
+    .joiners div {
+        padding: .3em 0 0 2em;
+    }
+
+    .joiners div:nth-of-type(1) h2:nth-of-type(1) {
+        left: -2.8em;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+/***********/
+/* CHAT  */
+/***********/
+/* .chat {
+    width: 25em;
+    background-color: white;
+    position: relative;
+    right: 1em;
+}
+
+.chat h2 {
+    padding: .2em 1em;
+}
+
+.chat h3{
+    font-family: var(--font); 
+    font-size: .6em; 
+    margin: 0;
+  }
+
+.chat-messages{
+    background-color: #FFE700;
+    padding: 2em;    
+    height: 60vh;
+}
+
+.you {
+    position: absolute;
+    right: 1em;
+}
+
+.you:nth-of-type(1){
+    bottom: 5em;
+}
+
+.you:nth-of-type(2){
+    top: 1em;
+}
+
+.you img {
+    background-color: gray;
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+}
+
+.you div p {
+    background-color: white;
+    padding:.5em;
+    border-radius: 2em;
+    margin-right: .5em;
+    font-family: var(--font);
+}
+
+.you div:last-of-type {
+    display: flex;
+}
+
+.you h3 {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+
+.other {
+    position: absolute;
+    left: 1em;
+    top: 44%;
+}
+
+.other img {
+    background-color: gray;
+    width: 2em;
+    height: 2em;
+    border-radius: 5em;
+}
+
+
+.other div:last-of-type {
+    display: flex;
+}
+
+
+.other p {
+    background-color: white;
+    padding:.5em;
+    border-radius: 2em;
+    font-family: var(--font); 
+    margin-left: .5em;
+}
+
+.other input {
+    border-radius: 2em;
+    width: 100%;
+    height: 2.5em;
+}
+
+.send {
+    width: 3em;
+    height: 3em;
+    background-color: gray;
+    border-radius: 5em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    border: none;   
+}
+
+.chat-bericht {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    width: 80%;
+    height: 3em;
+    border-radius: 2em;
+    border: none;
+    padding: 0 2em;
+} */
+
+/* detailpage hilal */
+/* chat */

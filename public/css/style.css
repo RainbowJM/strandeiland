@@ -20,6 +20,7 @@
     --font: 'Poppins', sans-serif;
 }
 
+
 body {
     background-color: var(--light-grey);
     font-family: var(--font);
@@ -39,8 +40,49 @@ li {
 }
 
 
-footer {
-    background-color: var(--dark-grey);
+
+nav.inlog-container a {
+    display: inline-block;
+    padding: 2px;
+    border-bottom: 2px solid var(--white);
+    color: var(--white);
+}
+
+/* Logo */
+
+header img {
+    width: 4em;
+    height: 4em;
+}
+
+/* Second Nav */
+nav.navigation-links {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+   display: none;
+}
+
+nav.navigation-links ul {
+    display: flex;
+    flex-direction: row;
+  
+    gap: .5em;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav.navigation-links ul li {
+
+    text-align: center;
+    width:90%;
+    height: 100%;
+}
+
+nav.navigation-links a {
+   text-align: center;
+    color: var(--dark-grey)
 }
 
 
@@ -120,4 +162,9 @@ nav.navigation-links a {
     nav.navigation-links {
    display: block;
     }
+}
+
+
+footer {
+    background-color: var(--dark-grey);
 }
