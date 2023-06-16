@@ -2,10 +2,8 @@
   height: 20em;
   position: relative;
   background-color: var(--white);
-  /* border: 0.5em solid var(--yellow); */
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 1em;
   grid-column-start: 1;
 }
 
@@ -15,7 +13,7 @@ text-align: center;
 
 .chat-section {
   overflow-y: scroll;
-  height: 67%;
+  height: 60%;
 }
 
 form {
@@ -27,18 +25,19 @@ form {
 
 form input[type="text"] {
   font-family: Poppins, system-ui;
-  background: #f5f7fb;
+  background: var(--light-grey);
   border: none;
   border-radius: 25px;
-  width: 80%;
+  width: 90%;
   padding: 15px 20px;
 }
 
 form button {
   height: 50px;
   width: 50px;
-  /* background-color: var(--yellow); */
-  border: solid 2px var(--yellow);
+  background: var(--blue);
+  border: none;
+  /* border: solid 2px var(--yellow); */
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -57,22 +56,25 @@ form button {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 8px;
-}
-
-#chat li.self #name,
-#chat li.multiple #name {
+  background-color: var(--yellow);
   display: none;
 }
 
 #chat li #message {
-  color: var(--white);
-  background: var(--blue);
-  border-radius: 0 25px 25px 25px;
-  width: 40%;
+  background: var(--light-grey);
+  border-radius: 25px;
+  width: 97%;
   padding: 10px 25px;
   height: 5em;
   font-size: medium;
   word-wrap: break-word;
+  margin: 0 10px 0 10px;
+  display: flex;
+}
+
+div.message-name-time{
+  display: flex;
+  flex-direction: column;
 }
 
 #chat li #message span::first-letter {
@@ -80,11 +82,11 @@ form button {
 }
 
 #chat li.self #message {
-  background: var(--white);
-  border-radius: 25px 0 25px 25px;
+  background: var(--light-grey);
+  border-radius: 25px;
   margin-left: auto;
-  border: 1.5px solid var(--yellow);
-  color: var(--black);
+  /* border: 1.5px solid var(--yellow); */
+  margin: 0 10px 0 10px;
 }
 
 #chat li #message p {
@@ -94,15 +96,35 @@ form button {
   text-align: start;
   font-weight: bold;
   font-size: medium;
-  font-style: italic;
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 0.05em;
 }
 
 #chat li #message .time {
-  color: var(--white);
   font-size: smaller;
   float: right;
+  color: grey;
+  font-style: italic;
 }
 
 #chat li.self #message .time {
-  color: var(--black);
+  color: grey;
+
+}
+
+img.avatar{
+  height: 4em;
+  width: 4em;
+  border-radius: 5em;
+  margin-right: 0.5em;
+}
+
+#typing {
+  font-size: small;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 25px;
+  position: absolute;
+  bottom: 5em;
 }
