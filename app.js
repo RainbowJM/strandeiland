@@ -12,6 +12,7 @@ const supabase = createClient(
     `${process.env.SUPABASE_KEY}`);
 const historySize = 100;
 let history = [];
+let typing = [];
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -85,6 +86,33 @@ io.on("connection", (socket) => {
       time: message.time,
     });
   });
+
+  socket.on("typing", (user) => {
+    let exists = false
+
+    // Check if the user is already in the array.
+    typing.forEach((client) => {
+        if (client[1] == socket.id) {
+            exists = true
+        }
+    })
+
+    if (user.typing && !exists) {
+        // Add the name and connection ID to the list of typing users.
+        typing.push([user.name, socket.id])
+    } else if (!user.typing) {
+        // Remove the name and connection ID from the list of typing users.
+        typing.forEach((client, index) => {
+            if (client[1] == socket.id) {
+                // Remove the user from the list of typing users.
+                typing.splice(index, 1);
+            }
+        })
+    }
+
+    // Emit the array of typing users.
+    io.emit("typing", typing)
+})
 
   socket.on("disconnect", () => {
     console.log(`user ${socket.id} disconnected`);

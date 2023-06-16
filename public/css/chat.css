@@ -13,7 +13,7 @@ text-align: center;
 
 .chat-section {
   overflow-y: scroll;
-  height: 67%;
+  height: 60%;
 }
 
 form {
@@ -118,4 +118,13 @@ img.avatar{
   width: 4em;
   border-radius: 5em;
   margin-right: 0.5em;
+}
+
+#typing {
+  font-size: small;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 25px;
+  position: absolute;
+  bottom: 5em;
 }
