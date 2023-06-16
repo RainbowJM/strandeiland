@@ -28,25 +28,6 @@ app.use(bodyParser.json());
 //   res.send(data);
 // });
 
-app.get('/suggestions', async (req, res) => {
-  const {data: themeData,  themeError} = await supabase
-      .from('thema')
-      .select()
-
-  const { data: suggestionsData, error: suggestionsError } = await supabase
-    .from( 'suggestion')
-    .select()
-    console.log(suggestionsData)
-    
-  res.render('suggestions',{
-    title: 'wensen',
-    themes: themeData,
-    suggestions: suggestionsData
-  });
-});
-
-
-
 app.get("/", (req, res) => {
   res.render("index", {
     title: "Wensen",
