@@ -46,23 +46,28 @@ app.get('/sent', (req, res) => {
     })
 });
   
-app.get('/detailPage-1', async (req, res) => {
-  const { data: themeData, themeError } = await supabase
-    .from('thema')
-    .select();
+app.get('/detailPage-1/:id', async (req, res) => {
+  const suggestionId = req.params.id;
 
-  const { data: suggestionsData, error: suggestionsError } = await supabase
-    .from('detailPage-1')
-    .select();
+  // Fetch the suggestion data from Supabase based on the provided ID
+  const { data: suggestionData, error } = await supabase
+    .from('suggestion')
+    .select()
+    .eq('id', suggestionId)
+    .single();
 
-  console.log(suggestionsData);
-
-  res.render('detailPage-1', {
-    title: "detail",
-    themes: themeData,
-    suggestions: suggestionsData
-  });
+  if (error) {
+    console.error('Error fetching suggestion:', error);
+    // Handle the error appropriately, e.g., render an error page
+  } else {
+    console.log(suggestionData);
+    res.render('detailPage-1', {
+      title: 'detail',
+      suggestion: suggestionData
+    });
+  }
 });
+
 
 app.get("/form", (req, res) => {
   res.render("form", {
