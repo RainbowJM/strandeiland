@@ -46,9 +46,21 @@ app.get('/sent', (req, res) => {
     })
 });
   
-app.get('/detailPage-1', (req, res) => {
-    res.render('detailPage-1',{
-    title: "Detail",
+app.get('/detailPage-1', async (req, res) => {
+  const { data: themeData, themeError } = await supabase
+    .from('thema')
+    .select();
+
+  const { data: suggestionsData, error: suggestionsError } = await supabase
+    .from('detailPage-1')
+    .select();
+
+  console.log(suggestionsData);
+
+  res.render('detailPage-1', {
+    title: "detail",
+    themes: themeData,
+    suggestions: suggestionsData
   });
 });
 
