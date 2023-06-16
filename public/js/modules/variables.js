@@ -1,5 +1,4 @@
-// For the reaction comments section
-const messages = document.querySelector("section ul");
+const messages = document.querySelector("#chat ul");
 const submitMessage = document.querySelector("#message-button");
 const input = document.querySelector("#message-input");
 const themeFilterBtn = document.querySelector(".thema-btn");
@@ -22,8 +21,9 @@ const filterThemeBtn = document.querySelector(".theme-btn");
 const filterSortBtn = document.querySelector(".sort-btn");
 const filterSortResultsBtn = document.querySelector(".filter-sort-results-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
+const typingElement = document.querySelector('#typing');
 
 
 export { messages, submitMessage, input, filterMenu, themeFilterBtn, 
     themeSelect, theMenuButton, theNav, theImage, asideItems, tabs, 
-    tabContents, filterThemeResultsBtn, filterSortResultsBtn, filterThemeBtn, filterSortBtn, closeFilterBtn }
+    tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement }
