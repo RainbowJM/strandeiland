@@ -26,4 +26,4 @@ const typingElement = document.querySelector('#typing');
 
 export { messages, submitMessage, input, filterMenu, themeFilterBtn, 
     themeSelect, theMenuButton, theNav, theImage, asideItems, tabs, 
-    tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement }
+    tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement, filterThemeResultsBtn, filterSortResultsBtn }
