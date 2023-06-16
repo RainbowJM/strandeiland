@@ -1,5 +1,5 @@
 // ------------------ variables -------------------------------------------------------
-import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton } from "./modules/variables.js";
+import {messages,submitMessage,input,tabs,filterMenu,themeFilterBtn,themeSelect,asideItems,theMenuButton,typingElement} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const localStorageKey = "formData";
   console.log("selectedOption", selectedOption);
 
-  if (selectedOption){
+  if (selectedOption) {
     selectedOption.addEventListener("click", function () {
       dropdownMenu.classList.toggle("show");
     });
   }
-  
+
   function updateFormData() {
     const checkboxes = document.querySelectorAll(
       "#themeDropdownMenu input[type='checkbox']"
@@ -93,7 +93,11 @@ if (submitMessage) {
     event.preventDefault();
 
     // Get the current time.
-    const hour = new Date().toLocaleTimeString("nl-NL", {
+    const date = new Date().toLocaleString("nl-NL", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
     });
@@ -102,15 +106,33 @@ if (submitMessage) {
       // Emit the message to all connected users.
       socket.emit("message", {
         message: input.value,
-        // name: nameTitle.textContent,
-        time: hour,
+        // name has to be fetch from database
+        name: "Jane Doe",
+        time: date,
       });
 
       // Add the message to the chat.
-      add(input.value, hour, socket.id, true);
+      add(input.value, 'Jane Doe', date, socket.id);
 
       input.value = "";
     }
+  });
+}
+
+if (input) {
+  input.addEventListener('input', event => {
+      event.preventDefault();
+      // Emit the typing event.
+      socket.emit('typing', {
+          name: 'Jane Doe',
+          typing: true
+      })
+      setTimeout(() => {
+          socket.emit('typing', {
+              name: 'Jane Doe',
+              typing: false
+          })
+      }, 3000)
   });
 }
 
@@ -128,7 +150,6 @@ if (themeSelect) {
 
 // filter menu
 
-
 if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
 }
@@ -137,15 +158,38 @@ if (theMenuButton) {
 
 socket.on("message", (message) => {
   if (message.id != socket.id) {
-    add(message.message, message.time, message.id);
+    add(message.message, message.name, message.time, message.id);
   }
 });
 
 socket.on("history", (history) => {
   history.forEach((message) => {
-    add(message.message, message.time, message.id);
+    add(message.message, message.name, message.time, message.id);
   });
 });
+
+socket.on('typing', (typing) => {
+  let names = []
+
+  // Get the names of the users that are typing.
+  typing.forEach((client) => {
+      if (client[1] != socket.id) {
+          // Add the name to the list.
+          names.push(client[0])
+      }
+  })
+
+  if (names.length == 0) {
+      // Empty indicator
+      typingElement.innerHTML = ""
+  } else if (names.length == 1) {
+      // Fill the typing indicator with text
+      typingElement.innerHTML = `💬${names[0]} is sending a message...`
+  } else {
+      // Fill the typing indicator with text
+      typingElement.innerHTML = `💬${names.slice(0, -1).join(", ")} and ${names.slice(-1)} are sending a message...`
+  }
+})
 
 // ------------------ functions -------------------------------------------------------
 
@@ -154,25 +198,17 @@ function displaySelectedOption(selectElement) {
   selectElement.value = selectedOption;
 }
 
-function add(message, time, id, self) {
-  let styling = "";
-
-  // Add styling to the message if you are the sender.
-  if (self) {
-    styling = "self";
-  } else {
-    if (last == id) {
-      styling = "multiple";
-    }
-  }
-
+function add(message, name, time, id) {
   messages.appendChild(
     Object.assign(document.createElement("li"), {
-      className: styling,
       innerHTML: `<section id='message'>
-    <span class="message">${message}</span>
-    <span class="time">${time}</span> 
-    </section>`,
+      <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+      <div class="message-name-time">
+      <p class="name">${name}</p> 
+      <span class="message">${message}</span>
+      <span class="time">${time}</span> 
+      </div>
+      </section>`,
     })
   );
   // Scroll to the bottom of the chat.
