@@ -1,3 +1,15 @@
+:root {
+  --yellow: #ffe700;
+  --light-yellow: #FFF48C;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #009ce0;
+  --light-blue: #94DFFF;
+  --light-grey: #f0f0eb;
+  --dark-grey: #333333;
+  --font: 'Poppins', sans-serif;
+}
+
 #chat {
   height: 20em;
   position: relative;
