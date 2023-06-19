@@ -1,5 +1,5 @@
 #chat {
-  height: 20em;
+  height: 26em;
   position: relative;
   background-color: var(--white);
   display: flex;
@@ -21,6 +21,8 @@ form {
   bottom: 0;
   width: 100%;
   margin: 0 1em 0.5em 1em;
+  padding: 0 1em 1em 0;
+
 }
 
 form input[type="text"] {
