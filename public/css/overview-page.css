@@ -56,6 +56,12 @@ main {
     background-color: var(--blue);
     color: var(--white);
     transform: rotate(5deg);
+
+    animation-name: slogan-1;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.125, 0.995, 1.000, 1);
 }
 
 .slogan-container span:nth-child(2) {
@@ -67,6 +73,12 @@ main {
 .slogan-container span:nth-child(3) {
     background-color: var(--white);
     color: var(--black);
+
+    animation-name: slogan-2;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.125, 0.995, 1.000, 1);
 }
 
 .slogan-container span:nth-child(4) {
@@ -79,7 +91,7 @@ main {
     background-color: var(--yellow);
     width: fit-content;
     padding: 1.5em;
-    border-radius: 1em; 
+    border-radius: 1em;
 }
 
 .slogan-call-to-action a {
@@ -89,6 +101,36 @@ main {
     background-color: var(--black);
     color: var(--white);
 }
+
+@keyframes slogan-1 {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-1rem);
+    }
+}
+
+@keyframes slogan-2 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-8deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations */
+    * {
+      animation-duration: 0s !important;
+      transition-duration: 0s !important;
+      transform: none !important;
+    }
+  }
+
 
 /************************/
 /* IDEA'S OVERWIEW LIST */
@@ -228,6 +270,7 @@ main {
     width: 32%;
     border-radius: 0;
 }
+
 .statistics span {
     font-weight: bold;
     margin-right: .2em;
@@ -313,13 +356,15 @@ main {
     font-size: 1.2em;
 }
 
-.grid-container .thumbnail-container article p{
+.grid-container .thumbnail-container article p {
 
-   font-size: 1em;
+    font-size: 1em;
 }
+
 .grid-container .user-info {
     display: none;
 }
+
 /**********/
 /* FILTER */
 /**********/
