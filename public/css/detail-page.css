@@ -39,7 +39,7 @@ main {
 .wish img {
     width: 100%;
     contain: content;
-    background-position: center;
+    transform: translateY(-30%);
 }
 
 .wish p:nth-of-type(1) {
