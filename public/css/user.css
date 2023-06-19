@@ -1,291 +1,269 @@
 :root {
-    --yellow: #ffe700;
-    --white: #ffffff;
-    --black: #000000;
-    --blue: #009ce0;
-    --light-grey: #f0f0eb;
-    --dark-grey: #333333;
-    --font: 'Poppins', sans-serif;
+  --yellow: #ffe700;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #009ce0;
+  --light-grey: #f0f0eb;
+  --dark-grey: #333333;
+  --font: "Poppins", sans-serif;
 }
 
 main {
-    padding: 0 3vw 0 5vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  padding: 0 3vw 0 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .terug {
-    margin: 3em 0 1em 5vw;
-
+  margin: 3em 0 1em 5vw;
 }
 
 .terug a {
-    color: var(--black);
-    font: var(--font);
+  color: var(--black);
+  font: var(--font);
 }
-
 
 /* wish -----------------------------------------------------------------------------------------*/
 .wish {
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 1.5em;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.5em;
 }
 
 .wish h2 {
-    color: var(--dark-grey);
+  color: var(--dark-grey);
 }
 
 .wish img {
-    width: 100%;
-    contain: content;
-    background-position: center;
+  width: 100%;
+  contain: content;
+  background-position: center;
 }
 
 .wish p:nth-of-type(1) {
-    margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
 }
 
 .wish p:nth-of-type(2) {
-    margin: 2em 0 3em 0;
+  margin: 2em 0 3em 0;
 }
 
 .wish p:nth-of-type(3) {
-    margin: 1.5em 0 .3em 0;
-    color: gray;
+  margin: 1.5em 0 0.3em 0;
+  color: gray;
 }
 
 .wish article {
-    background-color: var(--white);
-    padding: 4em 2em;
-    border-radius: 80px 80px;
+  background-color: var(--white);
+  padding: 4em 2em;
+  border-radius: 80px 80px;
 }
 
 #img-container {
-    height: 80vh;
-    width: 100%;
-    overflow: hidden;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* join --------------------------------------------------------------------------------------- */
 .join {
-    margin-top: 1em;
-    display: flex;
-    padding: 0;
+  margin-top: 1em;
+  display: flex;
+  padding: 0;
 }
 
 .join button {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 0 1em;
-    border: none;
-    margin-right: .5em;
-    height: 3em;
-    cursor: pointer;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0 1em;
+  border: none;
+  margin-right: 0.5em;
+  height: 3em;
+  cursor: pointer;
 }
 
 .join button:hover {
-    background-color: var(--yellow);
-    transition: .5s;
-    color: var(--black);
+  background-color: var(--yellow);
+  transition: 0.5s;
+  color: var(--black);
 }
-
-
 
 /* helpende -----------------------------------------------------------------------------------------*/
 .joiners {
-    grid-column-start: 2;
-    grid-row-start: 1;
-    margin: 0 0 0 2em;
-    display: flex;
-    display: grid;
-    grid-auto-rows: max-content;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin: 0 0 0 2em;
+  display: flex;
+  display: grid;
+  grid-auto-rows: max-content;
 
-    gap: 2em;
+  gap: 2em;
 }
 
-.joiners>div {
-    position: relative;
-    cursor: pointer;
+.joiners > div {
+  position: relative;
+  cursor: pointer;
 }
 
 .joiners h2 {
-    color: var(--white);
-    background-color: var(--blue);
-    padding: .5em;
-    margin-bottom: 1em;
-    font-size: 20px;
-    position: absolute;
-    text-align: center;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
 }
 
 .joiners h4 {
-    font-size: 12px;
-    color: var(--dark-grey);
-    font-weight: lighter;
-
+  font-size: 12px;
+  color: var(--dark-grey);
+  font-weight: lighter;
 }
 
 .joiners div ul li {
-    display: flex;
-    margin: 0 .5em .5em 0;
-    background-color: var(--white);
+  display: flex;
+  margin: 0 0.5em 0.5em 0;
+  background-color: var(--white);
 }
 
 .joiners img {
-    width: 2em;
-    height: 2em;
-    border-radius: 5em;
-    background-color: var(--white);
-    margin-right: .5em;
-    cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 5em;
+  background-color: var(--white);
+  margin-right: 0.5em;
+  cursor: pointer;
 }
 
 /* ambassadors */
 #ambassador > h3 {
-    font-size: 14px;
-    margin-top: 4em;
-    color: var(--black);
-    font-weight: lighter;
+  font-size: 14px;
+  margin-top: 4em;
+  color: var(--black);
+  font-weight: lighter;
 }
 
 #ambassador > div h2 {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 #ambassador ul {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 #ambassador ul li {
-    padding: 1em;
+  padding: 1em;
 }
 
 #ambassador ul li div h3 {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 #ambassador img {
-    width: 4.5em;
-    height: 4.5em;
+  width: 4.5em;
+  height: 4.5em;
 }
 
 /* helpers */
 #helpers > h3 {
-    font-size: 14px;
-    margin-top: 4em;
-    color: var(--black);
-    font-weight: lighter;
+  font-size: 14px;
+  margin-top: 4em;
+  color: var(--black);
+  font-weight: lighter;
 }
 
 #helpers img {
-    width: 4em;
-    height: 4em;
+  width: 4em;
+  height: 4em;
 }
 
 #helpers ul {
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #helpers ul li {
-    display: flex;
-    padding: .5em;
+  display: flex;
+  padding: 0.5em;
 }
 
 #helpers ul li div h3 {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 /* sharers */
 #sharers > h3 {
-    font-size: 14px;
-    margin-top: 4em;
-    color: var(--black);
-    font-weight: lighter;
+  font-size: 14px;
+  margin-top: 4em;
+  color: var(--black);
+  font-weight: lighter;
 }
 
 #sharers ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    background-color: var(--white);
-    margin-top: 1em;
-    padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: var(--white);
+  margin-top: 1em;
+  padding: 1em;
 }
 
 #sharers ul li {
-    display: flex;
-    margin: .3em;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin: 0.3em;
+  justify-content: center;
+  align-items: center;
 }
 
 #sharers ul li img {
-    height: 3em;
-    width: 3em;
+  height: 3em;
+  width: 3em;
 }
 
-.box {
-    display: none;
-    position: absolute;
-    background-color:var(--white);
-    padding: 10px;
-    height: 3.8em;
-    width: 10em;
-  }
-  
-  li:hover .box {
-    display: block;
-    margin-left: 13em;
-    z-index: 10000;
- 
-  }
+img.avatar {
+  height: 5em;
+  width: 5em;
+  border-radius: 5em;
+  margin-right: 0.5em;
+}
 
-  .box h3{
-    background-color: var(--yellow);
-    font-size: 14px;
-    width: max-content;
-    padding: 0 .2em;
-  }
+div.head{
+    display: flex;
+    margin-bottom: 1em;
+}
 
-  .box a{
-    color: var(--black);
-    text-decoration: underline;
-    font-size: 10px;
+div.head-name{
+    display: flex;
+    flex-direction: column;
   }
 
 @media (width < 50em) {
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        padding: 1em;
-    }
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 1em;
+  }
 
-    .wish {
-        padding: 1.5em;
-        width: 100%;
-    }
+  .wish {
+    padding: 1.5em;
+    width: 100%;
+  }
 
-    .wish img {
-        max-width: 100%;
-    }
+  .wish img {
+    max-width: 100%;
+  }
 
+  .joiners {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    gap: 0;
+  }
 
-    .joiners {
-        grid-column-start: 1;
-        grid-row-start: 3;
-        gap: 0;
-    }
-
-    .joiners  {
-        margin-top: 2em;
-    }
-
-  
-
+  .joiners {
+    margin-top: 2em;
+  }
 }
-

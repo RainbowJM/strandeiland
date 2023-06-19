@@ -3,8 +3,9 @@
 
 <head>
     <%- include('./partials/head'); %>
-    <link rel="stylesheet" href="/css/user.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/user.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,11 +21,13 @@
     <main>
         <section class="wish">
             <article>
-                <p>Wens</p>
-                <h1>Ik zou graag een skeelerroute willen op Strandeiland</h1>
-                <p>Opgroeien van kinderen > Tieners</p>
-                <img src="/images/skeeler-route.jpeg" alt="skeelerende kinderen">
-                <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
+                <div class="head">
+                    <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+                    <div class="head-name">
+                        <h1>Bobby Dijkstra</h1>
+                        <p>Ondernemer</p>
+                    </div>
+                </div>
                 <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
                     Noord is recentelijk gesloten. Er zijn op IJburg vele
                     jongeren die skaten als hobby hebben. Sporten en bewegen
@@ -36,19 +39,14 @@
                     jongeren op IJburg lijkt mij dit de plek in Amsterdam
                     voor een bruisend nieuw skatepark.
                 </p>
-                <!-- join -->
-                <section class="join">
-                    <button>Word trekker</button>
-                    <button>Help mee</button>
-                    <button>ik deel deze wens</button>
-                </section>
+                <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
             </article>
         </section>
 
         <aside id="joiners" class="joiners">
             <div id="ambassador" class="helping-item">
                 <h2>Wensen van ....</h2>
-                <h3>Trekkers van deze wens: 2</h3>
+                <h3>Totale wensen: 2</h3>
                 <ul>
                     <li>
                         <img src="/images/bob.jpeg" alt="">
@@ -67,7 +65,7 @@
                 </ul>
             </div>
 
-            <div id="helpers" class="helping-item">
+            <!-- <div id="helpers" class="helping-item">
                 <h2>Geplaatste reacties</h2>
                 <h3>Helpers van deze wens: 5</h3>
                 <ul>
@@ -108,15 +106,10 @@
                     </li>
 
                 </ul>
-            </div>
-
+            </div> -->
         </aside>
-
-
-
     </main>
 
-    <!-- footer -->
     <footer>
         <%- include('./partials/footer'); %>
     </footer>
