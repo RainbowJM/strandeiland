@@ -62,10 +62,12 @@ app.get('/detailPage-1/:id', async (req, res) => {
   } else {
     console.log(suggestionData);
     res.render('detailPage-1', {
-      title: 'detail',
+      title: 'Detail',
       suggestion: suggestionData
     });
   }
+  console.log(suggestionData)
+
 });
 
 
