@@ -28,11 +28,34 @@ app.use(bodyParser.json());
 //   res.send(data);
 // });
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  const { data: themeData, themeError } = await supabase
+    .from('theme')
+    .select()
+
+  const { data: suggestionsData, error: suggestionsError } = await supabase
+    .from('suggestion')
+    .select()
+  console.log(suggestionsData)
+
+  const { data: latestSuggestions, latestSuggestionsError } = await supabase
+    .from('suggestion')
+    .select()
+    
+
   res.render("index", {
     title: "Wensen",
+    themes: themeData,
+    suggestions: suggestionsData
   });
 });
+
+
+// app.get("/", (req, res) => {
+//   res.render("index", {
+//     title: "Wensen",
+//   });
+// });
 
 app.get("/chat", (req, res) => {
   res.render("chat", {

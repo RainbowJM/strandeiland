@@ -36,21 +36,24 @@
 
       <section class="latest-ideas">
         <h2>Bekijk de laatst gemaakte wensen</h2>
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
+       
+        <% for( let i = 0; i < 3; i++ ) { %>
+        <%- include('./partials/latest-thumbnail.ejs', {suggestions: suggestions[i]}) %>
+        <% } %>
 
+       
 
 
       </section>
 
       <h2> 2.500 resultaten</h2>
       <section class="grid-container">
-        <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-            <%- include('./partials/thumbnail.ejs') %>
-              <%- include('./partials/thumbnail.ejs') %>
-                <%- include('./partials/thumbnail.ejs') %>
+
+        <% suggestions.forEach(suggestion=> { %>
+          <%-include('./partials/thumbnail.ejs',{suggestionData: suggestion})%>
+            <% }) %>
+
+       
       </section>
   </main>
 
