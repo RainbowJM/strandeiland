@@ -9,12 +9,17 @@
 }
 
 body {
-    display:flex;
-    justify-content:center;
-    align-items:center;
     min-height:100vh;
     background: var(--white);
     font-family:'Poppins', sans-serif;
+    grid:none;
+  }
+
+  main{
+    display: flex ;
+    position: relative;
+    top: 30vh;
+    left: 40vw;
   }
   
   .content{
