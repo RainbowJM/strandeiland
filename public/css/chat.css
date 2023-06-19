@@ -1,0 +1,130 @@
+#chat {
+  height: 20em;
+  position: relative;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 1;
+}
+
+#chat h2{
+text-align: center;
+}
+
+.chat-section {
+  overflow-y: scroll;
+  height: 60%;
+}
+
+form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 1em 0.5em 1em;
+}
+
+form input[type="text"] {
+  font-family: Poppins, system-ui;
+  background: var(--light-grey);
+  border: none;
+  border-radius: 25px;
+  width: 90%;
+  padding: 15px 20px;
+}
+
+form button {
+  height: 50px;
+  width: 50px;
+  background: var(--blue);
+  border: none;
+  /* border: solid 2px var(--yellow); */
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#chat li {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#chat li #name {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 8px;
+  background-color: var(--yellow);
+  display: none;
+}
+
+#chat li #message {
+  background: var(--light-grey);
+  border-radius: 25px;
+  width: 97%;
+  padding: 10px 25px;
+  height: 5em;
+  font-size: medium;
+  word-wrap: break-word;
+  margin: 0 10px 0 10px;
+  display: flex;
+}
+
+div.message-name-time{
+  display: flex;
+  flex-direction: column;
+}
+
+#chat li #message span::first-letter {
+  text-transform: uppercase;
+}
+
+#chat li.self #message {
+  background: var(--light-grey);
+  border-radius: 25px;
+  margin-left: auto;
+  /* border: 1.5px solid var(--yellow); */
+  margin: 0 10px 0 10px;
+}
+
+#chat li #message p {
+  word-break: break-word;
+  display: inline;
+  margin: 0;
+  text-align: start;
+  font-weight: bold;
+  font-size: medium;
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 0.05em;
+}
+
+#chat li #message .time {
+  font-size: smaller;
+  float: right;
+  color: grey;
+  font-style: italic;
+}
+
+#chat li.self #message .time {
+  color: grey;
+
+}
+
+img.avatar{
+  height: 4em;
+  width: 4em;
+  border-radius: 5em;
+  margin-right: 0.5em;
+}
+
+#typing {
+  font-size: small;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 25px;
+  position: absolute;
+  bottom: 5em;
+}
