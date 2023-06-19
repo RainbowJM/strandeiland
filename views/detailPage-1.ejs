@@ -3,10 +3,10 @@
 
 <head>
     <%- include('./partials/head'); %>
-        <link rel="stylesheet" href="/css/detail-page.css">
-        <link rel="stylesheet" href="/css/chat.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/detail-page.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <body>
     <header>
@@ -22,219 +22,218 @@
 
         <!-- wish article -->
         <!-- <div class="column"> -->
-            <section class="wish">
-                <p>Wens</p>
-                <h1>Ik zou graag een skeelerroute willen op Strandeiland</h1>
-                <p>Opgroeien van kinderen > Tieners</p>
-                <img src="/images/skeeler-route.jpeg" alt="skeelerende kinderen">
-                <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
-                <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
-                    Noord is recentelijk gesloten. Er zijn op IJburg vele
-                    jongeren die skaten als hobby hebben. Sporten en bewegen
-                    is voor jongeren goed voor hun totale ontwikkeling.
-                    Nu skaten zij op trappen, in gargages en open ruimten
-                    tussen woonblokken op IJburg. Dit veroorzaakt overlast
-                    voor de omwonenden. Gezien de vele open plekken,
-                    leegstaande gebouwen en de grote groep (toekomstige)
-                    jongeren op IJburg lijkt mij dit de plek in Amsterdam
-                    voor een bruisend nieuw skatepark.
-                </p>
-                <!-- join -->
-                <section class="join">
-                    <button>Word trekker</button>
-                    <button>Help mee</button>
-                    <button>ik deel deze wens</button>
-                </section>
+        <section class="wish">
+            <p>Wens</p>
+            <h1>Ik zou graag een skeelerroute willen op Strandeiland</h1>
+            <p>Opgroeien van kinderen > Tieners</p>
+            <img src="/images/skeeler-route.jpeg" alt="skeelerende kinderen">
+            <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
+            <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
+                Noord is recentelijk gesloten. Er zijn op IJburg vele
+                jongeren die skaten als hobby hebben. Sporten en bewegen
+                is voor jongeren goed voor hun totale ontwikkeling.
+                Nu skaten zij op trappen, in gargages en open ruimten
+                tussen woonblokken op IJburg. Dit veroorzaakt overlast
+                voor de omwonenden. Gezien de vele open plekken,
+                leegstaande gebouwen en de grote groep (toekomstige)
+                jongeren op IJburg lijkt mij dit de plek in Amsterdam
+                voor een bruisend nieuw skatepark.
+            </p>
+            <!-- join -->
+            <section class="join">
+                <button>Word trekker</button>
+                <button>Help mee</button>
+                <button>ik deel deze wens</button>
             </section>
+        </section>
 
-              <!-- chat -->
-              <section id="chat">
-                <h2>Reacties</h2>
-                <ul class="chat-section"></ul>
-                <p id="typing"></p>
-                <form class="message-input">
-                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
-                    <button type="submit" id="message-button"><span
-                            class="material-symbols-outlined">Send</span></button>
-                </form>
-            </section>
+        <!-- chat -->
+        <section id="chat">
+            <h2>Reacties</h2>
+            <ul class="chat-section"></ul>
+            <p id="typing"></p>
+            <form class="message-input">
+                <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
+                <button type="submit" id="message-button"><span class="material-symbols-outlined">Send</span></button>
+            </form>
+        </section>
 
 
         <!-- joiners -->
         <!-- <div class="column"> -->
-            <aside id="joiners" class="joiners">
-                <!-- trekkers -->
-                <div id="ambassador" class="helping-item">
-                    <h2>Trekkers</h2>
-                    <h3>Trekkers van deze wens: 2</h3>
-                    <ul>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div>
-                                <h3>Bob Dissel</h3>
-                                <h4>Acteur</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div>
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent wiskunde</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <aside id="joiners" class="joiners">
+            <!-- trekkers -->
+            <div id="ambassador" class="helping-item">
+                <h2>Trekkers</h2>
+                <h3>Trekkers van deze wens: 2</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Acteur</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent wiskunde</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
 
-                <!-- helpers -->
-                <div id="helpers" class="helping-item">
-                    <h2>Helpers</h2>
-                    <h3>Helpers van deze wens: 5</h3>
-                    <ul>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div>
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent</h4>
-                            </div>
-                        </li>
-                            <li>
-                                <img src="/images/bob.jpeg" alt="">
-                                <div>
-                                    <h3>Bob Dissel</h3>
-                                    <h4>Docent</h4>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="/images/bob.jpeg" alt="">
-                                <div>
-                                    <h3>Bob Dissel</h3>
-                                    <h4>Docent </h4>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="/images/bob.jpeg" alt="">
-                                <div>
-                                    <h3>Bob Dissel</h3>
-                                    <h4>Docent</h4>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="/images/bob.jpeg" alt="">
-                                <div>
-                                    <h3>Bob Dissel</h3>
-                                    <h4>Docent </h4>
-                                </div>
-                            </li>
-                      
-                    </ul>
-                </div>
+            <!-- helpers -->
+            <div id="helpers" class="helping-item">
+                <h2>Helpers</h2>
+                <h3>Helpers van deze wens: 5</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
+                        </div>
+                    </li>
 
-                <!-- sharers -->
-                <div id="sharers" class="helping-item">
-                    <h2>Delers</h2>
-                    <h3>20 personen delen deze wens</h3>
-                    <ul>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div class="box">
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent</h4>
-                                <a href="#">bericht sturen</a>
-                              </div>
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div class="box">
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent</h4>
-                                <a href="#">bericht sturen</a>
-                              </div>
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div class="box">
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent</h4>
-                                <a href="#">bericht sturen</a>
-                              </div>
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                            <div class="box">
-                                <h3>Bob Dissel</h3>
-                                <h4>Docent</h4>
-                                <a href="#">bericht sturen</a>
-                              </div>
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                        <li>
-                            <img src="/images/bob.jpeg" alt="">
-                        </li>
-                    </ul>
-                </div>
-            </aside>
+                </ul>
+            </div>
+
+            <!-- sharers -->
+            <div id="sharers" class="helping-item">
+                <h2>Delers</h2>
+                <h3>20 personen delen deze wens</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </aside>
         </div>
 
 
-           <!-- Hoogtepunten -->
-            <!-- <section class="pinned">
+        <!-- Hoogtepunten -->
+        <!-- <section class="pinned">
                 <h2>Hoogtepunten uit de chat</h2>
                 <ul>
                     <li>
