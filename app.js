@@ -58,6 +58,27 @@ app.get("/form", (req, res) => {
   });
 });
 
+
+
+app.post("/form", async (req, res) => {
+
+  console.log('even kijken');
+  
+  const {error} = await supabase
+      .from('form')
+      .insert({
+        title: req.body.titel,
+        description: req.body.beschrijving,
+        theme: req.body.thema,
+        image: req.body.imageLink,
+        link: req.body.file
+      })
+  if (error) {
+      res.send(error);
+  }
+  res.send("created!!");
+});
+
 app.get("/offline", (req, res) => {
   res.render("offline", {
     title: "Offline",
