@@ -53,20 +53,20 @@ app.get('/detailPage-1/:id', async (req, res) => {
   const { data: suggestionData, error } = await supabase
     .from('suggestion')
     .select()
-    .eq('id', suggestionId);
+    .eq('id', suggestionId)
+    .single();
 
   if (error) {
     console.error('Error fetching suggestion:', error);
     // Handle the error appropriately, e.g., render an error page
   } else {
-    console.log(suggestionData); // Output the suggestionData to the console
+    console.log(suggestionData);
     res.render('detailPage-1', {
       title: 'detail',
       suggestion: suggestionData
     });
   }
 });
-
 
 
 app.get("/form", (req, res) => {
