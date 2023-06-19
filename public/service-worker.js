@@ -39,7 +39,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    console.log('Fetch event: ', event.request.url);
+    console.log('Fetch');
     if (isCoreGetRequest(event.request)) {
         event.respondWith(
             caches.open(cacheName)
