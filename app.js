@@ -37,6 +37,26 @@ app.get("/form", (req, res) => {
   });
 });
 
+
+app.post("/form", async (req, res) => {
+
+  console.log('even kijken');
+  
+  const {error} = await supabase
+      .from('form')
+      .insert({
+        title: req.body.titel,
+        description: req.body.beschrijving,
+        theme: req.body.thema,
+        image: req.body.imageLink,
+        link: req.body.file
+      })
+  if (error) {
+      res.send(error);
+  }
+  res.send("created!!");
+});
+
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected`);
 

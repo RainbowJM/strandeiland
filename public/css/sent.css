@@ -17,6 +17,20 @@
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
 } 
+
+.terug {
+  margin: 3em 0 1em 5vw;
+
+  
+
+}
+
+.terug a {
+  color: var(--black);
+  font: var(--font);
+}
+
+
   main {
     text-align: center;
     display: grid;

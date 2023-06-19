@@ -5,6 +5,9 @@ const themeCheckboxes = document.querySelectorAll("#themeDropdownMenu input[type
 const fileInput = document.getElementById("file");
 const customImagePreview = document.getElementById("customImagePreview");
 const selectedFileName = document.getElementById("selectedFileName");
+const closeButton = document.getElementById("closeButton");
+const popupCloseButton = document.getElementById("popupCloseButton");
+const popup = document.getElementById("popup");
 
 // Function to handle selectedOption click
 function handleSelectedOptionClick() {
@@ -12,10 +15,30 @@ function handleSelectedOptionClick() {
   selectedOption.classList.toggle('open');
 }
 
+function handleUploadButtonClick() {
+  popup.classList.remove("hidden");
+
+}
+
+// Function to handle closeButton click
+function handlePopupCloseButtonClick() {
+  popup.classList.add("hidden");
+}
+
+
 // Function to handle themeCheckboxes change
 function handleCheckboxChange() {
   updateFormData();
 }
+
+
+uploadButton.addEventListener("click", handleUploadButtonClick);
+
+// Event listener for closeButton click
+popupCloseButton.addEventListener("click", handlePopupCloseButtonClick);
+
+
+
 
 // Function to update form data
 function updateFormData() {
@@ -77,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
   imageLinkInput.addEventListener('input', () => {
       imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
 
+
+ 
+
   });
 
 });
@@ -93,7 +119,25 @@ fileInput.addEventListener("change", function() {
       img.src = e.target.result;
       img.alt = "Selected Image";
       customImagePreview.innerHTML = "";
+
+      const closeButton = document.createElement("button");
+      closeButton.classList.add("close-button");
+      closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
+
+      closeButton.addEventListener("click", function() {
+        // Clear the file input value
+        fileInput.value = "";
+
+        // Clear the image preview
+        customImagePreview.innerHTML = "";
+        selectedFileName.textContent = "Geen bestand geselecteerd";
+
+        // Remove the close button
+        closeButton.remove();
+      });
+
       customImagePreview.appendChild(img);
+      customImagePreview.appendChild(closeButton);
     };
     reader.readAsDataURL(file);
   } else {
@@ -101,6 +145,7 @@ fileInput.addEventListener("change", function() {
     customImagePreview.innerHTML = "";
   }
 });
+
 if (asideItems.length > 0) {
   asideItems.forEach((asideItem) => {
     asideItem.addEventListener('click', () => {

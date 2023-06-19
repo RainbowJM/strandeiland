@@ -9,22 +9,20 @@
         <%- include('./partials/header');  %>
     </header>
 
-    <!-- <div class="terug-btn">
-        <a href="next_page.html">
-            <img src="/images/terug.png" alt="Terug">
-            <p>Terug</p>
-          </a>
-    </div> -->
 
 
+    <div class="terug">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+        <a href="/">Terug</a>
+    </div>
 
-<h1 >Wens</h1>
+<h1>Maak een wens</h1>
 
 
 
 
 <div class="form-container">
-<form action="/form" method="post" enctype="application/x-www-form-urlencoded">
+<form action="/sent" enctype="application/x-www-form-urlencoded" >
 
     <fieldset>
         <label for="titel">Titel</label>
@@ -71,39 +69,48 @@
 
       
             <label for="afbeelding" >Afbeelding</label>
+   
+            <button id="uploadButton">Afbeelding uploaden</button>
 
-            <p class="hierarchy">Link</p>
+            <div id="popup" class="hidden">
+                
+                <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
+
+                    <div id="links">
+                        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                        <div class='linkjes'>
+                            <a href="https://unsplash.com/">Unsplash</a>
+                            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                            <a href="https://pixabay.com/nl/">Pixabay</a>
+                        </div>
+            
     
-            <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
-            <div id="imagePreview"></div>
+                        <p class="hierarchy">Link</p>
+           
+                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                        <div id="imagePreview"></div>
+    
+    
+    
+                        <label for="or">Of</label>
+    
+                        <p class="hierarchy">Bestand</p>
+    
+                        <div class="file-input-container">
+                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                        <p>Selecteer een bestand</p>
+                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" >
+                        </div>
+                        <div id="customImagePreview"></div>
+                        <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <div id="closeButton" class="hidden">&#10006;</div>
+             
+              </div>
+          
          
 
-            <label for="or">Of</label>
-
-                <p class="hierarchy">Bestand</p>
-
-                <div class="file-input-container">
-                <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
-                <p>Selecteer een bestand</p>
-                <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" >
-                </div>
-                <div id="customImagePreview"></div>
-                <p id="selectedFileName">Geen bestand geselecteerd</p>
         
    
-            <!-- </fieldset> -->
-        
-            <!-- <fieldset> -->
-                <div id="links">
-                <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
-                <div class='linkjes'>
-                    <a href="https://unsplash.com/">Unsplash</a>
-                    <a href="https://www.pexels.com/nl-nl/">Pexels</a>
-                    <a href="https://pixabay.com/nl/">Pixabay</a>
-                </div>
-        
-                
-            <!-- </fieldset> -->
            
 
        
@@ -113,7 +120,7 @@
     </div>
     </fieldset>
 
-    <input type="submit" value="wens aanmaken" id="versturen">
+    <input type="submit" value="wens aanmaken" id="versturen" >
 
 </form>
 </div>

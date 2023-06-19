@@ -19,6 +19,19 @@
   --font: 'Poppins', sans-serif;
 } 
 
+
+.terug {
+  margin: 10em 0 1em 5vw;
+
+
+}
+
+.terug a {
+  color: var(--black);
+  font: var(--font);
+}
+
+
 /* Placeholder Styling */
 textarea#beschrijving::placeholder,
 textarea#titel::placeholder {
@@ -31,7 +44,7 @@ textarea#titel::placeholder {
 h1 {
   text-align: center;
   margin-bottom: 1em;
-  margin-top: 3.5em;
+  margin-top: .5em;
 }
 
 /* Form Container Styling */
@@ -191,37 +204,44 @@ textarea#beschrijving::placeholder {
   }
 
 .dropdown-menu {
-    font-family: var(--font);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: var(--gray);
-    min-width: 200px;
-    border: border;
-    overflow-y: auto;
-    padding: 10px;
-    gap: 10px;
+  font-family: var(--font);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--gray);
+  min-width: 200px;
+  border: border;
+  overflow-y: auto;
+  padding: 10px;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.1s ease-in-out, linear 0.1s;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 
 .dropdown-menu li {
-    align-items: center;
-  
+  align-items: center;
   font-weight: normal;
   background-color: var(--white);
-
   word-wrap: wrap;
   height: 2em;
   width: 100%;
   text-align: center;
+  transition: 0.1s ease-in-out;
 }
 
-.dropdown-menu li:hover{
-    background-color: var(--dark-grey);
-    color: var(--white);
-    cursor: pointer;
-    border-radius: 4px;
-    border: 1px solid var(--black);
-
+.dropdown-menu li:hover {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--black);
 }
 
 
@@ -348,28 +368,62 @@ p{
 
 
 
+  /* #closeButton.hidden {
+    display: none;
+  } */
+
+  .hidden {
+    display: none;
+  }
+  
+  #popup .close-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+  }
 
 
-/* terug button, nog niet klaar */
-
-  .terug-btn {
+  #popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    z-index: 9999;
   }
-
-  .terug-btn img {
-    width: 20px;
+  
+  #popup > div {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px;
+    width: 70%;
+    max-width: 850px;
+    position: absolute;
+    top: calc(50% + 160px); /* Adjust the value to position it below the form */
+    transform: translateY(-50%);
   }
+  
+  
+  #popup #popupCloseButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
 
-  .terug-btn p {
-    font-size: 10px;
-    margin-left: 5px; /* Add some spacing between the image and text */
   }
+  
+  #popup.hidden {
+    display: none;
+  }
+  
 
 
-
-
-
-
-
-  /* even hier de image preview container hier stylen */
