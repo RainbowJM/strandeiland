@@ -41,12 +41,19 @@ app.get("/", async (req, res) => {
   const { data: latestSuggestions, latestSuggestionsError } = await supabase
     .from('suggestion')
     .select()
-    
+    .order('created_at', { ascending: false })
+    .limit(3);
+    console.log(latestSuggestions)
 
+    // for(let i = 0; i < latestSuggestions.length; i++) {
+    //   const latestSuggestionsData = latestSuggestions[i]
+
+    // }
   res.render("index", {
     title: "Wensen",
     themes: themeData,
-    suggestions: suggestionsData
+    suggestions: suggestionsData,
+    latestSuggestions: latestSuggestions
   });
 });
 

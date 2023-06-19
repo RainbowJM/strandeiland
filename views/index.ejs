@@ -37,11 +37,11 @@
       <section class="latest-ideas">
         <h2>Bekijk de laatst gemaakte wensen</h2>
        
-        <% for( let i = 0; i < 3; i++ ) { %>
-        <%- include('./partials/latest-thumbnail.ejs', {suggestions: suggestions[i]}) %>
-        <% } %>
-
-       
+        
+          <% latestSuggestions.forEach(suggestion=> { %>
+           
+            <%-include('./partials/latest-thumbnail.ejs',{suggestion})%>
+              <% }) %>
 
 
       </section>
