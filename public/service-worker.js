@@ -1,4 +1,4 @@
-const cacheName = 'cache-v1';
+const cacheName = 'cache-v2';
 const runtimeCacheName = 'runtime-cache'
 const assets = [
     '/',
@@ -9,6 +9,7 @@ const assets = [
     '/css/overview-page.css',
     '/css/sent.css',
     '/css/offline.css',
+    '/css/user.css',
     '/images/favicon.ico',
     '/offline',
 ];

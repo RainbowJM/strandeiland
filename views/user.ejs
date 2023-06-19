@@ -3,9 +3,8 @@
 
 <head>
     <%- include('./partials/head'); %>
-    <link rel="stylesheet" href="/css/detail-page.css">
-    <link rel="stylesheet" href="/css/chat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,48 +19,35 @@
 
     <main>
         <section class="wish">
-            <p>Wens</p>
-            <h1>Ik zou graag een skeelerroute willen op Strandeiland</h1>
-            <p>Opgroeien van kinderen > Tieners</p>
-            <img src="/images/skeeler-route.jpeg" alt="skeelerende kinderen">
-            <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
-            <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
-                Noord is recentelijk gesloten. Er zijn op IJburg vele
-                jongeren die skaten als hobby hebben. Sporten en bewegen
-                is voor jongeren goed voor hun totale ontwikkeling.
-                Nu skaten zij op trappen, in gargages en open ruimten
-                tussen woonblokken op IJburg. Dit veroorzaakt overlast
-                voor de omwonenden. Gezien de vele open plekken,
-                leegstaande gebouwen en de grote groep (toekomstige)
-                jongeren op IJburg lijkt mij dit de plek in Amsterdam
-                voor een bruisend nieuw skatepark.
-            </p>
-            <!-- join -->
-            <section class="join">
-                <button>Word trekker</button>
-                <button>Help mee</button>
-                <button>ik deel deze wens</button>
-            </section>
+            <article>
+                <p>Wens</p>
+                <h1>Ik zou graag een skeelerroute willen op Strandeiland</h1>
+                <p>Opgroeien van kinderen > Tieners</p>
+                <img src="/images/skeeler-route.jpeg" alt="skeelerende kinderen">
+                <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
+                <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
+                    Noord is recentelijk gesloten. Er zijn op IJburg vele
+                    jongeren die skaten als hobby hebben. Sporten en bewegen
+                    is voor jongeren goed voor hun totale ontwikkeling.
+                    Nu skaten zij op trappen, in gargages en open ruimten
+                    tussen woonblokken op IJburg. Dit veroorzaakt overlast
+                    voor de omwonenden. Gezien de vele open plekken,
+                    leegstaande gebouwen en de grote groep (toekomstige)
+                    jongeren op IJburg lijkt mij dit de plek in Amsterdam
+                    voor een bruisend nieuw skatepark.
+                </p>
+                <!-- join -->
+                <section class="join">
+                    <button>Word trekker</button>
+                    <button>Help mee</button>
+                    <button>ik deel deze wens</button>
+                </section>
+            </article>
         </section>
 
-        <!-- chat -->
-        <section id="chat">
-            <h2>Reacties</h2>
-            <ul class="chat-section"></ul>
-            <p id="typing"></p>
-            <form class="message-input">
-                <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
-                <button type="submit" id="message-button"><span class="material-symbols-outlined">Send</span></button>
-            </form>
-        </section>
-
-
-        <!-- joiners -->
-        <!-- <div class="column"> -->
         <aside id="joiners" class="joiners">
-            <!-- trekkers -->
             <div id="ambassador" class="helping-item">
-                <h2>Trekkers</h2>
+                <h2>Wensen van ....</h2>
                 <h3>Trekkers van deze wens: 2</h3>
                 <ul>
                     <li>
@@ -81,10 +67,8 @@
                 </ul>
             </div>
 
-
-            <!-- helpers -->
             <div id="helpers" class="helping-item">
-                <h2>Helpers</h2>
+                <h2>Geplaatste reacties</h2>
                 <h3>Helpers van deze wens: 5</h3>
                 <ul>
                     <li>
@@ -126,140 +110,9 @@
                 </ul>
             </div>
 
-            <!-- sharers -->
-            <div id="sharers" class="helping-item">
-                <h2>Delers</h2>
-                <h3>20 personen delen deze wens</h3>
-                <ul>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div class="box">
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                            <a href="#">bericht sturen</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div class="box">
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                            <a href="#">bericht sturen</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div class="box">
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                            <a href="#">bericht sturen</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div class="box">
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                            <a href="#">bericht sturen</a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                    </li>
-                </ul>
-            </div>
         </aside>
-        </div>
 
 
-        <!-- Hoogtepunten -->
-        <!-- <section class="pinned">
-                <h2>Hoogtepunten uit de chat</h2>
-                <ul>
-                    <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
-                        </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
-                    </li>
-                    <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
-                        </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
-                    </li>
-                    <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
-                        </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
-                    </li>
-                </ul>
-            </section>
-        </div> -->
 
     </main>
 
