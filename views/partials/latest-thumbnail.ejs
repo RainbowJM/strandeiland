@@ -11,14 +11,14 @@
 
         <article>
             <ul class="suggestion-themes">
-                <li>Verkeer</li>
+                <li><%= suggestion.theme.label %></li>
                 <li>Wonen</li>
             </ul>
 
 
             <ul class="user-info">
                 <li>Pieter van der baas</li>
-                <li><%= suggestion.created_at%></li>
+                <li><%= time %></li>
             </ul>
 
             <h2><%= suggestion.title%></h2>

@@ -40,7 +40,7 @@
         
           <% latestSuggestions.forEach(suggestion=> { %>
            
-            <%-include('./partials/latest-thumbnail.ejs',{suggestion})%>
+            <%-include('./partials/latest-thumbnail.ejs',{suggestion, time})%>
               <% }) %>
 
 
@@ -50,7 +50,7 @@
       <section class="grid-container">
 
         <% suggestions.forEach(suggestion=> { %>
-          <%-include('./partials/thumbnail.ejs',{suggestionData: suggestion})%>
+          <%-include('./partials/thumbnail.ejs',{suggestion: suggestion})%>
             <% }) %>
 
        

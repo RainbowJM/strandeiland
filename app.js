@@ -13,6 +13,7 @@ const supabase = createClient(
 const historySize = 100;
 let history = [];
 let typing = [];
+let localDateString;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -33,27 +34,76 @@ app.get("/", async (req, res) => {
     .from('theme')
     .select()
 
-  const { data: suggestionsData, error: suggestionsError } = await supabase
+    const { data: themeSuggestions, themeSuggestionsError } = await supabase
+    .from('suggestion_theme')
+    .select()
+    
+    const { data: suggestionsData, error: suggestionsError } = await supabase
     .from('suggestion')
     .select()
-  console.log(suggestionsData)
-
-  const { data: latestSuggestions, latestSuggestionsError } = await supabase
+    // console.log(suggestionsData)
+    
+    const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
     .from('suggestion')
     .select()
     .order('created_at', { ascending: false })
     .limit(3);
-    console.log(latestSuggestions)
+    // console.log(latestSuggestionsData)
+    // console.log(themeData, themeSuggestions, suggestionsData)
+   console.log(suggestionsData[4].created_at)
 
-    // for(let i = 0; i < latestSuggestions.length; i++) {
-    //   const latestSuggestionsData = latestSuggestions[i]
+  for (const suggestion of suggestionsData) {
+    const relatedTheme = themeSuggestions.find((ts) => ts.suggestionId === suggestion.id);
+    if (relatedTheme) {
+      const theme = themeData.find((t) => t.id === relatedTheme.themaId);
+      if (theme) {
+        suggestion.theme = theme;
+      }
+    }
+  }
 
-    // }
+
+  for (const latestSuggestion of latestSuggestionsData) {
+    const latestRelatedTheme = themeSuggestions.find((ts) => ts.suggestionId === latestSuggestion.id);
+    if (latestRelatedTheme) {
+      const theme = themeData.find((t) => t.id === latestRelatedTheme.themaId);
+      if (theme) {
+        latestSuggestion.theme = theme;
+      }
+    }
+  }
+
+  for (let i = 0; i < latestSuggestionsData.length; i++) {
+    const dateString = latestSuggestionsData[i].created_at;
+    const date = new Date(dateString);
+     localDateString = date.toLocaleString("nl-NL", {
+
+    
+
+      day: "numeric",
+
+      month: "short",
+
+      year: "numeric",
+
+      hour: "2-digit",
+
+      minute: "2-digit",
+
+    });
+    
+    console.log(localDateString);
+
+  
+    
+  }
+
   res.render("index", {
     title: "Wensen",
     themes: themeData,
     suggestions: suggestionsData,
-    latestSuggestions: latestSuggestions
+    latestSuggestions: latestSuggestionsData,
+    time: localDateString
   });
 });
 
