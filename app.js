@@ -58,8 +58,6 @@ app.get("/form", (req, res) => {
   });
 });
 
-
-
 app.post("/form", async (req, res) => {
 
   console.log('even kijken');
@@ -82,6 +80,12 @@ app.post("/form", async (req, res) => {
 app.get("/offline", (req, res) => {
   res.render("offline", {
     title: "Offline",
+  });
+});
+
+app.get("/user", (req, res) => {
+  res.render("user", {
+    title: "User",
   });
 });
 
