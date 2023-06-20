@@ -18,6 +18,7 @@
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
+
 }
 
 main {
@@ -63,4 +64,16 @@ main {
   transform: rotate(-5deg);
   width: max-content;
 
+} 
+
+.terug {
+  margin: 3em 0 1em 5vw;
+
+  
+
+}
+
+.terug a {
+  color: var(--black);
+  font: var(--font);
 }

@@ -8,32 +8,39 @@
     <header>
         <%- include('./partials/header');  %>
     </header>
-    <!-- <div class="terug-btn">
-        <a href="next_page.html">
-            <img src="/images/terug.png" alt="Terug">
-            <p>Terug</p>
-          </a>
-    </div> -->
-<h1>Wens</h1>
+
+
+
+
+    <div class="terug">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+        <a href="/">Terug</a>
+    </div>
+
+<h1>Maak een wens</h1>
+
 
 
 
 
 <div class="form-container">
-<form action="/form" method="post" enctype="application/x-www-form-urlencoded">
+<form action="/sent" enctype="application/x-www-form-urlencoded" >
 
     <fieldset>
         <label for="titel">Titel</label>
         <input type="text" id="titel" name="titel"
-        placeholder="Geef uw voorstel een titel"required>
+        placeholder="Geef uw wens een titel"required>
     
-        <label for="beschrijving" >Beschrijving</label>
-        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw voorstel zo duidelijk mogelijk"required></textarea>
+
+        <label for="beschrijving" >Wens beschrijving</label>
+        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw wens zo duidelijk mogelijk"required></textarea>
         
         <label for="thema">Thema's</label>
        
         <fieldset class="dropdown">
-            <div class="selected-option">Selecteer de passende thema's <span class="arrow"></span></div>
+            <div class="selected-option" id="selectedOption">
+                Selecteer de passende thema's
+            </div>
         <div class="dropdown-container" id="themeDropdownMenu">
 
             <ul class="dropdown-menu" >
@@ -56,25 +63,56 @@
         </fieldset>
 
         
-        <label for="afbeelding" >Afbeelding</label>
-        <div class="file-input-container">
-        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
-        <p>Selecteer een bestand</p>
-        <input type="file" id="afbeelding" name="file" accept="image/jpeg, image/png, image/jpg" required>
-        
-    </div>
 
-    <div id="links">
-        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
-        <div class='linkjes'>
-            <a href="https://unsplash.com/">Unsplash</a>
-            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
-            <a href="https://pixabay.com/nl/">Pixabay</a>
-        </div>
+
+            <!-- <fieldset> -->
+
+
+
+      
+            <label for="afbeelding" >Afbeelding</label>
+   
+            <button id="uploadButton">Afbeelding uploaden</button>
+
+            <div id="popup" class="hidden">
+                
+                <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
+
+                    <div id="links">
+                        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                        <div class='linkjes'>
+                            <a href="https://unsplash.com/">Unsplash</a>
+                            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                            <a href="https://pixabay.com/nl/">Pixabay</a>
+                        </div>
+            
+    
+                        <p class="hierarchy">Link</p>
+           
+                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                        <div id="imagePreview"></div>
+    
+    
+    
+                        <label for="or">Of</label>
+    
+                        <p class="hierarchy">Bestand</p>
+    
+                        <div class="file-input-container">
+                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+                        <p>Selecteer een bestand</p>
+                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg" >
+                        </div>
+                        <div id="customImagePreview"></div>
+                        <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <div id="closeButton" class="hidden">&#10006;</div>
+             
+              </div>
+          
     </div>
     </fieldset>
 
-    <input type="submit" value="Voorstel aanmaken" id="versturen">
+    <input type="submit" value="wens aanmaken" id="versturen" >
 
 </form>
 </div>

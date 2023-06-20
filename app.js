@@ -69,16 +69,56 @@ app.get('/sent', (req, res) => {
     })
 });
   
-app.get('/detailPage-1', (req, res) => {
-    res.render('detailPage-1',{
-    title: "Detail",
-  });
+app.get('/detailPage-1/:id', async (req, res) => {
+  const suggestionId = req.params.id;
+
+  // Fetch the suggestion data from Supabase based on the provided ID
+  const { data: suggestionData, error } = await supabase
+    .from('suggestion')
+    .select()
+    .eq('id', suggestionId)
+    .single();
+
+  if (error) {
+    console.error('Error fetching suggestion:', error);
+    // Handle the error appropriately, e.g., render an error page
+  } else {
+    console.log(suggestionData);
+    res.render('detailPage-1', {
+      title: 'Detail',
+      suggestion: suggestionData
+    });
+  }
+  console.log(suggestionData)
+
 });
+
 
 app.get("/form", (req, res) => {
   res.render("form", {
     title: "Formulier",
   });
+});
+
+
+
+app.post("/form", async (req, res) => {
+
+  console.log('even kijken');
+  
+  const {error} = await supabase
+      .from('form')
+      .insert({
+        title: req.body.titel,
+        description: req.body.beschrijving,
+        theme: req.body.thema,
+        image: req.body.imageLink,
+        link: req.body.file
+      })
+  if (error) {
+      res.send(error);
+  }
+  res.send("created!!");
 });
 
 app.get("/offline", (req, res) => {
