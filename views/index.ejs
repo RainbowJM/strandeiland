@@ -35,15 +35,10 @@
     <section class="content">
 
       <section class="latest-ideas">
-        <h2>Bekijk de laatst gemaakte wensen</h2>
-       
-        
+        <h2>Bekijk de laatst gemaakte wensen</h2>  
           <% latestSuggestions.forEach(suggestion=> { %>
-           
-            <%-include('./partials/latest-thumbnail.ejs',{suggestion, time})%>
-              <% }) %>
-
-
+            <%-include('./partials/latest-thumbnail.ejs',{suggestion: suggestion, time})%>
+          <% }) %>
       </section>
 
       <h2> 2.500 resultaten</h2>
