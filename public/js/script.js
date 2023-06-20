@@ -275,13 +275,3 @@ function updateFormData() {
   // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
-
-
-const boxes = document.querySelectorAll('.box-click');
-
-boxes.forEach(box => {
-  box.addEventListener('click', function() {
-    const boxElement = box.querySelector('.box');
-    boxElement.classList.toggle('show');
-  });
-});
