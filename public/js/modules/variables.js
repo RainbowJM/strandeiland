@@ -37,6 +37,7 @@ const imagePreview = document.getElementById('imagePreview');
 const uploadButton = document.getElementById("uploadButton");
 
 
+
 export { messages, submitMessage, input, filterMenu, themeFilterBtn, 
     themeSelect, theMenuButton, theNav, theImage, asideItems, tabs, 
     tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement,
