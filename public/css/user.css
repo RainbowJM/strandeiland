@@ -158,6 +158,10 @@ h1#user-name {
   padding: 1em;
 }
 
+#suggestion ul li div h4 {
+  text-transform: capitalize;
+}
+
 #suggestion img {
   width: 4.5em;
   height: 4.5em;
