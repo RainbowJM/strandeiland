@@ -66,11 +66,11 @@ h1#user-name{
     font-size: 1.5em;
 }
 
-.bio p:nth-of-type(1) {
+.bio p:nth-of-type(2) {
   margin: 0 0 0.5em 0;
 }
 
-.bio p:nth-of-type(2) {
+.bio p:nth-of-type(1) {
   color: gray;
   font-size: 12px;
 }
@@ -79,6 +79,16 @@ h1#user-name{
   background-color: var(--white);
   padding: 4em 2em;
   border-radius: 80px 80px;
+}
+
+.bio article h2 {
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 0.5em;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    width: fit-content;
 }
 
 /* helpende -----------------------------------------------------------------------------------------*/

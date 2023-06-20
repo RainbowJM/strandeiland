@@ -120,26 +120,29 @@ app.get('/wens/:id', async (req, res) => {
 
 app.get('/user/:first_name', async (req, res) => {
   const firstName = req.params.first_name;
-  const { data, error } = await supabase
+  const { data: userData, error: userError } = await supabase
     .from('resident')
     .select()
     .eq('first_name', firstName)
     .single();
 
-    let defaultTime = data.created_at;
+    let defaultTime = userData.created_at;
     let date = new Date(defaultTime).toLocaleDateString("nl-NL", {
       day: "numeric",
       month: "long",
-      year: "numeric"
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
     });
 
-  if (error) {
-    console.error('Error fetching suggestion:', error);
-    // Handle the error appropriately, e.g., render an error page
+  const { data: themeData, themeError } = await supabase
+
+  if (userError) {
+    console.error('Error:', userError);
   } else {
     res.render('user', {
       title: 'Gebruiker',
-      user: data,
+      user: userData,
       time: date
     });
   }
