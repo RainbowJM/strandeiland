@@ -7,6 +7,7 @@ const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
 const { createClient } = require('@supabase/supabase-js');
+const { time } = require('console');
 const supabase = createClient(
     'https://yyufywjwwwmgfjmenluv.supabase.co',
     `${process.env.SUPABASE_KEY}`);
@@ -125,13 +126,21 @@ app.get('/user/:first_name', async (req, res) => {
     .eq('first_name', firstName)
     .single();
 
+    let defaultTime = data.created_at;
+    let date = new Date(defaultTime).toLocaleDateString("nl-NL", {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+
   if (error) {
     console.error('Error fetching suggestion:', error);
     // Handle the error appropriately, e.g., render an error page
   } else {
     res.render('user', {
       title: 'Gebruiker',
-      user: data
+      user: data,
+      time: date
     });
   }
 });
