@@ -167,17 +167,17 @@ app.get("/user/:first_name", async (req, res) => {
 
   for (const suggestion of listSuggestions) {
     let relatedTheme = null;
-    for (const ts of suggestionThemeData) {
-      if (ts.suggestionId === suggestion.id) {
-        relatedTheme = ts;
+    for (const suggestionTheme of suggestionThemeData) {
+      if (suggestionTheme.suggestionId === suggestion.id) {
+        relatedTheme = suggestionTheme;
         break;
       }
     }
     if (relatedTheme) {
       let theme = null;
-      for (const t of themeData) {
-        if (t.id === relatedTheme.themaId) {
-          theme = t;
+      for (const theme of themeData) {
+        if (theme.id === relatedTheme.themaId) {
+          theme = theme;
           break;
         }
       }
