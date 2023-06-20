@@ -7,6 +7,7 @@ import { toggleMenu } from "./modules/navigationMenu.js";
 const socket = io();
 let last;
 
+
 // ------------------ logic -------------------------------------------------------
 if (uploadButton) {
 uploadButton.addEventListener("click", handleUploadButtonClick);
@@ -104,7 +105,6 @@ if (asideItems.length > 0) {
 
 if (filterThemeBtn) {
   toggleFilterMenu();
-  console.log("filterThemeBtn");
 }
 
 if (submitMessage) {

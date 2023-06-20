@@ -1,7 +1,6 @@
-
 <section class="thumbnail-container">
     <figure>
-        <img src="<%= suggestionData.image %>"
+        <img src="<%= suggestions.image %>"
             alt="Wens afbeelding">
         
     </figure>
@@ -19,16 +18,16 @@
 
             <ul class="user-info">
                 <li>Pieter van der baas</li>
-                <li><%= suggestionData.created_at%></li>
+                <li><%= suggestions.created_at%></li>
             </ul>
 
-            <h2><%= suggestionData.title%></h2>
-            <p><%= suggestionData.description%></p>
+            <h2><%= suggestions.title%></h2>
+            <p><%= suggestions.description%></p>
 
             <ul class="statistics">
                 <li> <span> <img src="../../images/trekkers.svg" alt=""></span> 5</li>
                 <li><span><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i></span> 2</li>
-                <li><span><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i></span><%= suggestionData.amount_vote%></li>
+                <li><span><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i></span><%= suggestions.amount_vote%></li>
             </ul>
         </article>
     </a>
