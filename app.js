@@ -138,9 +138,7 @@ app.get("/user/:first_name", async (req, res) => {
   });
 
   const { data: residentSuggestionData, residentSuggestionError } =
-    await supabase
-    .from("resident_suggestion")
-    .select();
+    await supabase.from("resident_suggestion").select();
 
   const { data: suggestionData, suggestionError } = await supabase
     .from("suggestion")
@@ -159,8 +157,42 @@ app.get("/user/:first_name", async (req, res) => {
     }
   }
 
+  const { data: themeData, themeError } = await supabase
+  .from("theme")
+  .select();
+
+  const { data: suggestionThemeData, suggestionThemeError } = await supabase
+    .from("suggestion_theme")
+    .select();
+
+  for (const suggestion of listSuggestions) {
+    let relatedTheme = null;
+    for (const ts of suggestionThemeData) {
+      if (ts.suggestionId === suggestion.id) {
+        relatedTheme = ts;
+        break;
+      }
+    }
+    if (relatedTheme) {
+      let theme = null;
+      for (const t of themeData) {
+        if (t.id === relatedTheme.themaId) {
+          theme = t;
+          break;
+        }
+      }
+      if (theme) {
+        suggestion.theme = theme;
+      }
+    }
+  }
+  console.log(listSuggestions);
+
   if (userError || residentSuggestionError || suggestionError) {
-    console.error("Error:", userError || residentSuggestionError || suggestionError);
+    console.error(
+      "Error:",
+      userError || residentSuggestionError || suggestionError
+    );
   } else {
     res.render("user", {
       title: "Gebruiker",
