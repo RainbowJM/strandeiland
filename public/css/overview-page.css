@@ -25,21 +25,22 @@ main {
 /* SLOGAN  */
 /***********/
 .slogan-wrapper {
-  background: url('../images/intro-pic.png');
+    background: url('../images/intro-pic.png');
     background-position: 25% 45%;
     width: 100%;
-    padding: .5em; 
+    padding: .5em;
     height: fit-content;
 }
+
 .slogan-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     max-width: 75em;
-   
+
     margin: 20px auto;
-  
-    
+
+
 }
 
 
@@ -130,13 +131,14 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     /* Disable animations */
     * {
-      animation-duration: 0s !important;
-      transition-duration: 0s !important;
-      transform: none !important;
+        animation-duration: 0s !important;
+        transition-duration: 0s !important;
+        transform: none !important;
     }
-  }
+}
 
 
 /************************/
@@ -592,7 +594,10 @@ input:checked+span {
         box-sizing: border-box;
     } */
 
-
+    .latest-ideas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 
     .grid-container.thumbnail-container {
         grid-column-start: 1;
@@ -610,14 +615,7 @@ input:checked+span {
 
 
 }
-@media screen and (max-width: 50em) {
-    
-    .latest-ideas {
-           
-            grid-template-columns: 1fr 1fr;
-           
-        }
-}
+
 
 @media screen and (max-width: 40em) {
 
