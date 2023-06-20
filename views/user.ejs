@@ -27,7 +27,8 @@
                     </div>
                     <div class="head-name">
                         <h1 id="user-name">
-                            <%= user.first_name %> <%= user.last_name %>
+                            <%= user.first_name %>
+                                <%= user.last_name %>
                         </h1>
                         <p>
                             <%= user.bio %>
@@ -35,7 +36,8 @@
                     </div>
                 </div>
                 <h2>Biografie</h2>
-                <p>Is lid geworden op <%= time %></p>
+                <p>Is lid geworden op <%= time %>
+                </p>
                 <p>
                     <%= user.description %>
                 </p>
@@ -46,54 +48,29 @@
             <div id="suggestion">
                 <h2>Wensen van <%= user.first_name %>
                 </h2>
-                <h3>Totale wensen: <%= amount %></h3>
+                <h3>Totale wensen: <%= amount %>
+                </h3>
                 <ul>
-                   <% suggestions.forEach(suggestion => { %>
-                    <%- include('./partials/article.ejs', {suggestion: suggestion})%>
-                    <% }) %>
+                    <% suggestions.forEach(suggestion=> { %>
+                        <%- include('./partials/article.ejs', {suggestion: suggestion})%>
+                            <% }) %>
                 </ul>
             </div>
 
             <div id="helpers" class="helping-item">
                 <h2>Geplaatste reacties</h2>
-                <h3>Totale reacties: 5</h3>
+                <h3>Totale reacties: 2</h3>
                 <ul>
                     <li>
-                        <img src="/images/bob.jpeg" alt="">
                         <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
+                            <h3>Middelbare school</h2>
+                            <p>Ben mee eens</p>
                         </div>
                     </li>
                     <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                        </div>
+                        <h3>Openbare vervoer</h2>
+                        <p>Ben mee eens</p>
                     </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent </h4>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent </h4>
-                        </div>
-                    </li>
-
                 </ul>
             </div>
         </aside>
