@@ -11,21 +11,27 @@
     <%- include('./partials/header'); %>
   </header>
 
+  <div class="slogan-wrapper">
+
+  
   <section class="slogan-container">
-    <h1>
-      <span>Draag bij</span>
-      <span>aan</span>
-      <span>Strandeiland</span>
-      <span>Jouw ideeën, <br> onze toekomst!</span>
-    </h1>
+   
 
-    <article class="slogan-call-to-action">
-      <h2>Wensen voor Strandeiland</h2>
-      <p>Wil je bijdragen aan Strandeiland?</p>
-      <a href="/form">Maak zelf een wens!</a>
-    </article>
+      <h1>
+        <span>Draag bij</span>
+        <span>aan</span>
+        <span>Strandeiland</span>
+        <span>Jouw ideeën, <br> onze toekomst!</span>
+      </h1>
+  
+      <article class="slogan-call-to-action">
+        <h2>Wensen voor Strandeiland</h2>
+        <p>Wil je bijdragen aan Strandeiland?</p>
+        <a href="/form">Maak zelf een wens!</a>
+      </article>
+    
   </section>
-
+</div>
   <main>
     <form>
       <%- include('./partials/filter-menu.ejs') %>
@@ -34,8 +40,8 @@
 
     <section class="content">
 
+      <h2>Bekijk de laatst gemaakte wensen</h2>  
       <section class="latest-ideas">
-        <h2>Bekijk de laatst gemaakte wensen</h2>  
           <% latestSuggestions.forEach(suggestion=> { %>
             <%-include('./partials/latest-thumbnail.ejs',{suggestion: suggestion, time})%>
           <% }) %>

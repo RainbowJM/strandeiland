@@ -153,6 +153,7 @@ nav.navigation-links ul li:last-of-type {
   border-radius: .5em;
   display: inline-block;
   /* transform-origin: top left; */
+  transition: transform 0.5s ease;
 }
 
 nav.navigation-links ul li:last-of-type span {
@@ -167,7 +168,7 @@ nav.navigation-links ul li:last-of-type span {
 }
 
 nav.navigation-links ul:has(a) li:last-of-type:hover {
-transition: transform 0.5s ease;
+
 transform: rotate(-10deg);
 }
 
@@ -215,7 +216,8 @@ nav.navigation-links a {
         margin-bottom: 1em ;
       }
 
-      header div img {
+
+header div img {
         width: 4em;
         height: 4em;
         margin:.8em 0 0 .8em;
