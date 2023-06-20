@@ -42,5 +42,5 @@ export { messages, submitMessage, input, filterMenu, themeFilterBtn,
     tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement,
     selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput,
     customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData,
-    imageLinkInput, imagePreview, uploadButton }
+    imageLinkInput, imagePreview, uploadButton, filterThemeResultsBtn, filterSortResultsBtn }
 
