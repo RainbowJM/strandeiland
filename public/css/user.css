@@ -127,6 +127,7 @@ h1#user-name {
   display: flex;
   margin: 0 0.5em 0.5em 0;
   background-color: var(--white);
+  border-radius: 50px 50px;
 }
 
 .joiners img {
@@ -139,8 +140,8 @@ h1#user-name {
 }
 
 #suggestion > h3 {
-  font-size: 1.5em;
-  margin-top: 4em;
+  font-size: 1em;
+  margin-top: 3.1em;
   color: var(--black);
   font-weight: lighter;
 }

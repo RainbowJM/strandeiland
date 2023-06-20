@@ -159,8 +159,6 @@ app.get("/user/:first_name", async (req, res) => {
     }
   }
 
-  console.log(listSuggestions);
-
   if (userError || residentSuggestionError || suggestionError) {
     console.error("Error:", userError || residentSuggestionError || suggestionError);
   } else {
