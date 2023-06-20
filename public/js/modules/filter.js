@@ -15,7 +15,6 @@ function toggleFilterMenu(){
 
     })
         tabContents.forEach(tabContent => {
-            console.log('add active class');
             // tabContent.classList.add('active');
 
             closeFilterBtn.addEventListener("click", (e) => {
@@ -23,55 +22,8 @@ function toggleFilterMenu(){
                 filterThemeMenu.classList.remove('show-filter-menu');
                 filterSortMenu.classList.remove('show-filter-menu');
                 // tabContent.classList.remove("active");
-                console.log("filter closed");
             });
     })
 }
- 
-// function closeAll() {
-//   tabContents.forEach(tabContent => {
-//     console.log('add active class');
-//     tabContent.classList.add('active');
-
-//       closeFilterBtn.addEventListener("click", (e) => {
-//             e.preventDefault();
-//             tabContent.classList.remove("active");
-//             console.log("filter closed");
-//         });
-//     });
-    
-
- 
-// }
-
-// function closeAll() {
-//     tabs.forEach((tab) => {
-//         const target = document.querySelector(tab.dataset.filterTarget);
-//         tab.addEventListener("click", (e) => {
-//             e.preventDefault();
-//             tabContents.forEach((tabContent) =>
-//                 tabContent.classList.remove("active")
-//             );
-//             target.classList.add("active");
-//         });
-
-//         filterThemeResultsBtn.addEventListener("click", (e) => {
-//             e.preventDefault();
-//             target.classList.remove("active");
-//             console.log("form submitted");
-//         });
-//         filterSortBtn.addEventListener("click", (e) => {
-//             e.preventDefault();
-//             target.classList.remove("active");
-//             console.log("form submitted");
-//         });
-
-//         closeFilterBtn.addEventListener("click", (e) => {
-//             e.preventDefault();
-//             target.classList.remove("active");
-//             console.log("form submitted");
-//         });
-//     });
-// }
 
 export {toggleFilterMenu}

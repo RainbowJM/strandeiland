@@ -7,7 +7,6 @@ import { toggleMenu } from "./modules/navigationMenu.js";
 const socket = io();
 let last;
 
-
 // ------------------ logic -------------------------------------------------------
 if (uploadButton) {
 uploadButton.addEventListener("click", handleUploadButtonClick);
@@ -97,7 +96,6 @@ if (fileInput) {
 if (asideItems.length > 0) {
   asideItems.forEach((asideItem) => {
     asideItem.addEventListener("click", () => {
-      console.log("click");
       asideItem.classList.toggle("active");
     });
   });
@@ -108,7 +106,6 @@ if (filterThemeBtn) {
 }
 
 if (submitMessage) {
-  console.log("submitMessage");
   submitMessage.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -222,13 +219,11 @@ function handleUploadButtonClick() {
 
 }
 
-   
 // Function to handle closeButton click
 function handlePopupCloseButtonClick(event) {
   event.preventDefault(); // Prevent the default form submission behavior
   popup.classList.add("hidden");
 }
-
 
 // Function to handle themeCheckboxes change
 function handleCheckboxChange() {
