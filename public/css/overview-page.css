@@ -199,6 +199,7 @@ main {
 
 .thumbnail-container figure {
     position: relative;
+
 }
 
 .thumbnail-container figcaption {
@@ -275,6 +276,9 @@ main {
     place-items: center;
 }
 
+.statistics li {
+    text-align: center;
+}
 .statistics img {
     width: 32%;
     border-radius: 0;
@@ -343,18 +347,35 @@ main {
 }
 
 
+/*******************/
+/* ALL SUGGESTIONS */
+/*******************/
+
+
 .grid-container {
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-auto-rows: minmax(24em, auto);
     gap: 20px;
     max-width: 75em;
     margin: 20px auto;
 }
 
-.grid-container .thumbnail-container article {
-
+.grid-container .thumbnail-container {
+    width: 100%;
+height: 34em;
+    
+}
+.grid-container .thumbnail-container a {
     transform: translateY(-18%);
+}
+
+.grid-container .thumbnail-container article {
+    width: 100%;
+   /* height: 50%; */
+    transform: translateY(-18%);
+    
 }
 
 .grid-container .thumbnail-container article h2 {
@@ -362,13 +383,25 @@ main {
 }
 
 .grid-container .thumbnail-container article p {
-
     font-size: 1em;
+    height: 6em;
 }
 
 .grid-container .user-info {
     display: none;
 }
+
+.grid-container .thumbnail-container figure{
+    height: 250px;
+}
+
+.grid-container .thumbnail-container figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
 
 /**********/
 /* FILTER */
@@ -596,7 +629,7 @@ input:checked+span {
 
     .latest-ideas {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
     }
 
     .grid-container.thumbnail-container {
