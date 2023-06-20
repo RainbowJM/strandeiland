@@ -31,7 +31,7 @@
   font: var(--font);
 }
 
-input:required:invalid,
+/* input:required:invalid,
 textarea:required:invalid {
   border-color: red;
 }
@@ -39,9 +39,19 @@ textarea:required:invalid {
 input:required:valid,
 textarea:required:valid {
   border-color: green;
+} */
+
+
+#title label input:valid {
+  border: 1px solid green;
+  border-bottom: 4px solid green;
 }
 
 
+#title label input:invalid {
+  border: 1px solid red;
+  border-bottom: 4px solid red;
+}
 /* Placeholder Styling */
 textarea#description::placeholder,
 textarea#title::placeholder {
