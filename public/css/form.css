@@ -31,15 +31,14 @@
   font: var(--font);
 }
 
-
-input:invalid,
-textarea:invalid {
+input:required:invalid,
+textarea:required:invalid {
   border-color: red;
 }
 
-input:valid,
-textarea:valid {
-  border-color: initial; /* or any valid border color */
+input:required:valid,
+textarea:required:valid {
+  border-color: green;
 }
 
 
