@@ -164,6 +164,7 @@ main {
     width: fit-content;
         background-color: var(--light-blue);
         padding: .5em;
+        margin: .5em 0;
 }
 /* .latest-ideas>h2 {
     grid-column: span 3;
@@ -696,6 +697,17 @@ input:checked+span {
         transform: translatey(-42%);
     }
 
-
+        .grid-container {
+            grid-template-columns: 1fr;
+            grid-column: span 3;
+        }
+    
+    
+        .latest-ideas {
+            display: grid;
+            grid-column: span 3;
+            grid-template-columns: 1fr ;
+    
+        }
 
 }

@@ -78,7 +78,9 @@ app.get("/", async (req, res) => {
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
+     
     });
+    console.log(localDateString);
   }
 
   res.render("index", {
