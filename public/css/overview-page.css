@@ -24,16 +24,22 @@ main {
 /***********/
 /* SLOGAN  */
 /***********/
+.slogan-wrapper {
+  background: url('../images/intro-pic.png');
+    background-position: 25% 45%;
+    width: 100%;
+    padding: .5em; 
+    height: fit-content;
+}
 .slogan-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    width: 100%;
-    height: fit-content;
-
-    background: url('../images/intro-pic.png');
-    background-position: 25% 45%;
-    padding: .5em;
+    max-width: 75em;
+   
+    margin: 20px auto;
+  
+    
 }
 
 
@@ -43,6 +49,7 @@ main {
     font-weight: 700;
     color: var(--white);
     padding: 1em 2em;
+    padding-left: 0;
 }
 
 .slogan-container h1 span {
@@ -320,12 +327,8 @@ main {
 
 
 .latest-ideas .thumbnail-container {
-
     border-radius: 2em;
-
-
     height: 34em;
-
     /* box-sizing: border-box; */
 }
 
@@ -606,6 +609,10 @@ input:checked+span {
     }
 
 
+}
+@media screen and (max-width: 50em) {
+    
+    
 }
 
 @media screen and (max-width: 40em) {
