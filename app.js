@@ -48,8 +48,6 @@ app.get("/", async (req, res) => {
     .select()
     .order('created_at', { ascending: false })
     .limit(3);
-    // console.log(latestSuggestionsData)
-    // console.log(themeData, themeSuggestions, suggestionsData)
    console.log(suggestionsData[4].created_at)
 
   for (const suggestion of suggestionsData) {
@@ -77,25 +75,14 @@ app.get("/", async (req, res) => {
     const dateString = latestSuggestionsData[i].created_at;
     const date = new Date(dateString);
      localDateString = date.toLocaleString("nl-NL", {
-
-    
-
       day: "numeric",
-
       month: "short",
-
       year: "numeric",
-
       hour: "2-digit",
-
       minute: "2-digit",
-
     });
     
     console.log(localDateString);
-
-  
-    
   }
 
   res.render("index", {
