@@ -21,22 +21,9 @@ app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.get('/thema', async (req, res) => {
-//   const {data, error} = await supabase
-//       .from('thema')
-//       .select()
-//   res.send(data);
-// });
-
 app.get("/", (req, res) => {
   res.render("index", {
     title: "Wensen",
-  });
-});
-
-app.get("/chat", (req, res) => {
-  res.render("chat", {
-    title: "Chat",
   });
 });
 
@@ -46,6 +33,26 @@ app.get('/sent', (req, res) => {
     })
 });
   
+app.get('/user/:first_name', async (req, res) => {
+  const firstName = req.params.first_name;
+  
+  const { data: userData, error } = await supabase
+    .from('resident')
+    .select()
+    .eq('first_name', firstName)
+    .single();
+
+  if (error) {
+    console.error('Error fetching user:', error);
+    // Handle the error appropriately, e.g., render an error page
+  } else {
+    res.render('user', {
+      title: 'User',
+      user: userData
+    });
+  }
+});
+
 app.get('/detailPage-1/:id', async (req, res) => {
   const suggestionId = req.params.id;
 
@@ -60,14 +67,11 @@ app.get('/detailPage-1/:id', async (req, res) => {
     console.error('Error fetching suggestion:', error);
     // Handle the error appropriately, e.g., render an error page
   } else {
-    console.log(suggestionData);
     res.render('detailPage-1', {
       title: 'Detail',
       suggestion: suggestionData
     });
   }
-  console.log(suggestionData)
-
 });
 
 
@@ -77,10 +81,7 @@ app.get("/form", (req, res) => {
   });
 });
 
-app.post("/form", async (req, res) => {
-
-  console.log('even kijken');
-  
+app.post("/form", async (req, res) => {  
   const {error} = await supabase
       .from('form')
       .insert({
@@ -102,11 +103,11 @@ app.get("/offline", (req, res) => {
   });
 });
 
-app.get("/user", (req, res) => {
-  res.render("user", {
-    title: "User",
-  });
-});
+// app.get("/user", (req, res) => {
+//   res.render("user", {
+//     title: "User",
+//   });
+// });
 
 io.on("connection", (socket) => {
   console.log("user connected");

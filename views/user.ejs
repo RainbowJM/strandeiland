@@ -22,30 +22,30 @@
         <section class="wish">
             <article>
                 <div class="head">
-                    <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+                    <div class="image">
+                        <img src="<%= user.image%> " alt="avatar" class="user-avatar">
+                    </div>
                     <div class="head-name">
-                        <h1>Bobby Dijkstra</h1>
-                        <p>Ondernemer</p>
+                        <h1>
+                            <%= user.first_name %> <%= user.last_name %>
+                        </h1>
+                        <p>
+                            <%= user.bio %>
+                        </p>
                     </div>
                 </div>
-                <p>Het enige skatepark in Amsterdam 'Everland' in Amsterdam
-                    Noord is recentelijk gesloten. Er zijn op IJburg vele
-                    jongeren die skaten als hobby hebben. Sporten en bewegen
-                    is voor jongeren goed voor hun totale ontwikkeling.
-                    Nu skaten zij op trappen, in gargages en open ruimten
-                    tussen woonblokken op IJburg. Dit veroorzaakt overlast
-                    voor de omwonenden. Gezien de vele open plekken,
-                    leegstaande gebouwen en de grote groep (toekomstige)
-                    jongeren op IJburg lijkt mij dit de plek in Amsterdam
-                    voor een bruisend nieuw skatepark.
+                <p>
+                    <%= user.description %>
                 </p>
-                <p>Geplaatst op 31 augustus 2023, 16:26 uur</p>
+                <p>Geplaatst op <%= user.created_at %>
+                </p>
             </article>
         </section>
 
         <aside id="joiners" class="joiners">
             <div id="ambassador" class="helping-item">
-                <h2>Wensen van ....</h2>
+                <h2>Wensen van <%= user.first_name %>
+                </h2>
                 <h3>Totale wensen: 2</h3>
                 <ul>
                     <li>

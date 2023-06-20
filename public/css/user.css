@@ -230,15 +230,27 @@ img.avatar {
   margin-right: 0.5em;
 }
 
-div.head{
-    display: flex;
-    margin-bottom: 1em;
+div.head {
+  display: flex;
+  margin-bottom: 1em;
 }
 
-div.head-name{
-    display: flex;
-    flex-direction: column;
-  }
+div.head-name {
+  display: flex;
+  flex-direction: column;
+}
+
+div.image {
+  height: 6em;
+  width: 6em;
+}
+
+img.user-avatar {
+  border-radius: 5em;
+  margin-right: 0.5em;
+  object-fit: contain;
+  overflow: hidden;
+}
 
 @media (width < 50em) {
   main {
