@@ -7,6 +7,7 @@ import { toggleMenu } from "./modules/navigationMenu.js";
 const socket = io();
 let last;
 
+
 // ------------------ logic -------------------------------------------------------
 if (uploadButton) {
 uploadButton.addEventListener("click", handleUploadButtonClick);
@@ -276,3 +277,11 @@ function updateFormData() {
 }
 
 
+const boxes = document.querySelectorAll('.box-click');
+
+boxes.forEach(box => {
+  box.addEventListener('click', function() {
+    const boxElement = box.querySelector('.box');
+    boxElement.classList.toggle('show');
+  });
+});

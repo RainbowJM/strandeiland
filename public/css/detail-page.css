@@ -62,11 +62,11 @@ main {
     padding: 4em 2em;
     border-top-left-radius: 80px 80px;
     border-top-right-radius: 80px 80px;
-    transform: translateY(-20%) ;
+    transform: translateY(-25%) ;
 }
 
 #img-container {
-    height: 80vh;
+    /* height: 80vh; */
     width: 100%;
     overflow: hidden;
 }
@@ -163,6 +163,7 @@ main {
 
 #ambassador ul li {
     padding: 1em;
+    border-radius: 1.5em
 }
 
 #ambassador ul li div h3 {
@@ -198,6 +199,7 @@ main {
 #helpers ul li {
     display: flex;
     padding: .5em;
+    border-radius: 1.5em
 }
 
 #helpers ul li div h3 {
@@ -214,15 +216,16 @@ main {
 
 #sharers ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: var(--white);
     margin-top: 1em;
     padding: 1em;
+    border-radius: 1.5em
 }
 
 #sharers ul li {
     display: flex;
-    margin: .3em;
+    margin: .3em 0;
     justify-content: center;
     align-items: center;
 }
@@ -235,18 +238,26 @@ main {
 .box {
     display: none;
     position: absolute;
-    background-color:var(--white);
+    background-color: var(--white);
     padding: 10px;
     height: 3.8em;
-    width: 10em;
+    width: 8.5em;
   }
   
-  li:hover .box {
+  .box.show {
+    display: block;
+    margin-left: 13em;
+    z-index: 10000;
+  }
+  
+  /* li:hover .box {
     display: block;
     margin-left: 13em;
     z-index: 10000;
  
-  }
+  } */
+
+
 
   .box h3{
     background-color: var(--yellow);
