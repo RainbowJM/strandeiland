@@ -117,6 +117,24 @@ app.get('/wens/:id', async (req, res) => {
   }
 });
 
+app.get('/user/:first_name', async (req, res) => {
+  const firstName = req.params.first_name;
+  const { data, error } = await supabase
+    .from('resident')
+    .select()
+    .eq('first_name', firstName)
+    .single();
+
+  if (error) {
+    console.error('Error fetching suggestion:', error);
+    // Handle the error appropriately, e.g., render an error page
+  } else {
+    res.render('user', {
+      title: 'Gebruiker',
+      user: data
+    });
+  }
+});
 
 app.get("/form", (req, res) => {
   res.render("form", {
