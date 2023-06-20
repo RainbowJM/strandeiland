@@ -11,6 +11,7 @@ const assets = [
     '/css/offline.css',
     '/css/user.css',
     '/images/favicon.ico',
+    '/images/strand-eiland.jpg',
     '/offline',
 ];
 

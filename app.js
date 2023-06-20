@@ -41,16 +41,12 @@ app.get("/", async (req, res) => {
     const { data: suggestionsData, error: suggestionsError } = await supabase
     .from('suggestion')
     .select()
-    // console.log(suggestionsData)
     
     const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
     .from('suggestion')
     .select()
     .order('created_at', { ascending: false })
     .limit(3);
-    // console.log(latestSuggestionsData)
-    // console.log(themeData, themeSuggestions, suggestionsData)
-   console.log(suggestionsData[4].created_at)
 
   for (const suggestion of suggestionsData) {
     const relatedTheme = themeSuggestions.find((ts) => ts.suggestionId === suggestion.id);
@@ -77,25 +73,12 @@ app.get("/", async (req, res) => {
     const dateString = latestSuggestionsData[i].created_at;
     const date = new Date(dateString);
      localDateString = date.toLocaleString("nl-NL", {
-
-    
-
       day: "numeric",
-
       month: "short",
-
       year: "numeric",
-
       hour: "2-digit",
-
       minute: "2-digit",
-
     });
-    
-    console.log(localDateString);
-
-  
-    
   }
 
   res.render("index", {
@@ -113,27 +96,7 @@ app.get('/sent', (req, res) => {
     })
 });
   
-app.get('/user/:first_name', async (req, res) => {
-  const firstName = req.params.first_name;
-  
-  const { data: userData, error } = await supabase
-    .from('resident')
-    .select()
-    .eq('first_name', firstName)
-    .single();
-
-  if (error) {
-    console.error('Error fetching user:', error);
-    // Handle the error appropriately, e.g., render an error page
-  } else {
-    res.render('user', {
-      title: 'User',
-      user: userData
-    });
-  }
-});
-
-app.get('/detailPage-1/:id', async (req, res) => {
+app.get('/wens/:id', async (req, res) => {
   const suggestionId = req.params.id;
 
   // Fetch the suggestion data from Supabase based on the provided ID
@@ -148,34 +111,10 @@ app.get('/detailPage-1/:id', async (req, res) => {
     // Handle the error appropriately, e.g., render an error page
   } else {
     res.render('detailPage-1', {
-      title: 'Detail',
+      title: 'Wens',
       suggestion: suggestionData
     });
   }
-});
-
-app.get('/detailPage-1/:id', async (req, res) => {
-  const suggestionId = req.params.id;
-
-  // Fetch the suggestion data from Supabase based on the provided ID
-  const { data: suggestionData, error } = await supabase
-    .from('suggestion')
-    .select()
-    .eq('id', suggestionId)
-    .single();
-
-  if (error) {
-    console.error('Error fetching suggestion:', error);
-    // Handle the error appropriately, e.g., render an error page
-  } else {
-    console.log(suggestionData);
-    res.render('detailPage-1', {
-      title: 'Detail',
-      suggestion: suggestionData
-    });
-  }
-  console.log(suggestionData)
-
 });
 
 
@@ -206,12 +145,6 @@ app.get("/offline", (req, res) => {
     title: "Offline",
   });
 });
-
-// app.get("/user", (req, res) => {
-//   res.render("user", {
-//     title: "User",
-//   });
-// });
 
 io.on("connection", (socket) => {
   console.log("user connected");

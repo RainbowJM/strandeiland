@@ -7,6 +7,7 @@ import { toggleMenu } from "./modules/navigationMenu.js";
 const socket = io();
 let last;
 
+
 // ------------------ logic -------------------------------------------------------
 if (uploadButton) {
 uploadButton.addEventListener("click", handleUploadButtonClick);
@@ -274,5 +275,3 @@ function updateFormData() {
   // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
-
-
