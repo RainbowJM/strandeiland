@@ -22,6 +22,8 @@
 
 .terug {
   margin: 10em 0 1em 5vw;
+
+
 }
 
 .terug a {
@@ -29,19 +31,16 @@
   font: var(--font);
 }
 
-input[type="checkbox"]:required:invalid:checked {
+
+input:invalid,
+textarea:invalid {
   border-color: red;
 }
 
-
-input[type="checkbox"]:required:invalid:checked::after {
-  content: 'This checkbox is required';
-  color: red;
-  font-size: 12px;
-  display: block;
-  margin-top: 5px;
+input:valid,
+textarea:valid {
+  border-color: initial; /* or any valid border color */
 }
-
 
 
 /* Placeholder Styling */
