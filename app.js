@@ -60,22 +60,34 @@ app.get("/form", (req, res) => {
 
 
 app.post("/form", async (req, res) => {
+form.addEventListener('#sendButton', async (event) => {
 
-  console.log('even kijken');
-  
-  const {error} = await supabase
-      .from('form')
-      .insert({
-        title: req.body.titel,
-        description: req.body.beschrijving,
-        theme: req.body.thema,
-        image: req.body.imageLink,
-        link: req.body.file
-      })
+  event.preventDefault()
+
+  const formInputs = form.querySelectorAll('#title, #description, #theme, #image, #link, #file')
+
+  let submision = {}
+
+  formInputs.forEach(element => {
+    const { value, name } = element
+    if (value) {
+        submision[name] = value
+    }
+  })
+  console.log(submision)
+
+
+  const { error } = await supabase.from('entries').insert([submision], { returning: 'minimal'})
+
   if (error) {
-      res.send(error);
+      alert('There was an error please try again')
+  } else {
+      res.render('sent');
   }
-  res.send("created!!");
+
+  formInputs.forEach(element => element.value = '')
+
+})
 });
 
 app.get("/offline", (req, res) => {

@@ -4,6 +4,7 @@ import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, theme
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
+
 const socket = io();
 let last;
 
@@ -33,8 +34,8 @@ if (savedFormData) {
   const parsedFormData = JSON.parse(savedFormData);
 
   // Set the saved values in the corresponding form fields
-  document.getElementById("titel").value = parsedFormData.titel;
-  document.getElementById("beschrijving").value = parsedFormData.beschrijving;
+  document.getElementById("title").value = parsedFormData.title;
+  document.getElementById("description").value = parsedFormData.description;
 
   parsedFormData.themas.forEach(function(theme) {
     const checkbox = document.querySelector(`#themeDropdownMenu input[type='checkbox'][value='${theme}']`);
@@ -271,13 +272,19 @@ function updateFormData() {
   selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
 
   const formData = {
-    titel: document.getElementById("titel").value,
-    beschrijving: document.getElementById("beschrijving").value,
+    title: document.getElementById("title").value,
+    description: document.getElementById("description").value,
     themas: selectedThemes
   };
 
   // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
+
+
+
+
+
+
 
 

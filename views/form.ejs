@@ -24,18 +24,18 @@
 
 
 <div class="form-container">
-<form action="/sent" enctype="application/x-www-form-urlencoded" >
+<form action="/form" enctype="application/x-www-form-urlencoded" >
 
     <fieldset>
-        <label for="titel">Titel</label>
-        <input type="text" id="titel" name="titel"
+        <label for="title">Titel</label>
+        <input type="text" id="title" name="title"
         placeholder="Geef uw wens een titel"required>
     
 
-        <label for="beschrijving" >Wens beschrijving</label>
-        <textarea name="beschrijving" id="beschrijving" cols="30" rows="10" placeholder="Beschrijf uw wens zo duidelijk mogelijk"required></textarea>
+        <label for="description" >Wens beschrijving</label>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Beschrijf uw wens zo duidelijk mogelijk"required></textarea>
         
-        <label for="thema">Thema's</label>
+        <label for="theme">Thema's</label>
        
         <fieldset class="dropdown">
             <div class="selected-option" id="selectedOption">
@@ -62,15 +62,10 @@
         </div>
         </fieldset>
 
-        
-
-
-            <!-- <fieldset> -->
-
 
 
       
-            <label for="afbeelding" >Afbeelding</label>
+            <label for="imagelabel" >Afbeelding</label>
    
             <button id="uploadButton">Afbeelding uploaden</button>
 
@@ -112,7 +107,7 @@
     </div>
     </fieldset>
 
-    <input type="submit" value="wens aanmaken" id="versturen" >
+    <input type="submit" value="wens aanmaken" id="sendButton" >
 
 </form>
 </div>

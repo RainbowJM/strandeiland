@@ -22,8 +22,6 @@
 
 .terug {
   margin: 10em 0 1em 5vw;
-
-
 }
 
 .terug a {
@@ -31,10 +29,24 @@
   font: var(--font);
 }
 
+input[type="checkbox"]:required:invalid:checked {
+  border-color: red;
+}
+
+
+input[type="checkbox"]:required:invalid:checked::after {
+  content: 'This checkbox is required';
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+
 
 /* Placeholder Styling */
-textarea#beschrijving::placeholder,
-textarea#titel::placeholder {
+textarea#description::placeholder,
+textarea#title::placeholder {
   font-style: var(--font);
     color: var(--dark-grey);
     font-size: 15px;
@@ -96,7 +108,7 @@ fieldset .file-input-container:focus
   box-shadow: 0 0 4px var(--black);
 }
 
-input#titel::placeholder, 
+input#title::placeholder, 
 #imageLink::placeholder{
     font-family: var(--font);
     color: var(--dark-grey);
@@ -131,7 +143,7 @@ textarea {
   border: none;
 }
 
-#titel{
+#title{
     margin-bottom: 10px;
     width: 75%;
     position: relative;
@@ -139,7 +151,7 @@ textarea {
 
 }
 /* Submit Button Styling */
-#versturen {
+#sendButton {
   background-color: var(--black);
   color: var(--white);
   padding: 10px 20px;
@@ -148,7 +160,7 @@ textarea {
   cursor: pointer;
 }
 
-textarea#beschrijving::placeholder {
+textarea#description::placeholder {
    font-family: var(--font);
    color: var(--dark-grey);
   }
@@ -184,7 +196,7 @@ textarea#beschrijving::placeholder {
     font-size: 18px; /* Adjust the font size as needed */
     font-weight: bold; /* Add this line */
     line-height: 1;
-    transition: transform 0.2s ease-in-out;
+
   }
   
   .selected-option.open::after {

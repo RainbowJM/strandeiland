@@ -28,9 +28,10 @@ const imageLinkInput = document.getElementById('imageLink');
 const imagePreview = document.getElementById('imagePreview');
 const uploadButton = document.getElementById("uploadButton");
 
+
 export { messages, submitMessage, input, filterMenu, themeFilterBtn, 
     themeSelect, theMenuButton, theNav, theImage, asideItems, tabs, 
     tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement,
     selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput,
     customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData,
-    imageLinkInput, imagePreview, uploadButton }
+    imageLinkInput, imagePreview, uploadButton}
