@@ -11,83 +11,50 @@
     <%- include('./partials/header'); %>
   </header>
 
-  <div class="slogan-container">
+  <section class="slogan-container">
     <h1>
       <span>Draag bij</span>
       <span>aan</span>
       <span>Strandeiland</span>
       <span>Jouw ideeën, <br> onze toekomst!</span>
     </h1>
-  </div>
+
+    <article class="slogan-call-to-action">
+      <h2>Wensen voor Strandeiland</h2>
+      <p>Wil je bijdragen aan Strandeiland?</p>
+      <a href="/form">Maak zelf een wens!</a>
+    </article>
+  </section>
 
   <main>
     <form>
-      <fieldset>
-        <button class="close-filter">Close filter</button>
-        <ul>
-          <li data-filter-target="#theme">Filteren op thema</li>
-          <li data-filter-target="#sorting">Sorteren</li>
-        </ul>
-
-        <section class="filter-content">
-          <article id="theme" data-filter-content>
-            <ul class="theme-filter-items"> 
-              <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="Winkels"><span>Winkels</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="natuur"><span>Natuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="milieu"><span>Milieu</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="jeugd"><span>Jeugd</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
-              <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
-            </ul>
-            <button class="filter-theme-btn" type="submit">Toon resultaten</button>
-          </article>
-
-          <article id="sorting" data-filter-content>
-            <ul class="sorting-filter-items">
-              <li><label><input type="radio" name="sort" value="recent"><span>Meest Recente</span></label></li>
-              <li><label><input type="radio" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
-              <li><label><input type="radio" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
-              <li><label><input type="radio" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
-            </ul>
-
-            <button class="filter-sort-btn" type="submit">Toon resultaten</button>
-          </article>
-        </section>
-        <p class="selected-filter-items">Hello</p>
-      </fieldset>
-      <a href="/form">Wens aanmaken</a>
+      <%- include('./partials/filter-menu.ejs') %>
+        <!-- <a href="/form">Maak een wens!</a> -->
     </form>
 
-    <div class="content">
+    <section class="content">
 
-      <div class="latest-ideas">
-        <h2>Recent wensen</h2>
-        <div class="scroll-snap">
-          <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-          <%- include('./partials/thumbnail.ejs') %>
-        </div>
-      </div>
+      <section class="latest-ideas">
+        <h2>Bekijk de laatst gemaakte wensen</h2>
+       
+        
+          <% latestSuggestions.forEach(suggestion=> { %>
+           
+            <%-include('./partials/latest-thumbnail.ejs',{suggestion, time})%>
+              <% }) %>
+
+
+      </section>
 
       <h2> 2.500 resultaten</h2>
-      <div class="grid-container">      
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
-        <%- include('./partials/thumbnail.ejs') %>
-      </div>
+      <section class="grid-container">
+
+        <% suggestions.forEach(suggestion=> { %>
+          <%-include('./partials/thumbnail.ejs',{suggestion: suggestion})%>
+            <% }) %>
+
+       
+      </section>
   </main>
 
   <footer>

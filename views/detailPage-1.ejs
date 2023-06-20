@@ -21,44 +21,42 @@
     <main>
 
         <!-- wish article -->
-        <!-- <div class="column"> -->
-            <section class="wish">
-                <p>Wens</p>
-                <div id="img-container">
-                    <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
-                </div>
-                <article>
-                  <h2>
+        <section class="wish">
+            <p>Wens</p>
+            <div id="img-container">
+                <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
+            </div>
+            <article>
+                <h2>
                     <%= suggestion.title %>
-                  </h2>
-                  <p><%= suggestion.created_at %></p>
-                  <p>
+                </h2>
+                <p>
+                    <%= suggestion.created_at %>
+                </p>
+                <p>
                     <%= suggestion.description %>
-                  </p>
-                   <!-- join -->
+                </p>
+                <!-- join -->
                 <section class="join">
                     <button>Word trekker</button>
                     <button>Help mee</button>
                     <button>ik deel deze wens</button>
                 </section>
-                </article>
+            </article>
+
+            <!-- chat -->
+            <section id="chat">
+                <h2>Reacties</h2>
+                <ul class="chat-section"></ul>
+                <p id="typing"></p>
+                <form class="message-input">
+                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
+                    <button type="submit" id="message-button"><span
+                            class="material-symbols-outlined">Send</span></button>
+                </form>
             </section>
         </section>
-
-        <!-- chat -->
-        <section id="chat">
-            <h2>Reacties</h2>
-            <ul class="chat-section"></ul>
-            <p id="typing"></p>
-            <form class="message-input">
-                <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
-                <button type="submit" id="message-button"><span class="material-symbols-outlined">Send</span></button>
-            </form>
-        </section>
-
-
         <!-- joiners -->
-        <!-- <div class="column"> -->
         <aside id="joiners" class="joiners">
             <!-- trekkers -->
             <div id="ambassador" class="helping-item">
@@ -228,40 +226,150 @@
             </div>
         </aside>
         </div>
-
-
-        <!-- Hoogtepunten -->
-        <!-- <section class="pinned">
-                <h2>Hoogtepunten uit de chat</h2>
+            <!-- helpers -->
+            <div id="helpers" class="helping-item">
+                <h2>Helpers</h2>
+                <h3>Helpers van deze wens: 5</h3>
                 <ul>
                     <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
                         </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
                     </li>
                     <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
                         </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
                     </li>
                     <li>
-                        <div id="profile">
-                            <img src="/images/bob.jpeg" alt="">
-                            <h3>Bobby Dijkstra</h3>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
                         </div>
-                        <p>Ik denk dat daar zeker ruimte voor is in het Ooster deel.</p>
-                        <p>16-10-2023</p>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- sharers -->
+            <div id="sharers" class="helping-item">
+                <h2>Delers</h2>
+                <h3>20 personen delen deze wens</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
                     </li>
                 </ul>
-            </section>
-        </div> -->
-
+            </div>
+        </aside>
+        </div>
     </main>
 
     <!-- footer -->

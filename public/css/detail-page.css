@@ -1,17 +1,19 @@
 :root {
     --yellow: #ffe700;
+    --light-yellow: #FFF48C;
     --white: #ffffff;
     --black: #000000;
     --blue: #009ce0;
+    --light-blue: #94DFFF;
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
     --font: 'Poppins', sans-serif;
 }
-
 main {
     padding: 0 3vw 0 5vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 0;
 }
 
 .terug {
@@ -39,7 +41,7 @@ main {
 .wish img {
     width: 100%;
     contain: content;
-    background-position: center;
+    transform: translateY(-30%);
 }
 
 .wish p:nth-of-type(1) {

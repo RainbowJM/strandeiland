@@ -13,6 +13,7 @@ const supabase = createClient(
 const historySize = 100;
 let history = [];
 let typing = [];
+let localDateString;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -21,9 +22,88 @@ app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+// app.get('/thema', async (req, res) => {
+//   const {data, error} = await supabase
+//       .from('thema')
+//       .select()
+//   res.send(data);
+// });
+
+app.get("/", async (req, res) => {
+  const { data: themeData, themeError } = await supabase
+    .from('theme')
+    .select()
+
+    const { data: themeSuggestions, themeSuggestionsError } = await supabase
+    .from('suggestion_theme')
+    .select()
+    
+    const { data: suggestionsData, error: suggestionsError } = await supabase
+    .from('suggestion')
+    .select()
+    // console.log(suggestionsData)
+    
+    const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
+    .from('suggestion')
+    .select()
+    .order('created_at', { ascending: false })
+    .limit(3);
+    // console.log(latestSuggestionsData)
+    // console.log(themeData, themeSuggestions, suggestionsData)
+   console.log(suggestionsData[4].created_at)
+
+  for (const suggestion of suggestionsData) {
+    const relatedTheme = themeSuggestions.find((ts) => ts.suggestionId === suggestion.id);
+    if (relatedTheme) {
+      const theme = themeData.find((t) => t.id === relatedTheme.themaId);
+      if (theme) {
+        suggestion.theme = theme;
+      }
+    }
+  }
+
+
+  for (const latestSuggestion of latestSuggestionsData) {
+    const latestRelatedTheme = themeSuggestions.find((ts) => ts.suggestionId === latestSuggestion.id);
+    if (latestRelatedTheme) {
+      const theme = themeData.find((t) => t.id === latestRelatedTheme.themaId);
+      if (theme) {
+        latestSuggestion.theme = theme;
+      }
+    }
+  }
+
+  for (let i = 0; i < latestSuggestionsData.length; i++) {
+    const dateString = latestSuggestionsData[i].created_at;
+    const date = new Date(dateString);
+     localDateString = date.toLocaleString("nl-NL", {
+
+    
+
+      day: "numeric",
+
+      month: "short",
+
+      year: "numeric",
+
+      hour: "2-digit",
+
+      minute: "2-digit",
+
+    });
+    
+    console.log(localDateString);
+
+  
+    
+  }
+
   res.render("index", {
     title: "Wensen",
+    themes: themeData,
+    suggestions: suggestionsData,
+    latestSuggestions: latestSuggestionsData,
+    time: localDateString
   });
 });
 
@@ -72,6 +152,30 @@ app.get('/detailPage-1/:id', async (req, res) => {
       suggestion: suggestionData
     });
   }
+});
+
+app.get('/detailPage-1/:id', async (req, res) => {
+  const suggestionId = req.params.id;
+
+  // Fetch the suggestion data from Supabase based on the provided ID
+  const { data: suggestionData, error } = await supabase
+    .from('suggestion')
+    .select()
+    .eq('id', suggestionId)
+    .single();
+
+  if (error) {
+    console.error('Error fetching suggestion:', error);
+    // Handle the error appropriately, e.g., render an error page
+  } else {
+    console.log(suggestionData);
+    res.render('detailPage-1', {
+      title: 'Detail',
+      suggestion: suggestionData
+    });
+  }
+  console.log(suggestionData)
+
 });
 
 
