@@ -69,26 +69,12 @@ app.get("/", async (req, res) => {
     }
   }
 
-  for (let i = 0; i < latestSuggestionsData.length; i++) {
-    const dateString = latestSuggestionsData[i].created_at;
-    const date = new Date(dateString);
-     localDateString = date.toLocaleString("nl-NL", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-     
-    });
-    console.log(localDateString);
-  }
 
   res.render("index", {
     title: "Wensen",
     themes: themeData,
     suggestions: suggestionsData,
     latestSuggestions: latestSuggestionsData,
-    time: localDateString
   });
 });
 

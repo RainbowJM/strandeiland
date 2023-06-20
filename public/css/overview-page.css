@@ -546,27 +546,28 @@ form a:hover {
 
 #theme.show-filter-menu {
     display: block;
+    transform-origin: top;
+    animation: smooth-dropdown .3s ease-in-out both alternate;
 }
 
 #sorting.show-filter-menu {
     display: block;
+    animation: smooth-dropdown .3s ease-in-out both alternate;
 }
 
-/* .active[data-filter-content] {
-    display: block;
-} */
-/* 
-[data-filter-content] {
-    position: absolute;
-    z-index: 2;
-    display: none;
-    width: 100%;
-    width: fit-content;
-    padding: 1em;
-    background-color: var(--white);
-    grid-column: span 2;
+@keyframes smooth-dropdown {
+    from {
+        opacity: 0;
+        
+    }
+
+    to {
+        opacity: 1;
+       
+    }
 }
-*/
+
+
 .active[data-filter-content] {
     display: block;
 }

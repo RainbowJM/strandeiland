@@ -43,7 +43,7 @@
       <h2>Bekijk de laatst gemaakte wensen</h2>  
       <section class="latest-ideas">
           <% latestSuggestions.forEach(suggestion=> { %>
-            <%-include('./partials/latest-thumbnail.ejs',{suggestion: suggestion, time})%>
+            <%-include('./partials/latest-thumbnail.ejs',{suggestion: suggestion})%>
           <% }) %>
       </section>
 
