@@ -61,9 +61,9 @@ img.user-avatar {
   object-position: center;
 }
 
-h1#user-name{
-    background-color: var(--yellow);
-    font-size: 1.5em;
+h1#user-name {
+  background-color: var(--yellow);
+  font-size: 1.5em;
 }
 
 .bio p:nth-of-type(2) {
@@ -82,13 +82,13 @@ h1#user-name{
 }
 
 .bio article h2 {
-    color: var(--white);
-    background-color: var(--blue);
-    padding: 0.5em;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    width: fit-content;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.5em;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  width: fit-content;
 }
 
 /* helpende -----------------------------------------------------------------------------------------*/
@@ -138,33 +138,45 @@ h1#user-name{
   cursor: pointer;
 }
 
-/* ambassadors */
-#ambassador > h3 {
-  font-size: 14px;
+#suggestion > h3 {
+  font-size: 1.5em;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
 }
 
-#ambassador > div h2 {
+#suggestion > div h2 {
   font-weight: lighter;
 }
 
-#ambassador ul {
+#suggestion ul {
   margin-top: 1em;
 }
 
-#ambassador ul li {
+#suggestion ul li {
   padding: 1em;
 }
 
-#ambassador ul li div h3 {
-  font-weight: lighter;
-}
-
-#ambassador img {
+#suggestion img {
   width: 4.5em;
   height: 4.5em;
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  place-items: center;
+}
+
+.statistics img {
+  width: 32%;
+  border-radius: 0;
+}
+
+.statistics span {
+  font-weight: bold;
+  margin-right: 0.2em;
 }
 
 /* helpers */

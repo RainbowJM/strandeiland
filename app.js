@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
@@ -6,11 +6,12 @@ const path = require("path");
 const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
-const { createClient } = require('@supabase/supabase-js');
-const { time } = require('console');
+const { createClient } = require("@supabase/supabase-js");
+const { time } = require("console");
 const supabase = createClient(
-    'https://yyufywjwwwmgfjmenluv.supabase.co',
-    `${process.env.SUPABASE_KEY}`);
+  "https://yyufywjwwwmgfjmenluv.supabase.co",
+  `${process.env.SUPABASE_KEY}`
+);
 const historySize = 100;
 let history = [];
 let typing = [];
@@ -31,26 +32,26 @@ app.use(bodyParser.json());
 // });
 
 app.get("/", async (req, res) => {
-  const { data: themeData, themeError } = await supabase
-    .from('theme')
-    .select()
+  const { data: themeData, themeError } = await supabase.from("theme").select();
 
-    const { data: themeSuggestions, themeSuggestionsError } = await supabase
-    .from('suggestion_theme')
+  const { data: themeSuggestions, themeSuggestionsError } = await supabase
+    .from("suggestion_theme")
+    .select();
+
+  const { data: suggestionsData, error: suggestionsError } = await supabase
+    .from("suggestion")
+    .select();
+
+  const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
+    .from("suggestion")
     .select()
-    
-    const { data: suggestionsData, error: suggestionsError } = await supabase
-    .from('suggestion')
-    .select()
-    
-    const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
-    .from('suggestion')
-    .select()
-    .order('created_at', { ascending: false })
+    .order("created_at", { ascending: false })
     .limit(3);
 
   for (const suggestion of suggestionsData) {
-    const relatedTheme = themeSuggestions.find((ts) => ts.suggestionId === suggestion.id);
+    const relatedTheme = themeSuggestions.find(
+      (ts) => ts.suggestionId === suggestion.id
+    );
     if (relatedTheme) {
       const theme = themeData.find((t) => t.id === relatedTheme.themaId);
       if (theme) {
@@ -59,9 +60,10 @@ app.get("/", async (req, res) => {
     }
   }
 
-
   for (const latestSuggestion of latestSuggestionsData) {
-    const latestRelatedTheme = themeSuggestions.find((ts) => ts.suggestionId === latestSuggestion.id);
+    const latestRelatedTheme = themeSuggestions.find(
+      (ts) => ts.suggestionId === latestSuggestion.id
+    );
     if (latestRelatedTheme) {
       const theme = themeData.find((t) => t.id === latestRelatedTheme.themaId);
       if (theme) {
@@ -73,7 +75,7 @@ app.get("/", async (req, res) => {
   for (let i = 0; i < latestSuggestionsData.length; i++) {
     const dateString = latestSuggestionsData[i].created_at;
     const date = new Date(dateString);
-     localDateString = date.toLocaleString("nl-NL", {
+    localDateString = date.toLocaleString("nl-NL", {
       day: "numeric",
       month: "short",
       year: "numeric",
@@ -87,63 +89,87 @@ app.get("/", async (req, res) => {
     themes: themeData,
     suggestions: suggestionsData,
     latestSuggestions: latestSuggestionsData,
-    time: localDateString
+    time: localDateString,
   });
 });
 
-app.get('/sent', (req, res) => {
-    res.render('sent',{
-        title: 'Bevesting',
-    })
+app.get("/sent", (req, res) => {
+  res.render("sent", {
+    title: "Bevesting",
+  });
 });
-  
-app.get('/wens/:id', async (req, res) => {
+
+app.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
 
   // Fetch the suggestion data from Supabase based on the provided ID
   const { data: suggestionData, error } = await supabase
-    .from('suggestion')
+    .from("suggestion")
     .select()
-    .eq('id', suggestionId)
+    .eq("id", suggestionId)
     .single();
 
   if (error) {
-    console.error('Error fetching suggestion:', error);
+    console.error("Error fetching suggestion:", error);
     // Handle the error appropriately, e.g., render an error page
   } else {
-    res.render('detailPage-1', {
-      title: 'Wens',
-      suggestion: suggestionData
+    res.render("detailPage-1", {
+      title: "Wens",
+      suggestion: suggestionData,
     });
   }
 });
 
-app.get('/user/:first_name', async (req, res) => {
+app.get("/user/:first_name", async (req, res) => {
   const firstName = req.params.first_name;
   const { data: userData, error: userError } = await supabase
-    .from('resident')
+    .from("resident")
     .select()
-    .eq('first_name', firstName)
+    .eq("first_name", firstName)
     .single();
 
-    let defaultTime = userData.created_at;
-    let date = new Date(defaultTime).toLocaleDateString("nl-NL", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+  let defaultTime = userData.created_at;
+  let date = new Date(defaultTime).toLocaleDateString("nl-NL", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
-  const { data: themeData, themeError } = await supabase
+  const { data: residentSuggestionData, residentSuggestionError } =
+    await supabase
+    .from("resident_suggestion")
+    .select();
 
-  if (userError) {
-    console.error('Error:', userError);
+  const { data: suggestionData, suggestionError } = await supabase
+    .from("suggestion")
+    .select();
+
+  let int = 0;
+  let listSuggestions = [];
+  for (const suggestion of suggestionData) {
+    for (const residentSuggestion of residentSuggestionData) {
+      if (suggestion.id === residentSuggestion.suggestion_id) {
+        if (userData.id === residentSuggestion.resident_id) {
+          int++;
+          listSuggestions.push(suggestion);
+        }
+      }
+    }
+  }
+
+  console.log(listSuggestions);
+
+  if (userError || residentSuggestionError || suggestionError) {
+    console.error("Error:", userError || residentSuggestionError || suggestionError);
   } else {
-    res.render('user', {
-      title: 'Gebruiker',
+    res.render("user", {
+      title: "Gebruiker",
       user: userData,
-      time: date
+      time: date,
+      amount: int,
+      suggestions: listSuggestions,
     });
   }
 });
@@ -154,18 +180,16 @@ app.get("/form", (req, res) => {
   });
 });
 
-app.post("/form", async (req, res) => {  
-  const {error} = await supabase
-      .from('form')
-      .insert({
-        title: req.body.titel,
-        description: req.body.beschrijving,
-        theme: req.body.thema,
-        image: req.body.imageLink,
-        link: req.body.file
-      })
+app.post("/form", async (req, res) => {
+  const { error } = await supabase.from("form").insert({
+    title: req.body.titel,
+    description: req.body.beschrijving,
+    theme: req.body.thema,
+    image: req.body.imageLink,
+    link: req.body.file,
+  });
   if (error) {
-      res.send(error);
+    res.send(error);
   }
   res.send("created!!");
 });
@@ -200,31 +224,31 @@ io.on("connection", (socket) => {
   });
 
   socket.on("typing", (user) => {
-    let exists = false
+    let exists = false;
 
     // Check if the user is already in the array.
     typing.forEach((client) => {
-        if (client[1] == socket.id) {
-            exists = true
-        }
-    })
+      if (client[1] == socket.id) {
+        exists = true;
+      }
+    });
 
     if (user.typing && !exists) {
-        // Add the name and connection ID to the list of typing users.
-        typing.push([user.name, socket.id])
+      // Add the name and connection ID to the list of typing users.
+      typing.push([user.name, socket.id]);
     } else if (!user.typing) {
-        // Remove the name and connection ID from the list of typing users.
-        typing.forEach((client, index) => {
-            if (client[1] == socket.id) {
-                // Remove the user from the list of typing users.
-                typing.splice(index, 1);
-            }
-        })
+      // Remove the name and connection ID from the list of typing users.
+      typing.forEach((client, index) => {
+        if (client[1] == socket.id) {
+          // Remove the user from the list of typing users.
+          typing.splice(index, 1);
+        }
+      });
     }
 
     // Emit the array of typing users.
-    io.emit("typing", typing)
-})
+    io.emit("typing", typing);
+  });
 
   socket.on("disconnect", () => {
     console.log(`user ${socket.id} disconnected`);

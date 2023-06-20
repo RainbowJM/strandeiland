@@ -43,25 +43,14 @@
         </section>
 
         <aside id="joiners" class="joiners">
-            <div id="ambassador" class="helping-item">
+            <div id="suggestion" class="helping-item">
                 <h2>Wensen van <%= user.first_name %>
                 </h2>
-                <h3>Totale wensen: 2</h3>
+                <h3>Totale wensen: <%= amount %></h3>
                 <ul>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Acteur</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent wiskunde</h4>
-                        </div>
-                    </li>
+                   <% suggestions.forEach(suggestion => { %>
+                    <%- include('./partials/article.ejs', {suggestion: suggestion})%>
+                    <% }) %>
                 </ul>
             </div>
 
