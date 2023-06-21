@@ -182,6 +182,15 @@ if (titleInput) {
     }
   });
 }
+if (descriptionTextarea) {
+  descriptionTextarea.addEventListener('input', function() {
+    if (descriptionTextarea.value.trim() === '') {
+      descriptionTextarea.setCustomValidity('Please enter a description');
+    } else {
+      descriptionTextarea.setCustomValidity('');
+    }
+  });
+}
 
 // ------------------ sockets -------------------------------------------------------
 
