@@ -9,13 +9,13 @@ const bodyParser = require("body-parser");
 const { createClient } = require("@supabase/supabase-js");
 const { time } = require("console");
 const supabase = createClient(
-  "https://yyufywjwwwmgfjmenluv.supabase.co",
-  `${process.env.SUPABASE_KEY}`
-);
-const historySize = 100;
+
+  'https://yyufywjwwwmgfjmenluv.supabase.co',
+  `${process.env.SUPABASE_KEY}`);
+
+let historySize = 100;
 let history = [];
 let typing = [];
-let localDateString;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -24,26 +24,21 @@ app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// app.get('/thema', async (req, res) => {
-//   const {data, error} = await supabase
-//       .from('thema')
-//       .select()
-//   res.send(data);
-// });
-
 app.get("/", async (req, res) => {
   const { data: themeData, themeError } = await supabase.from("theme").select();
 
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
-    .from("suggestion_theme")
-    .select();
+
+    .from('suggestion_theme')
+    .select()
 
   const { data: suggestionsData, error: suggestionsError } = await supabase
-    .from("suggestion")
-    .select();
+    .from('suggestion')
+    .select()
 
   const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
-    .from("suggestion")
+    .from('suggestion')
+
     .select()
     .order("created_at", { ascending: false })
     .limit(3);
@@ -71,6 +66,7 @@ app.get("/", async (req, res) => {
       }
     }
   }
+
 
   for (let i = 0; i < latestSuggestionsData.length; i++) {
     const dateString = latestSuggestionsData[i].created_at;
@@ -210,18 +206,40 @@ app.get("/form", (req, res) => {
 });
 
 app.post("/form", async (req, res) => {
-  const { error } = await supabase.from("form").insert({
-    title: req.body.titel,
-    description: req.body.beschrijving,
-    theme: req.body.thema,
-    image: req.body.imageLink,
-    link: req.body.file,
-  });
-  if (error) {
-    res.send(error);
+  console.log(req.body);
+  try {
+      const { data, error } = await supabase
+          .from('suggestion')
+          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink}])
+          .select();
+
+      const insertId = data[0].id ?? null;
+      console.log(insertId);
+
+      if (error || !insertId) {
+          throw error;
+      }
+
+      const { error: themeError } = await supabase
+          .from('suggestion_theme')
+          .insert([{
+              suggestionId: insertId,
+              themaId: req.body.theme
+          }]);
+
+      if (themeError) {
+          throw themeError;
+      }
+
+      res.render('sent');
+  } catch (error) {
+      res.status(500).json({ error: 'Het toevoegen van de wens ging fout, probeer opnieuw' });
+      console.log(error);
+      return;
+
   }
-  res.send("created!!");
 });
+
 
 app.get("/offline", (req, res) => {
   res.render("offline", {
@@ -258,13 +276,13 @@ io.on("connection", (socket) => {
     // Check if the user is already in the array.
     typing.forEach((client) => {
       if (client[1] == socket.id) {
-        exists = true;
+        exists = true
       }
-    });
+    })
 
     if (user.typing && !exists) {
       // Add the name and connection ID to the list of typing users.
-      typing.push([user.name, socket.id]);
+      typing.push([user.name, socket.id])
     } else if (!user.typing) {
       // Remove the name and connection ID from the list of typing users.
       typing.forEach((client, index) => {
@@ -272,12 +290,14 @@ io.on("connection", (socket) => {
           // Remove the user from the list of typing users.
           typing.splice(index, 1);
         }
+
       });
     }
 
     // Emit the array of typing users.
     io.emit("typing", typing);
   });
+
 
   socket.on("disconnect", () => {
     console.log(`user ${socket.id} disconnected`);

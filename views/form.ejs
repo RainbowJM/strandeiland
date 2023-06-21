@@ -2,47 +2,53 @@
 <html lang="en">
 
 <head>
+
     <%- include('./partials/head'); %>
-        <link rel="stylesheet" href="/css/form.css">
+
 </head>
 
 <body>
     <header>
+
         <%- include('./partials/header'); %>
+
     </header>
-
-
-
 
     <div class="terug">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
-        <a href="/">Terug</a>
+        <a href="/">Terug</a> <!-- Link to home page -->
     </div>
 
     <h1>Maak een wens</h1>
 
 
-
-
-
     <div class="form-container">
-        <form action="/sent" enctype="application/x-www-form-urlencoded">
-
+        <form action="/form">
+        
             <fieldset>
-                <label for="titel">Titel</label>
-                <input type="text" id="titel" name="titel" placeholder="Geef uw wens een titel" required>
-
-
-                <label for="beschrijving">Wens beschrijving</label>
-                <textarea name="beschrijving" id="beschrijving" cols="30" rows="10"
-                    placeholder="Beschrijf uw wens zo duidelijk mogelijk" required></textarea>
-
-                <label for="thema">Thema's</label>
+                <label for="title">Titel</label>
+                <input type="text" 
+                id="title" 
+                name="title" 
+                placeholder="Geef uw wens een titel" 
+                minlength="3" maxlength="40" required>
+                <!-- Input field for the title of the wish -->
+        
+                <label for="description" >Wens beschrijving</label>
+                <textarea name="description" 
+                id="description" cols="30" rows="10"
+                placeholder="Beschrijf uw wens zo duidelijk mogelijk" 
+                minlength="3" maxlength="200" required></textarea>
+                <!-- Textarea for describing the wish -->
+        
+                <label for="theme">Thema's</label>
+                
 
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption">
                         Selecteer de passende thema's
                     </div>
+
                     <div class="dropdown-container" id="themeDropdownMenu">
 
                         <ul class="dropdown-menu">
@@ -61,43 +67,73 @@
                             <li><label><input type="checkbox" value="Onderwijs">Onderwijs</label></li>
                             <li><label><input type="checkbox" value="Overig">Overig</label></li>
                         </ul>
+
+                        <!-- Dropdown menu options for selecting themes -->
                     </div>
                 </fieldset>
-                <label for="afbeelding">Afbeelding</label>
+        
+                <label for="imagelabel" >Afbeelding</label>
+                <!-- Label for the image input field -->
+        
                 <button id="uploadButton">Afbeelding uploaden</button>
+                <!-- Button for uploading an image -->
+        
                 <div id="popup" class="hidden">
+                    <!-- Popup container for image upload options -->
+        
                     <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
+                    <!-- Button for closing the popup -->
+        
                     <div id="links">
                         <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                        <!-- Label for image website links -->
                         <div class='linkjes'>
                             <a href="https://unsplash.com/">Unsplash</a>
                             <a href="https://www.pexels.com/nl-nl/">Pexels</a>
                             <a href="https://pixabay.com/nl/">Pixabay</a>
                         </div>
+
                         <p class="hierarchy">Link</p>
+
                         <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+                        <!-- Input field for entering the image link -->
                         <div id="imagePreview"></div>
+
+                        <!-- Placeholder for displaying image preview -->
+        
                         <label for="or">Of</label>
+                        <!-- Label for image upload options -->
+        
                         <p class="hierarchy">Bestand</p>
+                        <!-- Label for image file upload option -->
+        
+
                         <div class="file-input-container">
                             <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
                             <p>Selecteer een bestand</p>
                             <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+
                         </div>
                         <div id="customImagePreview"></div>
+                        <!-- Placeholder for displaying custom image preview -->
                         <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <!-- Placeholder for displaying selected file name -->
                         <div id="closeButton" class="hidden">&#10006;</div>
+
                     </div>
                 </div>
             </fieldset>
             <input type="submit" value="wens aanmaken" id="versturen">
+
         </form>
     </div>
 
     <footer>
         <%- include('./partials/footer'); %>
+
     </footer>
 
 </body>
 
 </html>
+

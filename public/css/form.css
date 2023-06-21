@@ -34,9 +34,28 @@
 }
 
 
+
+input:required:invalid {
+  border: 2px solid red;
+}
+
+input:required:valid {
+  border: 2px solid green;
+}
+
+textarea:required:invalid {
+  border: 2px solid red;
+}
+
+textarea:required:valid {
+  border: 2px solid green;
+}
+
+
+
 /* Placeholder Styling */
-textarea#beschrijving::placeholder,
-textarea#titel::placeholder {
+textarea#description::placeholder,
+textarea#title::placeholder {
   font-style: var(--font);
     color: var(--dark-grey);
     font-size: 15px;
@@ -98,7 +117,7 @@ fieldset .file-input-container:focus
   box-shadow: 0 0 4px var(--black);
 }
 
-input#titel::placeholder, 
+input#title::placeholder, 
 #imageLink::placeholder{
     font-family: var(--font);
     color: var(--dark-grey);
@@ -133,7 +152,7 @@ textarea {
   border: none;
 }
 
-#titel{
+#title{
     margin-bottom: 10px;
     width: 75%;
     position: relative;
@@ -141,7 +160,7 @@ textarea {
 
 }
 /* Submit Button Styling */
-#versturen {
+#sendButton {
   background-color: var(--black);
   color: var(--white);
   padding: 10px 20px;
@@ -150,7 +169,7 @@ textarea {
   cursor: pointer;
 }
 
-textarea#beschrijving::placeholder {
+textarea#description::placeholder {
    font-family: var(--font);
    color: var(--dark-grey);
   }
@@ -186,7 +205,7 @@ textarea#beschrijving::placeholder {
     font-size: 18px; /* Adjust the font size as needed */
     font-weight: bold; /* Add this line */
     line-height: 1;
-    transition: transform 0.2s ease-in-out;
+
   }
   
   .selected-option.open::after {
@@ -212,19 +231,10 @@ textarea#beschrijving::placeholder {
   background-color: var(--gray);
   min-width: 200px;
   border: border;
-  overflow-y: auto;
   padding: 10px;
   gap: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.1s ease-in-out, linear 0.1s;
 }
 
-.dropdown-container:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
-}
 
 
 .dropdown-menu li {
@@ -235,7 +245,6 @@ textarea#beschrijving::placeholder {
   height: 2em;
   width: 100%;
   text-align: center;
-  transition: 0.1s ease-in-out;
 }
 
 .dropdown-menu li:hover {
