@@ -1,5 +1,17 @@
+:root {
+  --yellow: #ffe700;
+  --light-yellow: #FFF48C;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #009ce0;
+  --light-blue: #94DFFF;
+  --light-grey: #f0f0eb;
+  --dark-grey: #333333;
+  --font: 'Poppins', sans-serif;
+}
+
 #chat {
-  height: 20em;
+  height: 26em;
   position: relative;
   background-color: var(--white);
   display: flex;
@@ -21,6 +33,8 @@ form {
   bottom: 0;
   width: 100%;
   margin: 0 1em 0.5em 1em;
+  padding: 0 1em 1em 0;
+
 }
 
 form input[type="text"] {

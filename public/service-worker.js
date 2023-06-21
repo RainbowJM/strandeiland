@@ -10,6 +10,7 @@ const assets = [
     '/css/sent.css',
     '/css/offline.css',
     '/images/favicon.ico',
+    '/images/strand-eiland.jpg',
     '/offline',
 ];
 

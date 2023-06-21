@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <%- include('./partials/head');  %> <!-- Include the 'head' partial -->
-  <link rel="stylesheet" href="/css/form.css"> <!-- Link to external CSS file -->
+
+    <%- include('./partials/head'); %>
+
 </head>
+
 <body>
     <header>
-        <%- include('./partials/header');  %> <!-- Include the 'header' partial -->
+
+        <%- include('./partials/header'); %>
+
     </header>
 
     <div class="terug">
@@ -15,6 +20,7 @@
     </div>
 
     <h1>Maak een wens</h1>
+
 
     <div class="form-container">
         <form action="/form">
@@ -37,14 +43,15 @@
         
                 <label for="theme">Thema's</label>
                 
+
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption">
                         Selecteer de passende thema's
                     </div>
-                    <!-- Placeholder for displaying the selected theme(s) -->
-        
+
                     <div class="dropdown-container" id="themeDropdownMenu">
-                        <ul class="dropdown-menu" >
+
+                        <ul class="dropdown-menu">
                             <li><label><input type="checkbox" value="Sport">Sport</label></li>
                             <li><label><input type="checkbox" value="Recreatie">Recreatie</label></li>
                             <li><label><input type="checkbox" value="Verkeer">Verkeer</label></li>
@@ -60,6 +67,7 @@
                             <li><label><input type="checkbox" value="Onderwijs">Onderwijs</label></li>
                             <li><label><input type="checkbox" value="Overig">Overig</label></li>
                         </ul>
+
                         <!-- Dropdown menu options for selecting themes -->
                     </div>
                 </fieldset>
@@ -84,14 +92,13 @@
                             <a href="https://www.pexels.com/nl-nl/">Pexels</a>
                             <a href="https://pixabay.com/nl/">Pixabay</a>
                         </div>
-                        <!-- Links to websites for finding royalty-free images -->
-        
+
                         <p class="hierarchy">Link</p>
-                        <!-- Label for image link input field -->
-           
+
                         <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
                         <!-- Input field for entering the image link -->
                         <div id="imagePreview"></div>
+
                         <!-- Placeholder for displaying image preview -->
         
                         <label for="or">Of</label>
@@ -100,32 +107,33 @@
                         <p class="hierarchy">Bestand</p>
                         <!-- Label for image file upload option -->
         
+
                         <div class="file-input-container">
                             <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
                             <p>Selecteer een bestand</p>
                             <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
-                            <!-- Input field for selecting an image file -->
+
                         </div>
                         <div id="customImagePreview"></div>
                         <!-- Placeholder for displaying custom image preview -->
                         <p id="selectedFileName">Geen bestand geselecteerd</p>
                         <!-- Placeholder for displaying selected file name -->
                         <div id="closeButton" class="hidden">&#10006;</div>
-                        <!-- Close button for clearing the selected file -->
+
                     </div>
                 </div>
             </fieldset>
-        
-            <input type="submit" value="wens aanmaken" id="sendButton">
-            <!-- Submit button for creating the wish -->
-        
+            <input type="submit" value="wens aanmaken" id="versturen">
+
         </form>
     </div>
 
     <footer>
         <%- include('./partials/footer'); %>
-        <!-- Include the 'footer' partial -->
+
     </footer>
 
 </body>
+
 </html>
+

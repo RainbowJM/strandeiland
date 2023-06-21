@@ -1,33 +1,29 @@
-import {tabs, tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn} from "./variables.js";
+import { tabs, tabContents, filterThemeResultsBtn, filterThemeBtn,  filterSortBtn, filterSortResultsBtn, closeFilterBtn} from "./variables.js";
 
-function toggleFilterMenu() {
-    tabs.forEach((tab) => {
-        const target = document.querySelector(tab.dataset.filterTarget);
-        tab.addEventListener("click", (e) => {
-            e.preventDefault();
-            tabContents.forEach((tabContent) =>
-                tabContent.classList.remove("active")
-            );
-            target.classList.add("active");
-        });
 
-        filterThemeBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            target.classList.remove("active");
-            console.log("form submitted");
-        });
-        filterSortBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            target.classList.remove("active");
-            console.log("form submitted");
-        });
+function toggleFilterMenu(){
+    const filterThemeMenu = document.querySelector('#theme');
+    const  filterSortMenu = document.querySelector('#sorting');
 
-        closeFilterBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            target.classList.remove("active");
-            console.log("form submitted");
-        });
-    });
+    filterThemeBtn.addEventListener('click', () => {
+        filterThemeMenu.classList.toggle('show-filter-menu');
+
+    })  
+
+    filterSortBtn.addEventListener('click', () => {
+        filterSortMenu.classList.toggle('show-filter-menu');
+
+    })
+        tabContents.forEach(tabContent => {
+            // tabContent.classList.add('active');
+
+            closeFilterBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                filterThemeMenu.classList.remove('show-filter-menu');
+                filterSortMenu.classList.remove('show-filter-menu');
+                // tabContent.classList.remove("active");
+            });
+    })
 }
 
 export {toggleFilterMenu}
