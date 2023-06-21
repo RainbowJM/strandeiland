@@ -4,10 +4,9 @@ const app = express();
 const http = require("http").createServer(app);
 const path = require("path");
 const io = require("socket.io")(http);
-const port = process.env.PORT;
+const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
 const { createClient } = require("@supabase/supabase-js");
-// const { time } = require("console");
 const supabase = createClient(
   `${process.env.SUPABASE_URL}`,
   `${process.env.SUPABASE_KEY}`
