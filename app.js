@@ -224,7 +224,6 @@ app.post("/form", async (req, res) => {
       res.status(500).json({ error: 'Het toevoegen van de wens ging fout, probeer opnieuw' });
       console.log(error);
       return;
-
   }
 });
 

@@ -437,4 +437,6 @@ p{
   }
   
 
-
+  .hidden {
+    display: none;
+  }
