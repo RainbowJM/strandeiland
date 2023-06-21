@@ -50,27 +50,32 @@
                 </h2>
                 <h3>Totale wensen: <%= amount %>
                 </h3>
-                <ul>
+                <ul class="suggestion-items">
                     <% suggestions.forEach(suggestion=> { %>
                         <%- include('./partials/article.ejs', {suggestion: suggestion})%>
                             <% }) %>
                 </ul>
             </div>
 
-            <div id="helpers">
+            <div id="reactions">
                 <h2>Geplaatste reacties</h2>
                 <h3>Totale reacties: 2</h3>
                 <ul>
                     <li>
                         <div>
-                            <h3>Middelbare school</h3>
+                            <h3>Middelbare school</h2>
+                                <p>Wens</p>
                             <p>Ben mee eens</p>
+                            <p>op 5 juni 2023 om 18:23</p>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <h3>Openbare vervoer</h3>
-                            <p>Ben mee eens</p>
+                            <h3>Openbare vervoer</h2>
+                                <p>Wens</p>
+                                <p>Ben mee eens jajajajajajajajaja Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae quam tempora sint, ipsa ducimus voluptates nam quas, accusamus quaerat nemo molestias eligendi vitae dolor deleniti ullam officiis voluptatum omnis? Modi, fuga distinctio ipsum rerum totam hic necessitatibus nemo voluptates eveniet consequatur quibusdam veniam enim ut sequi nostrum. Odit, minima.</p>
+                                <p>op 5 juni 2023 om 18:23</p>
+
                         </div>
                     </li>
                 </ul>

@@ -127,7 +127,9 @@ h1#user-name {
   display: flex;
   margin: 0 0.5em 0.5em 0;
   background-color: var(--white);
-  border-radius: 50px 50px;
+  border-radius: 2em;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .joiners img {
@@ -151,18 +153,23 @@ h1#user-name {
 }
 
 #suggestion ul {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 #suggestion ul li {
-  padding: 1em;
+  padding: 0.5em;
 }
 
 #suggestion ul li div h4 {
   text-transform: capitalize;
+  font-size: 0.8em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: fit-content;
+  background-color: var(--light-grey);
 }
 
-#suggestion img {
+#suggestion ul:first-of-type li > img {
   width: 4.5em;
   height: 4.5em;
 }
@@ -173,6 +180,9 @@ h1#user-name {
   margin-top: 20px;
   place-items: center;
 }
+/* #suggestion .statistics ul li {
+    padding: .5em;
+} */
 
 .statistics img {
   width: 32%;
@@ -183,35 +193,59 @@ h1#user-name {
   font-weight: bold;
   margin-right: 0.2em;
 }
+.statistics li span img {
+  width: 2em;
+  height: 2em;
+}
 
-/* helpers */
-#helpers > h3 {
+#reactions > h3 {
   font-size: 14px;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
 }
 
-#helpers img {
+#reactions img {
   width: 4em;
   height: 4em;
 }
 
-#helpers ul {
+#reactions ul {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
-#helpers ul li {
+#reactions ul li {
   display: flex;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+#reactions ul li div h3 {
+  font-weight: lighter;
+}
+
+#reactions ul li div p:nth-of-type(1) {
+  font-size: 0.8em;
   padding: 0.5em;
+  border-radius: 0.5em;
+  width: fit-content;
+  background-color: var(--light-grey);
 }
 
 #helpers ul li div h3 {
-  font-weight: lighter;
+  font-weight: bold;
+}
+
+#reactions ul li div p:nth-of-type(2) {
+  font-size: var(--font);
+  margin: 0.5em 0;
+  width: 100%;
+  word-wrap: break-word;
+  /* background-color: var(--light-grey); */
 }
 
 @media (width < 50em) {
