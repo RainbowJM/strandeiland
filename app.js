@@ -22,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
+  // Fetch the theme and suggestion data from Supabase
   const { data: themeData, themeError } = await supabase
     .from('theme')
     .select()

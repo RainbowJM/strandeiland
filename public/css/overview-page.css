@@ -20,7 +20,6 @@ main {
     /* overflow: hidden; */
 }
 
-
 /***********/
 /* SLOGAN  */
 /***********/
@@ -37,12 +36,8 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     max-width: 75em;
-
     margin: 20px auto;
-
-
 }
-
 
 .slogan-container h1 {
     grid-column: span 2;
@@ -81,7 +76,6 @@ main {
 .slogan-container span:nth-child(3) {
     background-color: var(--white);
     color: var(--black);
-
     animation-name: slogan-2;
     animation-duration: .9s;
     animation-iteration-count: infinite;
@@ -145,11 +139,8 @@ main {
 /* IDEA'S OVERWIEW LIST */
 /************************/
 .content {
-    /* width: 100%; */
     display: grid;
-    /* grid-template-columns: 2fr 1fr; */
     grid-template-columns: 1fr;
-    /* max-width: 1200px; */
     max-width: 75em;
     margin: 20px auto;
     gap: 20px;
@@ -166,13 +157,7 @@ main {
         padding: .5em;
         margin: .5em 0;
 }
-/* .latest-ideas>h2 {
-    grid-column: span 3;
-    width: fit-content;
-    background-color: var(--light-blue);
-    padding: .5em;
-}
- */
+
 /***************************/
 /*  SUGGESTIONS THUMBNAILS */
 /***************************/
@@ -183,17 +168,6 @@ main {
 
 }
 
-/* 
-@keyframes hover-animation {
-    0% {
-        transform: translateY(-18%);
-    }
-
-  
-    100% {
-    transform: translateY(-35%);
-    }
-} */
 
 .thumbnail-container img {
     width: 100%;
@@ -316,11 +290,6 @@ main {
 .suggestion-themes li::first-letter {
     text-transform: uppercase;
 }
-
-/* .statistics li:nth-child(2) {
-    text-align: right;
-} */
-
 /****************/
 /* LATEST SUGGESTION CONTAINER */
 /****************/
@@ -330,19 +299,11 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(24em, auto);
-    /* width: 200%; */
     gap: 20px;
-    /* margin: 2em 0; */
     width: 100%;
 }
 
-/* .latest-ideas>h2 {
-    grid-column: span 3;
-    width: fit-content;
-    background-color: var(--light-blue);
-    padding: .5em;
-}
- */
+
 
 .latest-ideas .thumbnail-container {
     border-radius: 2em;
@@ -388,8 +349,6 @@ main {
 
 .grid-container .thumbnail-container a {
     transform: translateY(-18%);
-
-
 }
 
 
@@ -397,7 +356,6 @@ main {
     width: 100%;
     /* height: 50%; */
     transform: translateY(-18%);
-
 }
 
 .grid-container .thumbnail-container article h2 {
@@ -426,9 +384,7 @@ main {
 
 .grid-container .thumbnail-container article {
     transition: transform .5s ease-in-out;
-
 }
-
 
 .grid-container .thumbnail-container article:hover {
     /* animation: hover-animation 1s ease-in-out 3 alternate forwards; */
@@ -491,7 +447,6 @@ form fieldset>ul li:nth-of-type(2) label {
     padding: .4rem 1rem;
     width: fit-content;
     height: fit-content;
-
 }
 
 .sort-btn {
