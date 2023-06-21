@@ -60,35 +60,39 @@ app.get("/form", (req, res) => {
 
 
 app.post("/form", async (req, res) => {
-form.addEventListener('#sendButton', async (event) => {
+  console.log(req.body);
+  try {
+      const { data, error } = await supabase
+          .from('suggestion')
+          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink, File: req.body.file}])
+          .select();
 
-  event.preventDefault()
+      const insertId = data[0].id ?? null;
+      console.log(insertId);
 
-  const formInputs = form.querySelectorAll('#title, #description, #theme, #image, #link, #file')
+      if (error || !insertId) {
+          throw error;
+      }
 
-  let submision = {}
+      const { error: themeError } = await supabase
+          .from('suggestion_theme')
+          .insert([{
+              suggestionId: insertId,
+              themaId: req.body.theme
+          }]);
 
-  formInputs.forEach(element => {
-    const { value, name } = element
-    if (value) {
-        submision[name] = value
-    }
-  })
-  console.log(submision)
+      if (themeError) {
+          throw themeError;
+      }
 
-
-  const { error } = await supabase.from('entries').insert([submision], { returning: 'minimal'})
-
-  if (error) {
-      alert('There was an error please try again')
-  } else {
       res.render('sent');
+  } catch (error) {
+      res.status(500).json({ error: 'Het toevoegen van de wens ging fout, probeer opnieuw' });
+      console.log(error);
+      return;
   }
-
-  formInputs.forEach(element => element.value = '')
-
-})
 });
+
 
 app.get("/offline", (req, res) => {
   res.render("offline", {
