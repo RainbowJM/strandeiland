@@ -93,6 +93,15 @@ app.get("/wens/:id", async (req, res) => {
     .eq("id", suggestionId)
     .single();
 
+    let defaultTime = suggestionData.created_at;
+    let date = new Date(defaultTime).toLocaleDateString("nl-NL", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
   if (error) {
     console.error("Error fetching suggestion:", error);
     // Handle the error appropriately, e.g., render an error page
@@ -100,6 +109,7 @@ app.get("/wens/:id", async (req, res) => {
     res.render("detailPage-1", {
       title: "Wens",
       suggestion: suggestionData,
+      time: date
     });
   }
 });
