@@ -91,21 +91,12 @@ router.get("/wens/:id", async (req, res) => {
     .from("suggestion_theme")
     .select();
 
+  let listSuggestions = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
       if (residentSuggestion.resident_id === resident.id) {
         if (residentSuggestion.suggestion_id === suggestionData.id) {
           suggestionData.resident = resident;
-        }
-      }
-    }
-  }
-
-  let listSuggestions = [];
-  for (const residentSuggestion of residentSuggestionData) {
-    for (const resident of residentData) {
-      if (suggestionData.id === residentSuggestion.suggestion_id) {
-        if (resident.id === residentSuggestion.resident_id) {
           listSuggestions.push(suggestionData);
         }
       }
@@ -133,7 +124,7 @@ router.get("/wens/:id", async (req, res) => {
       }
     }
   }
-
+  
   if (
     error ||
     residentSuggestionError ||
