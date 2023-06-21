@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
+
   const { data: themeData, themeError } = await supabase.from("theme").select();
 
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
@@ -42,6 +43,11 @@ app.get("/", async (req, res) => {
     .order("created_at", { ascending: false })
     .limit(3);
 
+  const { count, error } = await supabase
+    .from('suggestion')
+    .select('*', { count: 'exact', head: true })
+
+  console.log(count);
   for (const suggestion of suggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
@@ -66,14 +72,17 @@ app.get("/", async (req, res) => {
     }
   }
 
-  console.log(latestSuggestionsData);
-
-  res.render("index", {
-    title: "Wensen",
-    themes: themeData,
-    suggestions: suggestionsData,
-    latestSuggestions: latestSuggestionsData,
-  });
+  if (themeError || suggestionsError || latestSuggestionsError || themeSuggestionsError) {
+    console.error('Error:', themeError || suggestionsError || latestSuggestionsError || themeSuggestionsError);
+  } else {
+    res.render("index", {
+      title: "Wensen",
+      themes: themeData,
+      suggestions: suggestionsData,
+      latestSuggestions: latestSuggestionsData,
+      totalSuggestions: count
+    });
+  }
 });
 
 app.get("/sent", (req, res) => {
