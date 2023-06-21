@@ -51,7 +51,6 @@ app.get('/detailPage-1', (req, res) => {
     title: "Detail",
   });
 });
-
 app.get("/form", (req, res) => {
   res.render("form", {
     title: "Formulier",
@@ -59,7 +58,8 @@ app.get("/form", (req, res) => {
 });
 
 
-app.post("/form", async (req, res) => {
+app.post("/wens", async (req, res) => {
+  console.log('testtest');
   console.log(req.body);
   try {
       const { data, error } = await supabase
@@ -67,7 +67,7 @@ app.post("/form", async (req, res) => {
           .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink}])
           .select();
 
-      const insertId = data[0].id ?? null;
+      const insertId = data[0].id ?? null ;
       console.log(insertId);
 
       if (error || !insertId) {

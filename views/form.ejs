@@ -17,7 +17,7 @@
     <h1>Maak een wens</h1>
 
     <div class="form-container">
-        <form action="/form">
+        <form action="/wens" method="post">
         
             <fieldset>
                 <label for="title">Titel</label>
@@ -45,20 +45,20 @@
         
                     <div class="dropdown-container" id="themeDropdownMenu">
                         <ul class="dropdown-menu" >
-                            <li><label><input type="checkbox" value="Sport">Sport</label></li>
-                            <li><label><input type="checkbox" value="Recreatie">Recreatie</label></li>
-                            <li><label><input type="checkbox" value="Verkeer">Verkeer</label></li>
-                            <li><label><input type="checkbox" value="Winkels">Winkels</label></li>
-                            <li><label><input type="checkbox" value="Natuur">Natuur</label></li>
-                            <li><label><input type="checkbox" value="Milieu">Milieu</label></li>
-                            <li><label><input type="checkbox" value="Jeugd">Jeugd</label></li>
-                            <li><label><input type="checkbox" value="Veiligheid">Veiligheid</label></li>
-                            <li><label><input type="checkbox" value="Cultuur">Cultuur</label></li>
-                            <li><label><input type="checkbox" value="Huisvesting">Huisvesting</label></li>
-                            <li><label><input type="checkbox" value="Infrastructuur">Infrastructuur</label></li>
-                            <li><label><input type="checkbox" value="Strand">Strand</label></li>
-                            <li><label><input type="checkbox" value="Onderwijs">Onderwijs</label></li>
-                            <li><label><input type="checkbox" value="Overig">Overig</label></li>
+                            <li><label><input type="checkbox" value="1">Sport</label></li>
+                            <li><label><input type="checkbox" value="2">Recreatie</label></li>
+                            <li><label><input type="checkbox" value="3">Verkeer</label></li>
+                            <li><label><input type="checkbox" value="4">Winkels</label></li>
+                            <li><label><input type="checkbox" value="5">Natuur</label></li>
+                            <li><label><input type="checkbox" value="6">Milieu</label></li>
+                            <li><label><input type="checkbox" value="7">Jeugd</label></li>
+                            <li><label><input type="checkbox" value="8">Veiligheid</label></li>
+                            <li><label><input type="checkbox" value="9">Cultuur</label></li>
+                            <li><label><input type="checkbox" value="10">Huisvesting</label></li>
+                            <li><label><input type="checkbox" value="11">Infrastructuur</label></li>
+                            <li><label><input type="checkbox" value="12">Strand</label></li>
+                            <li><label><input type="checkbox" value="13">Onderwijs</label></li>
+                            <li><label><input type="checkbox" value="14">Overig</label></li>
                         </ul>
                         <!-- Dropdown menu options for selecting themes -->
                     </div>
@@ -70,7 +70,7 @@
                 <button id="uploadButton">Afbeelding uploaden</button>
                 <!-- Button for uploading an image -->
         
-                <div id="popup" class="hidden">
+                <!-- <div id="popup" class="hidden"> -->
                     <!-- Popup container for image upload options -->
         
                     <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
@@ -113,10 +113,10 @@
                         <div id="closeButton" class="hidden">&#10006;</div>
                         <!-- Close button for clearing the selected file -->
                     </div>
-                </div>
+                <!-- </div> -->
             </fieldset>
         
-            <input type="submit" value="wens aanmaken" id="sendButton">
+            <input type="submit" value="wens aanmaken" id="sendButton" />
             <!-- Submit button for creating the wish -->
         
         </form>
