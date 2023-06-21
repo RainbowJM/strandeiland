@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       // Proceed with form submission
       form.submit();
+      console.log('loading')
     }, 2000);
   });
 });
