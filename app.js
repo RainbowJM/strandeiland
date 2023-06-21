@@ -64,7 +64,7 @@ app.post("/form", async (req, res) => {
   try {
       const { data, error } = await supabase
           .from('suggestion')
-          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink, File: req.body.file}])
+          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink}])
           .select();
 
       const insertId = data[0].id ?? null;
