@@ -26,15 +26,12 @@ io.on("connection", (socket) => {
   socket.emit("history", history);
 
   socket.on("message", (message) => {
-    // Add the message to the history.
     while (history.length > historySize) {
       // Remove the oldest message.
       history.shift();
     }
-    // Add the message to the history.
     history.push(message);
 
-    // Emit the message to all connected users.
     io.emit("message", {
       message: message.message,
       name: message.name,
@@ -66,7 +63,6 @@ io.on("connection", (socket) => {
       });
     }
 
-    // Emit the array of typing users.
     io.emit("typing", typing);
   });
 
