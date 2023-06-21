@@ -41,6 +41,11 @@ app.get("/", async (req, res) => {
     .order('created_at', { ascending: false })
     .limit(3);
 
+  const { count, error } = await supabase
+    .from('suggestion')
+    .select('*', { count: 'exact', head: true })
+
+  console.log(count);
   for (const suggestion of suggestionsData) {
     const relatedTheme = themeSuggestions.find((ts) => ts.suggestionId === suggestion.id);
     if (relatedTheme) {
@@ -70,6 +75,7 @@ app.get("/", async (req, res) => {
       themes: themeData,
       suggestions: suggestionsData,
       latestSuggestions: latestSuggestionsData,
+      totalSuggestions: count
     });
   }
 });
