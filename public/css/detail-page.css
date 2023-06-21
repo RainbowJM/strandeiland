@@ -115,7 +115,7 @@ main {
 
 .joiners>div {
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .joiners h2 {
@@ -238,10 +238,11 @@ main {
 #sharers ul li img {
     height: 3em;
     width: 3em;
+    cursor: pointer;
 }
 
 #sharers li img:hover {
-    filter: drop-shadow(3px 1px 3px var(--yellow));
+    filter: drop-shadow(5px 5px 1px var(--yellow));
   }
 
 .box {
