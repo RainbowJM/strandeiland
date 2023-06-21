@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton} from "./modules/variables.js";
+  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, titleInput, descriptionTextarea} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -171,6 +171,16 @@ if (themeSelect) {
 
 if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
+}
+
+if (titleInput) {
+  titleInput.addEventListener('input', function() {
+    if (titleInput.value.trim() === '') {
+      titleInput.setCustomValidity('Please enter a title');
+    } else {
+      titleInput.setCustomValidity('');
+    }
+  });
 }
 
 // ------------------ sockets -------------------------------------------------------
