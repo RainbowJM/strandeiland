@@ -102,6 +102,11 @@ main {
     padding: .5em 1em;
     background-color: var(--black);
     color: var(--white);
+    transition: background-color .3s ease-in-out;
+}
+
+.slogan-call-to-action a:hover{
+    background-color: var(--blue);
 }
 
 @keyframes slogan-1 {
