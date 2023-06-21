@@ -35,6 +35,9 @@ const savedFormData = localStorage.getItem(localStorageKey);
 const imageLinkInput = document.getElementById('imageLink');
 const imagePreview = document.getElementById('imagePreview');
 const uploadButton = document.getElementById("uploadButton");
+const titleInput = document.getElementById('title');
+const descriptionTextarea = document.getElementById('description');
+
 
 
 
@@ -43,5 +46,7 @@ export { messages, submitMessage, input, filterMenu, themeFilterBtn,
     tabContents, filterThemeBtn, filterSortBtn, closeFilterBtn, typingElement,
     selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput,
     customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData,
-    imageLinkInput, imagePreview, uploadButton, filterThemeResultsBtn, filterSortResultsBtn }
+    imageLinkInput, imagePreview, uploadButton, titleInput, descriptionTextarea,
+  filterThemeResultsBtn, filterSortResultsBtn }
+
 

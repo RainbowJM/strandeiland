@@ -108,20 +108,40 @@ app.get("/form", (req, res) => {
 });
 
 app.post("/form", async (req, res) => {
-  const { error } = await supabase
-    .from('form')
-    .insert({
-      title: req.body.titel,
-      description: req.body.beschrijving,
-      theme: req.body.thema,
-      image: req.body.imageLink,
-      link: req.body.file
-    })
-  if (error) {
-    res.send(error);
+  console.log(req.body);
+  try {
+      const { data, error } = await supabase
+          .from('suggestion')
+          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink}])
+          .select();
+
+      const insertId = data[0].id ?? null;
+      console.log(insertId);
+
+      if (error || !insertId) {
+          throw error;
+      }
+
+      const { error: themeError } = await supabase
+          .from('suggestion_theme')
+          .insert([{
+              suggestionId: insertId,
+              themaId: req.body.theme
+          }]);
+
+      if (themeError) {
+          throw themeError;
+      }
+
+      res.render('sent');
+  } catch (error) {
+      res.status(500).json({ error: 'Het toevoegen van de wens ging fout, probeer opnieuw' });
+      console.log(error);
+      return;
+
   }
-  res.send("created!!");
 });
+
 
 app.get("/offline", (req, res) => {
   res.render("offline", {
