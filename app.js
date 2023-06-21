@@ -112,16 +112,15 @@ app.get("/wens/:id", async (req, res) => {
 
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
-      console.log(residentSuggestion);
-      if (residentSuggestion.suggestion_id === resident.id) {
-        console.log(residentSuggestion);
-        if (residentSuggestion.resident_id === suggestionData.id) {
-          // suggestionData.resident = resident;
-          console.log(resident);
+      if (residentSuggestion.resident_id === resident.id) {
+        if (residentSuggestion.suggestion_id === suggestionData.id) {
+          suggestionData.resident = resident;
         }
       }
     }
   }
+  var count= Object.keys(suggestionData.resident).length
+  console.log(count)
   if (error) {
     console.error("Error fetching suggestion:", error);
     // Handle the error appropriately, e.g., render an error page
