@@ -1,8 +1,9 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton} from "./modules/variables.js";
+  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
+
 
 const socket = io();
 let last;
@@ -34,8 +35,8 @@ if (savedFormData) {
   const parsedFormData = JSON.parse(savedFormData);
 
   // Set the saved values in the corresponding form fields
-  document.getElementById("titel").value = parsedFormData.titel;
-  document.getElementById("beschrijving").value = parsedFormData.beschrijving;
+  document.getElementById("title").value = parsedFormData.title;
+  document.getElementById("description").value = parsedFormData.description;
 
   parsedFormData.themas.forEach(function(theme) {
     const checkbox = document.querySelector(`#themeDropdownMenu input[type='checkbox'][value='${theme}']`);
@@ -170,6 +171,25 @@ if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
 }
 
+if (titleInput) {
+  titleInput.addEventListener('input', function() {
+    if (titleInput.value.trim() === '') {
+      titleInput.setCustomValidity('Please enter a title');
+    } else {
+      titleInput.setCustomValidity('');
+    }
+  });
+}
+if (descriptionTextarea) {
+  descriptionTextarea.addEventListener('input', function() {
+    if (descriptionTextarea.value.trim() === '') {
+      descriptionTextarea.setCustomValidity('Please enter a description');
+    } else {
+      descriptionTextarea.setCustomValidity('');
+    }
+  });
+}
+
 // ------------------ sockets -------------------------------------------------------
 
 socket.on("message", (message) => {
@@ -208,6 +228,37 @@ socket.on('typing', (typing) => {
 })
 
 // ------------------ functions -------------------------------------------------------
+
+// form loading state
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const submitButton = document.querySelector('.submit-button');
+  const loadingState = document.querySelector('#loadingState');
+
+  form.addEventListener('submit', function(event) {
+    // Prevent the form from submitting immediately
+    event.preventDefault();
+
+    submitButton.classList.add('hidden');
+    loadingState.classList.remove('hidden');
+
+    setTimeout(function() {
+      form.submit();
+      console.log('loading')
+    }, 2000);
+  });
+});
+
+
+// giving a class to the box that leads to the detail user page
+boxes.forEach(box => {
+  box.addEventListener('click', function() {
+    const boxElement = box.querySelector('.box');
+    boxElement.classList.toggle('show');
+    console.log('click')
+  });
+});
+
 
 // Function to handle selectedOption click
 function handleSelectedOptionClick() {
@@ -267,11 +318,16 @@ function updateFormData() {
   selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
 
   const formData = {
-    titel: document.getElementById("titel").value,
-    beschrijving: document.getElementById("beschrijving").value,
+    title: document.getElementById("title").value,
+    description: document.getElementById("description").value,
     themas: selectedThemes
   };
 
   // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
+
+
+
+
+

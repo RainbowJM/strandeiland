@@ -3,10 +3,10 @@
 
 <head>
     <%- include('./partials/head'); %>
-        <link rel="stylesheet" href="/css/detail-page.css">
-        <link rel="stylesheet" href="/css/chat.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/detail-page.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <body>
     <header>
@@ -19,23 +19,16 @@
     </div>
 
     <main>
-
         <!-- wish article -->
         <section class="wish">
-            <p>Wens</p>
             <div id="img-container">
                 <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
             </div>
             <article>
-                <h2>
-                    <%= suggestion.title %>
-                </h2>
-                <p>
-                    <%= suggestion.created_at %>
-                </p>
-                <p>
-                    <%= suggestion.description %>
-                </p>
+                <h2> <%= suggestion.title %> </h2>
+                <h3> <%= suggestion.theme.label %> </h3>
+                <p id="time"> Geplaatst op <%= time %></p>
+                <p> <%= suggestion.description %> </p>
                 <!-- join -->
                 <section class="join">
                     <button>Word trekker</button>
@@ -62,24 +55,12 @@
             <!-- trekkers -->
             <div id="ambassador" class="helping-item">
                 <h2>Trekkers</h2>
-                <h3>Trekkers van deze wens: 2</h3>
+                <h3>Trekkers van deze wens: 1</h3>
                 <ul>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Acteur</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="/images/bob.jpeg" alt="">
-                        <div>
-                            <h3>Bob Dissel</h3>
-                            <h4>Docent wiskunde</h4>
-                        </div>
-                    </li>
+                    <%- include('./partials/ambassador.ejs', suggestion)%> 
                 </ul>
             </div>
+
             <!-- helpers -->
             <div id="helpers" class="helping-item">
                 <h2>Helpers</h2>
@@ -123,6 +104,7 @@
 
                 </ul>
             </div>
+
             <!-- sharers -->
             <div id="sharers" class="helping-item">
                 <h2>Delers</h2>
@@ -130,7 +112,7 @@
                 <ul>
                     <li>
                         <img src="/images/bob.jpeg" alt="">
-                        <div class="box" tabindex="0">
+                        <div class="box">
                             <h3>Bob Dissel</h3>
                             <h4>Docent</h4>
                             <a href="#">bericht sturen</a>
@@ -138,7 +120,7 @@
                     </li>
                     <li>
                         <img src="/images/bob.jpeg" alt="">
-                        <div class="box" tabindex="0">
+                        <div class="box">
                             <h3>Bob Dissel</h3>
                             <h4>Docent</h4>
                             <a href="#">bericht sturen</a>
@@ -146,7 +128,7 @@
                     </li>
                     <li>
                         <img src="/images/bob.jpeg" alt="">
-                        <div class="box" tabindex="0">
+                        <div class="box">
                             <h3>Bob Dissel</h3>
                             <h4>Docent</h4>
                             <a href="#">bericht sturen</a>
@@ -154,10 +136,10 @@
                     </li>
                     <li>
                         <img src="/images/bob.jpeg" alt="">
-                        <div class="box" tabindex="0">
+                        <div class="box">
                             <h3>Bob Dissel</h3>
                             <h4>Docent</h4>
-                            <a href="#">bekijk profiel</a>
+                            <a href="#">bericht sturen</a>
                         </div>
                     </li>
                     <li>
@@ -224,6 +206,7 @@
             </div>
         </aside>
         </div>
+           
     </main>
 
     <!-- footer -->

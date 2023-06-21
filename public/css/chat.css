@@ -11,6 +11,7 @@
 }
 
 #chat {
+  transform: translateY(-10%);
   height: 26em;
   position: relative;
   background-color: var(--white);

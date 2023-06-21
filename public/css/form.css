@@ -34,9 +34,28 @@
 }
 
 
+
+input:required:invalid {
+  border: 2px solid red;
+}
+
+input:required:valid {
+  border: 2px solid green;
+}
+
+textarea:required:invalid {
+  border: 2px solid red;
+}
+
+textarea:required:valid {
+  border: 2px solid green;
+}
+
+
+
 /* Placeholder Styling */
-textarea#beschrijving::placeholder,
-textarea#titel::placeholder {
+textarea#description::placeholder,
+textarea#title::placeholder {
   font-style: var(--font);
     color: var(--dark-grey);
     font-size: 15px;
@@ -98,7 +117,7 @@ fieldset .file-input-container:focus
   box-shadow: 0 0 4px var(--black);
 }
 
-input#titel::placeholder, 
+input#title::placeholder, 
 #imageLink::placeholder{
     font-family: var(--font);
     color: var(--dark-grey);
@@ -133,7 +152,7 @@ textarea {
   border: none;
 }
 
-#titel{
+#title{
     margin-bottom: 10px;
     width: 75%;
     position: relative;
@@ -141,7 +160,7 @@ textarea {
 
 }
 /* Submit Button Styling */
-#versturen {
+#sendButton {
   background-color: var(--black);
   color: var(--white);
   padding: 10px 20px;
@@ -150,7 +169,7 @@ textarea {
   cursor: pointer;
 }
 
-textarea#beschrijving::placeholder {
+textarea#description::placeholder {
    font-family: var(--font);
    color: var(--dark-grey);
   }
@@ -186,7 +205,7 @@ textarea#beschrijving::placeholder {
     font-size: 18px; /* Adjust the font size as needed */
     font-weight: bold; /* Add this line */
     line-height: 1;
-    transition: transform 0.2s ease-in-out;
+
   }
   
   .selected-option.open::after {
@@ -212,19 +231,10 @@ textarea#beschrijving::placeholder {
   background-color: var(--gray);
   min-width: 200px;
   border: border;
-  overflow-y: auto;
   padding: 10px;
   gap: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.1s ease-in-out, linear 0.1s;
 }
 
-.dropdown-container:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
-}
 
 
 .dropdown-menu li {
@@ -235,7 +245,6 @@ textarea#beschrijving::placeholder {
   height: 2em;
   width: 100%;
   text-align: center;
-  transition: 0.1s ease-in-out;
 }
 
 .dropdown-menu li:hover {
@@ -428,4 +437,70 @@ p{
   }
   
 
+  /* body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background: white;
+    font-family:'Poppins', sans-serif;
+  } */
+  
 
+  /* loading state */
+  #loadingState{
+    position:relative;
+
+    
+  }
+
+  #background{
+    /* position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+    background-color: white;
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  #loadingState h2 {
+    position:absolute;
+    transform:translate(-50%, -50%);
+    font-size:8em;
+    font-family:'Poppins', sans-serif;
+  }
+  
+  #loadingState h2:nth-child(1){
+    color:transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+  }
+  
+  #loadingState h2:nth-child(2){
+    color:#03a9f4;
+    -webkit-text-stroke: 2px #03a9f4;
+    animation: animate 4s ease-in-out infinite;
+  }
+  
+  @keyframes animate{
+    0%,100% {
+      clip-path:polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
+    }
+    20% {
+      clip-path:polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
+    }
+  
+  }
+  
+  p {
+    color:#03a9f4;
+    position:absolute;
+    bottom:8em;
+    left:40vh;
+  }
+
+  .hidden {
+    display: none;
+  }
