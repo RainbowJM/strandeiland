@@ -25,13 +25,10 @@
                 <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
             </div>
             <article>
-                <h2>
-                    <%= suggestion.title %>
-                </h2>
+                <h2> <%= suggestion.title %> </h2>
+                <h3> <%= suggestion.theme.label %> </h3>
                 <p id="time"> Geplaatst op <%= time %></p>
-                <p>
-                    <%= suggestion.description %>
-                </p>
+                <p> <%= suggestion.description %> </p>
                 <!-- join -->
                 <section class="join">
                     <button>Word trekker</button>

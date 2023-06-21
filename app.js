@@ -101,13 +101,20 @@ app.get("/wens/:id", async (req, res) => {
     minute: "2-digit",
   });
 
-  const { data: residentSuggestionData, residentSuggestionError } =
-    await supabase
-    .from("resident_suggestion")
-    .select();
+  const { data: residentSuggestionData, residentSuggestionError } = await supabase
+  .from("resident_suggestion")
+  .select();
 
   const { data: residentData, residentError } = await supabase
     .from("resident")
+    .select();
+
+  const { data: themeData, themeError } = await supabase
+  .from("theme")
+  .select();
+
+  const { data: suggestionThemeData, suggestionThemeError } = await supabase
+    .from("suggestion_theme")
     .select();
 
   for (const residentSuggestion of residentSuggestionData) {
@@ -119,8 +126,42 @@ app.get("/wens/:id", async (req, res) => {
       }
     }
   }
-  var count= Object.keys(suggestionData.resident).length
-  console.log(count)
+
+  let listSuggestions = [];
+  for (const residentSuggestion of residentSuggestionData) {
+    for (const resident of residentData) {
+      if (suggestionData.id === residentSuggestion.suggestion_id) {
+        if (resident.id === residentSuggestion.resident_id) {
+          listSuggestions.push(suggestionData);
+        }
+      }
+    }
+  }
+
+  for (const suggestion of listSuggestions) {
+    let relatedTheme = null;
+    for (const ts of suggestionThemeData) {
+      if (ts.suggestionId === suggestion.id) {
+        relatedTheme = ts;
+        break;
+      }
+    }
+    if (relatedTheme) {
+      let theme = null;
+      for (const t of themeData) {
+        if (t.id === relatedTheme.themaId) {
+          theme = t;
+          break;
+        }
+      }
+      if (theme) {
+        suggestionData.theme = theme;
+      }
+    }
+  }
+
+  console.log(suggestionData)
+
   if (error) {
     console.error("Error fetching suggestion:", error);
     // Handle the error appropriately, e.g., render an error page
@@ -197,7 +238,6 @@ app.get("/user/:first_name", async (req, res) => {
       }
     }
   }
-
   if (userError || residentSuggestionError || suggestionError) {
     console.error(
       "Error:",

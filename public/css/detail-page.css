@@ -81,6 +81,16 @@ main {
     font-size: 12px;
 }
 
+.wish article h3 {
+    text-transform: capitalize;
+    font-size: 0.8em;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 0.5em;
+    width: fit-content;
+    background-color: var(--light-grey);
+  }
+
 /* join --------------------------------------------------------------------------------------- */
 .join {
     margin-top: 1em;
