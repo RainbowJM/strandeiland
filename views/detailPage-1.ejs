@@ -19,10 +19,8 @@
     </div>
 
     <main>
-
         <!-- wish article -->
         <section class="wish">
-            <p>Wens</p>
             <div id="img-container">
                 <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
             </div>
@@ -30,9 +28,7 @@
                 <h2>
                     <%= suggestion.title %>
                 </h2>
-                <p>
-                    <%= suggestion.created_at %>
-                </p>
+                <p id="time"> Geplaatst op <%= time %></p>
                 <p>
                     <%= suggestion.description %>
                 </p>
