@@ -150,7 +150,7 @@ router.get("/wens/:id", async (req, res) => {
         suggestionThemeError
     );
   } else {
-    res.render("detailPage-1", {
+    res.render("suggestion", {
       title: "Wens",
       suggestion: suggestionData,
       time: date,
