@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton} from "./modules/variables.js";
+  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -209,6 +209,16 @@ socket.on('typing', (typing) => {
 
 // ------------------ functions -------------------------------------------------------
 
+// giving a class to the box that leads to the detail user page
+boxes.forEach(box => {
+  box.addEventListener('click', function() {
+    const boxElement = box.querySelector('.box');
+    boxElement.classList.toggle('show');
+    console.log('click')
+  });
+});
+
+
 // Function to handle selectedOption click
 function handleSelectedOptionClick() {
   dropdownMenu.classList.toggle("show");
@@ -275,3 +285,8 @@ function updateFormData() {
   // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
+
+
+
+
+

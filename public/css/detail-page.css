@@ -8,7 +8,12 @@
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
     --font: 'Poppins', sans-serif;
+
+    --border-radius-small: 2em;
+    --border-radius-big: 4em;
 }
+
+
 main {
     padding: 0 3vw 0 5vw;
     display: grid;
@@ -34,14 +39,21 @@ main {
     margin-bottom: 1.5em;
 }
 
-.wish h2 {
+.wish article h2 {
     color: var(--dark-grey);
+    background-color: var(--yellow);
+    width: max-content;
+}
+
+#img-container {
+    width: 100%;
+    height: 25em;
 }
 
 .wish img {
     width: 100%;
-    contain: content;
-    transform: translateY(-30%);
+    object-fit: cover;
+    /* transform: translateY(-30%); */
 }
 
 .wish p:nth-of-type(1) {
@@ -60,15 +72,8 @@ main {
 .wish article {
     background-color: var(--white);
     padding: 4em 2em;
-    border-top-left-radius: 80px 80px;
-    border-top-right-radius: 80px 80px;
+    border-radius: var(--border-radius-big);
     transform: translateY(-25%) ;
-}
-
-#img-container {
-    /* height: 80vh; */
-    width: 100%;
-    overflow: hidden;
 }
 
 /* join --------------------------------------------------------------------------------------- */
@@ -89,9 +94,9 @@ main {
 }
 
 .join button:hover {
-    background-color: var(--yellow);
+    background-color: var(--blue);
     transition: .5s;
-    color: var(--black);
+    color: var(--white);
 }
 
 
@@ -104,7 +109,6 @@ main {
     display: flex;
     display: grid;
     grid-auto-rows: max-content;
-
     gap: 2em;
 }
 
@@ -139,7 +143,7 @@ main {
 .joiners img {
     width: 2em;
     height: 2em;
-    border-radius: 5em;
+    border-radius: var(--border-radius-big);
     background-color: var(--white);
     margin-right: .5em;
     cursor: pointer;
@@ -163,7 +167,7 @@ main {
 
 #ambassador ul li {
     padding: 1em;
-    border-radius: 1.5em
+    border-radius: var(--border-radius-small);
 }
 
 #ambassador ul li div h3 {
@@ -199,7 +203,7 @@ main {
 #helpers ul li {
     display: flex;
     padding: .5em;
-    border-radius: 1.5em
+    border-radius: var(--border-radius-small);
 }
 
 #helpers ul li div h3 {
@@ -220,7 +224,7 @@ main {
     background-color: var(--white);
     margin-top: 1em;
     padding: 1em;
-    border-radius: 1.5em
+    border-radius: var(--border-radius-small);
 }
 
 #sharers ul li {
@@ -235,13 +239,17 @@ main {
     width: 3em;
 }
 
+#sharers li img:hover {
+    filter: drop-shadow(3px 1px 3px var(--yellow));
+  }
+
 .box {
     display: none;
     position: absolute;
     background-color: var(--white);
-    padding: 10px;
     height: 3.8em;
     width: 8.5em;
+    transform: translateY(-1%);
   }
   
   .box.show {
@@ -250,15 +258,6 @@ main {
     z-index: 10000;
   }
   
-  /* li:hover .box {
-    display: block;
-    margin-left: 13em;
-    z-index: 10000;
- 
-  } */
-
-
-
   .box h3{
     background-color: var(--yellow);
     font-size: 14px;
