@@ -229,6 +229,27 @@ socket.on('typing', (typing) => {
 
 // ------------------ functions -------------------------------------------------------
 
+// form loading state
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const submitButton = document.querySelector('.submit-button');
+  const loadingState = document.querySelector('#loadingState');
+
+  form.addEventListener('submit', function(event) {
+    // Prevent the form from submitting immediately
+    event.preventDefault();
+
+    submitButton.classList.add('hidden');
+    loadingState.classList.remove('hidden');
+
+    setTimeout(function() {
+      form.submit();
+      console.log('loading')
+    }, 2000);
+  });
+});
+
+
 // giving a class to the box that leads to the detail user page
 boxes.forEach(box => {
   box.addEventListener('click', function() {
