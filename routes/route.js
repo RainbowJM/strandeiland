@@ -31,8 +31,6 @@ router.get("/", async (req, res) => {
     .from("suggestion")
     .select("*", { count: "exact", head: true });
 
-  console.log(count);
-
   for (const suggestion of suggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
