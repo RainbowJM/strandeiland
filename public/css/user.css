@@ -184,9 +184,6 @@ h1#user-name {
   margin-top: 20px;
   place-items: center;
 }
-/* #suggestion .statistics ul li {
-    padding: .5em;
-} */
 
 .statistics img {
   width: 32%;
@@ -249,7 +246,6 @@ h1#user-name {
   margin: 0.5em 0;
   width: 100%;
   word-wrap: break-word;
-  /* background-color: var(--light-grey); */
 }
 
 @media (width < 50em) {

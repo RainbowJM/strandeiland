@@ -8,7 +8,7 @@
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --font: 'Poppins', sans-serif;
-  
+
   --border-radius-small: 0.5em;
   --border-radius-medium: 2em;
   --border-radius-large: 4em;
@@ -56,7 +56,6 @@ form button {
   width: 50px;
   background: var(--blue);
   border: none;
-  /* border: solid 2px var(--yellow); */
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -104,7 +103,6 @@ div.message-name-time{
   background: var(--light-grey);
   border-radius: 25px;
   margin-left: auto;
-  /* border: 1.5px solid var(--yellow); */
   margin: 0 10px 0 10px;
 }
 
