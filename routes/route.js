@@ -85,8 +85,6 @@ router.get("/", async (req, res) => {
 
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
-
-  // Fetch the suggestion data from Supabase based on the provided ID
   const { data: suggestionData, error } = await supabase
     .from("suggestion")
     .select()
@@ -264,7 +262,6 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
-  console.log(req.body);
   try {
     const { data, error } = await supabase
       .from("suggestion")
@@ -278,7 +275,6 @@ router.post("/form", async (req, res) => {
       .select();
 
     const insertId = data[0].id ?? null;
-    console.log(insertId);
 
     if (error || !insertId) {
       throw error;
@@ -302,7 +298,6 @@ router.post("/form", async (req, res) => {
     res
       .status(500)
       .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
-    console.log(error);
     return;
   }
 });

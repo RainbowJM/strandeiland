@@ -20,10 +20,8 @@
         <a href="/">Terug</a> <!-- Link to home page -->
     </div>
 
-    <h1>Maak een wens</h1>
-
-
     <div class="form-container">
+        <h1>Maak een wens</h1>
         <form action="/sent">
 
             <fieldset>
@@ -65,25 +63,18 @@
                             <li><label><input type="checkbox" value="Overig">Overig</label></li>
                         </ul>
 
-                        <!-- Dropdown menu options for selecting themes -->
                     </div>
                 </fieldset>
 
                 <label for="imagelabel">Afbeelding</label>
-                <!-- Label for the image input field -->
 
                 <button id="uploadButton">Afbeelding uploaden</button>
-                <!-- Button for uploading an image -->
 
                 <div id="popup" class="hidden">
-                    <!-- Popup container for image upload options -->
-
                     <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
-                    <!-- Button for closing the popup -->
 
                     <div id="links">
                         <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
-                        <!-- Label for image website links -->
                         <div class='linkjes'>
                             <a href="https://unsplash.com/">Unsplash</a>
                             <a href="https://www.pexels.com/nl-nl/">Pexels</a>
@@ -93,16 +84,9 @@
                         <p class="hierarchy">Link</p>
 
                         <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
-                        <!-- Input field for entering the image link -->
                         <div id="imagePreview"></div>
-
-                        <!-- Placeholder for displaying image preview -->
-
                         <label for="or">Of</label>
-                        <!-- Label for image upload options -->
-
                         <p class="hierarchy">Bestand</p>
-                        <!-- Label for image file upload option -->
 
 
                         <div class="file-input-container">
@@ -112,9 +96,7 @@
 
                         </div>
                         <div id="customImagePreview"></div>
-                        <!-- Placeholder for displaying custom image preview -->
                         <p id="selectedFileName">Geen bestand geselecteerd</p>
-                        <!-- Placeholder for displaying selected file name -->
                         <div id="closeButton" class="hidden">&#10006;</div>
 
                     </div>
@@ -123,8 +105,8 @@
             <input type="submit" value="wens aanmaken" id="versturen" class="submit-button">
 
             <div id="loadingState" class="loading-state hidden">
-                <h2>loading</h2>
-                <h2>loading</h2>
+                <h2>versturen</h2>
+                <h2>versturen</h2>
                 <div id="background"></div>
             </div>
 

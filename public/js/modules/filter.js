@@ -10,10 +10,6 @@ function toggleFilterMenu(){
 
     })  
 
-    // filterSortBtn.addEventListener('click', () => {
-    //     filterSortMenu.classList.toggle('show-filter-menu');
-
-    // })
  
 }
 

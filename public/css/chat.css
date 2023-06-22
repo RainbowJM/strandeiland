@@ -8,6 +8,10 @@
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --font: 'Poppins', sans-serif;
+
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
 }
 
 #chat {
@@ -18,6 +22,7 @@
   display: flex;
   flex-direction: column;
   grid-column-start: 1;
+  border-radius: var(--border-radius-medium);
 }
 
 #chat h2{
@@ -42,20 +47,17 @@ form input[type="text"] {
   font-family: Poppins, system-ui;
   background: var(--light-grey);
   border: none;
-  border-radius: 25px;
+  border-radius: 1.5em;
   width: 90%;
-  padding: 15px 20px;
+  padding: 1em 1.3em;
 }
 
 form button {
-  height: 50px;
-  width: 50px;
+  height: 3em;
+  width: 3em;
   background: var(--blue);
   border: none;
-  /* border: solid 2px var(--yellow); */
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
 
@@ -63,14 +65,14 @@ form button {
   font-size: small;
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #chat li #name {
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 0.5em;
   background-color: var(--yellow);
   display: none;
 }
@@ -79,11 +81,11 @@ form button {
   background: var(--light-grey);
   border-radius: 25px;
   width: 97%;
-  padding: 10px 25px;
+  padding: 0.6em 1.5em;
   height: 5em;
   font-size: medium;
   word-wrap: break-word;
-  margin: 0 10px 0 10px;
+  margin: 0 0.6em 0 0.6em;
   display: flex;
 }
 
@@ -98,10 +100,9 @@ div.message-name-time{
 
 #chat li.self #message {
   background: var(--light-grey);
-  border-radius: 25px;
+  border-radius: 1.5em;
   margin-left: auto;
-  /* border: 1.5px solid var(--yellow); */
-  margin: 0 10px 0 10px;
+  margin: 0 0.6em 0 0.6em;
 }
 
 #chat li #message p {
@@ -137,9 +138,9 @@ img.avatar{
 
 #typing {
   font-size: small;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: 25px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
   position: absolute;
   bottom: 5em;
 }
