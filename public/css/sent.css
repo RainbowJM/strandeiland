@@ -16,9 +16,12 @@
   --light-blue: #94DFFF;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
-  --gray: #E9E9E9;
+  --grey: #E9E9E9;
   --font: 'Poppins', sans-serif;
 
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
 }
 
 main {

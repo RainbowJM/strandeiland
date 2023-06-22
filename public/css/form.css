@@ -1,13 +1,3 @@
-/* Reset CSS */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Color Variables */
 :root {
   --yellow: #ffe700;
   --light-yellow: #FFF48C;
@@ -19,8 +9,11 @@
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
-} 
 
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
+} 
 
 .terug {
   margin: 10em 0 1em 5vw;

@@ -9,8 +9,9 @@
     --dark-grey: #333333;
     --font: 'Poppins', sans-serif;
 
-    --border-radius-small: 2em;
-    --border-radius-big: 4em;
+    --border-radius-small: 0.5em;
+    --border-radius-medium: 2em;
+    --border-radius-large: 4em;
 }
 
 
@@ -72,7 +73,7 @@ main {
 .wish article {
     background-color: var(--white);
     padding: 4em 2em;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-large);
     transform: translateY(-25%) ;
 }
 
@@ -158,7 +159,7 @@ main {
 .joiners img {
     width: 2em;
     height: 2em;
-    border-radius: var(--border-radius-big);
+    border-radius: var(--border-radius-large);
     background-color: var(--white);
     margin-right: .5em;
     cursor: pointer;
@@ -182,7 +183,7 @@ main {
 
 #ambassador ul li {
     padding: 1em;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-medium);
 }
 
 #ambassador ul li div h3 {
@@ -218,7 +219,7 @@ main {
 #helpers ul li {
     display: flex;
     padding: .5em;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-medium);
 }
 
 #helpers ul li div h3 {
@@ -239,7 +240,7 @@ main {
     background-color: var(--white);
     margin-top: 1em;
     padding: 1em;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-medium);
 }
 
 #sharers ul li {
