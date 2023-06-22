@@ -18,9 +18,7 @@ app.set("views", "./views");
 app.use(express.static(path.resolve("public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use('/', router);
-
 
 io.on("connection", (socket) => {
   console.log("user connected");

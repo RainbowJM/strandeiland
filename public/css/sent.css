@@ -60,11 +60,11 @@ main {
 
 } 
 
-.terug {
+.back {
   margin: 3em 0 1em 5vw;
 }
 
-.terug a {
+.back a {
   color: var(--black);
   font: var(--font);
 }
