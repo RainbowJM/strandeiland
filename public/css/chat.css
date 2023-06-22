@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   grid-column-start: 1;
+  border-radius: var(--border-radius-large);
 }
 
 #chat h2{
@@ -57,8 +58,6 @@ form button {
   background: var(--blue);
   border: none;
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
 
