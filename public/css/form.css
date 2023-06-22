@@ -14,16 +14,16 @@
   --white: #ffffff;
   --black: #000000;
   --blue: #009ce0;
-      --light-blue: #94DFFF;
+  --light-blue: #94DFFF;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
-} 
+}
 
 
 .terug {
-  margin: 10em 0 1em 5vw;
+  margin: 3em 0 1em 5vw;
 
 
 }
@@ -57,8 +57,8 @@ textarea:required:valid {
 textarea#description::placeholder,
 textarea#title::placeholder {
   font-style: var(--font);
-    color: var(--dark-grey);
-    font-size: 15px;
+  color: var(--dark-grey);
+  font-size: 15px;
 }
 
 /* Heading Styling */
@@ -94,36 +94,34 @@ fieldset {
 fieldset label,
 fieldset textarea,
 fieldset .file-input-container,
-#imageLink
- {
+#imageLink {
   margin-bottom: 10px;
   width: 75%;
   position: relative;
   left: 5%;
 }
 
-fieldset .dropdown-menu label{
-    margin-bottom: 0;
-    font-weight: normal;
-    cursor: pointer;
+fieldset .dropdown-menu label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
 }
 
 /* Focus Styling */
 fieldset label:focus,
 fieldset textarea:focus,
-fieldset .file-input-container:focus
- {
+fieldset .file-input-container:focus {
   outline: none;
   box-shadow: 0 0 4px var(--black);
 }
 
-input#title::placeholder, 
-#imageLink::placeholder{
-    font-family: var(--font);
-    color: var(--dark-grey);
-    font-size: 15px;
-  }
-  
+input#title::placeholder,
+#imageLink::placeholder {
+  font-family: var(--font);
+  color: var(--dark-grey);
+  font-size: 15px;
+}
+
 /* Label Styling */
 fieldset label {
   font-weight: bold;
@@ -152,13 +150,14 @@ textarea {
   border: none;
 }
 
-#title{
-    margin-bottom: 10px;
-    width: 75%;
-    position: relative;
-    left: 5%;
+#title {
+  margin-bottom: 10px;
+  width: 75%;
+  position: relative;
+  left: 5%;
 
 }
+
 /* Submit Button Styling */
 #sendButton {
   background-color: var(--black);
@@ -170,59 +169,64 @@ textarea {
 }
 
 textarea#description::placeholder {
-   font-family: var(--font);
-   color: var(--dark-grey);
-  }
-  /* vanaf hier begint de dropdown menu  */
+  font-family: var(--font);
+  color: var(--dark-grey);
+}
+
+/* vanaf hier begint de dropdown menu  */
 
 .dropdown {
-    margin-bottom: 10px;
-    width: 75%;
-    position: relative;
-    left: 5%;
-    padding: 0;
-  }
-  
-  .selected-option {
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--gray);
-    color: var(--dark-grey);
-    border: none;
-    position: relative;
-    font-family: var(--font);
-    font-size: 15px;
-    font-weight: normal;
-    display: flex;
-    align-items: center;
-  }
-  .selected-option::after {
-    content: "\2304";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 18px; /* Adjust the font size as needed */
-    font-weight: bold; /* Add this line */
-    line-height: 1;
+  margin-bottom: 10px;
+  width: 75%;
+  position: relative;
+  left: 5%;
+  padding: 0;
+}
 
-  }
-  
-  .selected-option.open::after {
-    content: "×";
-    font-size: 18px; /* Adjust the font size as needed */
-    
-    transform: translateY(-50%);
-    line-height: 1;
-  }
-  
-  
-  
-  
-  .dropdown-container {
-    display: none;
-    margin-top: 10px;
-  }
+.selected-option {
+  cursor: pointer;
+  padding: 10px;
+  background-color: var(--gray);
+  color: var(--dark-grey);
+  border: none;
+  position: relative;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.selected-option::after {
+  content: "\2304";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  /* Adjust the font size as needed */
+  font-weight: bold;
+  /* Add this line */
+  line-height: 1;
+
+}
+
+.selected-option.open::after {
+  content: "×";
+  font-size: 18px;
+  /* Adjust the font size as needed */
+
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+
+
+
+.dropdown-container {
+  display: none;
+  margin-top: 10px;
+}
 
 .dropdown-menu {
   font-family: var(--font);
@@ -265,7 +269,7 @@ textarea#description::placeholder {
 
 .show {
   display: block;
- 
+
 }
 
 
@@ -287,7 +291,7 @@ textarea#description::placeholder {
   padding: 10px;
   border: none;
   border-radius: 4px;
-    font-family: var(--font);
+  font-family: var(--font);
 }
 
 .file-input-container input[type="file"] {
@@ -302,10 +306,10 @@ textarea#description::placeholder {
 
 
 .file-input-container {
-    background-color: var(--gray);
+  background-color: var(--gray);
 
-    height: 10em;
-  
+  height: 10em;
+
 }
 
 p#selectedFileName {
@@ -319,125 +323,128 @@ p#selectedFileName {
 }
 
 
-img{
-    width: 5em;
-    height: 4.5em;
-    position: relative;
-    left: 40%;
-    top: 15%;
-}
-p{
-    position: relative;
-    left: 29%;
-    top: 10%;
-    font-family: var(--font);
-    margin-left: 1em;
-    margin-top: 1em;
-    color: var(--black);
-    font-size: 16px;
+img {
+  width: 5em;
+  height: 4.5em;
+  position: relative;
+  left: 40%;
+  top: 15%;
 }
 
-.hierarchy{
-    position: relative;
-    left: 3%;
-
-    font-size: 15px;
- 
+p {
+  position: relative;
+  left: 29%;
+  top: 10%;
+  font-family: var(--font);
+  margin-left: 1em;
+  margin-top: 1em;
+  color: var(--black);
+  font-size: 16px;
 }
 
-#links label{
-    font-size:15px;
-    font-weight: bold;
-    
-}
+.hierarchy {
+  position: relative;
+  left: 3%;
 
-.linkjes{
-    position: relative;
-    left: 5%;
-    margin-top: 30px;
+  font-size: 15px;
 
 }
+
+#links label {
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+.linkjes {
+  position: relative;
+  left: 5%;
+  margin-top: 30px;
+
+}
+
 .linkjes a {
-    padding: 5px 10px;
-    background-color: var(--gray);
-    color: var(--black);
-    text-decoration: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-family: var(--font);
-    
-  }
-  
-  .linkjes a:last-child {
-    margin-right: 0;
-  }
-  
-  .linkjes a:hover {
-    background-color: var(--black);
-    color: var(--white);
-  }
+  padding: 5px 10px;
+  background-color: var(--gray);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-family: var(--font);
+
+}
+
+.linkjes a:last-child {
+  margin-right: 0;
+}
+
+.linkjes a:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
 
 
 
-  /* #closeButton.hidden {
+/* #closeButton.hidden {
     display: none;
   } */
 
-  .hidden {
-    display: none;
-  }
-  
-  #popup .close-button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
-    cursor: pointer;
-  }
+.hidden {
+  display: none;
+}
+
+#popup .close-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
 
 
-  #popup {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  #popup > div {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 40px;
-    width: 70%;
-    max-width: 850px;
-    position: absolute;
-    top: calc(50% + 160px); /* Adjust the value to position it below the form */
-    transform: translateY(-50%);
-  }
-  
-  
-  #popup #popupCloseButton{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
+#popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-  }
-  
-  #popup.hidden {
-    display: none;
-  }
-  
+#popup>div {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 40px;
+  width: 70%;
+  max-width: 850px;
+  position: absolute;
+  top: calc(50% + 160px);
+  /* Adjust the value to position it below the form */
+  transform: translateY(-50%);
+}
 
-  /* body {
+
+#popup #popupCloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+#popup.hidden {
+  display: none;
+}
+
+
+/* body {
     display:flex;
     justify-content:center;
     align-items:center;
@@ -445,62 +452,70 @@ p{
     background: white;
     font-family:'Poppins', sans-serif;
   } */
-  
 
-  /* loading state */
-  #loadingState{
-    position:relative;
 
-    
-  }
+/* loading state */
+#loadingState {
+  position: relative;
 
-  #background{
-    /* position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; */
-    background-color: white;
-    width: 100%;
-    height: 100%;
 
-  }
-  
-  #loadingState h2 {
-    position:absolute;
-    transform:translate(-50%, -50%);
-    font-size:8em;
-    font-family:'Poppins', sans-serif;
-  }
-  
-  #loadingState h2:nth-child(1){
-    color:transparent;
-    -webkit-text-stroke: 2px #03a9f4;
-  }
-  
-  #loadingState h2:nth-child(2){
-    color:#03a9f4;
-    -webkit-text-stroke: 2px #03a9f4;
-    animation: animate 4s ease-in-out infinite;
-  }
-  
-  @keyframes animate{
-    0%,100% {
-      clip-path:polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
-    }
-    20% {
-      clip-path:polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
-    }
-  
-  }
-  
-  p {
-    color:#03a9f4;
-    position:absolute;
-    bottom:8em;
-    left:40vh;
+}
+
+#background {
+  background-color: #fffe;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+}
+
+#loadingState h2 {
+  position: absolute;
+  bottom: 50vh;
+  left: 5vw;
+  font-size: 5em;
+  font-family: 'Poppins', sans-serif;
+  z-index: 33929929;
+}
+
+#loadingState h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+
+#loadingState h2:nth-child(2) {
+  color: #03a9f4;
+  -webkit-text-stroke: 2px #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
   }
 
-  .hidden {
-    display: none;
+  20% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
   }
+
+}
+
+p {
+  color: #03a9f4;
+  position: absolute;
+  bottom: 8em;
+  left: 40vh;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* background-color: #fff5;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0; */
