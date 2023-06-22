@@ -9,9 +9,7 @@ const supabase = createClient(
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const { data: themeData, themeError } = await supabase
-  .from("theme")
-  .select();
+  const { data: themeData, themeError } = await supabase.from("theme").select();
 
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
     .from("suggestion_theme")
@@ -262,6 +260,7 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
+  console.log(req.body);
   try {
     const { data, error } = await supabase
       .from("suggestion")
@@ -274,30 +273,45 @@ router.post("/form", async (req, res) => {
       ])
       .select();
 
-    const insertId = data[0].id ?? null;
-
+    const insertId = data.length > 0 ? data[0].id : null;
     if (error || !insertId) {
       throw error;
     }
 
-    const { error: themeError } = await supabase
-      .from("suggestion_theme")
-      .insert([
-        {
-          suggestionId: insertId,
-          themaId: req.body.theme,
-        },
-      ]);
+    const themes = [req.body.theme];
 
-    if (themeError) {
-      throw themeError;
-    }
+    const themeInsertPromises = themes.map(async (theme) => {
+      const { data: themeData, error: themeError } = await supabase
+        .from("theme")
+        .select("id")
+        .eq("id", theme)
+        .single();
+      if (themeError) {
+        throw themeError;
+      }
 
-    res.render("sent");
+      const { error: suggestionThemeError } = await supabase
+        .from("suggestion_theme")
+        .insert([
+          {
+            suggestionId: insertId,
+            themaId: themeData.id,
+          },
+        ]);
+      if (suggestionThemeError) {
+        throw suggestionThemeError;
+      }
+    });
+
+    await Promise.all(themeInsertPromises);
+    res.render("sent", {
+      title: "sent",
+    });
   } catch (error) {
     res
       .status(500)
       .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
+    console.log(error);
     return;
   }
 });
