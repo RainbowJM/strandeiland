@@ -171,7 +171,7 @@ main {
 .thumbnail-container figure {
   position: relative;
   height: 15.625em;
-  background-color: var(--white);
+  background-color: var(--yellow);
   border-radius: var(--border-radius-medium);
 }
 
@@ -566,6 +566,7 @@ input:checked + span {
     width: 30em;
     height: auto;
     padding: .5em 1em;
+    animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
 .select-menu-sorting option {
