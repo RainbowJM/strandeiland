@@ -4,7 +4,7 @@
   --white: #ffffff;
   --black: #000000;
   --blue: #009ce0;
-  --light-blue: #94DFFF;
+  --light-blue: #94dfff;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --gray: #e9e9e9;
@@ -47,10 +47,10 @@ textarea#title::placeholder {
   font-size: 15px;
 }
 
-h1{
+h1 {
   width: 60%;
   margin: auto;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
 
@@ -62,7 +62,6 @@ h1{
 }
 
 form {
-
   width: 60%;
   margin: auto;
 }
@@ -75,7 +74,6 @@ fieldset {
   margin-bottom: 20px;
   padding: 40px 20px;
   border-radius: var(--border-radius-large);
-
 }
 
 fieldset label,
@@ -108,7 +106,6 @@ input#title::placeholder,
   font-size: 15px;
 }
 
-
 fieldset label {
   font-weight: bold;
   font-size: 1em;
@@ -124,6 +121,13 @@ fieldset input[type="url"] {
   border: none;
 }
 
+#title{
+  margin-bottom: 10px;
+  width: 85%;
+  position: relative;
+  left: 5%;
+}
+
 input[type="text"],
 textarea {
   width: 100%;
@@ -133,13 +137,11 @@ textarea {
   border: none;
 }
 
-
-#uploadButton{
+#uploadButton {
   width: 10em;
   position: relative;
   left: 5%;
 }
-
 
 /* Submit Button Styling */
 .submit-button {
@@ -158,13 +160,10 @@ textarea#description::placeholder {
   color: var(--dark-grey);
 }
 
-
 .dropdown {
   margin-bottom: 10px;
   width: 75%;
-
-
-/* vanaf hier begint de dropdown menu  */
+}
 
 .dropdown {
   margin-bottom: 10px;
@@ -206,7 +205,6 @@ textarea#description::placeholder {
   transform: translateY(-50%);
   line-height: 1;
 }
-
 
 .dropdown-container {
   display: none;
@@ -396,7 +394,6 @@ p {
   display: none;
 }
 
-
 #loadingState {
   position: relative;
 }
@@ -412,7 +409,7 @@ p {
   transform: translate(-50%, -50%);
   font-size: 8em;
   font-family: "Poppins", sans-serif;
-
+}
 
 #loadingState h2:nth-child(1) {
   color: transparent;
@@ -426,7 +423,6 @@ p {
 }
 
 @keyframes animate {
-
   0%,
   100% {
     clip-path: polygon(
@@ -453,7 +449,7 @@ p {
       100% 100%,
       0% 100%
     );
-
+  }
 }
 
 p {
@@ -469,9 +465,8 @@ p {
 }
 
 @media (max-width: 60em) {
-form {
-  width: 80%;
-  margin: auto;
+  form {
+    width: 80%;
+    margin: auto;
+  }
 }
-}
-
