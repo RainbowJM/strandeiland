@@ -19,9 +19,9 @@
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
-  --big-radius:4em;
-  --medium-radius:2em;
-  --small-radius:.5em;
+  --border-radius-large:4em;
+  --border-radius-medium:2em;
+  --border-radius-small:.5em;
 }
 
 
@@ -95,7 +95,7 @@ fieldset {
   border-style: none;
   margin-bottom: 20px;
   padding: 40px 20px;
-  border-radius: var(--big-radius);
+  border-radius: var(--border-radius-large);
 
 }
 
