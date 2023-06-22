@@ -20,13 +20,11 @@
 } 
 
 
-.terug {
+.back {
   margin: 10em 0 1em 5vw;
-
-
 }
 
-.terug a {
+.back a {
   color: var(--black);
   font: var(--font);
 }
@@ -139,7 +137,6 @@ fieldset input[type="url"] {
 }
 
 
-
 /* Input, Textarea, and Select Styling */
 input[type="text"],
 textarea {
@@ -148,6 +145,12 @@ textarea {
   background-color: var(--gray);
   box-sizing: border-box;
   border: none;
+}
+
+input[type="text"]:focus,
+textarea:focus{
+  outline: none;
+  border-color: none;
 }
 
 #title{
@@ -381,11 +384,11 @@ p{
     display: none;
   } */
 
-  .hidden {
+  /* .hidden {
     display: none;
   }
-  
-  #popup .close-button {
+   */
+  /* #popup .close-button {
     border: none;
     background-color: transparent;
     padding: 0;
@@ -394,9 +397,9 @@ p{
     font-weight: bold;
     color: red;
     cursor: pointer;
-  }
+  } */
 
-
+/* 
   #popup {
     position: absolute;
     top: 0;
@@ -417,8 +420,8 @@ p{
     max-width: 850px;
     position: absolute;
     top: calc(50% + 160px); /* Adjust the value to position it below the form */
-    transform: translateY(-50%);
-  }
+    /* transform: translateY(-50%); */
+  /* }
   
   
   #popup #popupCloseButton{
@@ -435,4 +438,4 @@ p{
   }
   
 
-
+ */ 

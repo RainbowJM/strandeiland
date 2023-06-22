@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('./partials/head');  %> <!-- Include the 'head' partial -->
-  <link rel="stylesheet" href="/css/form.css"> <!-- Link to external CSS file -->
+  <%- include('./partials/head');  %> 
+  <link rel="stylesheet" href="/css/form.css"> 
 </head>
 <body>
     <header>
-        <%- include('./partials/header');  %> <!-- Include the 'header' partial -->
+        <%- include('./partials/header');  %> 
     </header>
 
-    <div class="terug">
+    <div class="back">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
-        <a href="/">Terug</a> <!-- Link to home page -->
+        <a href="/">Terug</a> 
     </div>
 
     <h1>Maak een wens</h1>
 
     <div class="form-container">
-        <form action="/wens" method="post">
+        <form action="/form" method="post">
         
             <fieldset>
                 <label for="title">Titel</label>
@@ -26,105 +26,103 @@
                 name="title" 
                 placeholder="Geef uw wens een titel" 
                 minlength="3" maxlength="40" required>
-                <!-- Input field for the title of the wish -->
+  
         
                 <label for="description" >Wens beschrijving</label>
                 <textarea name="description" 
                 id="description" cols="30" rows="10"
                 placeholder="Beschrijf uw wens zo duidelijk mogelijk" 
                 minlength="3" maxlength="200" required></textarea>
-                <!-- Textarea for describing the wish -->
+
         
                 <label for="theme">Thema's</label>
                 
-                <fieldset class="dropdown">
+                <fieldset class="dropdown" required>
                     <div class="selected-option" id="selectedOption">
                         Selecteer de passende thema's
                     </div>
-                    <!-- Placeholder for displaying the selected theme(s) -->
+           
         
                     <div class="dropdown-container" id="themeDropdownMenu">
                         <ul class="dropdown-menu" >
-                            <li><label><input type="checkbox" value="1">Sport</label></li>
-                            <li><label><input type="checkbox" value="2">Recreatie</label></li>
-                            <li><label><input type="checkbox" value="3">Verkeer</label></li>
-                            <li><label><input type="checkbox" value="4">Winkels</label></li>
-                            <li><label><input type="checkbox" value="5">Natuur</label></li>
-                            <li><label><input type="checkbox" value="6">Milieu</label></li>
-                            <li><label><input type="checkbox" value="7">Jeugd</label></li>
-                            <li><label><input type="checkbox" value="8">Veiligheid</label></li>
-                            <li><label><input type="checkbox" value="9">Cultuur</label></li>
-                            <li><label><input type="checkbox" value="10">Huisvesting</label></li>
-                            <li><label><input type="checkbox" value="11">Infrastructuur</label></li>
-                            <li><label><input type="checkbox" value="12">Strand</label></li>
-                            <li><label><input type="checkbox" value="13">Onderwijs</label></li>
-                            <li><label><input type="checkbox" value="14">Overig</label></li>
+                            <li><label><input type="checkbox" value="sport" name="theme">Sport</label></li>
+                            <li><label><input type="checkbox" value="recreatie" name="theme">Recreatie</label></li>
+                            <li><label><input type="checkbox" value="verkeer" name="theme">Verkeer</label></li>
+                            <li><label><input type="checkbox" value="winkels" name="theme">Winkels</label></li>
+                            <li><label><input type="checkbox" value="natuur" name="theme">Natuur</label></li>
+                            <li><label><input type="checkbox" value="milieu" name="theme">Milieu</label></li>
+                            <li><label><input type="checkbox" value="jeugd" name="theme">Jeugd</label></li>
+                            <li><label><input type="checkbox" value="veiligheid" name="theme">Veiligheid</label></li>
+                            <li><label><input type="checkbox" value="cultuur" name="theme">Cultuur</label></li>
+                            <li><label><input type="checkbox" value="huisvesting"name="theme">Huisvesting</label></li>
+                            <li><label><input type="checkbox" value="infrastructuur"name="theme">Infrastructuur</label></li>
+                            <li><label><input type="checkbox" value="strand"name="theme">Strand</label></li>
+                            <li><label><input type="checkbox" value="onderwijs"name="theme">Onderwijs</label></li>
+                            <li><label><input type="checkbox" value="overig"name="theme">Overig</label></li>
                         </ul>
-                        <!-- Dropdown menu options for selecting themes -->
+                      
                     </div>
                 </fieldset>
         
                 <label for="imagelabel" >Afbeelding</label>
-                <!-- Label for the image input field -->
+             
         
                 <button id="uploadButton">Afbeelding uploaden</button>
-                <!-- Button for uploading an image -->
+           
         
                 <!-- <div id="popup" class="hidden"> -->
-                    <!-- Popup container for image upload options -->
-        
-                    <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
-                    <!-- Button for closing the popup -->
+    
+                
         
                     <div id="links">
                         <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
-                        <!-- Label for image website links -->
+       
                         <div class='linkjes'>
                             <a href="https://unsplash.com/">Unsplash</a>
                             <a href="https://www.pexels.com/nl-nl/">Pexels</a>
                             <a href="https://pixabay.com/nl/">Pixabay</a>
                         </div>
-                        <!-- Links to websites for finding royalty-free images -->
+                      
         
                         <p class="hierarchy">Link</p>
-                        <!-- Label for image link input field -->
+                    
            
                         <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
-                        <!-- Input field for entering the image link -->
+                        
                         <div id="imagePreview"></div>
-                        <!-- Placeholder for displaying image preview -->
+                    
         
                         <label for="or">Of</label>
-                        <!-- Label for image upload options -->
+                 
         
                         <p class="hierarchy">Bestand</p>
-                        <!-- Label for image file upload option -->
+                   
         
                         <div class="file-input-container">
                             <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
                             <p>Selecteer een bestand</p>
                             <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
-                            <!-- Input field for selecting an image file -->
+                     
                         </div>
                         <div id="customImagePreview"></div>
-                        <!-- Placeholder for displaying custom image preview -->
+                    
                         <p id="selectedFileName">Geen bestand geselecteerd</p>
-                        <!-- Placeholder for displaying selected file name -->
+            
                         <div id="closeButton" class="hidden">&#10006;</div>
-                        <!-- Close button for clearing the selected file -->
-                    </div>
-                <!-- </div> -->
+                     
+                    <!-- </div> -->
+                </div>
             </fieldset>
         
             <input type="submit" value="wens aanmaken" id="sendButton" />
-            <!-- Submit button for creating the wish -->
+    
         
         </form>
     </div>
 
     <footer>
         <%- include('./partials/footer'); %>
-        <!-- Include the 'footer' partial -->
+
     </footer>
 
 </body>
