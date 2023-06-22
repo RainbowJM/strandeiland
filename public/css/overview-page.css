@@ -1,15 +1,18 @@
-/* Color variable */
 :root {
     --yellow: #ffe700;
-    --light-yellow: #FFF48C;
+    --light-yellow: #fff48c;
     --white: #ffffff;
     --black: #000000;
     --blue: #009ce0;
-    --light-blue: #94DFFF;
+    --light-blue: #94dfff;
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
-    --font: 'Poppins', sans-serif;
-}
+    --font: "Poppins", sans-serif;
+  
+    --border-radius-small: 0.5em;
+    --border-radius-medium: 2em;
+    --border-radius-large: 4em;
+  }
 
 body {
     overflow: auto;

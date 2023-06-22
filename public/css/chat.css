@@ -8,6 +8,10 @@
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --font: 'Poppins', sans-serif;
+  
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
 }
 
 #chat {

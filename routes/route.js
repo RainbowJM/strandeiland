@@ -148,6 +148,7 @@ router.get("/wens/:id", async (req, res) => {
       }
     }
   }
+  console.log(suggestionData)
 
   if (
     error ||
