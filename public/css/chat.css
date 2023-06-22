@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   grid-column-start: 1;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-medium);
 }
 
 #chat h2{
