@@ -261,44 +261,57 @@ router.get("/user/:first_name", async (req, res) => {
   }
 });
 
-router.post("/form", async (req, res) => {
+app.post("/form", async (req, res) => {
+  console.log(req.body);
   try {
-    const { data, error } = await supabase
-      .from("suggestion")
-      .insert([
-        {
-          title: req.body.title,
-          description: req.body.description,
-          image: req.body.imageLink,
-        },
-      ])
-      .select();
+      const { data, error } = await supabase
+          .from('suggestion')
+          .insert([{ title: req.body.title, description: req.body.description, image: req.body.imageLink }])
+          .select(); 
 
-    const insertId = data[0].id ?? null;
+          const insertId = data[0].id ?? null ;
+          console.log(insertId); 
+          if (error || !insertId) {
+              throw error;  
+          }
 
-    if (error || !insertId) {
-      throw error;
-    }
+      const themes = req.body.theme;
+      console.log(themes);
+      
+      const themeInsertPromises = themes.map(async (theme) => { 
 
-    const { error: themeError } = await supabase
-      .from("suggestion_theme")
-      .insert([
-        {
-          suggestionId: insertId,
-          themaId: req.body.theme,
-        },
-      ]);
+          const { data: themeData, error: themeError } = await supabase
 
-    if (themeError) {
-      throw themeError;
-    }
+          .from('theme')
+          .select('id')
+          .eq('label', theme)
+          .single();
+          if (themeError) {
+              console.log(themeError);
+              throw themeError;
+          }
+          console.log(themeData.id);
 
-    res.render("sent");
+          const { error: suggestionThemeError } = await supabase
+              .from('suggestion_theme')
+              .insert([{
+                  suggestionId: insertId,
+                  themaId: themeData.id
+              }]);
+          if (suggestionThemeError) {
+              throw suggestionThemeError;
+          }
+      });
+
+      await Promise.all(themeInsertPromises); 
+      res.render("sent", {
+        title: "sent",
+      });
+
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
-    return;
+      res.status(500).json({ error: 'Het toevoegen van de wens ging fout, probeer opnieuw' });
+      console.log(error);
+      return;
   }
 });
 
