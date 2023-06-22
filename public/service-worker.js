@@ -1,24 +1,22 @@
-const cacheName = 'cache-v1';
+const cacheName = 'cache-v2';
 const runtimeCacheName = 'runtime-cache'
 const assets = [
     '/',
-    '/css/style.css',
-    '/css/detail-page.css',
+    '/css/suggestion.css',
     '/css/form.css',
     '/css/global.css',
-    '/css/overview-page.css',
+    '/css/suggestions.css',
     '/css/sent.css',
     '/css/offline.css',
+    '/css/user.css',
     '/images/favicon.ico',
     '/images/strand-eiland.jpg',
     '/offline',
 ];
 
-
 self.addEventListener('install', event => {
     console.log('Installed service worker');
 
-    
     event.waitUntil(
         caches.open(cacheName)
             .then(cache => {

@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, titleInput, descriptionTextarea} from "./modules/variables.js";
+  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -13,28 +13,23 @@ let last;
 if (uploadButton) {
 uploadButton.addEventListener("click", handleUploadButtonClick);
 }
-// Event listener for closeButton click
 if (popupCloseButton) {
   popupCloseButton.addEventListener("click", handlePopupCloseButtonClick);
 }
 
-// Event listener for selectedOption click
 if (selectedOption) {
 selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
 
-// Event listener for themeCheckboxes change
 if (themeCheckboxes) {
 themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });
 }
 
-// Retrieve form data from localStorage
 if (savedFormData) {
   const parsedFormData = JSON.parse(savedFormData);
 
-  // Set the saved values in the corresponding form fields
   document.getElementById("title").value = parsedFormData.title;
   document.getElementById("description").value = parsedFormData.description;
 
@@ -53,7 +48,6 @@ imageLinkInput.addEventListener('input', () => {
 });
 }
 
-
 if (fileInput) {
   fileInput.addEventListener("change", function() {
     const file = fileInput.files[0];
@@ -70,17 +64,14 @@ if (fileInput) {
   
         const closeButton = document.createElement("button");
         closeButton.classList.add("close-button");
-        closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
+        closeButton.innerHTML = "&times;"; 
   
         closeButton.addEventListener("click", function() {
-          // Clear the file input value
           fileInput.value = "";
   
-          // Clear the image preview
           customImagePreview.innerHTML = "";
           selectedFileName.textContent = "Geen bestand geselecteerd";
   
-          // Remove the close button
           closeButton.remove();
         });
   
@@ -111,7 +102,6 @@ if (submitMessage) {
   submitMessage.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Get the current time.
     const date = new Date().toLocaleString("nl-NL", {
       weekday: "short",
       day: "numeric",
@@ -122,15 +112,12 @@ if (submitMessage) {
     });
 
     if (input.value) {
-      // Emit the message to all connected users.
       socket.emit("message", {
         message: input.value,
-        // name has to be fetch from database
         name: "Jane Doe",
         time: date,
       });
 
-      // Add the message to the chat.
       add(input.value, 'Jane Doe', date, socket.id);
 
       input.value = "";
@@ -141,7 +128,6 @@ if (submitMessage) {
 if (input) {
   input.addEventListener('input', event => {
       event.preventDefault();
-      // Emit the typing event.
       socket.emit('typing', {
           name: 'Jane Doe',
           typing: true
@@ -216,7 +202,6 @@ socket.on('typing', (typing) => {
   })
 
   if (names.length == 0) {
-      // Empty indicator
       typingElement.innerHTML = ""
   } else if (names.length == 1) {
       // Fill the typing indicator with text
@@ -229,7 +214,35 @@ socket.on('typing', (typing) => {
 
 // ------------------ functions -------------------------------------------------------
 
-// Function to handle selectedOption click
+// form loading state
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const submitButton = document.querySelector('.submit-button');
+  const loadingState = document.querySelector('#loadingState');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    submitButton.classList.add('hidden');
+    loadingState.classList.remove('hidden');
+
+    setTimeout(function() {
+      form.submit();
+      console.log('loading')
+    }, 2000);
+  });
+});
+
+
+boxes.forEach(box => {
+  box.addEventListener('click', function() {
+    const boxElement = box.querySelector('.box');
+    boxElement.classList.toggle('show');
+    console.log('click')
+  });
+});
+
+
 function handleSelectedOptionClick() {
   dropdownMenu.classList.toggle("show");
   selectedOption.classList.toggle('open');
@@ -240,13 +253,11 @@ function handleUploadButtonClick() {
 
 }
 
-// Function to handle closeButton click
 function handlePopupCloseButtonClick(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+  event.preventDefault(); 
   popup.classList.add("hidden");
 }
 
-// Function to handle themeCheckboxes change
 function handleCheckboxChange() {
   updateFormData();
 }
@@ -273,7 +284,6 @@ function add(message, name, time, id) {
   last = id;
 };
     
-// Function to update form data
 function updateFormData() {
   const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
   const selectedThemes = [];
@@ -292,6 +302,10 @@ function updateFormData() {
     themas: selectedThemes
   };
 
-  // Save form data to localStorage
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
+
+
+
+
+

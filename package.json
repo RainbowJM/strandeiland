@@ -28,7 +28,6 @@
     "dotenv": "^16.1.4",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "request": "^2.88.2",
     "socket.io": "^4.6.1"
   },
   "devDependencies": {

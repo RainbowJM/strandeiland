@@ -3,7 +3,7 @@
 
 <head>
   <%- include('./partials/head'); %>
-  <link rel="stylesheet" href="/css/sent.css">
+    <link rel="stylesheet" href="/css/sent.css">
 </head>
 
 <body>
@@ -16,9 +16,9 @@
     <div class="back">
       <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
       <a href="/">Terug</a>
+
   </div>
-  
-   
+
     <main>
       <div class="sent">
         <h1>
@@ -29,6 +29,11 @@
         </h1>
       </div>
     </main>
+    <footer>
+      <%- include('./partials/footer'); %>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/script.js"></script>
   </body>
 
 </html>

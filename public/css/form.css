@@ -1,29 +1,24 @@
-/* Reset CSS */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Color Variables */
 :root {
   --yellow: #ffe700;
-  --light-yellow: #FFF48C;
+  --light-yellow: #fff48c;
   --white: #ffffff;
   --black: #000000;
   --blue: #009ce0;
-      --light-blue: #94DFFF;
+  --light-blue: #94dfff;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
-  --gray: #E9E9E9;
-  --font: 'Poppins', sans-serif;
-} 
+  --gray: #e9e9e9;
+  --font: "Poppins", sans-serif;
+
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
+}
 
 
 .back {
   margin: 10em 0 1em 5vw;
+
 }
 
 .back a {
@@ -31,98 +26,88 @@
   font: var(--font);
 }
 
-
-
 input:required:invalid {
-  border: 2px solid red;
+  border: 0.2em solid red;
 }
 
 input:required:valid {
-  border: 2px solid green;
+  border: 0.2em solid green;
 }
 
 textarea:required:invalid {
-  border: 2px solid red;
+  border: 0.2em solid red;
 }
 
 textarea:required:valid {
-  border: 2px solid green;
+  border: 0.2em solid green;
 }
 
-
-
-/* Placeholder Styling */
 textarea#description::placeholder,
 textarea#title::placeholder {
   font-style: var(--font);
-    color: var(--dark-grey);
-    font-size: 15px;
+  color: var(--dark-grey);
+  font-size: 1em;
 }
 
-/* Heading Styling */
 h1 {
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: .5em;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
-/* Form Container Styling */
 .form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
-/* Form Styling */
 form {
-  width: 50%;
-
+  width: 60%;
+  margin: auto;
 }
 
-/* Fieldset Styling */
 fieldset {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   border-style: none;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 1.25em;
+  padding: 2.5em 1.25em;
+  border-radius: var(--border-radius-large);
 }
 
-/* Label, Textarea, Select, and File Input Container Styling */
 fieldset label,
 fieldset textarea,
 fieldset .file-input-container,
-#imageLink
- {
-  margin-bottom: 10px;
-  width: 75%;
+#imageLink {
+  margin-bottom: 0.625em;
+  width: 85%;
   position: relative;
   left: 5%;
 }
 
-fieldset .dropdown-menu label{
-    margin-bottom: 0;
-    font-weight: normal;
-    cursor: pointer;
+fieldset .dropdown-menu label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
 }
 
-/* Focus Styling */
 fieldset label:focus,
 fieldset textarea:focus,
-fieldset .file-input-container:focus
- {
+fieldset .file-input-container:focus {
   outline: none;
-  box-shadow: 0 0 4px var(--black);
+  box-shadow: 0 0 0.250em var(--black);
 }
 
-input#title::placeholder, 
-#imageLink::placeholder{
-    font-family: var(--font);
-    color: var(--dark-grey);
-    font-size: 15px;
-  }
-  
-/* Label Styling */
+input#title::placeholder,
+#imageLink::placeholder {
+  font-family: var(--font);
+  color: var(--dark-grey);
+  font-size: 1em;
+}
+
 fieldset label {
   font-weight: bold;
   font-size: 1em;
@@ -132,18 +117,23 @@ fieldset label {
 fieldset input[type="text"],
 fieldset input[type="url"] {
   width: 100%;
-  padding: 10px;
+  padding: 0.625em;
   background-color: var(--gray);
   box-sizing: border-box;
   border: none;
 }
 
+#title{
+  margin-bottom: 0.625em;
+  width: 85%;
+  position: relative;
+  left: 5%;
+}
 
-/* Input, Textarea, and Select Styling */
 input[type="text"],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 0.625em;
   background-color: var(--gray);
   box-sizing: border-box;
   border: none;
@@ -160,85 +150,86 @@ textarea:focus{
     width: 75%;
     position: relative;
     left: 5%;
-
 }
+
 /* Submit Button Styling */
-#sendButton {
+.submit-button {
   background-color: var(--black);
   color: var(--white);
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 0.625em 1.250em;
+  font-size: 1em;
   border: none;
   cursor: pointer;
+  margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 textarea#description::placeholder {
-   font-family: var(--font);
-   color: var(--dark-grey);
-  }
-  /* vanaf hier begint de dropdown menu  */
+  font-family: var(--font);
+  color: var(--dark-grey);
+}
 
 .dropdown {
-    margin-bottom: 10px;
-    width: 75%;
-    position: relative;
-    left: 5%;
-    padding: 0;
-  }
-  
-  .selected-option {
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--gray);
-    color: var(--dark-grey);
-    border: none;
-    position: relative;
-    font-family: var(--font);
-    font-size: 15px;
-    font-weight: normal;
-    display: flex;
-    align-items: center;
-  }
-  .selected-option::after {
-    content: "\2304";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 18px; /* Adjust the font size as needed */
-    font-weight: bold; /* Add this line */
-    line-height: 1;
+  margin-bottom: 0.625em;
+  width: 75%;
+}
 
-  }
-  
-  .selected-option.open::after {
-    content: "×";
-    font-size: 18px; /* Adjust the font size as needed */
-    
-    transform: translateY(-50%);
-    line-height: 1;
-  }
-  
-  
-  
-  
-  .dropdown-container {
-    display: none;
-    margin-top: 10px;
-  }
+.dropdown {
+  margin-bottom: 0.625em;
+  width: 85%;
+  position: relative;
+  left: 5%;
+  padding: 0;
+}
+
+.selected-option {
+  cursor: pointer;
+  padding: 0.625em;
+  background-color: var(--gray);
+  color: var(--dark-grey);
+  border: none;
+  position: relative;
+  font-family: var(--font);
+  font-size: 1em;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.selected-option::after {
+  content: "\2304";
+  position: absolute;
+  top: 50%;
+  right: 0.625em;
+  transform: translateY(-50%);
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.selected-option.open::after {
+  content: "×";
+  font-size: 1em;
+
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+.dropdown-container {
+  display: none;
+  margin-top: 0.625em;
+}
 
 .dropdown-menu {
   font-family: var(--font);
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--gray);
-  min-width: 200px;
+  min-width: 12.5em;
   border: border;
-  padding: 10px;
-  gap: 10px;
+  padding: 0.625em;
+  gap: 0.625em;
 }
-
-
 
 .dropdown-menu li {
   align-items: center;
@@ -254,32 +245,22 @@ textarea#description::placeholder {
   background-color: var(--dark-grey);
   color: var(--white);
   cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid var(--black);
+  border-radius: var(--border-radius-small);
+  border: 0.05em solid var(--black);
 }
-
-
 
 .dropdown-menu label input[type="checkbox"] {
   display: none;
-
 }
-
 
 .show {
   display: block;
- 
 }
 
-
-
-
-/* Style the file input */
 .file-input-container {
   position: relative;
   display: inline-block;
-  margin-top: 10px;
-
+  margin-top: 0.625em;
 }
 
 .file-input-container label {
@@ -287,10 +268,10 @@ textarea#description::placeholder {
   cursor: pointer;
   background-color: #f1f1f1;
   color: #333;
-  padding: 10px;
+  padding: 0.625em;
   border: none;
-  border-radius: 4px;
-    font-family: var(--font);
+  border-radius: var(--border-radius-small);
+  font-family: var(--font);
 }
 
 .file-input-container input[type="file"] {
@@ -303,141 +284,118 @@ textarea#description::placeholder {
   cursor: pointer;
 }
 
-
 .file-input-container {
-    background-color: var(--gray);
-
-    height: 10em;
-  
+  background-color: var(--gray);
+  height: 10em;
 }
 
 p#selectedFileName {
   position: relative;
   left: 3%;
-  margin-top: 10px;
+  margin-top: 0.625em;
   font-family: var(--font);
   color: var(--black);
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 1em;
+  margin-bottom: 1.250em;
 }
 
-
-img{
-    width: 5em;
-    height: 4.5em;
-    position: relative;
-    left: 40%;
-    top: 15%;
+img {
+  width: 5em;
+  height: 4.5em;
+  position: relative;
+  left: 40%;
+  top: 15%;
 }
-p{
-    position: relative;
-    left: 29%;
-    top: 10%;
-    font-family: var(--font);
-    margin-left: 1em;
-    margin-top: 1em;
-    color: var(--black);
-    font-size: 16px;
-}
-
-.hierarchy{
-    position: relative;
-    left: 3%;
-
-    font-size: 15px;
- 
+p {
+  position: relative;
+  left: 29%;
+  top: 10%;
+  font-family: var(--font);
+  margin-left: 1em;
+  margin-top: 1em;
+  color: var(--black);
+  font-size: 1em;
 }
 
-#links label{
-    font-size:15px;
-    font-weight: bold;
-    
+.hierarchy {
+  position: relative;
+  left: 3%;
+
+  font-size: 1em;
 }
 
-.linkjes{
-    position: relative;
-    left: 5%;
-    margin-top: 30px;
+#links label {
+  font-size: 1em;
+  font-weight: bold;
+}
 
+.linkjes {
+  position: relative;
+  left: 5%;
+  margin-top: 1.875em;
 }
 .linkjes a {
-    padding: 5px 10px;
-    background-color: var(--gray);
-    color: var(--black);
-    text-decoration: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-family: var(--font);
-    
-  }
-  
-  .linkjes a:last-child {
-    margin-right: 0;
-  }
-  
-  .linkjes a:hover {
-    background-color: var(--black);
-    color: var(--white);
-  }
+  padding: 0.313em 0.625em;
+  background-color: var(--gray);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: var(--border-radius-small);
+  margin-right: 0.625em;
+  font-family: var(--font);
+}
 
+.linkjes a:last-child {
+  margin-right: 0;
+}
 
+.linkjes a:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
 
-  /* #closeButton.hidden {
-    display: none;
-  } */
+.hidden {
+  display: none;
+}
 
-  /* .hidden {
-    display: none;
-  }
-   */
-  /* #popup .close-button {
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
-    cursor: pointer;
-  } */
+#popup .close-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
 
-/* 
-  #popup {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  
-  #popup > div {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 40px;
-    width: 70%;
-    max-width: 850px;
-    position: absolute;
-    top: calc(50% + 160px); /* Adjust the value to position it below the form */
-    /* transform: translateY(-50%); */
-  /* }
-  
-  
-  #popup #popupCloseButton{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
+#popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-  }
-  
-  #popup.hidden {
-    display: none;
-  }
-  
+#popup > div {
+  background-color: var(--white);
+  border-radius: var(--border-radius-medium);
+  padding: 2.5em;
+  width: 70%;
+  max-width: 53.125em;
+  position: absolute;
+  top: calc(50% + 10em); 
+  transform: translateY(-50%);
+}
 
- */ 
+#popup #popupCloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.625em;
+  cursor: pointer;
+}
+

@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
   <%- include('./partials/head');  %> 
   <link rel="stylesheet" href="/css/form.css"> 
+
 </head>
 
 <body>
@@ -16,10 +18,9 @@
         <a href="/">Terug</a> 
     </div>
 
-    <h1>Maak een wens</h1>
-
-
     <div class="form-container">
+
+ <h1>Maak een wens</h1>
         <form action="/form" method="post">
         
             <fieldset>
@@ -41,6 +42,8 @@
                 <label for="theme">Thema's</label>
                 
                 <fieldset class="dropdown" required>
+        
+        
                     <div class="selected-option" id="selectedOption">
                         Selecteer de passende thema's
                     </div>
@@ -63,7 +66,7 @@
                             <li><label><input type="checkbox" value="onderwijs"name="theme">Onderwijs</label></li>
                             <li><label><input type="checkbox" value="overig"name="theme">Overig</label></li>
                         </ul>
-                      
+        
                     </div>
                 </fieldset>
         
@@ -80,6 +83,7 @@
                     <div id="links">
                         <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
        
+
                         <div class='linkjes'>
                             <a href="https://unsplash.com/">Unsplash</a>
                             <a href="https://www.pexels.com/nl-nl/">Pexels</a>
@@ -91,6 +95,7 @@
                     
            
                         <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier uw link">
+
                         
                         <div id="imagePreview"></div>
                     
@@ -102,16 +107,17 @@
                    
         
 
+
                         <div class="file-input-container">
                             <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
                             <p>Selecteer een bestand</p>
                             <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
                      
                         </div>
-                        <div id="customImagePreview"></div>
-                    
+                        <div id="customImagePreview"></div>                  
                         <p id="selectedFileName">Geen bestand geselecteerd</p>
             
+
                         <div id="closeButton" class="hidden">&#10006;</div>
                      
                     <!-- </div> -->
@@ -121,15 +127,14 @@
             <input type="submit" value="wens aanmaken" id="sendButton" />
     
         
+
         </form>
     </div>
-
     <footer>
         <%- include('./partials/footer'); %>
-
     </footer>
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/script.js"></script>
 </body>
 
 </html>
-

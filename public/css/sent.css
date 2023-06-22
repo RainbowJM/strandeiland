@@ -1,12 +1,3 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Color Variables */
 :root {
   --yellow: #ffe700;
   --light-yellow: #FFF48C;
@@ -16,9 +7,12 @@
   --light-blue: #94DFFF;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
-  --gray: #E9E9E9;
+  --grey: #E9E9E9;
   --font: 'Poppins', sans-serif;
 
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
 }
 
 main {
@@ -37,8 +31,8 @@ main {
 .sent h1 span {
   display: block;
   width: fit-content;
-  padding: 5px;
-  margin: 10px 0;
+  padding: 0.313em;
+  margin: 0.625em 0;
 }
 
 .sent span:nth-child(1) {
@@ -68,9 +62,6 @@ main {
 
 .back {
   margin: 3em 0 1em 5vw;
-
-  
-
 }
 
 .back a {

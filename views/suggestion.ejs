@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="/css/suggestion.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/header'); %>
+    </header>
+
+    <div class="terug">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+        <a href="/">Terug</a>
+    </div>
+
+    <main>
+        <section class="wish">
+            <div id="img-container">
+                <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
+            </div>
+            <article>
+                <h2> <%= suggestion.title %> </h2>
+                <h3> <%= suggestion.theme.label %> </h3>
+                <p id="time"> Geplaatst op <%= time %></p>
+                <p> <%= suggestion.description %> </p>
+                <section class="join">
+                    <button>Word trekker</button>
+                    <button>Help mee</button>
+                    <button>Ik deel deze wens</button>
+                </section>
+            </article>
+
+            <section id="chat">
+                <h2>Reacties</h2>
+                <ul class="chat-section"></ul>
+                <p id="typing"></p>
+                <form class="message-input">
+                    <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
+                    <button type="submit" id="message-button"><span
+                            class="material-symbols-outlined">Send</span></button>
+                </form>
+            </section>
+        </section>
+
+        <aside id="joiners" class="joiners">
+            <div id="ambassador" class="helping-item">
+                <h2>Trekkers</h2>
+                <h3>Trekkers van deze wens: 1</h3>
+                <ul>
+                    <%- include('./partials/ambassador.ejs', suggestion)%> 
+                </ul>
+            </div>
+
+            <div id="helpers" class="helping-item">
+                <h2>Helpers</h2>
+                <h3>Helpers van deze wens: 5</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div>
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent </h4>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- sharers -->
+            <div id="sharers" class="helping-item">
+                <h2>Delers</h2>
+                <h3>20 personen delen deze wens</h3>
+                <ul>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                        <div class="box">
+                            <h3>Bob Dissel</h3>
+                            <h4>Docent</h4>
+                            <a href="#">bericht sturen</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/bob.jpeg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        </div>
+           
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/script.js"></script>
+</body>
+
+</html>
