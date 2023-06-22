@@ -8,9 +8,11 @@
 
 :root {
     --yellow: #ffe700;
+    --light-yellow: #FFF48C;
     --white: #ffffff;
     --black: #000000;
     --blue: #009ce0;
+    --light-blue:#94DFFF;
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
     --font: 'Poppins', sans-serif;
@@ -130,9 +132,50 @@ nav.navigation-links ul li {
     height: 100%;
 }
 
+/* nav.navigation-links ul li:last-of-type  {
+  background-color: var(--blue);
+clip-path: polygon(0 35%, 100% 0, 100% 68%, 0 100%);
+transform: skew(-20deg);
+padding: 1em;
+width: fit-content;
+font-weight: bold;
+border-radius: .5em;
+}
+ */
+
+nav.navigation-links ul li:last-of-type {
+  background-color: var(--blue);
+  /* clip-path: polygon(0 35%, 100% 0, 100% 68%, 0 100%); */
+  transform: rotate(-20deg);
+  padding: 1em;
+  width: fit-content;
+  font-weight: bold;
+  border-radius: .5em;
+  display: inline-block;
+  /* transform-origin: top left; */
+  transition: transform 0.5s ease;
+}
+
+nav.navigation-links ul li:last-of-type span {
+  /* color: var(--white); */
+  transform: rotate(20deg);
+  display: inline-block;
+
+  & a{
+    color: var(--white);
+  }
+  
+}
+
+nav.navigation-links ul:has(a) li:last-of-type:hover {
+
+transform: rotate(-10deg);
+}
+
 nav.navigation-links a {
     text-align: center;
-    color: var(--dark-grey)
+    color: var(--dark-grey);
+    
 }
 
 
@@ -173,7 +216,8 @@ nav.navigation-links a {
         margin-bottom: 1em ;
       }
 
-      header div img {
+
+header div img {
         width: 4em;
         height: 4em;
         margin:.8em 0 0 .8em;

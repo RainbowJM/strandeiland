@@ -1,20 +1,27 @@
 :root {
     --yellow: #ffe700;
+    --light-yellow: #FFF48C;
     --white: #ffffff;
     --black: #000000;
     --blue: #009ce0;
+    --light-blue: #94DFFF;
     --light-grey: #f0f0eb;
     --dark-grey: #333333;
     --font: 'Poppins', sans-serif;
 }
 
 body {
-    display:flex;
-    justify-content:center;
-    align-items:center;
     min-height:100vh;
     background: var(--white);
     font-family:'Poppins', sans-serif;
+    grid:none;
+  }
+
+  main{
+    display: flex ;
+    position: relative;
+    top: 30vh;
+    left: 40vw;
   }
   
   .content{

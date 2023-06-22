@@ -1,0 +1,51 @@
+<section class="thumbnail-container">
+    <figure>
+        <img src="<%= suggestion.image %>" alt="Wens afbeelding">
+
+    </figure>
+
+
+
+    <a href="/wens/<%= suggestion.id %>">
+
+        <article>
+            <ul class="suggestion-themes">
+                <li>
+                    <%= suggestion.theme.label %>
+                </li>
+            </ul>
+
+
+            <ul class="user-info">
+                <li>Pieter van der baas</li>
+                <li>
+                    <%= (new Date(suggestion.created_at)).toLocaleString("nl-NL", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+     
+    })%>
+                </li>
+            </ul>
+
+            <h2>
+                <%= suggestion.title%>
+            </h2>
+            <p>
+                <%= suggestion.description%>
+            </p>
+
+            <ul class="statistics">
+                <li> <span> <img src="../../images/trekkers.svg" alt=""></span> 5</li>
+                <li><span><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i></span> 2</li>
+                <li><span><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i></span>
+                    <%= suggestion.amount_vote%>
+                </li>
+            </ul>
+        </article>
+    </a>
+
+
+</section>
