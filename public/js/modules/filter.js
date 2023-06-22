@@ -3,27 +3,18 @@ import { tabs, tabContents, filterThemeResultsBtn, filterThemeBtn,  filterSortBt
 
 function toggleFilterMenu(){
     const filterThemeMenu = document.querySelector('#theme');
-    const  filterSortMenu = document.querySelector('#sorting');
+    // const  filterSortMenu = document.querySelector('#sorting');
 
     filterThemeBtn.addEventListener('click', () => {
         filterThemeMenu.classList.toggle('show-filter-menu');
 
     })  
 
-    filterSortBtn.addEventListener('click', () => {
-        filterSortMenu.classList.toggle('show-filter-menu');
+    // filterSortBtn.addEventListener('click', () => {
+    //     filterSortMenu.classList.toggle('show-filter-menu');
 
-    })
-        tabContents.forEach(tabContent => {
-            // tabContent.classList.add('active');
-
-            closeFilterBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                filterThemeMenu.classList.remove('show-filter-menu');
-                filterSortMenu.classList.remove('show-filter-menu');
-                // tabContent.classList.remove("active");
-            });
-    })
+    // })
+ 
 }
 
 export {toggleFilterMenu}

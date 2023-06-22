@@ -105,7 +105,7 @@ main {
     transition: background-color .3s ease-in-out;
 }
 
-.slogan-call-to-action a:hover{
+.slogan-call-to-action a:hover {
     background-color: var(--blue);
 }
 
@@ -153,14 +153,14 @@ main {
 
 .content h2 {
     grid-column: span 3;
-  
+
 }
 
-.content > h2 {
+.content>h2 {
     width: fit-content;
-        background-color: var(--light-blue);
-        padding: .5em;
-        margin: .5em 0;
+    background-color: var(--light-blue);
+    padding: .5em;
+    margin: .5em 0;
 }
 
 /***************************/
@@ -295,6 +295,7 @@ main {
 .suggestion-themes li::first-letter {
     text-transform: uppercase;
 }
+
 /****************/
 /* LATEST SUGGESTION CONTAINER */
 /****************/
@@ -518,12 +519,12 @@ form a:hover {
 @keyframes smooth-dropdown {
     from {
         opacity: 0;
-        
+
     }
 
     to {
         opacity: 1;
-       
+
     }
 }
 
@@ -590,6 +591,24 @@ input:checked+span {
     line-height: 1.5;
 }
 
+
+/**************/
+/* SELECTMENU */
+/**************/
+.select-menu-sorting::part(button) {
+    padding: .9em;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+.select-menu-sorting::part(selected-value) {
+    font-size: 1.2em;
+}
+
+.select-menu-sorting::part(listbox) {
+    
+}
 /* Responsive */
 @media (max-width: 55em) {
 
@@ -658,17 +677,17 @@ input:checked+span {
         transform: translatey(-42%);
     }
 
-        .grid-container {
-            grid-template-columns: 1fr;
-            grid-column: span 3;
-        }
-    
-    
-        .latest-ideas {
-            display: grid;
-            grid-column: span 3;
-            grid-template-columns: 1fr ;
-    
-        }
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-column: span 3;
+    }
+
+
+    .latest-ideas {
+        display: grid;
+        grid-column: span 3;
+        grid-template-columns: 1fr;
+
+    }
 
 }
