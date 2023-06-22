@@ -14,14 +14,7 @@ function toggleFilterMenu(){
         filterSortMenu.classList.toggle('show-filter-menu');
 
     })
-        tabContents.forEach(tabContent => {
-
-            closeFilterBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                filterThemeMenu.classList.remove('show-filter-menu');
-                filterSortMenu.classList.remove('show-filter-menu');
-            });
-    })
+        
 }
 
 export {toggleFilterMenu}
