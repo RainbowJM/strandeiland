@@ -19,6 +19,9 @@
   --dark-grey: #333333;
   --gray: #E9E9E9;
   --font: 'Poppins', sans-serif;
+  --big-radius:4em;
+  --medium-radius:2em;
+  --small-radius:.5em;
 }
 
 
@@ -63,21 +66,25 @@ textarea#title::placeholder {
 
 /* Heading Styling */
 h1 {
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: .5em;
+  width: 60%;
+  margin-bottom: 0.5em;
+  margin: auto;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
 }
 
 /* Form Container Styling */
 .form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
 /* Form Styling */
 form {
-  width: 50%;
-
+  width: 60%;
+  margin: auto;
 }
 
 /* Fieldset Styling */
@@ -87,7 +94,9 @@ fieldset {
   flex-direction: column;
   border-style: none;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 40px 20px;
+  border-radius: var(--big-radius);
+
 }
 
 /* Label, Textarea, Select, and File Input Container Styling */
@@ -96,7 +105,7 @@ fieldset textarea,
 fieldset .file-input-container,
 #imageLink {
   margin-bottom: 10px;
-  width: 75%;
+  width: 85%;
   position: relative;
   left: 5%;
 }
@@ -152,20 +161,29 @@ textarea {
 
 #title {
   margin-bottom: 10px;
-  width: 75%;
+  width: 85%;
   position: relative;
   left: 5%;
 
 }
 
+#uploadButton{
+  width: 10em;
+  position: relative;
+  left: 5%;
+}
+
+
 /* Submit Button Styling */
-#sendButton {
+.submit-button {
   background-color: var(--black);
   color: var(--white);
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 textarea#description::placeholder {
@@ -177,7 +195,7 @@ textarea#description::placeholder {
 
 .dropdown {
   margin-bottom: 10px;
-  width: 75%;
+  width: 85%;
   position: relative;
   left: 5%;
   padding: 0;
@@ -307,9 +325,7 @@ textarea#description::placeholder {
 
 .file-input-container {
   background-color: var(--gray);
-
   height: 10em;
-
 }
 
 p#selectedFileName {
@@ -345,22 +361,18 @@ p {
 .hierarchy {
   position: relative;
   left: 3%;
-
   font-size: 15px;
-
 }
 
 #links label {
   font-size: 15px;
   font-weight: bold;
-
 }
 
 .linkjes {
   position: relative;
   left: 5%;
   margin-top: 30px;
-
 }
 
 .linkjes a {
@@ -371,7 +383,6 @@ p {
   border-radius: 4px;
   margin-right: 10px;
   font-family: var(--font);
-
 }
 
 .linkjes a:last-child {
@@ -382,8 +393,6 @@ p {
   background-color: var(--black);
   color: var(--white);
 }
-
-
 
 /* #closeButton.hidden {
     display: none;
@@ -425,7 +434,6 @@ p {
   max-width: 850px;
   position: absolute;
   top: calc(50% + 160px);
-  /* Adjust the value to position it below the form */
   transform: translateY(-50%);
 }
 
@@ -436,7 +444,6 @@ p {
   right: 0;
   padding: 10px;
   cursor: pointer;
-
 }
 
 #popup.hidden {
@@ -444,21 +451,9 @@ p {
 }
 
 
-/* body {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background: white;
-    font-family:'Poppins', sans-serif;
-  } */
-
-
 /* loading state */
 #loadingState {
   position: relative;
-
-
 }
 
 #background {
@@ -480,12 +475,12 @@ p {
 
 #loadingState h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #03a9f4;
+  -webkit-text-stroke: 2px var(--blue);
 }
 
 #loadingState h2:nth-child(2) {
-  color: #03a9f4;
-  -webkit-text-stroke: 2px #03a9f4;
+  color: var(--blue);
+  -webkit-text-stroke: 2px var(--blue);
   animation: animate 4s ease-in-out infinite;
 }
 
@@ -503,7 +498,7 @@ p {
 }
 
 p {
-  color: #03a9f4;
+  color: var(--blue);
   position: absolute;
   bottom: 8em;
   left: 40vh;
@@ -514,8 +509,9 @@ p {
 }
 
 
-/* background-color: #fff5;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  inset: 0; */
+@media (max-width: 60em) {
+form {
+  width: 80%;
+  margin: auto;
+}
+}
