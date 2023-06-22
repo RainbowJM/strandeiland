@@ -170,6 +170,9 @@ main {
 
 .thumbnail-container figure {
   position: relative;
+  height: 15.625em;
+  background-color: var(--white);
+  border-radius: var(--border-radius-medium);
 }
 
 .thumbnail-container figcaption {
