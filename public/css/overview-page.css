@@ -555,7 +555,23 @@ input:checked + span {
 }
 
 .select-menu-sorting::part(listbox) {
-    
+    box-shadow: none;
+    width: 30em;
+    height: auto;
+    padding: .5em;
+}
+
+.select-menu-sorting option {
+    padding: .9em;
+    font-size: 1.2em;
+    border: none;
+    background-color: var(--light-grey);
+    color: var(--black);
+}
+
+.select-menu-sorting option:hover {
+    background-color: var(--black);
+    color: var(--white);
 }
 /* Responsive */
 @media (max-width: 55em) {
