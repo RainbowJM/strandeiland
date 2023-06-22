@@ -13,9 +13,9 @@
 
   <div class="slogan-wrapper">
 
-  
-  <section class="slogan-container">
-   
+
+    <section class="slogan-container">
+
 
       <h1>
         <span>Draag bij</span>
@@ -23,15 +23,15 @@
         <span>Strandeiland</span>
         <span>Jouw ideeën, <br> onze toekomst!</span>
       </h1>
-  
+
       <article class="slogan-call-to-action">
         <h2>Wensen voor Strandeiland</h2>
         <p>Wil je bijdragen aan Strandeiland?</p>
         <a href="/form">Maak zelf een wens!</a>
       </article>
-    
-  </section>
-</div>
+
+    </section>
+  </div>
   <main>
     <form>
       <%- include('./partials/filter-menu.ejs') %>
@@ -40,26 +40,27 @@
 
     <section class="content">
 
-      <h2>Bekijk de laatst gemaakte wensen</h2>  
+      <h2>Bekijk de laatst gemaakte wensen</h2>
       <section class="latest-ideas">
-          <% latestSuggestions.forEach(suggestion=> { %>
-            <%-include('./partials/latest-thumbnail.ejs',{suggestion: suggestion})%>
-          <% }) %>
+        <% latestSuggestions.forEach(suggestion=> { %>
+          <%-include('. /partials/latest-thumbnail.ejs',{suggestion: suggestion})%>
+            <% }) %>
       </section>
 
       <h2> 2.500 resultaten</h2>
       <section class="grid-container">
 
         <% suggestions.forEach(suggestion=> { %>
-          <%-include('./partials/thumbnail.ejs',{suggestion: suggestion})%>
+          <%-include('. /partials/thumbnail.ejs',{suggestion: suggestion})%>
             <% }) %>
 
       </section>
   </main>
-
   <footer>
     <%- include('./partials/footer'); %>
   </footer>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/script.js"></script>
 </body>
 
 </html>
