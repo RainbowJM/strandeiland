@@ -4,7 +4,7 @@
   --white: #ffffff;
   --black: #000000;
   --blue: #009ce0;
-  --light-blue: #94dfff;
+  --light-blue: #94DFFF;
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --gray: #e9e9e9;
@@ -16,7 +16,7 @@
 }
 
 .terug {
-  margin: 10em 0 1em 5vw;
+  margin: 3em 0 1em 5vw;
 }
 
 .terug a {
@@ -47,19 +47,24 @@ textarea#title::placeholder {
   font-size: 15px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 1em;
+h1{
+  width: 60%;
+  margin: auto;
+  margin-bottom: .5em;
   margin-top: 0.5em;
 }
 
 .form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
 form {
-  width: 50%;
+
+  width: 60%;
+  margin: auto;
 }
 
 fieldset {
@@ -68,7 +73,9 @@ fieldset {
   flex-direction: column;
   border-style: none;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 40px 20px;
+  border-radius: var(--border-radius-large);
+
 }
 
 fieldset label,
@@ -76,7 +83,7 @@ fieldset textarea,
 fieldset .file-input-container,
 #imageLink {
   margin-bottom: 10px;
-  width: 75%;
+  width: 85%;
   position: relative;
   left: 5%;
 }
@@ -100,6 +107,7 @@ input#title::placeholder,
   color: var(--dark-grey);
   font-size: 15px;
 }
+
 
 fieldset label {
   font-weight: bold;
@@ -125,19 +133,24 @@ textarea {
   border: none;
 }
 
-#title {
-  margin-bottom: 10px;
-  width: 75%;
+
+#uploadButton{
+  width: 10em;
   position: relative;
   left: 5%;
 }
-#sendButton {
+
+
+/* Submit Button Styling */
+.submit-button {
   background-color: var(--black);
   color: var(--white);
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  margin-bottom: 2em;
+  margin-left: 2em;
 }
 
 textarea#description::placeholder {
@@ -145,9 +158,17 @@ textarea#description::placeholder {
   color: var(--dark-grey);
 }
 
+
 .dropdown {
   margin-bottom: 10px;
   width: 75%;
+
+
+/* vanaf hier begint de dropdown menu  */
+
+.dropdown {
+  margin-bottom: 10px;
+  width: 85%;
   position: relative;
   left: 5%;
   padding: 0;
@@ -166,6 +187,7 @@ textarea#description::placeholder {
   display: flex;
   align-items: center;
 }
+
 .selected-option::after {
   content: "\2304";
   position: absolute;
@@ -180,9 +202,11 @@ textarea#description::placeholder {
 .selected-option.open::after {
   content: "×";
   font-size: 18px;
+
   transform: translateY(-50%);
   line-height: 1;
 }
+
 
 .dropdown-container {
   display: none;
@@ -255,7 +279,6 @@ textarea#description::placeholder {
 
 .file-input-container {
   background-color: var(--gray);
-
   height: 10em;
 }
 
@@ -389,7 +412,7 @@ p {
   transform: translate(-50%, -50%);
   font-size: 8em;
   font-family: "Poppins", sans-serif;
-}
+
 
 #loadingState h2:nth-child(1) {
   color: transparent;
@@ -397,12 +420,13 @@ p {
 }
 
 #loadingState h2:nth-child(2) {
-  color: #03a9f4;
-  -webkit-text-stroke: 2px #03a9f4;
+  color: var(--blue);
+  -webkit-text-stroke: 2px var(--blue);
   animation: animate 4s ease-in-out infinite;
 }
 
 @keyframes animate {
+
   0%,
   100% {
     clip-path: polygon(
@@ -429,11 +453,12 @@ p {
       100% 100%,
       0% 100%
     );
-  }
+
 }
 
 p {
-  color: #03a9f4;
+  color: var(--blue);
+
   position: absolute;
   bottom: 8em;
   left: 40vh;
@@ -442,3 +467,11 @@ p {
 .hidden {
   display: none;
 }
+
+@media (max-width: 60em) {
+form {
+  width: 80%;
+  margin: auto;
+}
+}
+
