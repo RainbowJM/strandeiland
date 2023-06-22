@@ -1,11 +1,11 @@
-const cacheName = 'cache-v1';
+const cacheName = 'cache-v2';
 const runtimeCacheName = 'runtime-cache'
 const assets = [
     '/',
     '/css/suggestion.css',
     '/css/form.css',
     '/css/global.css',
-    '/css/overview-page.css',
+    '/css/suggestions.css',
     '/css/sent.css',
     '/css/offline.css',
     '/css/user.css',
