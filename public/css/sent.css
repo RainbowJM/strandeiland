@@ -31,8 +31,8 @@ main {
 .sent h1 span {
   display: block;
   width: fit-content;
-  padding: 5px;
-  margin: 10px 0;
+  padding: 0.313em;
+  margin: 0.625em 0;
 }
 
 .sent span:nth-child(1) {
