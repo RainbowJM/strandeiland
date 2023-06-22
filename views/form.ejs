@@ -2,21 +2,28 @@
 <html lang="en">
 
 <head>
+
     <%- include('./partials/head'); %>
     <link rel="stylesheet" href="/css/form.css">
+
 </head>
 
 <body>
     <header>
+
         <%- include('./partials/header'); %>
+
     </header>
 
     <div class="back">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+
         <a href="/">Terug</a>
+
     </div>
     <h1>Maak een wens</h1>
     <div class="form-container">
+
         <form action="/form" method="post">
             <fieldset>
                 <label for="title">Titel</label>
@@ -73,6 +80,7 @@
                 </div>
             </fieldset>
             <input type="submit" value="wens aanmaken" id="sendButton" />
+
         </form>
     </div>
     <footer>

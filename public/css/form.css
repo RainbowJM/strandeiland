@@ -26,21 +26,15 @@
 
 
 
+
 .back {
-
   margin: 10em 0 1em 5vw;
-
 }
 
 
-
-
 .back a {
-
   color: var(--black);
-
   font: var(--font);
-
 }
 
 
@@ -293,6 +287,7 @@ textarea {
 
 
 
+
 input[type="text"]:focus,
 
 textarea:focus{
@@ -315,10 +310,6 @@ textarea:focus{
     position: relative;
 
     left: 5%;
-
-
-
-
 }
 
 /* Submit Button Styling */
@@ -681,6 +672,7 @@ p{
     font-size: 16px;
 
 }
+
 
 
 
