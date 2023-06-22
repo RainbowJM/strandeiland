@@ -3,7 +3,7 @@
 
 <head>
   <%- include('./partials/head'); %>
-  <link rel="stylesheet" href="/css/offline.css">
+    <link rel="stylesheet" href="/css/offline.css">
 </head>
 
 <body>
@@ -12,13 +12,18 @@
   </header>
 
   <body>
-      <main>
-        <div class="content">
-          <h2>Offline</h2>
-          <h2>Offline</h2>  
-          <p>Kan niet verbinden met internet</p>
-        </div>
-      </main>  
+    <main>
+      <div class="content">
+        <h2>Offline</h2>
+        <h2>Offline</h2>
+        <p>Kan niet verbinden met internet</p>
+      </div>
+    </main>
+    <footer>
+      <%- include('./partials/footer'); %>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/script.js"></script>
   </body>
 
 </html>

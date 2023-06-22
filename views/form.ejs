@@ -25,25 +25,21 @@
 
     <div class="form-container">
         <form action="/sent">
-        
+
             <fieldset>
                 <label for="title">Titel</label>
-                <input type="text" 
-                id="title" 
-                name="title" 
-                placeholder="Geef uw wens een titel" 
-                minlength="3" maxlength="40" required>
+                <input type="text" id="title" name="title" placeholder="Geef uw wens een titel" minlength="3"
+                    maxlength="40" required>
                 <!-- Input field for the title of the wish -->
-        
-                <label for="description" >Wens beschrijving</label>
-                <textarea name="description" 
-                id="description" cols="30" rows="10"
-                placeholder="Beschrijf uw wens zo duidelijk mogelijk" 
-                minlength="3" maxlength="200" required></textarea>
+
+                <label for="description">Wens beschrijving</label>
+                <textarea name="description" id="description" cols="30" rows="10"
+                    placeholder="Beschrijf uw wens zo duidelijk mogelijk" minlength="3" maxlength="200"
+                    required></textarea>
                 <!-- Textarea for describing the wish -->
-        
+
                 <label for="theme">Thema's</label>
-                
+
 
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption">
@@ -72,19 +68,19 @@
                         <!-- Dropdown menu options for selecting themes -->
                     </div>
                 </fieldset>
-        
-                <label for="imagelabel" >Afbeelding</label>
+
+                <label for="imagelabel">Afbeelding</label>
                 <!-- Label for the image input field -->
-        
+
                 <button id="uploadButton">Afbeelding uploaden</button>
                 <!-- Button for uploading an image -->
-        
+
                 <div id="popup" class="hidden">
                     <!-- Popup container for image upload options -->
-        
+
                     <button id="popupCloseButton" class="popup-close-button">&#10006;</button>
                     <!-- Button for closing the popup -->
-        
+
                     <div id="links">
                         <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
                         <!-- Label for image website links -->
@@ -101,13 +97,13 @@
                         <div id="imagePreview"></div>
 
                         <!-- Placeholder for displaying image preview -->
-        
+
                         <label for="or">Of</label>
                         <!-- Label for image upload options -->
-        
+
                         <p class="hierarchy">Bestand</p>
                         <!-- Label for image file upload option -->
-        
+
 
                         <div class="file-input-container">
                             <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
@@ -128,20 +124,18 @@
 
             <div id="loadingState" class="loading-state hidden">
                 <h2>loading</h2>
-                <h2>loading</h2>  
+                <h2>loading</h2>
                 <div id="background"></div>
             </div>
 
 
         </form>
     </div>
-
     <footer>
         <%- include('./partials/footer'); %>
-
     </footer>
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/js/script.js"></script>
 </body>
 
 </html>
-
