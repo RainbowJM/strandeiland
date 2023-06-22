@@ -15,13 +15,11 @@ function toggleFilterMenu(){
 
     })
         tabContents.forEach(tabContent => {
-            // tabContent.classList.add('active');
 
             closeFilterBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 filterThemeMenu.classList.remove('show-filter-menu');
                 filterSortMenu.classList.remove('show-filter-menu');
-                // tabContent.classList.remove("active");
             });
     })
 }
