@@ -548,21 +548,24 @@ input:checked + span {
     appearance: none;
     -webkit-appearance: none;
     border: none;
+    cursor: pointer;
 }
 
 .select-menu-sorting::part(selected-value) {
     font-size: 1.2em;
+
 }
 
 .select-menu-sorting::part(listbox) {
     box-shadow: none;
     width: 30em;
     height: auto;
-    padding: .5em;
+    padding: .5em 1em;
 }
 
 .select-menu-sorting option {
     padding: .9em;
+    margin: .5em 0;
     font-size: 1.2em;
     border: none;
     background-color: var(--light-grey);
@@ -570,6 +573,7 @@ input:checked + span {
 }
 
 .select-menu-sorting option:hover {
+  cursor: pointer;
     background-color: var(--black);
     color: var(--white);
 }
