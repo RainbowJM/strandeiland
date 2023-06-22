@@ -9,10 +9,11 @@ const supabase = createClient(
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const { data: themeData, themeError } = await supabase.from("theme").select();
+  const { data: themeData, themeError } = await supabase
+  .from("theme")
+  .select();
 
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
-
     .from("suggestion_theme")
     .select();
 
@@ -22,17 +23,24 @@ router.get("/", async (req, res) => {
 
   const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
     .from("suggestion")
-
     .select()
     .order("created_at", { ascending: false })
     .limit(3);
+
+  const { count, error } = await supabase
+    .from("suggestion")
+    .select("*", { count: "exact", head: true });
+
+  console.log(count);
 
   for (const suggestion of suggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
     );
+
     if (relatedTheme) {
       const theme = themeData.find((t) => t.id === relatedTheme.themaId);
+
       if (theme) {
         suggestion.theme = theme;
       }
@@ -43,20 +51,38 @@ router.get("/", async (req, res) => {
     const latestRelatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === latestSuggestion.id
     );
+
     if (latestRelatedTheme) {
       const theme = themeData.find((t) => t.id === latestRelatedTheme.themaId);
+
       if (theme) {
         latestSuggestion.theme = theme;
       }
     }
   }
 
-  res.render("index", {
-    title: "Wensen",
-    themes: themeData,
-    suggestions: suggestionsData,
-    latestSuggestions: latestSuggestionsData,
-  });
+  if (
+    themeError ||
+    suggestionsError ||
+    latestSuggestionsError ||
+    themeSuggestionsError
+  ) {
+    console.error(
+      "Error:",
+      themeError ||
+        suggestionsError ||
+        latestSuggestionsError ||
+        themeSuggestionsError
+    );
+  } else {
+    res.render("index", {
+      title: "Wensen",
+      themes: themeData,
+      suggestions: suggestionsData,
+      latestSuggestions: latestSuggestionsData,
+      totalSuggestions: count,
+    });
+  }
 });
 
 router.get("/wens/:id", async (req, res) => {
@@ -124,7 +150,7 @@ router.get("/wens/:id", async (req, res) => {
       }
     }
   }
-  
+
   if (
     error ||
     residentSuggestionError ||
