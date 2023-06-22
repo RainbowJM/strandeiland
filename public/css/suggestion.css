@@ -76,7 +76,7 @@ main {
 
 .wish article p#time {
   color: gray;
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 .wish article h3 {
@@ -84,7 +84,7 @@ main {
   font-size: 0.8em;
   padding: 0.5em;
   margin-top: 1em;
-  border-radius: 0.5em;
+  border-radius: var(--border-radius-small);
   width: fit-content;
   background-color: var(--light-grey);
 }
@@ -132,13 +132,13 @@ main {
   background-color: var(--blue);
   padding: 0.5em;
   margin-bottom: 1em;
-  font-size: 20px;
+  font-size: 1.250em;
   position: absolute;
   text-align: center;
 }
 
 .joiners h4 {
-  font-size: 12px;
+  font-size: 0.750em;
   color: var(--dark-grey);
   font-weight: lighter;
 }
@@ -159,7 +159,7 @@ main {
 }
 
 #ambassador > h3 {
-  font-size: 14px;
+  font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
@@ -188,7 +188,7 @@ main {
 }
 
 #helpers > h3 {
-  font-size: 14px;
+  font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
@@ -218,7 +218,7 @@ main {
 }
 
 #sharers > h3 {
-  font-size: 14px;
+  font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
@@ -247,7 +247,7 @@ main {
 }
 
 #sharers li img:hover {
-  filter: drop-shadow(5px 5px 1px var(--yellow));
+  filter: drop-shadow(0.313em 0.313em 0.063em var(--yellow));
 }
 
 .box {
@@ -271,7 +271,7 @@ main {
 
 .box h3 {
   background-color: var(--yellow);
-  font-size: 14px;
+  font-size: 0.875em;
   width: max-content;
   padding: 0 0.2em;
 }
@@ -279,7 +279,7 @@ main {
 .box a {
   color: var(--black);
   text-decoration: underline;
-  font-size: 10px;
+  font-size: 0.625em;
 }
 
 @media (width < 50em) {
