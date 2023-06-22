@@ -274,26 +274,21 @@ router.post("/form", async (req, res) => {
       .select();
 
     const insertId = data.length > 0 ? data[0].id : null;
-    console.log(insertId);
     if (error || !insertId) {
       throw error;
     }
 
-    const themes = req.body.theme;
-    console.log(themes);
+    const themes = [req.body.theme];
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase
-
         .from("theme")
         .select("id")
-        .eq("label", theme)
+        .eq("id", theme)
         .single();
       if (themeError) {
-        console.log(themeError);
         throw themeError;
       }
-      console.log(themeData.id);
 
       const { error: suggestionThemeError } = await supabase
         .from("suggestion_theme")
