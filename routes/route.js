@@ -115,7 +115,9 @@ router.get("/wens/:id", async (req, res) => {
   let listSuggestions = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
+      // console.log('resident',residentSuggestion.resident_id, resident.id);
       if (residentSuggestion.resident_id === resident.id) {
+        // console.log('suggestion',residentSuggestion.suggestion_id, suggestionData.id);``
         if (residentSuggestion.suggestion_id === suggestionData.id) {
           suggestionData.resident = resident;
           listSuggestions.push(suggestionData);
@@ -124,25 +126,29 @@ router.get("/wens/:id", async (req, res) => {
     }
   }
 
+  // console.log(listSuggestions);
   for (const suggestion of listSuggestions) {
-    let relatedTheme = null;
+    // console.log(suggestion);
+    let relatedThemes = [];
     for (const ts of suggestionThemeData) {
       if (ts.suggestionId === suggestion.id) {
-        relatedTheme = ts;
-        break;
+        relatedThemes.push(ts);
       }
     }
-    if (relatedTheme) {
-      let theme = null;
+    console.log(relatedThemes);
+    // if (relatedTheme) {
+      for (const relatedTheme of relatedThemes) {
+      let theme = [];
       for (const t of themeData) {
+        console.log(t.id, relatedTheme.themaId);
         if (t.id === relatedTheme.themaId) {
-          theme = t;
-          break;
+          theme.push(t);
         }
       }
-      if (theme) {
-        suggestionData.theme = theme;
-      }
+      console.log(theme);
+      // if (theme) {
+      //   suggestionData.theme = theme;
+      // }
     }
   }
 
