@@ -145,6 +145,12 @@ h1#user-name {
   cursor: pointer;
 }
 
+.join {
+  margin-top: 1em;
+  display: flex;
+  padding: 0;
+}
+
 #suggestion > h3 {
   font-size: 1em;
   margin-top: 3.1em;
@@ -171,6 +177,8 @@ h1#user-name {
   border-radius: 0.5em;
   width: fit-content;
   background-color: var(--light-grey);
+  margin-right: 1em;
+
 }
 
 #suggestion ul:first-of-type li > img {

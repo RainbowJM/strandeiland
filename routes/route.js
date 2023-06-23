@@ -115,9 +115,7 @@ router.get("/wens/:id", async (req, res) => {
   let theme = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
-      // console.log('resident',residentSuggestion.resident_id, resident.id);
       if (residentSuggestion.resident_id === resident.id) {
-        // console.log('suggestion',residentSuggestion.suggestion_id, suggestionData.id);``
         if (residentSuggestion.suggestion_id === suggestionData.id) {
           suggestionData.resident = resident;
           listSuggestions.push(suggestionData);
@@ -126,9 +124,7 @@ router.get("/wens/:id", async (req, res) => {
     }
   }
 
-  // console.log(listSuggestions);
   for (const suggestion of listSuggestions) {
-    // console.log(suggestion);
     let relatedThemes = [];
     for (const ts of suggestionThemeData) {
       if (ts.suggestionId === suggestion.id) {
@@ -137,15 +133,10 @@ router.get("/wens/:id", async (req, res) => {
     }
     for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
-        // console.log(t.id, relatedTheme.themaId);
         if (t.id === relatedTheme.themaId) {
           theme.push(t);
         }
       }
-      console.log(theme);
-      // if (theme) {
-      //   suggestionData.theme = theme;
-      // }
     }
   }
 
@@ -200,6 +191,7 @@ router.get("/user/:first_name", async (req, res) => {
 
   let int = 0;
   let listSuggestions = [];
+  let theme = [];
   for (const suggestion of suggestionData) {
     for (const residentSuggestion of residentSuggestionData) {
       if (suggestion.id === residentSuggestion.suggestion_id) {
@@ -216,28 +208,24 @@ router.get("/user/:first_name", async (req, res) => {
   const { data: suggestionThemeData, suggestionThemeError } = await supabase
     .from("suggestion_theme")
     .select();
-
+// console.log(listSuggestions);
   for (const suggestion of listSuggestions) {
-    let relatedTheme = null;
+    let relatedThemes = [];
     for (const ts of suggestionThemeData) {
       if (ts.suggestionId === suggestion.id) {
-        relatedTheme = ts;
-        break;
+        relatedThemes.push(ts);
       }
     }
-    if (relatedTheme) {
-      let theme = null;
+    console.log(relatedThemes)
+    for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
         if (t.id === relatedTheme.themaId) {
-          theme = t;
-          break;
+          theme.push(t);
         }
-      }
-      if (theme) {
-        suggestion.theme = theme;
       }
     }
   }
+  // console.log(theme);
   if (
     userError ||
     residentSuggestionError ||
@@ -260,6 +248,7 @@ router.get("/user/:first_name", async (req, res) => {
       time: date,
       amount: int,
       suggestions: listSuggestions,
+      themes: theme,
     });
   }
 });

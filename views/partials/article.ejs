@@ -2,7 +2,11 @@
     <img src="<%= suggestion.image %>" alt="">
     <div>
         <h3><%= suggestion.title %></h3>
-        <h4><%= suggestion.theme.label %></h4>
+        <section class="join" id="suggestion-label">
+            <% themes.forEach(theme => { %>
+                <h4> <%= theme.label %> </h4>
+                  <% }) %>
+        </section>
         <ul class="statistics">
             <li> <span> <img src="../../images/trekkers.svg" alt=""></span> 5</li>
             <li><span><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i></span> 2</li>
