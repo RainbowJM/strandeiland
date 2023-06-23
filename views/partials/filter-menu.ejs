@@ -10,11 +10,12 @@
                 <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
                 <input type="text" name="search" id="search" placeholder="Zoek op treftwoord">
             </label>
-
+            
         </li>
         <li class="sort-btn" data-filter-target="#sorting">
             <span>Sorteren op:</span>
-            <span>Meest recente <i class="fa-solid fa-angle-down"></i></span>
+            <%- include('./selectmenu.ejs') %>
+            <!-- <span>Meest recente <i class="fa-solid fa-angle-down"></i></span> -->
         </li>
     </ul>
 
@@ -40,14 +41,18 @@
         </article>
 
         <article id="sorting" data-filter-content>
-            <ul class="sorting-filter-items">
+
+           
+         
+            <!-- <ul class="sorting-filter-items">
                 <li><label><input type="radio" name="sort" value="recent"><span>Meest Recente</span></label></li>
                 <li><label><input type="radio" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
                 <li><label><input type="radio" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
                 <li><label><input type="radio" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
             </ul>
 
-            <button class="filter-sort-results-btn" type="submit">Toon resultaten</button>
+            <button class="filter-sort-results-btn" type="submit">Toon resultaten</button> -->
         </article>
+
     </section>
 </fieldset>

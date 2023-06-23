@@ -6,30 +6,30 @@ const supabase = createClient(
   `${process.env.SUPABASE_URL}`,
   `${process.env.SUPABASE_KEY}`
 );
+const _ = require('lodash');
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   const { data: themeData, themeError } = await supabase.from("theme").select();
-
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
     .from("suggestion_theme")
     .select();
-
   const { data: suggestionsData, error: suggestionsError } = await supabase
     .from("suggestion")
     .select();
-
   const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
     .from("suggestion")
     .select()
     .order("created_at", { ascending: false })
     .limit(3);
-
   const { count, error } = await supabase
     .from("suggestion")
     .select("*", { count: "exact", head: true });
 
-  for (const suggestion of suggestionsData) {
+  // Randomize the suggestionsData array
+  const shuffledSuggestionsData = _.shuffle(suggestionsData);
+
+  for (const suggestion of shuffledSuggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
     );
@@ -74,12 +74,13 @@ router.get("/", async (req, res) => {
     res.render("index", {
       title: "Wensen",
       themes: themeData,
-      suggestions: suggestionsData,
+      suggestions: shuffledSuggestionsData,
       latestSuggestions: latestSuggestionsData,
       totalSuggestions: count,
     });
   }
 });
+
 
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
@@ -260,7 +261,6 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
-  console.log(req.body);
   try {
     const { data, error } = await supabase
       .from("suggestion")
@@ -278,7 +278,8 @@ router.post("/form", async (req, res) => {
       throw error;
     }
 
-    const themes = [parseInt(req.body.theme)];
+    console.log([parseInt(req.body.theme)])
+    const themes = req.body.theme;
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase

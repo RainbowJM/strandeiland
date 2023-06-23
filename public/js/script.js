@@ -299,7 +299,7 @@ function updateFormData() {
   const formData = {
     title: document.getElementById("title").value,
     description: document.getElementById("description").value,
-    themas: selectedThemes
+    themes: selectedThemes
   };
 
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
