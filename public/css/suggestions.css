@@ -109,7 +109,7 @@ main {
 
 .slogan-call-to-action a:hover {
   transform: rotate(-5deg);
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 @keyframes slogan-1 {
@@ -147,7 +147,7 @@ main {
   grid-column: span 3;
 }
 
-.content > h2 {
+.content>h2 {
   width: fit-content;
   background-color: var(--light-blue);
   padding: 0.5em;
@@ -316,8 +316,7 @@ main {
 
 .grid-container {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: minmax(24em, auto);
   gap: 1.25em;
   max-width: 75em;
@@ -347,7 +346,7 @@ main {
 .grid-container .thumbnail-container article {
   width: 100%;
   transform: translateY(-18%);
-    transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 
 .grid-container .thumbnail-container article:hover {
@@ -386,35 +385,35 @@ form fieldset {
   border: none;
 }
 
-form fieldset > ul {
+form fieldset>ul {
   display: flex;
   gap: 1.25em;
 }
 
-form fieldset > ul li {
+form fieldset>ul li {
   display: flex;
   flex-direction: column;
 }
 
-form fieldset > ul li span {
+form fieldset>ul li span {
   display: inline-block;
 }
 
-form fieldset > ul li span:nth-of-type(1) {
+form fieldset>ul li span:nth-of-type(1) {
   font-weight: bold;
   margin-bottom: 0.2em;
 }
 
-form fieldset > ul li span:nth-of-type(2) {
+form fieldset>ul li span:nth-of-type(2) {
   background-color: var(--white);
   padding: 0.5rem 1rem;
 }
 
-form fieldset > ul li span:nth-of-type(2):hover {
+form fieldset>ul li span:nth-of-type(2):hover {
   cursor: pointer;
 }
 
-form fieldset > ul li:nth-of-type(2) label {
+form fieldset>ul li:nth-of-type(2) label {
   background-color: var(--white);
   padding: 0.4rem 1rem;
   width: fit-content;
@@ -526,7 +525,7 @@ form a:hover {
   width: 20em;
 }
 
-input:checked + span {
+input:checked+span {
   background-color: var(--black);
   color: var(--white);
   padding: 0.5em;
@@ -549,41 +548,52 @@ input:checked + span {
 /* SELECTMENU */
 /**************/
 .select-menu-sorting::part(button) {
-    padding: .9em;
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    cursor: pointer;
+  padding: .9em;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
 }
 
 .select-menu-sorting::part(selected-value) {
-    font-size: 1.2em;
+  font-size: 1.2em;
 
 }
 
 .select-menu-sorting::part(listbox) {
-    box-shadow: none;
-    width: 30em;
-    height: auto;
-    padding: .5em 1em;
-    animation: smooth-dropdown 0.3s ease-in-out both alternate;
+  box-shadow: none;
+  width: 30em;
+  height: auto;
+  padding: .5em 1em;
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
 .select-menu-sorting option {
-    padding: .9em;
-    margin: .5em 0;
-    font-size: 1.2em;
-    border: none;
-    background-color: var(--light-grey);
-    color: var(--black);
+  padding: .9em;
+  margin: .5em 0;
+  font-size: 1.2em;
+  border: none;
+  background-color: var(--light-grey);
+  color: var(--black);
 }
 
 .select-menu-sorting option:hover {
   cursor: pointer;
-    background-color: var(--black);
-    color: var(--white);
+  background-color: var(--black);
+  color: var(--white);
 }
-/* Responsive */
+
+
+/**************/
+/* RESPONSIVE */
+/**************/
+/* @media (max-width: 60em) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: span 3;
+  }
+} */
+
 @media (max-width: 55em) {
   .content {
     display: block;
@@ -594,6 +604,11 @@ input:checked + span {
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column: span 3;
   }
 
   .latest-ideas.thumbnail-container {
@@ -614,7 +629,7 @@ input:checked + span {
     flex-direction: column;
   }
 
-  main form > fieldset ul {
+  main form>fieldset ul {
     flex-direction: column;
   }
 
@@ -635,11 +650,16 @@ input:checked + span {
   }
 
 
-    .latest-ideas {
-        display: grid;
-        grid-column: span 3;
-        grid-template-columns: 1fr;
+  .latest-ideas {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 1fr;
 
-    }
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-column: span 3;
+  }
 
 }
