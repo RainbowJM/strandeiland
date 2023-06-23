@@ -2,41 +2,92 @@
 
   --yellow: #ffe700;
 
+
+
+
   --light-yellow: #FFF48C;
+
+
+
 
   --white: #ffffff;
 
+
+
+
   --black: #000000;
+
+
+
 
   --blue: #009ce0;
 
-      --light-blue: #94DFFF;
+
+
+
+  --light-blue: #94DFFF;
+
+
+
 
   --light-grey: #f0f0eb;
 
+
+
+
   --dark-grey: #333333;
+
+
+
 
   --gray: #E9E9E9;
 
+
+
+
   --font: 'Poppins', sans-serif;
 
+
+
+
+  --border-radius-small: 0.5em;
+
+  --border-radius-medium: 2em;
+
+  --border-radius-large: 4em;
+
 }
-
-
 
 
 
 
 .back {
+
   margin: 10em 0 1em 5vw;
+
 }
+
+
 
 
 .back a {
+
   color: var(--black);
+
   font: var(--font);
+
 }
 
+
+
+
+
+
+/*****************/
+
+/* Validation */
+
+/*****************/
 
 
 
@@ -47,6 +98,7 @@ input:required:invalid {
   border: 2px solid red;
 
 }
+
 
 
 
@@ -80,7 +132,15 @@ textarea:required:valid {
 
 
 
-/* Placeholder Styling */
+/*****************/
+
+/* PLACEHOLDER */
+
+/*****************/
+
+
+
+
 
 textarea#description::placeholder,
 
@@ -88,16 +148,15 @@ textarea#title::placeholder {
 
   font-style: var(--font);
 
-    color: var(--dark-grey);
+  color: var(--dark-grey);
 
-    font-size: 15px;
+  font-size: 15px;
 
 }
 
 
 
 
-/* Heading Styling */
 
 h1 {
 
@@ -112,34 +171,64 @@ h1 {
 
 
 
-/* Form Container Styling */
+/*****************/
+
+/* FORM CONTAINER */
+
+/*****************/
+
+
+
 
 .form-container {
 
   display: flex;
 
+  flex-direction: column;
+
   justify-content: center;
+
+  margin: auto;
 
 }
 
 
 
 
-/* Form Styling */
+
+
+
+/*****************/
+
+/* FORM */
+
+/*****************/
+
+
+
 
 form {
 
-  width: 50%;
+  width: 60%;
 
-
-
+  margin: auto;
 
 }
 
 
 
 
-/* Fieldset Styling */
+
+
+
+/*****************/
+
+/*  FIELDSET */
+
+/*****************/
+
+
+
 
 fieldset {
 
@@ -153,14 +242,16 @@ fieldset {
 
   margin-bottom: 20px;
 
-  padding: 20px;
+  padding: 40px 20px;
+
+  border-radius: var(--border-radius-large);
 
 }
 
 
 
 
-/* Label, Textarea, Select, and File Input Container Styling */
+
 
 fieldset label,
 
@@ -174,13 +265,19 @@ fieldset .file-input-container,
 
   margin-bottom: 10px;
 
-  width: 75%;
+  width: 85%;
 
   position: relative;
 
   left: 5%;
 
+
+
+
 }
+
+
+
 
 
 
@@ -193,12 +290,17 @@ fieldset .dropdown-menu label{
 
     cursor: pointer;
 
+
+
+
 }
 
 
 
 
-/* Focus Styling */
+
+
+
 
 fieldset label:focus,
 
@@ -217,6 +319,9 @@ fieldset .file-input-container:focus
 
 
 
+
+
+
 input#title::placeholder,
 
 #imageLink::placeholder{
@@ -227,11 +332,20 @@ input#title::placeholder,
 
     font-size: 15px;
 
+
+
+
   }
+
+
+
 
   
 
-/* Label Styling */
+
+
+
+
 
 fieldset label {
 
@@ -241,7 +355,13 @@ fieldset label {
 
   font-family: var(--font);
 
+
+
+
 }
+
+
+
 
 
 
@@ -260,13 +380,15 @@ fieldset input[type="url"] {
 
   border: none;
 
+
+
+
 }
 
 
 
 
 
-/* Input, Textarea, and Select Styling */
 
 input[type="text"],
 
@@ -296,7 +418,11 @@ textarea:focus{
 
   border-color: none;
 
+
+
+
 }
+
 
 
 
@@ -305,88 +431,224 @@ textarea:focus{
 
     margin-bottom: 10px;
 
-    width: 75%;
+    width: 85%;
 
     position: relative;
 
     left: 5%;
+
 }
 
-/* Submit Button Styling */
+
+
+
+
 
 #sendButton {
+
+
+
+
+  background-color: var(--black);
+
+
+
+
+  color: var(--white);
+
+
+
+
+  padding: 10px 20px;
+
+
+
+
+  font-size: 16px;
+
+
+
+
+  border: none;
+
+
+
+
+  cursor: pointer;
+
+
+
+
+}
+
+
+
+
+#uploadButton {
 
   background-color: var(--black);
 
   color: var(--white);
 
-  padding: 10px 20px;
+  padding: 5px 10px; /* Adjust the padding as needed */
 
-  font-size: 16px;
+  font-size: 14px; /* Adjust the font size as needed */
 
   border: none;
 
   cursor: pointer;
 
+  width: auto;
+
+  display: inline-block;
+
+  width: 10em;
+
+  position: relative;
+
+  left: 5%;
+
 }
+
+
+
+
 
 
 
 
 textarea#description::placeholder {
 
+
+
+
    font-family: var(--font);
+
+
+
 
    color: var(--dark-grey);
 
+
+
+
   }
+
+
+
 
   /* vanaf hier begint de dropdown menu  */
 
 
 
 
+
+
+
 .dropdown {
+
+
+
 
     margin-bottom: 10px;
 
+
+
+
     width: 75%;
 
+
+
+
     position: relative;
+
+
+
 
     left: 5%;
 
+
+
+
     padding: 0;
 
+
+
+
   }
+
+
+
 
   
 
+
+
+
   .selected-option {
+
+
+
 
     cursor: pointer;
 
+
+
+
     padding: 10px;
+
+
+
 
     background-color: var(--gray);
 
+
+
+
     color: var(--dark-grey);
+
+
+
 
     border: none;
 
+
+
+
     position: relative;
+
+
+
 
     font-family: var(--font);
 
+
+
+
     font-size: 15px;
+
+
+
 
     font-weight: normal;
 
+
+
+
     display: flex;
+
+
+
 
     align-items: center;
 
+
+
+
   }
+
+
+
 
   .selected-option::after {
 
@@ -411,60 +673,141 @@ textarea#description::placeholder {
 
   }
 
+
+
+
   
+
+
+
 
   .selected-option.open::after {
 
+
+
+
     content: "×";
+
+
+
 
     font-size: 18px; /* Adjust the font size as needed */
 
+
+
+
     
+
+
+
 
     transform: translateY(-50%);
 
+
+
+
     line-height: 1;
+
+
+
 
   }
 
-  
+
+
 
   
 
-  
+
+
 
   
+
+
+
+
+  
+
+
+
+
+  
+
+
+
 
   .dropdown-container {
 
+
+
+
     display: none;
+
+
+
 
     margin-top: 10px;
 
+
+
+
   }
+
+
+
 
 
 
 
 .dropdown-menu {
 
+
+
+
   font-family: var(--font);
+
+
+
 
   display: grid;
 
+
+
+
   grid-template-columns: 1fr 1fr;
+
+
+
 
   background-color: var(--gray);
 
+
+
+
   min-width: 200px;
+
+
+
 
   border: border;
 
+
+
+
   padding: 10px;
+
+
+
 
   gap: 10px;
 
+
+
+
 }
+
+
+
 
 
 
@@ -492,6 +835,9 @@ textarea#description::placeholder {
 
 
 
+
+
+
 .dropdown-menu li:hover {
 
   background-color: var(--dark-grey);
@@ -515,10 +861,10 @@ textarea#description::placeholder {
 
   display: none;
 
-
-
-
 }
+
+
+
 
 
 
@@ -528,9 +874,10 @@ textarea#description::placeholder {
 
   display: block;
 
- 
-
 }
+
+
+
 
 
 
@@ -540,62 +887,137 @@ textarea#description::placeholder {
 
 /* Style the file input */
 
+
+
+
 .file-input-container {
+
+
+
 
   position: relative;
 
+
+
+
   display: inline-block;
+
+
+
 
   margin-top: 10px;
 
 
 
 
+
+
+
 }
+
+
+
 
 
 
 
 .file-input-container label {
 
+
+
+
   display: block;
+
+
+
 
   cursor: pointer;
 
+
+
+
   background-color: #f1f1f1;
+
+
+
 
   color: #333;
 
+
+
+
   padding: 10px;
+
+
+
 
   border: none;
 
+
+
+
   border-radius: 4px;
+
+
+
 
     font-family: var(--font);
 
+
+
+
 }
+
+
+
 
 
 
 
 .file-input-container input[type="file"] {
 
+
+
+
   opacity: 0;
+
+
+
 
   position: absolute;
 
+
+
+
   width: 100%;
+
+
+
 
   height: 100%;
 
+
+
+
   left: 0;
+
+
+
 
   top: 0;
 
+
+
+
   cursor: pointer;
 
+
+
+
 }
+
+
+
 
 
 
@@ -605,35 +1027,60 @@ textarea#description::placeholder {
 
     background-color: var(--gray);
 
-
-
-
     height: 10em;
 
-  
-
 }
+
+
+
 
 
 
 
 p#selectedFileName {
 
+
+
+
   position: relative;
+
+
+
 
   left: 3%;
 
+
+
+
   margin-top: 10px;
+
+
+
 
   font-family: var(--font);
 
+
+
+
   color: var(--black);
+
+
+
 
   font-size: 16px;
 
+
+
+
   margin-bottom: 20px;
 
+
+
+
 }
+
+
+
 
 
 
@@ -641,37 +1088,88 @@ p#selectedFileName {
 
 img{
 
+
+
+
     width: 5em;
+
+
+
 
     height: 4.5em;
 
+
+
+
     position: relative;
+
+
+
 
     left: 40%;
 
+
+
+
     top: 15%;
 
+
+
+
 }
+
+
+
 
 p{
 
+
+
+
     position: relative;
 
-    left: 29%;
+
+
+
+    left: 20%;
+
+
+
 
     top: 10%;
 
+
+
+
     font-family: var(--font);
+
+
+
 
     margin-left: 1em;
 
+
+
+
     margin-top: 1em;
+
+
+
 
     color: var(--black);
 
+
+
+
     font-size: 16px;
 
+
+
+
 }
+
+
+
 
 
 
@@ -683,14 +1181,20 @@ p{
 
     left: 3%;
 
-
-
-
     font-size: 15px;
+
+
+
 
  
 
+
+
+
 }
+
+
+
 
 
 
@@ -701,18 +1205,31 @@ p{
 
     font-weight: bold;
 
-    
+
+
 
 }
 
 
 
 
+
+
+
 .linkjes{
+
+
+
 
     position: relative;
 
+
+
+
     left: 5%;
+
+
+
 
     margin-top: 30px;
 
@@ -721,40 +1238,190 @@ p{
 
 }
 
+
+
+
 .linkjes a {
+
+
+
 
     padding: 5px 10px;
 
+
+
+
     background-color: var(--gray);
+
+
+
 
     color: var(--black);
 
+
+
+
     text-decoration: none;
+
+
+
 
     border-radius: 4px;
 
+
+
+
     margin-right: 10px;
+
+
+
 
     font-family: var(--font);
 
+
+
+
     
+
+
+
 
   }
 
+
+
+
   
+
+
+
 
   .linkjes a:last-child {
 
+
+
+
     margin-right: 0;
+
+
+
+
+  }
+
+
+
+
+  
+
+
+
+
+  .linkjes a:hover {
+
+
+
+
+    background-color: var(--black);
+
+
+
+
+    color: var(--white);
+
+
+
+
+  }
+
+
+
+
+  dialog {
+
+    width: 40em;
+
+
+
+
+    padding: 20px;
+
+    background-color: #f1f1f1;
+
+    border: none;
+
+    border-radius: 4px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 9999;
 
   }
 
   
 
-  .linkjes a:hover {
+  dialog::backdrop {
 
-    background-color: var(--black);
+    background-color: rgba(0, 0, 0, 0.5);
 
-    color: var(--white);
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
 
   }
+
+
+
+
+  
+
+  dialog[open] {
+
+    display: block;
+
+  }
+
+  
+
+  /* .form-container {
+
+    position: relative;
+
+  } */
+
+  
+
+  /* form {
+
+    width: 50%;
+
+    margin: 0 auto;
+
+  }
+
+   */
+
+  .dialog-form-container {
+
+    position: relative;
+
+    z-index: 99999;
+
+  }
+
+  
+
+  
