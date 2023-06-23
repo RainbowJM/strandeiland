@@ -260,7 +260,6 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
-  console.log(req.body);
   try {
     const { data, error } = await supabase
       .from("suggestion")
@@ -278,7 +277,8 @@ router.post("/form", async (req, res) => {
       throw error;
     }
 
-    const themes = [parseInt(req.body.theme)];
+    console.log([parseInt(req.body.theme)])
+    const themes = req.body.theme;
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase
