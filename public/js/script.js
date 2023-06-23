@@ -1,6 +1,9 @@
 // ------------------ variables -------------------------------------------------------
-import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea} from "./modules/variables.js";
+import {   messages,submitMessage,input,tabs,filterMenu,themeFilterBtn,
+  themeSelect,asideItems,theMenuButton,typingElement,selectedOption,
+  dropdownMenu,localStorageKey,themeCheckboxes,fileInput,customImagePreview,selectedFileName,
+  savedFormData,imageLinkInput,imagePreview,filterThemeBtn,uploadButton,boxes,titleInput,descriptionTextarea,
+  closeDialogButton,uploadDialog } from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 
@@ -10,12 +13,12 @@ let last;
 
 
 // ------------------ logic -------------------------------------------------------
-if (uploadButton) {
-uploadButton.addEventListener("click", handleUploadButtonClick);
+if (uploadDialog) {
+  uploadButton.addEventListener("click", showDialog);
+
+  closeDialogButton.addEventListener("click", closeDialog);
 }
-if (popupCloseButton) {
-  popupCloseButton.addEventListener("click", handlePopupCloseButtonClick);
-}
+
 
 if (selectedOption) {
 selectedOption.addEventListener("click", handleSelectedOptionClick);
@@ -26,6 +29,17 @@ themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });
 }
+
+
+if (closeDialogButton) {
+  closeDialogButton.addEventListener('click', closeDialog);
+  }
+
+
+
+if (uploadButton) {
+  uploadButton.addEventListener("click", handleUploadButtonClick);
+  }
 
 if (savedFormData) {
   const parsedFormData = JSON.parse(savedFormData);
@@ -43,10 +57,10 @@ if (savedFormData) {
 }
 
 if (imageLinkInput) {
-imageLinkInput.addEventListener('input', () => {
-  imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
-});
-}
+  imageLinkInput.addEventListener('input', () => {
+    imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
+  });
+  }
 
 if (fileInput) {
   fileInput.addEventListener("change", function() {
@@ -64,14 +78,17 @@ if (fileInput) {
   
         const closeButton = document.createElement("button");
         closeButton.classList.add("close-button");
-        closeButton.innerHTML = "&times;"; 
+        closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
   
         closeButton.addEventListener("click", function() {
+          // Clear the file input value
           fileInput.value = "";
   
+          // Clear the image preview
           customImagePreview.innerHTML = "";
           selectedFileName.textContent = "Geen bestand geselecteerd";
   
+          // Remove the close button
           closeButton.remove();
         });
   
@@ -248,15 +265,8 @@ function handleSelectedOptionClick() {
   selectedOption.classList.toggle('open');
 }
 
-function handleUploadButtonClick() {
-  popup.classList.remove("hidden");
 
-}
 
-function handlePopupCloseButtonClick(event) {
-  event.preventDefault(); 
-  popup.classList.add("hidden");
-}
 
 function handleCheckboxChange() {
   updateFormData();
@@ -306,6 +316,12 @@ function updateFormData() {
 }
 
 
+function showDialog() {
+  uploadDialog.showModal();
+}
 
+function closeDialog() {
+  uploadDialog.close();
+}
 
 

@@ -33,8 +33,6 @@ const themeCheckboxes = document.querySelectorAll(
 const fileInput = document.getElementById("file");
 const customImagePreview = document.getElementById("customImagePreview");
 const selectedFileName = document.getElementById("selectedFileName");
-const popupCloseButton = document.getElementById("popupCloseButton");
-const popup = document.getElementById("popup");
 const savedFormData = localStorage.getItem(localStorageKey);
 const imageLinkInput = document.getElementById("imageLink");
 const imagePreview = document.getElementById("imagePreview");
@@ -43,6 +41,8 @@ const boxes = document.querySelectorAll(".box-click");
 
 const titleInput = document.getElementById("title");
 const descriptionTextarea = document.getElementById("description");
+const closeDialogButton = document.getElementById('closeDialog');
+const uploadDialog = document.querySelector('dialog');
 
 export {
   messages,
@@ -68,8 +68,6 @@ export {
   fileInput,
   customImagePreview,
   selectedFileName,
-  popupCloseButton,
-  popup,
   savedFormData,
   imageLinkInput,
   imagePreview,
@@ -79,4 +77,6 @@ export {
   boxes,
   titleInput,
   descriptionTextarea,
+  closeDialogButton,
+  uploadDialog 
 };

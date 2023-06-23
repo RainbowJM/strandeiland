@@ -56,7 +56,9 @@
                     </div>
                 </fieldset>
                 <label for="imagelabel">Afbeelding</label>
-                <button id="uploadButton">Afbeelding uploaden</button>
+                <button id="uploadButton">Afbeelding     uploaden</button>
+
+                <dialog class="no-js">   
                 <div id="links">
                     <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
                     <div class='linkjes'>
@@ -76,10 +78,15 @@
                     </div>
                     <div id="customImagePreview"></div>
                     <p id="selectedFileName">Geen bestand geselecteerd</p>
-                    <div id="closeButton" class="hidden">&#10006;</div>
+                    <!-- <div id="closeButton" class="hidden">&#10006;</div> -->
+
+                    <button id="closeDialog">sluiten</button>
                 </div>
+
+            </dialog>
             </fieldset>
             <input type="submit" value="wens aanmaken" id="sendButton" />
+       
 
         </form>
     </div>

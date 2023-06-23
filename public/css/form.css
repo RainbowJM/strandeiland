@@ -1,5 +1,4 @@
 :root {
-
   --yellow: #ffe700;
 
   --light-yellow: #FFF48C;
@@ -10,7 +9,7 @@
 
   --blue: #009ce0;
 
-      --light-blue: #94DFFF;
+  --light-blue: #94DFFF;
 
   --light-grey: #f0f0eb;
 
@@ -20,17 +19,14 @@
 
   --font: 'Poppins', sans-serif;
 
+  --border-radius-small: 0.5em;
+  --border-radius-medium: 2em;
+  --border-radius-large: 4em;
 }
-
-
-
-
-
 
 .back {
   margin: 10em 0 1em 5vw;
 }
-
 
 .back a {
   color: var(--black);
@@ -38,23 +34,13 @@
 }
 
 
-
-
-
-
 input:required:invalid {
-
   border: 2px solid red;
-
 }
 
 
-
-
 input:required:valid {
-
   border: 2px solid green;
-
 }
 
 
@@ -79,8 +65,10 @@ textarea:required:valid {
 
 
 
+/*****************/
+/* PLACEHOLDER */
+/*****************/
 
-/* Placeholder Styling */
 
 textarea#description::placeholder,
 
@@ -96,9 +84,6 @@ textarea#title::placeholder {
 
 
 
-
-/* Heading Styling */
-
 h1 {
 
   text-align: center;
@@ -110,9 +95,11 @@ h1 {
 }
 
 
+/*****************/
+/* FORM CONTAINER */
+/*****************/
 
 
-/* Form Container Styling */
 
 .form-container {
 
@@ -125,7 +112,9 @@ h1 {
 
 
 
-/* Form Styling */
+/*****************/
+/* FORM */
+/*****************/
 
 form {
 
@@ -139,7 +128,9 @@ form {
 
 
 
-/* Fieldset Styling */
+/*****************/
+/*  FIELDSET */
+/*****************/
 
 fieldset {
 
@@ -158,9 +149,6 @@ fieldset {
 }
 
 
-
-
-/* Label, Textarea, Select, and File Input Container Styling */
 
 fieldset label,
 
@@ -198,7 +186,6 @@ fieldset .dropdown-menu label{
 
 
 
-/* Focus Styling */
 
 fieldset label:focus,
 
@@ -231,7 +218,7 @@ input#title::placeholder,
 
   
 
-/* Label Styling */
+
 
 fieldset label {
 
@@ -263,10 +250,6 @@ fieldset input[type="url"] {
 }
 
 
-
-
-
-/* Input, Textarea, and Select Styling */
 
 input[type="text"],
 
@@ -329,6 +312,22 @@ textarea:focus{
   cursor: pointer;
 
 }
+
+#uploadButton {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5px 10px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border: none;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+  width: 10em;
+  position: relative;
+
+  left: 5%;
+}
+
 
 
 
@@ -701,8 +700,6 @@ p{
 
     font-weight: bold;
 
-    
-
 }
 
 
@@ -715,9 +712,6 @@ p{
     left: 5%;
 
     margin-top: 30px;
-
-
-
 
 }
 
@@ -758,3 +752,47 @@ p{
     color: var(--white);
 
   }
+
+  dialog {
+    width: 400px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  dialog[open] {
+    display: block;
+  }
+  
+  /* .form-container {
+    position: relative;
+  } */
+  
+  /* form {
+    width: 50%;
+    margin: 0 auto;
+  }
+   */
+  .dialog-form-container {
+    position: relative;
+    z-index: 99999;
+  }
+  
+  
