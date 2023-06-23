@@ -39,8 +39,7 @@ main {
 
 .wish article h2 {
   color: var(--dark-grey);
-  background-color: var(--yellow);
-  width: max-content;
+  width: 80%;
 }
 
 #img-container {
