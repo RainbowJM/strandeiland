@@ -34,6 +34,10 @@ text-align: center;
   height: 60%;
 }
 
+.chat-section::-webkit-scrollbar {
+  display: none;
+}
+
 form {
   position: absolute;
   bottom: 0;
