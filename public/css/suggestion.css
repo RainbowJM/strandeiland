@@ -141,6 +141,7 @@ main {
   font-size: 0.750em;
   color: var(--dark-grey);
   font-weight: lighter;
+  position: absolute;
 }
 
 .joiners div ul li {
@@ -254,15 +255,16 @@ main {
   display: none;
   position: absolute;
   background-color: var(--white);
-  height: 3.8em;
-  width: 5em;
+  height: 4.5em;
+  width: 6em;
   transform: translateY(-1%);
 }
 
 .box.show {
   display: block;
-  margin-left: 8em;
+  margin-left: 10em;
   z-index: 10000;
+  border: none;
 }
 
 #box-left.show {
@@ -273,13 +275,17 @@ main {
   background-color: var(--yellow);
   font-size: 0.875em;
   width: max-content;
-  padding: 0 0.2em;
+  position: absolute;
+  top: 1em;
 }
 
 .box a {
   color: var(--black);
   text-decoration: underline;
   font-size: 0.625em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 @media (width < 50em) {
