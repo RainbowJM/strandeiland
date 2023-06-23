@@ -7,7 +7,7 @@ function toggleFilterMenu(){
 
     filterThemeBtn.addEventListener('click', () => {
         filterThemeMenu.classList.toggle('show-filter-menu');
-
+      console.log('clicked');
     })  
 
  
