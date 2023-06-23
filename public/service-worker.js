@@ -1,4 +1,4 @@
-const cacheName = 'cache-v4';
+const cacheName = 'cache-v3';
 const runtimeCacheName = 'runtime-cache'
 const assets = [
     '/',
