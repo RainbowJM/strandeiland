@@ -15,36 +15,38 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 70vh;
+  overflow: hidden;
   background: var(--white);
   font-family: "Poppins", sans-serif;
   grid: none;
 }
 
 main {
-  display: flex;
-  position: relative;
-  top: 30vh;
-  left: 40vw;
+  display: grid;
+place-items: center;
+height: 100%;
+justify-content: center;
 }
 
 .content {
   position: relative;
-
+width: 100%;
+text-align: center;
 }
 
 .content h2 {
-  position: absolute;
   font-size: 8em;
 }
 
 .content h2:nth-child(1) {
+  position: absolute;
   color: transparent;
-  -webkit-text-stroke: 0.125em var(--blue);
+  -webkit-text-stroke: 0.02em var(--blue);
 }
 .content h2:nth-child(2) {
   color: var(--blue);
-  -webkit-text-stroke: 0.125em var(--blue);
+  -webkit-text-stroke: 0.02em var(--blue);
   animation: animate 4s ease-in-out infinite;
 }
 
@@ -80,5 +82,4 @@ main {
 
 p {
   color: var(--blue);
-  margin-top: 10em;
 }
