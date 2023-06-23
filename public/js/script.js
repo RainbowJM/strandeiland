@@ -38,6 +38,7 @@ if (closeDialogButton) {
 
 
 if (uploadButton) {
+  preventDefault();
   uploadButton.addEventListener("click", handleUploadButtonClick);
   }
 
