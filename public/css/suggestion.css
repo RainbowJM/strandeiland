@@ -176,7 +176,7 @@ main {
 
 #ambassador ul li {
   padding: 1em;
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius-small);
 }
 
 #ambassador ul li div h3 {
@@ -211,11 +211,12 @@ main {
 #helpers ul li {
   display: flex;
   padding: 0.5em;
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius-small);
 }
 
-#helpers ul li div h3 {
+#helpers ul li h3 {
   font-weight: lighter;
+  color: var(--dark-grey);
 }
 
 #sharers > h3 {
