@@ -455,11 +455,6 @@ form a:hover {
   animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
-#sorting.show-filter-menu {
-  display: block;
-  animation: smooth-dropdown 0.3s ease-in-out both alternate;
-}
-
 @keyframes smooth-dropdown {
   from {
     opacity: 0;
