@@ -6,7 +6,7 @@ const supabase = createClient(
   `${process.env.SUPABASE_URL}`,
   `${process.env.SUPABASE_KEY}`
 );
-const _ = require('lodash');
+const _ = require("lodash");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -81,7 +81,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
   const { data: suggestionData, error } = await supabase
@@ -113,6 +112,7 @@ router.get("/wens/:id", async (req, res) => {
     .select();
 
   let listSuggestions = [];
+  let theme = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
       // console.log('resident',residentSuggestion.resident_id, resident.id);
@@ -135,12 +135,9 @@ router.get("/wens/:id", async (req, res) => {
         relatedThemes.push(ts);
       }
     }
-    console.log(relatedThemes);
-    // if (relatedTheme) {
-      for (const relatedTheme of relatedThemes) {
-      let theme = [];
+    for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
-        console.log(t.id, relatedTheme.themaId);
+        // console.log(t.id, relatedTheme.themaId);
         if (t.id === relatedTheme.themaId) {
           theme.push(t);
         }
@@ -172,6 +169,7 @@ router.get("/wens/:id", async (req, res) => {
       title: "Wens",
       suggestion: suggestionData,
       time: date,
+      themes: theme,
     });
   }
 });
@@ -284,7 +282,7 @@ router.post("/form", async (req, res) => {
       throw error;
     }
 
-    console.log([parseInt(req.body.theme)])
+    console.log([parseInt(req.body.theme)]);
     const themes = req.body.theme;
 
     const themeInsertPromises = themes.map(async (theme) => {

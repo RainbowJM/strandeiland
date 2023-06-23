@@ -83,10 +83,10 @@ main {
   text-transform: capitalize;
   font-size: 0.8em;
   padding: 0.5em;
-  margin-top: 1em;
   border-radius: var(--border-radius-small);
   width: fit-content;
   background-color: var(--light-grey);
+  margin-right: 1em;
 }
 
 /* join --------------------------------------------------------------------------------------- */

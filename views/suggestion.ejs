@@ -25,7 +25,11 @@
             </div>
             <article>
                 <h2> <%= suggestion.title %> </h2>
-                <h3> <%= suggestion.theme.label %> </h3>
+                <section class="join" id="suggestion-label">
+                    <% themes.forEach(theme => { %>
+                        <h3> <%= theme.label %> </h3>
+                          <% }) %>
+                </section>
                 <p id="time"> Geplaatst op <%= time %></p>
                 <p> <%= suggestion.description %> </p>
                 <section class="join">
