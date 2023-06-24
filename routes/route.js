@@ -68,7 +68,6 @@ router.get("/", async (req, res) => {
         for (const resident of residentData) {
           if (resident.id === residentSuggestion.resident_id) {
             latestSuggestion.amb = resident;
-            console.log(latestSuggestion);
           }
         }
       }
