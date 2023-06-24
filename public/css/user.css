@@ -181,7 +181,7 @@ h1#user-name {
 
 }
 
-#suggestion ul:first-of-type li > img {
+.suggestion-items img[alt="suggestion-items"] {
   width: 4.5em;
   height: 4.5em;
 }
@@ -191,6 +191,10 @@ h1#user-name {
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 1.25em;
   place-items: center;
+}
+.statistics li:nth-of-type(1) img {
+  width: 2em;
+  height: 2em;
 }
 
 .statistics img {
@@ -202,7 +206,7 @@ h1#user-name {
   font-weight: bold;
   margin-right: 0.2em;
 }
-.statistics li span img {
+ img[alt="ambassador"] {
   width: 2em;
   height: 2em;
 }
@@ -234,7 +238,7 @@ h1#user-name {
 }
 
 #reactions ul li div h3 {
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 #reactions ul li div p:nth-of-type(1) {

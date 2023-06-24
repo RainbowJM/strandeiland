@@ -1,8 +1,9 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea} from "./modules/variables.js";
+  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
+import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./modules/dynamicIconData.js";
 
 
 const socket = io();
@@ -176,6 +177,11 @@ if (descriptionTextarea) {
   });
 }
 
+if (helperIconValue || votersIconValue || ambassadorsIconValue) {
+  addRandomHelperValue();
+  addRandomVoters();
+  addRandomAmbassadors();
+}
 // ------------------ sockets -------------------------------------------------------
 
 socket.on("message", (message) => {
