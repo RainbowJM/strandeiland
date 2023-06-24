@@ -25,6 +25,11 @@ router.get("/", async (req, res) => {
   const { count, error } = await supabase
     .from("suggestion")
     .select("*", { count: "exact", head: true });
+  const { data: residentSuggestionData, residentSuggestionError } =
+    await supabase.from("resident_suggestion").select();
+  const { data: residentData, residentError } = await supabase
+    .from("resident")
+    .select();
 
   // Randomize the suggestionsData array
   const shuffledSuggestionsData = _.shuffle(suggestionsData);
@@ -53,6 +58,19 @@ router.get("/", async (req, res) => {
 
       if (theme) {
         latestSuggestion.theme = theme;
+      }
+    }
+  }
+
+  for (const latestSuggestion of latestSuggestionsData) {
+    for (const residentSuggestion of residentSuggestionData) {
+      if (latestSuggestion.id === residentSuggestion.suggestion_id) {
+        for (const resident of residentData) {
+          if (resident.id === residentSuggestion.resident_id) {
+            latestSuggestion.amb = resident;
+            console.log(latestSuggestion);
+          }
+        }
       }
     }
   }
@@ -208,7 +226,6 @@ router.get("/user/:first_name", async (req, res) => {
   const { data: suggestionThemeData, suggestionThemeError } = await supabase
     .from("suggestion_theme")
     .select();
-// console.log(listSuggestions);
   for (const suggestion of listSuggestions) {
     let relatedThemes = [];
     for (const ts of suggestionThemeData) {
@@ -216,7 +233,6 @@ router.get("/user/:first_name", async (req, res) => {
         relatedThemes.push(ts);
       }
     }
-    console.log(relatedThemes)
     for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
         if (t.id === relatedTheme.themaId) {
@@ -225,7 +241,6 @@ router.get("/user/:first_name", async (req, res) => {
       }
     }
   }
-  // console.log(theme);
   if (
     userError ||
     residentSuggestionError ||
