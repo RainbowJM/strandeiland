@@ -17,7 +17,7 @@
 
 
             <ul class="user-info">
-                <li>Pieter van der baas</li>
+                <li><%= suggestion.amb.first_name %> <%= suggestion.amb.last_name %></li>
                 <li>
                     <%= (new Date(suggestion.created_at)).toLocaleString("nl-NL", {
       day: "numeric",
