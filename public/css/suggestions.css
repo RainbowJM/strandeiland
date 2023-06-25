@@ -629,6 +629,14 @@ input:checked+span {
     transform: translatey(-42%);
   }
 
+  .select-menu-sorting::part(listbox) {
+  box-shadow: none;
+  width: 10em;
+  height: auto;
+  padding: .5em 1em;
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
+}
+
 
   .latest-ideas {
     display: grid;
