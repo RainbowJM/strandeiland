@@ -88,6 +88,12 @@ main {
   margin-right: 1em;
 }
 
+.wish article #suggestion-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+
 /* join --------------------------------------------------------------------------------------- */
 .join {
   margin-top: 1em;
@@ -131,13 +137,13 @@ main {
   background-color: var(--blue);
   padding: 0.5em;
   margin-bottom: 1em;
-  font-size: 1.250em;
+  font-size: 1.25em;
   position: absolute;
   text-align: center;
 }
 
 .joiners h4 {
-  font-size: 0.750em;
+  font-size: 0.75em;
   color: var(--dark-grey);
   font-weight: lighter;
   position: absolute;

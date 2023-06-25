@@ -148,6 +148,8 @@ h1#user-name {
 .join {
   margin-top: 1em;
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
   padding: 0;
 }
 
@@ -184,6 +186,12 @@ h1#user-name {
 .suggestion-items img[alt="suggestion-items"] {
   width: 4.5em;
   height: 4.5em;
+  background-color: var(--yellow);
+}
+#suggestion .suggestion-items li div .suggestion-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
 }
 
 .statistics {
