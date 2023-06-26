@@ -50,10 +50,10 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 
 
 ## Functionaliteiten 
-- Voorstellen kunnen filtreren op populariteit
-- Voorstellen kunnen filtreren van oud tot nieuw
-- Voorstellen kunnen filtreren op thema's
-- Het formulier van voorstel opslaan in localstorage
+- Wensen kunnen filtreren op populariteit
+- Wensen kunnen filtreren van oud tot nieuw
+- Wensen kunnen filtreren op thema's
+- Het formulier van wensen opslaan in localstorage
 - Een real time chat, zodat de gebruikers tot elkaar kunnen praten 
 
 
