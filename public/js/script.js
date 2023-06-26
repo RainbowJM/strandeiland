@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue, uploadDialog} from "./modules/variables.js";
+  customImagePreview, selectedFileName, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue, uploadDialog, closeDialogButton} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./modules/dynamicIconData.js";
@@ -13,9 +13,9 @@ console.log('hello world')
 // ------------------ logic -------------------------------------------------------
 if (uploadDialog) {
   uploadButton.addEventListener("click", showDialog);
-
   closeDialogButton.addEventListener("click", closeDialog);
 }
+
 
 console.log(selectedOption)
 
@@ -33,11 +33,7 @@ themeCheckboxes.forEach(function(checkbox) {
 });
 }
 
-console.log(closeDialogButton)
-if (closeDialogButton) {
-  console.log(closeDialogButton)
-  closeDialogButton.addEventListener('click', closeDialog);
-  }
+
 
 
 
