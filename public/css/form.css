@@ -303,7 +303,7 @@ textarea#description::placeholder {
 
     margin-bottom: 10px;
 
-    width: 75%;
+    width: 85%;
 
     position: relative;
 
@@ -696,18 +696,16 @@ p{
     display: block;
   }
   
-  /* .form-container {
-    position: relative;
-  } */
-  
-  /* form {
-    width: 50%;
-    margin: 0 auto;
-  }
-   */
+
   .dialog-form-container {
     position: relative;
     z-index: 99999;
   }
-  
-  
+
+
+  @media (max-width: 60em) {
+    form {
+      width: 80%;
+      margin: auto;
+    }
+    }
