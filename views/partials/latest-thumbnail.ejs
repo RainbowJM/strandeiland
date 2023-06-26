@@ -10,9 +10,12 @@
 
         <article>
             <ul class="suggestion-themes">
-                <li>
-                    <%= suggestion.theme.label %>
+                <% suggestion.themes.forEach(theme => { %>
+                  <li>
+                    <%= theme %>
                 </li>
+                <% }) %>
+               
             </ul>
 
 
