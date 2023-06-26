@@ -34,16 +34,16 @@ router.get("/", async (req, res) => {
   // Randomize the suggestionsData array
   const shuffledSuggestionsData = _.shuffle(suggestionsData);
 
-  
+
   for (const suggestion of shuffledSuggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
-      );
-      
-      
-      if (relatedTheme) {
-        const theme = themeData.find((t) => t.id === relatedTheme.themaId);
-        
+    );
+
+
+    if (relatedTheme) {
+      const theme = themeData.find((t) => t.id === relatedTheme.themaId);
+
       if (theme) {
         suggestion.theme = theme;
       }
@@ -75,58 +75,59 @@ router.get("/", async (req, res) => {
       }
     }
   }
+  // const shuffledSuggestionsData = _.shuffle(suggestionsData);
 
-  let listAllSuggestions = [];
-  console.log("a",listAllSuggestions);
-  let theme = [];
-  for ( const suggestion of suggestionsData){
-    for(const themeSuggestionArray  of themeSuggestions){
-      if(themeSuggestionArray.suggestionId === suggestion.id && themeSuggestionArray.themaId === suggestion.id){
-        suggestionsData.theme = suggestion;
-        listAllSuggestions.push(suggestion);
-        console.log('LIST', listAllSuggestions);
-        //   console.log('new array', listAllSuggestions);
-        // if(themeSuggestionArray.themaId === suggestion.id){
-        //   // console.log('added suggestion', suggestion);
-        //   listAllSuggestions.push(suggestion);
-        //   console.log('new array', listAllSuggestions);
-        // }
-      }
-    //  console.log('array', suggestion);
-    }
-  }
-  
-  // for (const suggestion of listAllSuggestions) {
-  //   let relatedSuggestionsThemes = [];
-  //   for ( const ts of themeSuggestions){
-  //     console.log('ts', ts);
-  //   }
-  //   console.log(suggestion);
-  // }
 
-  if (
-    themeError ||
-    suggestionsError ||
-    latestSuggestionsError ||
-    themeSuggestionsError
-  ) {
-    console.error(
-      "Error:",
+  // for (const suggestion of shuffledSuggestionsData) {
+  //   const relatedTheme = themeSuggestions.find(
+  //     (ts) => ts.suggestionId === suggestion.id
+  //   );
+
+
+
+    const suggestionsWithThemes = suggestionsData.map(suggestion => {
+      const themeIds = themeSuggestions
+        .filter(item => item.suggestionId === suggestion.id)
+        .map(item => item.themaId);
+
+      const themes = themeIds.map(themeId => {
+        const theme = themeData.find(item => item.id === themeId);
+        return theme ? theme.label : null;
+      });
+
+      return {
+        ...suggestion,
+        themes: themes
+      };
+    });
+    console.log(suggestionsWithThemes);
+
+    const themeLabels = themeData.map(theme => theme.label);
+
+// console.log(themeLabels);
+    if (
       themeError ||
+      suggestionsError ||
+      latestSuggestionsError ||
+      themeSuggestionsError
+    ) {
+      console.error(
+        "Error:",
+        themeError ||
         suggestionsError ||
         latestSuggestionsError ||
         themeSuggestionsError
-    );
-  } else {
-    res.render("index", {
-      title: "Wensen",
-      themes: themeData,
-      suggestions: shuffledSuggestionsData,
-      latestSuggestions: latestSuggestionsData,
-      totalSuggestions: count,
-    });
-}
-});
+      );
+    } else {
+      res.render("index", {
+        title: "Wensen",
+        themes: themeData,
+        suggestions: shuffledSuggestionsData,
+        latestSuggestions: latestSuggestionsData,
+        totalSuggestions: count,
+      });
+    }
+  });
 
 
 router.get("/wens/:id", async (req, res) => {
@@ -163,7 +164,6 @@ router.get("/wens/:id", async (req, res) => {
   let theme = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
-      console.log(residentSuggestion.resident_id === resident.id);
       if (residentSuggestion.resident_id === resident.id) {
         if (residentSuggestion.suggestion_id === suggestionData.id) {
           suggestionData.resident = resident;
@@ -199,10 +199,10 @@ router.get("/wens/:id", async (req, res) => {
     console.error(
       "Error fetching suggestion:",
       error ||
-        residentSuggestionError ||
-        residentError ||
-        themeError ||
-        suggestionThemeError
+      residentSuggestionError ||
+      residentError ||
+      themeError ||
+      suggestionThemeError
     );
   } else {
     res.render("suggestion", {
@@ -282,10 +282,10 @@ router.get("/user/:first_name", async (req, res) => {
     console.error(
       "Error:",
       userError ||
-        residentSuggestionError ||
-        suggestionError ||
-        themeError ||
-        suggestionThemeError
+      residentSuggestionError ||
+      suggestionError ||
+      themeError ||
+      suggestionThemeError
     );
   } else {
     res.render("user", {
