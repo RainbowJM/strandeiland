@@ -1,555 +1,198 @@
 :root {
-
   --yellow: #ffe700;
-
-
-
-
   --light-yellow: #FFF48C;
-
-
-
-
   --white: #ffffff;
-
-
-
-
   --black: #000000;
-
-
-
-
   --blue: #009ce0;
-
-
-
-
   --light-blue: #94DFFF;
-
-
-
-
   --light-grey: #f0f0eb;
-
-
-
-
   --dark-grey: #333333;
-
-
-
-
   --gray: #E9E9E9;
-
-
-
-
   --font: 'Poppins', sans-serif;
 
-
-
-
   --border-radius-small: 0.5em;
-
   --border-radius-medium: 2em;
-
   --border-radius-large: 4em;
-
 }
-
-
-
 
 .back {
-
-  margin: 10em 0 1em 5vw;
-
+  margin: 2em 0 1em 5vw;
 }
-
-
-
 
 .back a {
-
   color: var(--black);
-
   font: var(--font);
-
 }
 
 
-
-
-
-
 /*****************/
-
 /* Validation */
-
 /*****************/
-
-
-
-
-
 input:required:invalid {
-
   border: 2px solid red;
-
 }
-
-
-
-
 
 input:required:valid {
-
   border: 2px solid green;
-
 }
-
-
-
 
 textarea:required:invalid {
-
   border: 2px solid red;
-
 }
-
-
-
 
 textarea:required:valid {
-
   border: 2px solid green;
-
 }
 
-
-
-
-
-
 /*****************/
-
 /* PLACEHOLDER */
-
 /*****************/
-
-
-
-
 
 textarea#description::placeholder,
-
 textarea#title::placeholder {
-
   font-style: var(--font);
-
   color: var(--dark-grey);
-
   font-size: 15px;
-
 }
-
-
-
-
 
 h1 {
-
   text-align: center;
-
   margin-bottom: 1em;
-
   margin-top: .5em;
-
 }
 
 
-
-
 /*****************/
-
 /* FORM CONTAINER */
-
 /*****************/
-
-
-
-
 .form-container {
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   margin: auto;
-
 }
 
-
-
-
-
-
-
 /*****************/
-
 /* FORM */
-
 /*****************/
-
-
-
-
 form {
-
   width: 60%;
-
   margin: auto;
-
 }
 
-
-
-
-
-
-
 /*****************/
-
 /*  FIELDSET */
-
 /*****************/
-
-
-
-
 fieldset {
-
   background-color: var(--white);
-
   display: flex;
-
   flex-direction: column;
-
   border-style: none;
-
   margin-bottom: 20px;
-
   padding: 40px 20px;
-
   border-radius: var(--border-radius-large);
-
 }
-
-
-
-
-
 
 fieldset label,
-
 fieldset textarea,
-
 fieldset .file-input-container,
-
 #imageLink
-
 {
-
   margin-bottom: 10px;
-
   width: 85%;
-
   position: relative;
-
   left: 5%;
-
-
-
-
 }
-
-
-
-
-
-
 
 fieldset .dropdown-menu label{
-
     margin-bottom: 0;
-
     font-weight: normal;
-
     cursor: pointer;
-
-
-
-
 }
-
-
-
-
-
-
-
 
 fieldset label:focus,
-
 fieldset textarea:focus,
-
 fieldset .file-input-container:focus
-
 {
-
   outline: none;
-
   box-shadow: 0 0 4px var(--black);
-
 }
-
-
-
-
-
-
 
 input#title::placeholder,
-
 #imageLink::placeholder{
-
     font-family: var(--font);
-
     color: var(--dark-grey);
-
     font-size: 15px;
-
-
-
-
   }
-
-
-
-
-  
-
-
-
-
-
 
 fieldset label {
-
   font-weight: bold;
-
   font-size: 1em;
-
   font-family: var(--font);
-
-
-
-
 }
-
-
-
-
-
-
 
 fieldset input[type="text"],
-
 fieldset input[type="url"] {
-
   width: 100%;
-
   padding: 10px;
-
   background-color: var(--gray);
-
   box-sizing: border-box;
-
   border: none;
-
-
-
-
 }
-
-
-
-
-
 
 input[type="text"],
-
 textarea {
-
   width: 100%;
-
   padding: 10px;
-
   background-color: var(--gray);
-
   box-sizing: border-box;
-
   border: none;
-
 }
-
-
-
-
 
 input[type="text"]:focus,
-
 textarea:focus{
-
   outline: none;
-
   border-color: none;
-
-
-
-
 }
-
-
-
-
 
 #title{
-
     margin-bottom: 10px;
-
     width: 85%;
-
     position: relative;
-
     left: 5%;
-
 }
-
-
-
-
-
 
 #sendButton {
-
-
-
-
   background-color: var(--black);
-
-
-
-
   color: var(--white);
-
-
-
-
   padding: 10px 20px;
-
-
-
-
   font-size: 16px;
-
-
-
-
   border: none;
-
-
-
-
   cursor: pointer;
-
-
-
-
+  margin-bottom: 2em;
 }
-
-
-
 
 #uploadButton {
-
   background-color: var(--black);
-
   color: var(--white);
-
   padding: 5px 10px; /* Adjust the padding as needed */
-
   font-size: 14px; /* Adjust the font size as needed */
-
   border: none;
-
   cursor: pointer;
-
   width: auto;
-
   display: inline-block;
-
   width: 10em;
-
   position: relative;
-
   left: 5%;
-
 }
 
-
-
-
-
-
-
-
 textarea#description::placeholder {
-
-
-
-
    font-family: var(--font);
-
-
-
-
    color: var(--dark-grey);
-
-
-
-
   }
 
-
-
-
-  /* vanaf hier begint de dropdown menu  */
-
-
-
-
-
-
-
+/* vanaf hier begint de dropdown menu  */
 .dropdown {
-
-
-
-
     margin-bottom: 10px;
 
 
@@ -1421,6 +1064,72 @@ p{
     z-index: 99999;
 
   }
+
+
+/* loading state */
+#loadingState {
+  position: relative;
+}
+
+#background {
+  background-color: #fffe;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+}
+
+#loadingState h2 {
+  position: absolute;
+  bottom: 50vh;
+  left: 5vw;
+  font-size: 5em;
+  font-family: 'Poppins', sans-serif;
+  z-index: 33929929;
+}
+
+#loadingState h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--blue);
+}
+
+#loadingState h2:nth-child(2) {
+  color: var(--blue);
+  -webkit-text-stroke: 2px var(--blue);
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
+  }
+
+  20% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
+  }
+
+}
+
+p {
+  color: var(--blue);
+  position: absolute;
+  bottom: 8em;
+  left: 40vh;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media (max-width: 60em) {
+form {
+  width: 80%;
+  margin: auto;
+}
+}
 
   
 
