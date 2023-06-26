@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, popupCloseButton, popup, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue} from "./modules/variables.js";
+  customImagePreview, selectedFileName, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue, uploadDialog} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./modules/dynamicIconData.js";
@@ -9,7 +9,7 @@ import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./m
 const socket = io();
 let last;
 
-
+console.log('hello world')
 // ------------------ logic -------------------------------------------------------
 if (uploadDialog) {
   uploadButton.addEventListener("click", showDialog);
@@ -17,10 +17,13 @@ if (uploadDialog) {
   closeDialogButton.addEventListener("click", closeDialog);
 }
 
-
+console.log(selectedOption);
 if (selectedOption) {
+  console.log(selectedOption)
 selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
+
+
 
 if (themeCheckboxes) {
 themeCheckboxes.forEach(function(checkbox) {
@@ -79,8 +82,10 @@ if (fileInput) {
         closeButton.classList.add("close-button");
         closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
   
+
         closeButton.addEventListener("click", function() {
           // Clear the file input value
+
           fileInput.value = "";
   
           // Clear the image preview
@@ -111,6 +116,8 @@ if (asideItems.length > 0) {
 }
 
 if (filterThemeBtn) {
+
+
   toggleFilterMenu();
 }
 
