@@ -17,22 +17,25 @@ if (uploadDialog) {
   closeDialogButton.addEventListener("click", closeDialog);
 }
 
-console.log(selectedOption);
+console.log(selectedOption)
+
 if (selectedOption) {
   console.log(selectedOption)
 selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
 
 
-
+console.log(themeCheckboxes)
 if (themeCheckboxes) {
+  console.log(themeCheckboxes)
 themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });
 }
 
-
+console.log(closeDialogButton)
 if (closeDialogButton) {
+  console.log(closeDialogButton)
   closeDialogButton.addEventListener('click', closeDialog);
   }
 
