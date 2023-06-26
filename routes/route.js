@@ -81,8 +81,6 @@ router.get("/", async (req, res) => {
   let theme = [];
   for ( const suggestion of suggestionsData){
     for(const themeSuggestionArray  of themeSuggestions){
-      // console.log('match between suggestion_theme id and suggestion id', themeSuggestionArray.suggestionId, suggestion.id);
-      // console.log(themeSuggestionArray.suggestionId === suggestion.id || themeSuggestionArray.themaId === suggestion.id);
       if(themeSuggestionArray.suggestionId === suggestion.id && themeSuggestionArray.themaId === suggestion.id){
         suggestionsData.theme = suggestion;
         listAllSuggestions.push(suggestion);
