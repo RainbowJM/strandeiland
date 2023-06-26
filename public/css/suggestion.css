@@ -189,6 +189,7 @@ main {
 }
 
 #ambassador img {
+  object-fit: cover;
   width: 4.5em;
   height: 4.5em;
 }
