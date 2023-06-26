@@ -34,14 +34,16 @@ router.get("/", async (req, res) => {
   // Randomize the suggestionsData array
   const shuffledSuggestionsData = _.shuffle(suggestionsData);
 
+  
   for (const suggestion of shuffledSuggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
-    );
-
-    if (relatedTheme) {
-      const theme = themeData.find((t) => t.id === relatedTheme.themaId);
-
+      );
+      
+      
+      if (relatedTheme) {
+        const theme = themeData.find((t) => t.id === relatedTheme.themaId);
+        
       if (theme) {
         suggestion.theme = theme;
       }
@@ -74,6 +76,36 @@ router.get("/", async (req, res) => {
     }
   }
 
+  let listAllSuggestions = [];
+  console.log("a",listAllSuggestions);
+  let theme = [];
+  for ( const suggestion of suggestionsData){
+    for(const themeSuggestionArray  of themeSuggestions){
+      // console.log('match between suggestion_theme id and suggestion id', themeSuggestionArray.suggestionId, suggestion.id);
+      // console.log(themeSuggestionArray.suggestionId === suggestion.id || themeSuggestionArray.themaId === suggestion.id);
+      if(themeSuggestionArray.suggestionId === suggestion.id && themeSuggestionArray.themaId === suggestion.id){
+        suggestionsData.theme = suggestion;
+        listAllSuggestions.push(suggestion);
+        console.log('LIST', listAllSuggestions);
+        //   console.log('new array', listAllSuggestions);
+        // if(themeSuggestionArray.themaId === suggestion.id){
+        //   // console.log('added suggestion', suggestion);
+        //   listAllSuggestions.push(suggestion);
+        //   console.log('new array', listAllSuggestions);
+        // }
+      }
+    //  console.log('array', suggestion);
+    }
+  }
+  
+  // for (const suggestion of listAllSuggestions) {
+  //   let relatedSuggestionsThemes = [];
+  //   for ( const ts of themeSuggestions){
+  //     console.log('ts', ts);
+  //   }
+  //   console.log(suggestion);
+  // }
+
   if (
     themeError ||
     suggestionsError ||
@@ -95,8 +127,9 @@ router.get("/", async (req, res) => {
       latestSuggestions: latestSuggestionsData,
       totalSuggestions: count,
     });
-  }
+}
 });
+
 
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
@@ -132,6 +165,7 @@ router.get("/wens/:id", async (req, res) => {
   let theme = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
+      console.log(residentSuggestion.resident_id === resident.id);
       if (residentSuggestion.resident_id === resident.id) {
         if (residentSuggestion.suggestion_id === suggestionData.id) {
           suggestionData.resident = resident;
