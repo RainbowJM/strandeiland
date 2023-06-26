@@ -39,6 +39,12 @@ main {
   background-color: var(--blue);
   color: var(--white);
   transform: rotate(5deg);
+  animation-name: slogan-1;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.125, 0.995, 1, 1);
+
 }
 
 .sent span:nth-child(2) {
@@ -50,6 +56,11 @@ main {
 .sent span:nth-child(3) {
   background-color: var(--white);
   color: var(--black);
+   animation-name: slogan-2;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.125, 0.995, 1, 1);
 }
 
 .sent span:nth-child(4) {
@@ -59,6 +70,28 @@ main {
   width: max-content;
 
 } 
+
+@keyframes slogan-1{
+
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-1rem);
+  }
+}
+
+@keyframes slogan-2 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+
 
 .back {
   margin: 3em 0 1em 5vw;

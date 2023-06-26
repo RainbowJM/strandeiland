@@ -65,6 +65,7 @@ h1 {
 /*****************/
 /* FORM CONTAINER */
 /*****************/
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -125,6 +126,7 @@ input#title::placeholder,
     font-size: 15px;
   }
 
+
 fieldset label {
   font-weight: bold;
   font-size: 1em;
@@ -157,7 +159,7 @@ textarea:focus{
 
 #title{
     margin-bottom: 10px;
-    width: 85%;
+    width: 40%;
     position: relative;
     left: 5%;
 }
@@ -172,6 +174,7 @@ textarea:focus{
   margin-bottom: 2em;
 }
 
+
 #uploadButton {
   background-color: var(--black);
   color: var(--white);
@@ -180,10 +183,36 @@ textarea:focus{
   border: none;
   cursor: pointer;
   width: auto;
+  height: 3em;
   display: inline-block;
-  width: 10em;
+  width: fit-content;
   position: relative;
   left: 5%;
+  font-weight: bold;
+}
+
+#closeDialog {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5px 10px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 3em;
+  display: inline-block;
+  width: fit-content;
+  position: relative;
+  left: 5%;
+  font-weight: bold;
+}
+
+
+#uploadButton:hover{
+    background-color: var(--blue);
+    font-weight: bold;
+    color: var(--black);
+    box-shadow: 0 0 3em rgba(0, 0, 1, 1);
 }
 
 textarea#description::placeholder {
@@ -194,15 +223,7 @@ textarea#description::placeholder {
 /* vanaf hier begint de dropdown menu  */
 .dropdown {
     margin-bottom: 10px;
-
-
-
-
-    width: 75%;
-
-
-
-
+    width: 85%;
     position: relative;
 
 
@@ -294,25 +315,14 @@ textarea#description::placeholder {
 
 
   .selected-option::after {
-
     content: "\2304";
-
     position: absolute;
-
     top: 50%;
-
     right: 10px;
-
     transform: translateY(-50%);
-
-    font-size: 18px; /* Adjust the font size as needed */
-
-    font-weight: bold; /* Add this line */
-
+    font-size: 18px; 
+    font-weight: bold; 
     line-height: 1;
-
-
-
 
   }
 
@@ -444,9 +454,19 @@ textarea#description::placeholder {
 
   gap: 10px;
 
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
+
+}
 
 
+@keyframes smooth-dropdown {
+  from {
+    opacity: 0;
+  }
 
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -458,21 +478,13 @@ textarea#description::placeholder {
 
 
 .dropdown-menu li {
-
   align-items: center;
-
   font-weight: normal;
-
   background-color: var(--white);
-
   word-wrap: wrap;
-
   height: 2em;
-
   width: 100%;
-
   text-align: center;
-
 }
 
 
@@ -482,28 +494,17 @@ textarea#description::placeholder {
 
 
 .dropdown-menu li:hover {
-
   background-color: var(--dark-grey);
-
   color: var(--white);
-
   cursor: pointer;
-
   border-radius: 4px;
-
   border: 1px solid var(--black);
-
 }
 
 
 
-
-
-
 .dropdown-menu label input[type="checkbox"] {
-
   display: none;
-
 }
 
 
@@ -514,9 +515,7 @@ textarea#description::placeholder {
 
 
 .show {
-
   display: block;
-
 }
 
 
@@ -667,11 +666,8 @@ textarea#description::placeholder {
 
 
 .file-input-container {
-
     background-color: var(--gray);
-
     height: 10em;
-
 }
 
 
@@ -819,11 +815,8 @@ p{
 
 
 .hierarchy{
-
     position: relative;
-
     left: 3%;
-
     font-size: 15px;
 
 
@@ -843,13 +836,8 @@ p{
 
 
 #links label{
-
     font-size:15px;
-
     font-weight: bold;
-
-
-
 
 }
 
@@ -875,9 +863,6 @@ p{
 
 
     margin-top: 30px;
-
-
-
 
 }
 
@@ -1026,43 +1011,82 @@ p{
 
   }
 
+  dialog {
+    width: 40em;
 
-
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   
-
   dialog[open] {
-
     display: block;
-
   }
-
   
-
-  /* .form-container {
-
-    position: relative;
-
-  } */
-
-  
-
-  /* form {
-
-    width: 50%;
-
-    margin: 0 auto;
-
-  }
-
-   */
 
   .dialog-form-container {
-
     position: relative;
-
     z-index: 99999;
+  }
 
+
+  @media (max-width: 60em) {
+    form {
+      width: 80%;
+      margin: auto;
+    }
+    }
+
+  dialog {
+    width: 40em;
+
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  
+  dialog[open] {
+    display: block;
+  }
+  
+
+  .dialog-form-container {
+    position: relative;
+    z-index: 99999;
   }
 
 
@@ -1130,7 +1154,3 @@ form {
   margin: auto;
 }
 }
-
-  
-
-  

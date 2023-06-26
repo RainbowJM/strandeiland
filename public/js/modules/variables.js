@@ -24,7 +24,8 @@ const filterSortBtn = document.querySelector(".sort-btn");
 const filterSortResultsBtn = document.querySelector(".filter-sort-results-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
 const typingElement = document.querySelector("#typing");
-const selectedOption = document.querySelector(".selected-option");
+const selectedOption = document.getElementById("selectedOption");
+console.log(selectedOption);
 const dropdownMenu = document.getElementById("themeDropdownMenu");
 const localStorageKey = "formData";
 const themeCheckboxes = document.querySelectorAll(
@@ -33,8 +34,6 @@ const themeCheckboxes = document.querySelectorAll(
 const fileInput = document.getElementById("file");
 const customImagePreview = document.getElementById("customImagePreview");
 const selectedFileName = document.getElementById("selectedFileName");
-const popupCloseButton = document.getElementById("popupCloseButton");
-const popup = document.getElementById("popup");
 const savedFormData = localStorage.getItem(localStorageKey);
 const imageLinkInput = document.getElementById("imageLink");
 const imagePreview = document.getElementById("imagePreview");
@@ -46,6 +45,8 @@ const votersIconValue = document.querySelectorAll(".statistics li:nth-child(3) s
 
 const titleInput = document.getElementById("title");
 const descriptionTextarea = document.getElementById("description");
+const closeDialogButton = document.getElementById('closeDialog');
+const uploadDialog = document.querySelector('dialog');
 
 export {
   messages,
@@ -71,8 +72,6 @@ export {
   fileInput,
   customImagePreview,
   selectedFileName,
-  popupCloseButton,
-  popup,
   savedFormData,
   imageLinkInput,
   imagePreview,
@@ -82,6 +81,8 @@ export {
   boxes,
   titleInput,
   descriptionTextarea,
+  closeDialogButton,
+  uploadDialog,
   helperIconValue,
   votersIconValue,
   ambassadorsIconValue
