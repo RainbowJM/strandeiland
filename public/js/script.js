@@ -38,7 +38,7 @@ themeCheckboxes.forEach(function(checkbox) {
 
 
 if (uploadButton) {
-  preventDefault()
+  event.preventDefault()
   uploadButton.addEventListener("click", handleUploadButtonClick);
   }
 

@@ -330,9 +330,13 @@ router.get("/sent", (req, res) => {
   });
 });
 
-router.get("/form", (req, res) => {
+router.get("/form", async (req, res) => {
+  const { data: themeData, error: themeError } = await supabase
+        .from("theme")
+        .select();
   res.render("form", {
     title: "Formulier",
+    themes: themeData,
   });
 });
 
