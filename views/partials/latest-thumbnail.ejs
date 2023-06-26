@@ -1,6 +1,6 @@
 <section class="thumbnail-container">
     <figure>
-        <img src="<%= suggestion.image %>" alt="Wens afbeelding">
+        <img loading="lazy" src="<%= suggestion.image %>" alt="Wens afbeelding">
 
     </figure>
 
@@ -17,7 +17,7 @@
 
 
             <ul class="user-info">
-                <li>Pieter van der baas</li>
+                <li><%= suggestion.amb.first_name %> <%= suggestion.amb.last_name %></li>
                 <li>
                     <%= (new Date(suggestion.created_at)).toLocaleString("nl-NL", {
       day: "numeric",
@@ -38,10 +38,10 @@
             </p>
 
             <ul class="statistics">
-                <li> <span> <img src="../../images/trekkers.svg" alt=""></span> 5</li>
-                <li><span><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i></span> 2</li>
-                <li><span><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i></span>
-                    <%= suggestion.amount_vote%>
+                <li>  <img src="../../images/trekkers.svg" alt=""> <span>5</span></li>
+                <li><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i> <span>2</span></li>
+                <li><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i>
+                    <span><%= suggestion.amount_vote%></span>
                 </li>
             </ul>
         </article>

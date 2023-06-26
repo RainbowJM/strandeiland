@@ -38,6 +38,9 @@ const imageLinkInput = document.getElementById("imageLink");
 const imagePreview = document.getElementById("imagePreview");
 const uploadButton = document.getElementById("uploadButton");
 const boxes = document.querySelectorAll(".box-click");
+const ambassadorsIconValue = document.querySelectorAll(" .statistics li:nth-child(1) span");
+const helperIconValue = document.querySelectorAll(" .statistics li:nth-child(2) span ");
+const votersIconValue = document.querySelectorAll(".statistics li:nth-child(3) span ");
 
 const titleInput = document.getElementById("title");
 const descriptionTextarea = document.getElementById("description");
@@ -78,5 +81,8 @@ export {
   titleInput,
   descriptionTextarea,
   closeDialogButton,
-  uploadDialog 
+  uploadDialog,
+  helperIconValue,
+  votersIconValue,
+  ambassadorsIconValue
 };

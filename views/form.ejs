@@ -1,71 +1,135 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
+
 
 <head>
 
+
+
+
     <%- include('./partials/head'); %>
+
     <link rel="stylesheet" href="/css/form.css">
+
+
+
 
 </head>
 
+
+
+
 <body>
+
     <header>
+
+
+
 
         <%- include('./partials/header'); %>
 
+
+
+
     </header>
 
+
+
+
     <div class="back">
+
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+
+
+
 
         <a href="/">Terug</a>
 
+
+
+
     </div>
+
     <h1>Maak een wens</h1>
+
     <div class="form-container">
 
+
+
+
         <form action="/form" method="post">
+
             <fieldset>
+
                 <label for="title">Titel</label>
                 <input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2"
                     maxlength="40" required>
+
                 <label for="description">Wens beschrijving</label>
+
                 <textarea name="description" id="description" cols="30" rows="10"
                     placeholder="Beschrijf je wens zo duidelijk mogelijk" minlength="2" maxlength="200"
                     required></textarea>
+
                 <label for="theme">Thema's</label>
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption" >Selecteer de passende thema's</div>
                     <div class="dropdown-container" id="themeDropdownMenu" >
                         <ul class="dropdown-menu" >
                             <li><label><input type="checkbox" value="1" name="theme">Sport</label></li>
+
                             <li><label><input type="checkbox" value="2" name="theme">Recreatie</label></li>
+
                             <li><label><input type="checkbox" value="3" name="theme">Verkeer</label></li>
+
                             <li><label><input type="checkbox" value="4" name="theme">Winkels</label></li>
+
                             <li><label><input type="checkbox" value="5" name="theme">Natuur</label></li>
+
                             <li><label><input type="checkbox" value="6" name="theme">Milieu</label></li>
+
                             <li><label><input type="checkbox" value="7" name="theme">Jeugd</label></li>
+
                             <li><label><input type="checkbox" value="8" name="theme">Veiligheid</label></li>
+
                             <li><label><input type="checkbox" value="9" name="theme">Cultuur</label></li>
+
                             <li><label><input type="checkbox" value="10"name="theme">Huisvesting</label></li>
+
                             <li><label><input type="checkbox" value="11"name="theme">Infrastructuur</label></li>
+
                             <li><label><input type="checkbox" value="12"name="theme">Strand</label></li>
+
                             <li><label><input type="checkbox" value="13"name="theme">Onderwijs</label></li>
+
                             <li><label><input type="checkbox" value="14"name="theme">Overig</label></li>
+
                         </ul>
+
                     </div>
+
                 </fieldset>
                 <label for="imagelabel" required>Afbeelding</label>
                 <button id="uploadButton">afbeelding toevoegen</button>
 
                 <dialog class="no-js">   
                 <div id="links">
+
                     <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+
                     <div class='linkjes'>
+
                         <a href="https://unsplash.com/">Unsplash</a>
+
                         <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+
                         <a href="https://pixabay.com/nl/">Pixabay</a>
+
                     </div>
+
                     <p class="hierarchy">Link</p>
                     <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier je link">
                     <div id="imagePreview"></div>
@@ -75,11 +139,17 @@
                     <p class="hierarchy">Bestand</p>
 
                     <div class="file-input-container">
+
                         <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
+
                         <p>Selecteer een bestand</p>
+
                         <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+
                     </div>
+
                     <div id="customImagePreview"></div>
+
                     <p id="selectedFileName">Geen bestand geselecteerd</p>
                     <!-- <div id="closeButton" class="hidden">&#10006;</div> -->
 
@@ -88,13 +158,27 @@
 
             </dialog>
             </fieldset>
+
             <input type="submit" value="wens aanmaken" id="sendButton" />
        
 
+       
+
+
+
+
         </form>
+
     </div>
+
     <footer>
+
         <%- include('./partials/footer'); %>
+
     </footer>
+
 </body>
+
 </html>
+
+has context menu

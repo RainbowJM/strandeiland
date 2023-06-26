@@ -6,30 +6,35 @@ const supabase = createClient(
   `${process.env.SUPABASE_URL}`,
   `${process.env.SUPABASE_KEY}`
 );
+const _ = require("lodash");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
   const { data: themeData, themeError } = await supabase.from("theme").select();
-
   const { data: themeSuggestions, themeSuggestionsError } = await supabase
     .from("suggestion_theme")
     .select();
-
   const { data: suggestionsData, error: suggestionsError } = await supabase
     .from("suggestion")
     .select();
-
   const { data: latestSuggestionsData, latestSuggestionsError } = await supabase
     .from("suggestion")
     .select()
     .order("created_at", { ascending: false })
     .limit(3);
-
   const { count, error } = await supabase
     .from("suggestion")
     .select("*", { count: "exact", head: true });
+  const { data: residentSuggestionData, residentSuggestionError } =
+    await supabase.from("resident_suggestion").select();
+  const { data: residentData, residentError } = await supabase
+    .from("resident")
+    .select();
 
-  for (const suggestion of suggestionsData) {
+  // Randomize the suggestionsData array
+  const shuffledSuggestionsData = _.shuffle(suggestionsData);
+
+  for (const suggestion of shuffledSuggestionsData) {
     const relatedTheme = themeSuggestions.find(
       (ts) => ts.suggestionId === suggestion.id
     );
@@ -57,6 +62,18 @@ router.get("/", async (req, res) => {
     }
   }
 
+  for (const latestSuggestion of latestSuggestionsData) {
+    for (const residentSuggestion of residentSuggestionData) {
+      if (latestSuggestion.id === residentSuggestion.suggestion_id) {
+        for (const resident of residentData) {
+          if (resident.id === residentSuggestion.resident_id) {
+            latestSuggestion.amb = resident;
+          }
+        }
+      }
+    }
+  }
+
   if (
     themeError ||
     suggestionsError ||
@@ -74,7 +91,7 @@ router.get("/", async (req, res) => {
     res.render("index", {
       title: "Wensen",
       themes: themeData,
-      suggestions: suggestionsData,
+      suggestions: shuffledSuggestionsData,
       latestSuggestions: latestSuggestionsData,
       totalSuggestions: count,
     });
@@ -112,6 +129,7 @@ router.get("/wens/:id", async (req, res) => {
     .select();
 
   let listSuggestions = [];
+  let theme = [];
   for (const residentSuggestion of residentSuggestionData) {
     for (const resident of residentData) {
       if (residentSuggestion.resident_id === resident.id) {
@@ -124,23 +142,17 @@ router.get("/wens/:id", async (req, res) => {
   }
 
   for (const suggestion of listSuggestions) {
-    let relatedTheme = null;
+    let relatedThemes = [];
     for (const ts of suggestionThemeData) {
       if (ts.suggestionId === suggestion.id) {
-        relatedTheme = ts;
-        break;
+        relatedThemes.push(ts);
       }
     }
-    if (relatedTheme) {
-      let theme = null;
+    for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
         if (t.id === relatedTheme.themaId) {
-          theme = t;
-          break;
+          theme.push(t);
         }
-      }
-      if (theme) {
-        suggestionData.theme = theme;
       }
     }
   }
@@ -165,6 +177,7 @@ router.get("/wens/:id", async (req, res) => {
       title: "Wens",
       suggestion: suggestionData,
       time: date,
+      themes: theme,
     });
   }
 });
@@ -195,6 +208,7 @@ router.get("/user/:first_name", async (req, res) => {
 
   let int = 0;
   let listSuggestions = [];
+  let theme = [];
   for (const suggestion of suggestionData) {
     for (const residentSuggestion of residentSuggestionData) {
       if (suggestion.id === residentSuggestion.suggestion_id) {
@@ -211,25 +225,18 @@ router.get("/user/:first_name", async (req, res) => {
   const { data: suggestionThemeData, suggestionThemeError } = await supabase
     .from("suggestion_theme")
     .select();
-
   for (const suggestion of listSuggestions) {
-    let relatedTheme = null;
+    let relatedThemes = [];
     for (const ts of suggestionThemeData) {
       if (ts.suggestionId === suggestion.id) {
-        relatedTheme = ts;
-        break;
+        relatedThemes.push(ts);
       }
     }
-    if (relatedTheme) {
-      let theme = null;
+    for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
         if (t.id === relatedTheme.themaId) {
-          theme = t;
-          break;
+          theme.push(t);
         }
-      }
-      if (theme) {
-        suggestion.theme = theme;
       }
     }
   }
@@ -255,6 +262,7 @@ router.get("/user/:first_name", async (req, res) => {
       time: date,
       amount: int,
       suggestions: listSuggestions,
+      themes: theme,
     });
   }
 });
@@ -277,7 +285,7 @@ router.post("/form", async (req, res) => {
       throw error;
     }
 
-    console.log([parseInt(req.body.theme)])
+    console.log([parseInt(req.body.theme)]);
     const themes = req.body.theme;
 
     const themeInsertPromises = themes.map(async (theme) => {

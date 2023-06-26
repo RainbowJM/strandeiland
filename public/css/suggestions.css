@@ -104,10 +104,11 @@ main {
   padding: 0.5em 1em;
   background-color: var(--black);
   color: var(--white);
-  transition: background-color 0.3s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .slogan-call-to-action a:hover {
+  transform: rotate(-5deg);
   background-color: var(--blue);
 }
 
@@ -146,7 +147,7 @@ main {
   grid-column: span 3;
 }
 
-.content > h2 {
+.content>h2 {
   width: fit-content;
   background-color: var(--light-blue);
   padding: 0.5em;
@@ -169,6 +170,9 @@ main {
 
 .thumbnail-container figure {
   position: relative;
+  height: 15.625em;
+  background-color: var(--yellow);
+  border-radius: var(--border-radius-medium);
 }
 
 .thumbnail-container figcaption {
@@ -181,20 +185,6 @@ main {
   font-weight: bold;
 }
 
-.thumbnail-container:nth-child(2) figcaption {
-  background-color: var(--blue);
-  color: var(--white);
-}
-
-.thumbnail-container:nth-child(3) figcaption {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.thumbnail-container:nth-child(4) figcaption {
-  background-color: var(--white);
-  color: var(--black);
-}
 
 .user-info {
   display: grid;
@@ -209,7 +199,7 @@ main {
   padding: 1em;
   color: var(--black);
   background-color: var(--white);
-  transform: translateY(-20%);
+  transform: translateY(-18%);
   border-radius: var(--border-radius-medium);
 }
 
@@ -252,8 +242,7 @@ main {
 }
 
 .statistics span {
-  font-weight: bold;
-  margin-right: 0.2em;
+  margin-left: 0.2em;
 }
 
 .suggestion-themes {
@@ -273,6 +262,7 @@ main {
 .suggestion-themes li::first-letter {
   text-transform: uppercase;
 }
+
 /****************/
 /* LATEST SUGGESTION CONTAINER */
 /****************/
@@ -287,7 +277,7 @@ main {
 }
 
 .latest-ideas .thumbnail-container {
-  border-radius: 2em;
+  border-radius: var(--border-radius-medium);
   background-color: transparent;
 }
 
@@ -295,8 +285,8 @@ main {
   padding: 1em;
   color: var(--black);
   background-color: var(--white);
-  transform: translateY(-20%);
-  border-radius: 2em;
+  transform: translateY(-23%);
+  border-radius: var(--border-radius-medium);
   transition: transform 0.5s ease-in-out;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 }
@@ -320,17 +310,14 @@ main {
 
 .grid-container .thumbnail-container {
   width: 100%;
-  height: 34em;
+  height: 32em;
+  overflow: hidden;
 }
 
 .grid-container .thumbnail-container a {
   transform: translateY(-18%);
 }
 
-.grid-container .thumbnail-container article {
-  width: 100%;
-  transform: translateY(-18%);
-}
 
 .grid-container .thumbnail-container article h2 {
   font-size: 1.2em;
@@ -339,6 +326,16 @@ main {
 .grid-container .thumbnail-container article p {
   font-size: 1em;
   height: 6em;
+}
+
+.grid-container .thumbnail-container article {
+  width: 100%;
+  transform: translateY(-19%);
+  transition: transform .5s ease-in-out;
+}
+
+.grid-container .thumbnail-container article:hover {
+  transform: translateY(-38%);
 }
 
 .grid-container .user-info {
@@ -355,13 +352,6 @@ main {
   object-fit: cover;
 }
 
-.grid-container .thumbnail-container article {
-  transition: transform 0.5s ease-in-out;
-}
-
-.grid-container .thumbnail-container article:hover {
-  transform: translateY(-35%);
-}
 
 /**********/
 /* FILTER */
@@ -380,35 +370,35 @@ form fieldset {
   border: none;
 }
 
-form fieldset > ul {
+form fieldset>ul {
   display: flex;
   gap: 1.25em;
 }
 
-form fieldset > ul li {
+form fieldset>ul li {
   display: flex;
   flex-direction: column;
 }
 
-form fieldset > ul li span {
+form fieldset>ul li span {
   display: inline-block;
 }
 
-form fieldset > ul li span:nth-of-type(1) {
+form fieldset>ul li span:nth-of-type(1) {
   font-weight: bold;
   margin-bottom: 0.2em;
 }
 
-form fieldset > ul li span:nth-of-type(2) {
+form fieldset>ul li span:nth-of-type(2) {
   background-color: var(--white);
   padding: 0.5rem 1rem;
 }
 
-form fieldset > ul li span:nth-of-type(2):hover {
+form fieldset>ul li span:nth-of-type(2):hover {
   cursor: pointer;
 }
 
-form fieldset > ul li:nth-of-type(2) label {
+form fieldset>ul li:nth-of-type(2) label {
   background-color: var(--white);
   padding: 0.4rem 1rem;
   width: fit-content;
@@ -464,11 +454,6 @@ form a:hover {
   animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
-#sorting.show-filter-menu {
-  display: block;
-  animation: smooth-dropdown 0.3s ease-in-out both alternate;
-}
-
 @keyframes smooth-dropdown {
   from {
     opacity: 0;
@@ -520,7 +505,7 @@ form a:hover {
   width: 20em;
 }
 
-input:checked + span {
+input:checked+span {
   background-color: var(--black);
   color: var(--white);
   padding: 0.5em;
@@ -538,20 +523,72 @@ input:checked + span {
   line-height: 1.5;
 }
 
+
+/**************/
+/* SELECTMENU */
+/**************/
+.select-menu-sorting::part(button) {
+  padding: .9em;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.select-menu-sorting::part(selected-value) {
+  font-size: 1.2em;
+
+}
+
+.select-menu-sorting::part(listbox) {
+  box-shadow: none;
+  width: 30em;
+  height: auto;
+  padding: .5em 1em;
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
+}
+
+.select-menu-sorting option {
+  padding: .9em;
+  margin: .5em 0;
+  font-size: 1.2em;
+  border: none;
+  background-color: var(--light-grey);
+  color: var(--black);
+}
+
+.select-menu-sorting option:hover {
+  cursor: pointer;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+
+/**************/
+/* RESPONSIVE */
+/**************/
+@media (max-width: 60em) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: span 3;
+  }
+}
+
 @media (max-width: 55em) {
   .content {
     display: block;
   }
 
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-    grid-column: span 3;
-  }
 
   .latest-ideas {
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column: span 3;
   }
 
   .latest-ideas.thumbnail-container {
@@ -572,7 +609,7 @@ input:checked + span {
     flex-direction: column;
   }
 
-  main form > fieldset ul {
+  main form>fieldset ul {
     flex-direction: column;
   }
 
@@ -592,14 +629,25 @@ input:checked + span {
     transform: translatey(-42%);
   }
 
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-column: span 3;
-  }
+  .select-menu-sorting::part(listbox) {
+  box-shadow: none;
+  width: 10em;
+  height: auto;
+  padding: .5em 1em;
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
+}
+
 
   .latest-ideas {
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr;
+
   }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-column: span 3;
+  }
+
 }

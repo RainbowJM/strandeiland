@@ -145,6 +145,14 @@ h1#user-name {
   cursor: pointer;
 }
 
+.join {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  padding: 0;
+}
+
 #suggestion > h3 {
   font-size: 1em;
   margin-top: 3.1em;
@@ -171,11 +179,19 @@ h1#user-name {
   border-radius: 0.5em;
   width: fit-content;
   background-color: var(--light-grey);
+  margin-right: 1em;
+
 }
 
-#suggestion ul:first-of-type li > img {
+.suggestion-items img[alt="suggestion-items"] {
   width: 4.5em;
   height: 4.5em;
+  background-color: var(--yellow);
+}
+#suggestion .suggestion-items li div .suggestion-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
 }
 
 .statistics {
@@ -183,6 +199,10 @@ h1#user-name {
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 1.25em;
   place-items: center;
+}
+.statistics li:nth-of-type(1) img {
+  width: 2em;
+  height: 2em;
 }
 
 .statistics img {
@@ -194,7 +214,7 @@ h1#user-name {
   font-weight: bold;
   margin-right: 0.2em;
 }
-.statistics li span img {
+ img[alt="ambassador"] {
   width: 2em;
   height: 2em;
 }
@@ -226,7 +246,7 @@ h1#user-name {
 }
 
 #reactions ul li div h3 {
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 #reactions ul li div p:nth-of-type(1) {

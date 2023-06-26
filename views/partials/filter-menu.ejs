@@ -10,44 +10,27 @@
                 <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
                 <input type="text" name="search" id="search" placeholder="Zoek op treftwoord">
             </label>
-
+            
         </li>
         <li class="sort-btn" data-filter-target="#sorting">
             <span>Sorteren op:</span>
-            <span>Meest recente <i class="fa-solid fa-angle-down"></i></span>
+            <%- include('./selectmenu.ejs') %>
+            <!-- <span>Meest recente <i class="fa-solid fa-angle-down"></i></span> -->
         </li>
     </ul>
 
     <section class="filter-content">
         <article id="theme" data-filter-content>
             <ul class="theme-filter-items">
-                <li><label><input type="checkbox" name="theme" value="sport"><span>Sport</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="recreatie"><span>Recreatie</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="verkeer"><span>Verkeer</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="Winkels"><span>Winkels</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="natuur"><span>Natuur</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="milieu"><span>Milieu</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="jeugd"><span>Jeugd</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="veiligheid"><span>Veiligheid</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="cultuur"><span>Cultuur</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="huisvesting"><span>Huisvesting</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="infrastructuur"><span>Infrastructuur</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="strand"><span>Strand</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="onderwijs"><span>Onderwijs</span></label></li>
-                <li><label><input type="checkbox" name="theme" value="overig"><span>Overig</span></label></li>
+                <% themes.forEach(theme => { %>
+                <li><label><input type="checkbox" name="theme" value="<%= theme.label%>"><span><%= theme.label%></span></label></li>
+                <% }) %>
+                
             </ul>
             <button class="filter-theme-results-btn" type="submit">Toon resultaten</button>
         </article>
 
-        <article id="sorting" data-filter-content>
-            <ul class="sorting-filter-items">
-                <li><label><input type="radio" name="sort" value="recent"><span>Meest Recente</span></label></li>
-                <li><label><input type="radio" name="sort" value="delers"><span>Meest gedeeld</span></label></li>
-                <li><label><input type="radio" name="sort" value="trekkers"><span>Meeste trekkers</span></label></li>
-                <li><label><input type="radio" name="sort" value="helpers"><span>Meeste helpers</span></label></li>
-            </ul>
+       
 
-            <button class="filter-sort-results-btn" type="submit">Toon resultaten</button>
-        </article>
     </section>
 </fieldset>
