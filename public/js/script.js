@@ -221,23 +221,23 @@ socket.on('typing', (typing) => {
 // ------------------ functions -------------------------------------------------------
 
 // form loading state
-// document.addEventListener('DOMContentLoaded', function() {
-//   const form = document.querySelector('form');
-//   const submitButton = document.querySelector('.submit-button');
-//   const loadingState = document.querySelector('#loadingState');
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const submitButton = document.querySelector('.submit-button');
+  const loadingState = document.querySelector('#loadingState');
 
-//   form.addEventListener('submit', function(event) {
-//     event.preventDefault();
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-//     submitButton.classList.add('hidden');
-//     loadingState.classList.remove('hidden');
+    submitButton.classList.add('hidden');
+    loadingState.classList.remove('hidden');
 
-//     setTimeout(function() {
-//       form.submit();
-//       console.log('loading')
-//     }, 2000);
-//   });
-// });
+    setTimeout(function() {
+      form.submit();
+      console.log('loading')
+    }, 2000);
+  });
+});
 
 
 boxes.forEach(box => {
