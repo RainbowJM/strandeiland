@@ -26,8 +26,7 @@
 }
 
 #chat h2{
-  position: absolute;
-  left: 1em;
+  margin-left: 1em;
 }
 
 .chat-section {
