@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
-const path = require("path");
 const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
 const router = require('./routes/route')
+let options = {
+  maxAge: '2y',
+  etag: false
+}
 const historySize = 100;
 
 let history = [];
@@ -15,7 +18,7 @@ let typing = [];
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.use(express.static(path.resolve("public")));
+app.use(express.static('public', options));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', router);
