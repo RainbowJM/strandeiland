@@ -286,7 +286,8 @@ router.post("/form", async (req, res) => {
     }
 
     console.log([parseInt(req.body.theme)]);
-    const themes = req.body.theme;
+    
+    const themes = Array.isArray(req.body.theme) ? req.body.theme : [req.body.theme];
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase

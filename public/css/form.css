@@ -87,7 +87,7 @@ form {
 /*****************/
 
 input:required:invalid {
-  border: 2px solid red;
+  border: 2px solid #f6a192;
 }
 
 input:required:valid {
@@ -95,7 +95,7 @@ input:required:valid {
 }
 
 textarea:required:invalid {
-  border: 2px solid red;
+  border: 2px solid #f6a192;
 }
 
 textarea:required:valid {
@@ -258,7 +258,14 @@ input#title::placeholder,
 }
 
 
-#uploadButton {
+#uploadButton:hover{
+    background-color: var(--blue);
+    font-weight: bold;
+    color: var(--black);
+    box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+}
+
+#imgCloseDialog {
   background-color: var(--black);
   color: var(--white);
   padding: 5px 10px; /* Adjust the padding as needed */
@@ -274,15 +281,12 @@ input#title::placeholder,
   font-weight: bold;
 }
 
-#uploadButton:hover{
-    background-color: var(--blue);
-    font-weight: bold;
-    color: var(--black);
-    box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+#imgCloseDialog:hover {
+  background-color: var(--blue);
+  font-weight: bold;
+  color: var(--black);
+  box-shadow: 0 0 3em rgba(0, 0, 1, 1);
 }
-
-
-
 
 
 
