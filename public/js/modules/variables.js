@@ -25,7 +25,6 @@ const filterSortResultsBtn = document.querySelector(".filter-sort-results-btn");
 const closeFilterBtn = document.querySelector(".close-filter");
 const typingElement = document.querySelector("#typing");
 const selectedOption = document.getElementById("selectedOption");
-console.log(selectedOption);
 const dropdownMenu = document.getElementById("themeDropdownMenu");
 const localStorageKey = "formData";
 const themeCheckboxes = document.querySelectorAll(
