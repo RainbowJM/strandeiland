@@ -34,7 +34,7 @@ main {
 .wish {
   flex-direction: column;
   width: 100%;
-  margin-bottom: 1.5em;
+  box-sizing: border-box;
 }
 
 .wish article h2 {
@@ -70,7 +70,7 @@ main {
   background-color: var(--white);
   padding: 4em 2em;
   border-radius: var(--border-radius-large);
-  transform: translateY(-25%);
+  transform: translateY(-30%);
 }
 
 .wish article p#time {
@@ -147,6 +147,8 @@ main {
   color: var(--dark-grey);
   font-weight: lighter;
   position: absolute;
+  line-height: 1em;
+  margin-top:.6em
 }
 
 .joiners div ul li {
@@ -223,6 +225,8 @@ main {
 #helpers ul li h3 {
   font-weight: lighter;
   color: var(--dark-grey);
+  line-height: 1em;
+  font-family: var(--font);
 }
 
 #sharers > h3 {
