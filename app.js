@@ -6,14 +6,15 @@ const io = require("socket.io")(http);
 const port = process.env.PORT || 6954;
 const bodyParser = require("body-parser");
 const router = require('./routes/route')
-let options = {
-  maxAge: '2y',
-  etag: false
-}
+const minifyHTML = require('express-minify-html');
 const historySize = 100;
 
 let history = [];
 let typing = [];
+let options = {
+  maxAge: '2y',
+  etag: false
+}
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -22,6 +23,19 @@ app.use(express.static('public', options));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', router);
+app.use(minifyHTML({
+  override:      true,
+  exception_url: false,
+  htmlMinifier: {
+      removeComments:            true,
+      collapseWhitespace:        true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes:     true,
+      removeEmptyAttributes:     true,
+      minifyJS:                  true
+  }
+}));
+
 
 io.on("connection", (socket) => {
   console.log("user connected");
