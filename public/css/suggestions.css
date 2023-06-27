@@ -535,6 +535,17 @@ input:checked+span {
 /**************/
 /* SELECTMENU */
 /**************/
+@-moz-document url-prefix() {
+  .sort-btn  span{
+  display: none;
+  }
+  
+.select-menu-sorting {
+  display: none;
+}
+
+}
+
 .select-menu-sorting::part(button) {
   padding: .9em;
   appearance: none;
