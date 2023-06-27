@@ -82,17 +82,11 @@ router.get("/", async (req, res) => {
       themes: themes
     };
   });
-
-
-
-    
-  console.log(suggestionsWithThemes);
-
  
     const themeLabels = themeData.map(theme => theme.label);
 shuffleArray(suggestionsWithThemes);
 
-// console.log(themeLabels);
+
     if (
       themeError ||
       suggestionsError ||
