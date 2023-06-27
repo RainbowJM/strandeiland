@@ -50,41 +50,91 @@ router.get("/", async (req, res) => {
       }
     }
   }
+  // Function to shuffle an array
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
-    const suggestionsWithThemes = suggestionsData.map(suggestion => {
-      const themeIds = themeSuggestions
-        .filter(item => item.suggestionId === suggestion.id)
-        .map(item => item.themaId);
 
-      const themes = themeIds.map(themeId => {
-        const theme = themeData.find(item => item.id === themeId);
-        return theme ? theme.label : null;
-      });
 
-      return {
-        ...suggestion,
-        themes: themes
-      };
-    });
-
-  const latestsuggestionsWithThemes = latestSuggestionsData.map(suggestion => {
-    const themeIds = themeSuggestions
-      .filter(item => item.suggestionId === suggestion.id)
-      .map(item => item.themaId);
-
-    const themes = themeIds.map(themeId => {
-      const theme = themeData.find(item => item.id === themeId);
-      return theme ? theme.label : null;
-    });
-
-    return {
+  const suggestionsWithThemes = [];
+  for (let i = 0; i < suggestionsData.length; i++) {
+    const suggestion = suggestionsData[i];
+    const themeIds = [];
+    for (let j = 0; j < themeSuggestions.length; j++) {
+      const item = themeSuggestions[j];
+      if (item.suggestionId === suggestion.id) {
+        themeIds.push(item.themaId);
+      }
+    }
+    const themes = [];
+    for (let k = 0; k < themeIds.length; k++) {
+      const themeId = themeIds[k];
+      let theme = null;
+      for (let l = 0; l < themeData.length; l++) {
+        const item = themeData[l];
+        if (item.id === themeId) {
+          theme = item;
+          break;
+        }
+      }
+      if (theme) {
+        themes.push(theme.label);
+      }
+    }
+    suggestionsWithThemes.push({
       ...suggestion,
-      themes: themes
-    };
-  });
- 
-    const themeLabels = themeData.map(theme => theme.label);
-shuffleArray(suggestionsWithThemes);
+      themes: themes,
+    });
+  }
+
+
+
+  const latestsuggestionsWithThemes = [];
+  for (let i = 0; i < latestSuggestionsData.length; i++) {
+    const suggestion = latestSuggestionsData[i];
+    const themeIds = [];
+    for (let j = 0; j < themeSuggestions.length; j++) {
+      const item = themeSuggestions[j];
+      if (item.suggestionId === suggestion.id) {
+        themeIds.push(item.themaId);
+      }
+    }
+    const themes = [];
+    for (let k = 0; k < themeIds.length; k++) {
+      const themeId = themeIds[k];
+      let theme = null;
+      for (let l = 0; l < themeData.length; l++) {
+        const item = themeData[l];
+        if (item.id === themeId) {
+          theme = item;
+          break;
+        }
+      }
+      if (theme) {
+        themes.push(theme.label);
+      }
+    }
+    latestsuggestionsWithThemes.push({
+      ...suggestion,
+      themes: themes,
+    });
+  }
+
+
+
+  const themeLabels = [];
+  for (let i = 0; i < themeData.length; i++) {
+    const theme = themeData[i];
+    themeLabels.push(theme.label);
+  }
+
+
+
+  shuffleArray(suggestionsWithThemes);
 
 
     if (
