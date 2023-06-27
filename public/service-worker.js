@@ -1,4 +1,4 @@
-const cacheName = 'cache-v4';
+const cacheName = 'cache-v9';
 const runtimeCacheName = 'runtime-cache'
 const assets = [
     '/',
@@ -12,6 +12,8 @@ const assets = [
     '/images/favicon.ico',
     '/images/strand-eiland.jpg',
     '/offline',
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap',
+    'https://kit.fontawesome.com/87a1015511.js',
 ];
 
 self.addEventListener('install', event => {
