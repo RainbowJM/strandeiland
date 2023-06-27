@@ -136,9 +136,7 @@ selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
 
 
-console.log(themeCheckboxes)
 if (themeCheckboxes) {
-  console.log(themeCheckboxes)
 themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });
