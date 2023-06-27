@@ -26,7 +26,7 @@ main {
 /* SLOGAN  */
 /***********/
 .slogan-wrapper {
-  background: url("../images/intro-pic.png");
+  background: url("../images/intro-pic.webp");
   background-position: 25% 45%;
   width: 100%;
   padding: 0.5em;
@@ -217,7 +217,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(transparent 10px, white);
+  background: linear-gradient(transparent 10px, var(--white));
 }
 
 .thumbnail-container article h2 {
@@ -237,11 +237,14 @@ main {
 
 .statistics li {
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .statistics img {
   width: 32%;
   border-radius: 0;
+  margin-left: 1em;
 }
 
 .statistics span {
