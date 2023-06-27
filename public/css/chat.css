@@ -60,10 +60,10 @@ form input[type="text"] {
 form button {
   height: 3em;
   width: 3em;
-  background: var(--blue);
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  border: var(--yellow) solid 0.2em;
 }
 
 #chat li {
