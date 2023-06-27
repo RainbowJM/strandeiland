@@ -299,7 +299,8 @@ main {
   bottom: 0;
 }
 
-@media (width < 50em) {
+
+@media (max-width: 50em) {
   main {
     display: grid;
     grid-template-columns: 1fr;
@@ -308,7 +309,7 @@ main {
   }
 
   .wish {
-    padding: 1.5em;
+    /* padding: 1.5em; */
     width: 100%;
   }
 
@@ -325,4 +326,8 @@ main {
   .joiners {
     margin-top: 2em;
   }
+
+  #helpers ul {
+    grid-template-columns: 1fr;
+}
 }
