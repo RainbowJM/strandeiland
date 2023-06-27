@@ -26,7 +26,15 @@
 }
 
 #chat h2{
-  margin-left: 1em;
+  /* position: absolute;
+  left: 1em; */
+  text-align: left;
+    margin-left: 1em;
+    transform: translateY(-2.5em);
+    background-color: var(--blue);
+    width: max-content;
+    color: var(--white);
+    padding: 0.3em;
 }
 
 .chat-section {
@@ -148,3 +156,13 @@ img.avatar{
   position: absolute;
   bottom: 5em;
 }
+
+.message-input{
+  display: flex;
+}
+
+/* @media (max-width: 50em) {
+  form input[type="text"] {
+    width: 80%;
+  }
+} */
