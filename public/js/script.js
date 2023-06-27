@@ -131,14 +131,12 @@ if (uploadDialog) {
 
 
 if (selectedOption) {
-  console.log(selectedOption)
+
 selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
 
-
-console.log(themeCheckboxes)
 if (themeCheckboxes) {
-  console.log(themeCheckboxes)
+
 themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });
@@ -384,7 +382,7 @@ boxes.forEach(box => {
   box.addEventListener('click', function() {
     const boxElement = box.querySelector('.box');
     boxElement.classList.toggle('show');
-    console.log('click')
+  
   });
 });
 
