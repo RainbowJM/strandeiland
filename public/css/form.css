@@ -333,7 +333,7 @@ dialog[open] {
 }
 
 
-#closeDialog {
+button#closeDialog {
   background-color: var(--black);
   color: var(--white);
   padding: 5px 10px; /* Adjust the padding as needed */
@@ -345,11 +345,16 @@ dialog[open] {
   display: inline-block;
   width: fit-content;
   position: relative;
-  left: 5%;
+  left: 90%;
   font-weight: bold;
 }
 
-
+button#closeDialog:hover{
+  background-color: var(--blue);
+  font-weight: bold;
+  color: var(--black);
+  box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+}
 
 /*****************/
 /* THEME MENU*/
@@ -549,7 +554,7 @@ img{
   }
 
 
-  
+
 
 
 /*****************/

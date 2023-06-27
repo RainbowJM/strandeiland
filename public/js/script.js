@@ -13,7 +13,7 @@ let last;
 // ------------------ logic -------------------------------------------------------
 if (localStorage.getItem(localStorageKey)) {
   const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
-
+ 
 
   if (titleInput) {
     titleInput.value = savedFormData.title;
@@ -105,16 +105,24 @@ if (fileInput) {
   });
 }
 
+console.log(selectedCheckboxes);
+
 function updateFormData() {
   const selectedCheckboxes = Array.from(themeCheckboxes)
-    .filter((checkbox) => checkbox.checked)
-    .map((checkbox) => checkbox.value);
+  .filter((checkbox) => checkbox.checked)
+  .map((checkbox) => checkbox.value);
+  
+  console.log(selectedCheckboxes);
+  const selectedThemes = themes
+    .filter((theme) => selectedCheckboxes.includes(theme.id))
+    .map((theme) => theme.label);
 
   const selectedOption = document.querySelector('.selected-option');
-  selectedOption.textContent = selectedCheckboxes.length > 0 ? selectedCheckboxes.join(", ") : "Selecteer de passende thema's";
+  selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
 
   saveFormData();
 }
+
 
 
 if (themeCheckboxes) {
