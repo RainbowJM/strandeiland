@@ -128,7 +128,7 @@ main {
   gap: 2em;
 }
 
-.joiners > div {
+.joiners>div {
   position: relative;
 }
 
@@ -148,7 +148,7 @@ main {
   font-weight: lighter;
   position: absolute;
   line-height: 1em;
-  margin-top:.6em
+  margin-top: .6em
 }
 
 .joiners div ul li {
@@ -166,14 +166,14 @@ main {
   cursor: pointer;
 }
 
-#ambassador > h3 {
+#ambassador>h3 {
   font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
   font-weight: lighter;
 }
 
-#ambassador > div h2 {
+#ambassador>div h2 {
   font-weight: lighter;
 }
 
@@ -196,7 +196,7 @@ main {
   height: 4.5em;
 }
 
-#helpers > h3 {
+#helpers>h3 {
   font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
@@ -229,7 +229,7 @@ main {
   font-family: var(--font);
 }
 
-#sharers > h3 {
+#sharers>h3 {
   font-size: 0.875em;
   margin-top: 4em;
   color: var(--black);
@@ -303,9 +303,10 @@ main {
 @media (max-width: 50em) {
   main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
     padding: 1em;
+    overflow: hidden;
   }
 
   .wish {
@@ -328,5 +329,23 @@ main {
 
   #helpers ul {
     grid-template-columns: 1fr;
-}
+  }
+
+  #sharers ul li img{
+    height: 2.5em;
+    width: 2.5em;
+  }
+
+  aside {
+    grid-template-columns: minmax(0, 1fr);
+
+  }
+
+  #joiners{
+    margin: 0;
+  }
+
+  #box-left.show {
+    margin-right: 33vw;
+  }
 }
