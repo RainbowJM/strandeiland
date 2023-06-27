@@ -423,6 +423,14 @@ input[name="search"] {
   border: none;
 }
 
+form a {
+  display: inline-block;
+  padding: .5em 1em;
+  background-color: var(--black);
+  color: var(--white);
+
+}
+
 .filter-content button[type="submit"] {
   margin-top: 0.5em;
   background-color: var(--black);
@@ -462,6 +470,10 @@ form a:hover {
   animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
+#sorting.show-filter-menu {
+  display: block;
+    animation: smooth-dropdown 0.3s ease-in-out both alternate;
+}
 @keyframes smooth-dropdown {
   from {
     opacity: 0;
@@ -485,7 +497,7 @@ form a:hover {
 .sorting-filter-items {
   display: grid;
 
-  gap: 0.625em;
+  gap: 0.4em;
 }
 
 .theme-filter-items li,
@@ -507,6 +519,11 @@ form a:hover {
   display: inline-block;
   padding: 0.5em;
   width: 8.625em;
+}
+
+.theme-filter-items span::first-letter,
+.sorting-filter-items span::first-letter{
+  text-transform: uppercase;
 }
 
 .sorting-filter-items span {
