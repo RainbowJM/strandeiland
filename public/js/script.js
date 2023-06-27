@@ -9,7 +9,7 @@ import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./m
 const socket = io();
 let last;
 
-console.log('hello world')
+
 // ------------------ logic -------------------------------------------------------
 if (localStorage.getItem(localStorageKey)) {
   const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
@@ -97,6 +97,24 @@ if (fileInput) {
   });
 }
 
+function updateFormData() {
+  const selectedCheckboxes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  const selectedOption = document.querySelector('.selected-option');
+  selectedOption.textContent = selectedCheckboxes.length > 0 ? selectedCheckboxes.join(", ") : "Selecteer de passende thema's";
+
+  // Call the saveFormData function to update the saved form data in localStorage
+  saveFormData();
+}
+
+// Add event listeners to checkboxes for updating form data
+if (themeCheckboxes) {
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", updateFormData);
+  });
+}
 
 
 
@@ -110,7 +128,7 @@ if (uploadDialog) {
 }
 
 
-console.log(selectedOption)
+
 
 if (selectedOption) {
   console.log(selectedOption)
@@ -387,7 +405,6 @@ function displaySelectedOption(selectElement) {
   let selectedOption = selectElement.options[selectElement.selectedIndex].text;
   selectElement.value = selectedOption;
 }
-
 
     
 // const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
