@@ -32,33 +32,10 @@ router.get("/", async (req, res) => {
     .select();
 
   // Randomize the suggestionsData array
-  const shuffledSuggestionsData = _.shuffle(suggestionsData);
-
-  for (const suggestion of shuffledSuggestionsData) {
-    const relatedTheme = themeSuggestions.find(
-      (ts) => ts.suggestionId === suggestion.id
-    );
-
-    if (relatedTheme) {
-      const theme = themeData.find((t) => t.id === relatedTheme.themaId);
-
-      if (theme) {
-        suggestion.theme = theme;
-      }
-    }
-  }
-
-  for (const latestSuggestion of latestSuggestionsData) {
-    const latestRelatedTheme = themeSuggestions.find(
-      (ts) => ts.suggestionId === latestSuggestion.id
-    );
-
-    if (latestRelatedTheme) {
-      const theme = themeData.find((t) => t.id === latestRelatedTheme.themaId);
-
-      if (theme) {
-        latestSuggestion.theme = theme;
-      }
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
   }
 
@@ -73,30 +50,117 @@ router.get("/", async (req, res) => {
       }
     }
   }
+  // Function to shuffle an array
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
-  if (
-    themeError ||
-    suggestionsError ||
-    latestSuggestionsError ||
-    themeSuggestionsError
-  ) {
-    console.error(
-      "Error:",
+
+
+  const suggestionsWithThemes = [];
+  for (let i = 0; i < suggestionsData.length; i++) {
+    const suggestion = suggestionsData[i];
+    const themeIds = [];
+    for (let j = 0; j < themeSuggestions.length; j++) {
+      const item = themeSuggestions[j];
+      if (item.suggestionId === suggestion.id) {
+        themeIds.push(item.themaId);
+      }
+    }
+    const themes = [];
+    for (let k = 0; k < themeIds.length; k++) {
+      const themeId = themeIds[k];
+      let theme = null;
+      for (let l = 0; l < themeData.length; l++) {
+        const item = themeData[l];
+        if (item.id === themeId) {
+          theme = item;
+          break;
+        }
+      }
+      if (theme) {
+        themes.push(theme.label);
+      }
+    }
+    suggestionsWithThemes.push({
+      ...suggestion,
+      themes: themes,
+    });
+  }
+
+
+
+  const latestsuggestionsWithThemes = [];
+  for (let i = 0; i < latestSuggestionsData.length; i++) {
+    const suggestion = latestSuggestionsData[i];
+    const themeIds = [];
+    for (let j = 0; j < themeSuggestions.length; j++) {
+      const item = themeSuggestions[j];
+      if (item.suggestionId === suggestion.id) {
+        themeIds.push(item.themaId);
+      }
+    }
+    const themes = [];
+    for (let k = 0; k < themeIds.length; k++) {
+      const themeId = themeIds[k];
+      let theme = null;
+      for (let l = 0; l < themeData.length; l++) {
+        const item = themeData[l];
+        if (item.id === themeId) {
+          theme = item;
+          break;
+        }
+      }
+      if (theme) {
+        themes.push(theme.label);
+      }
+    }
+    latestsuggestionsWithThemes.push({
+      ...suggestion,
+      themes: themes,
+    });
+  }
+
+
+
+  const themeLabels = [];
+  for (let i = 0; i < themeData.length; i++) {
+    const theme = themeData[i];
+    themeLabels.push(theme.label);
+  }
+
+
+
+  shuffleArray(suggestionsWithThemes);
+
+
+    if (
       themeError ||
+      suggestionsError ||
+      latestSuggestionsError ||
+      themeSuggestionsError
+    ) {
+      console.error(
+        "Error:",
+        themeError ||
         suggestionsError ||
         latestSuggestionsError ||
         themeSuggestionsError
-    );
-  } else {
-    res.render("index", {
-      title: "Wensen",
-      themes: themeData,
-      suggestions: shuffledSuggestionsData,
-      latestSuggestions: latestSuggestionsData,
-      totalSuggestions: count,
-    });
-  }
-});
+      );
+    } else {
+      res.render("index", {
+        title: "Wensen",
+        themes: themeLabels,
+        suggestions: suggestionsWithThemes,
+        latestSuggestions: latestsuggestionsWithThemes,
+        totalSuggestions: count,
+      });
+    }
+  });
+
 
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
@@ -167,10 +231,10 @@ router.get("/wens/:id", async (req, res) => {
     console.error(
       "Error fetching suggestion:",
       error ||
-        residentSuggestionError ||
-        residentError ||
-        themeError ||
-        suggestionThemeError
+      residentSuggestionError ||
+      residentError ||
+      themeError ||
+      suggestionThemeError
     );
   } else {
     res.render("suggestion", {
@@ -250,10 +314,10 @@ router.get("/user/:first_name", async (req, res) => {
     console.error(
       "Error:",
       userError ||
-        residentSuggestionError ||
-        suggestionError ||
-        themeError ||
-        suggestionThemeError
+      residentSuggestionError ||
+      suggestionError ||
+      themeError ||
+      suggestionThemeError
     );
   } else {
     res.render("user", {
