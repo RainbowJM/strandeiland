@@ -3,8 +3,8 @@
     <div>
         <h3><%= suggestion.title %></h3>
         <section class="join" id="suggestion-label">
-            <% themes.forEach(theme => { %>
-                <h4> <%= theme.label %> </h4>
+            <% suggestion.theme.forEach(theme => { %>
+                <h4> <%= theme %> </h4>
                   <% }) %>
         </section>
         <ul class="statistics">

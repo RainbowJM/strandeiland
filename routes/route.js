@@ -31,14 +31,6 @@ router.get("/", async (req, res) => {
     .from("resident")
     .select();
 
-  // Randomize the suggestionsData array
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
   for (const latestSuggestion of latestSuggestionsData) {
     for (const residentSuggestion of residentSuggestionData) {
       if (latestSuggestion.id === residentSuggestion.suggestion_id) {
@@ -50,15 +42,13 @@ router.get("/", async (req, res) => {
       }
     }
   }
-  // Function to shuffle an array
+
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-
-
 
   const suggestionsWithThemes = [];
   for (let i = 0; i < suggestionsData.length; i++) {
@@ -91,8 +81,6 @@ router.get("/", async (req, res) => {
     });
   }
 
-
-
   const latestsuggestionsWithThemes = [];
   for (let i = 0; i < latestSuggestionsData.length; i++) {
     const suggestion = latestSuggestionsData[i];
@@ -124,43 +112,37 @@ router.get("/", async (req, res) => {
     });
   }
 
-
-
   const themeLabels = [];
   for (let i = 0; i < themeData.length; i++) {
     const theme = themeData[i];
     themeLabels.push(theme.label);
   }
 
-
-
   shuffleArray(suggestionsWithThemes);
 
-
-    if (
+  if (
+    themeError ||
+    suggestionsError ||
+    latestSuggestionsError ||
+    themeSuggestionsError
+  ) {
+    console.error(
+      "Error:",
       themeError ||
-      suggestionsError ||
-      latestSuggestionsError ||
-      themeSuggestionsError
-    ) {
-      console.error(
-        "Error:",
-        themeError ||
         suggestionsError ||
         latestSuggestionsError ||
         themeSuggestionsError
-      );
-    } else {
-      res.render("index", {
-        title: "Wensen",
-        themes: themeLabels,
-        suggestions: suggestionsWithThemes,
-        latestSuggestions: latestsuggestionsWithThemes,
-        totalSuggestions: count,
-      });
-    }
-  });
-
+    );
+  } else {
+    res.render("index", {
+      title: "Wensen",
+      themes: themeLabels,
+      suggestions: suggestionsWithThemes,
+      latestSuggestions: latestsuggestionsWithThemes,
+      totalSuggestions: count,
+    });
+  }
+});
 
 router.get("/wens/:id", async (req, res) => {
   const suggestionId = req.params.id;
@@ -231,10 +213,10 @@ router.get("/wens/:id", async (req, res) => {
     console.error(
       "Error fetching suggestion:",
       error ||
-      residentSuggestionError ||
-      residentError ||
-      themeError ||
-      suggestionThemeError
+        residentSuggestionError ||
+        residentError ||
+        themeError ||
+        suggestionThemeError
     );
   } else {
     res.render("suggestion", {
@@ -289,6 +271,7 @@ router.get("/user/:first_name", async (req, res) => {
   const { data: suggestionThemeData, suggestionThemeError } = await supabase
     .from("suggestion_theme")
     .select();
+
   for (const suggestion of listSuggestions) {
     let relatedThemes = [];
     for (const ts of suggestionThemeData) {
@@ -296,13 +279,15 @@ router.get("/user/:first_name", async (req, res) => {
         relatedThemes.push(ts);
       }
     }
+    label = []
     for (const relatedTheme of relatedThemes) {
-      for (const t of themeData) {
-        if (t.id === relatedTheme.themaId) {
-          theme.push(t);
+      for (const theme of themeData) {
+        if (relatedTheme.themaId === theme.id) {
+          label.push(theme.label);
         }
       }
     }
+    suggestion.theme = label;
   }
   if (
     userError ||
@@ -314,10 +299,10 @@ router.get("/user/:first_name", async (req, res) => {
     console.error(
       "Error:",
       userError ||
-      residentSuggestionError ||
-      suggestionError ||
-      themeError ||
-      suggestionThemeError
+        residentSuggestionError ||
+        suggestionError ||
+        themeError ||
+        suggestionThemeError
     );
   } else {
     res.render("user", {
@@ -326,7 +311,6 @@ router.get("/user/:first_name", async (req, res) => {
       time: date,
       amount: int,
       suggestions: listSuggestions,
-      themes: theme,
     });
   }
 });
@@ -350,8 +334,10 @@ router.post("/form", async (req, res) => {
     }
 
     console.log([parseInt(req.body.theme)]);
-    
-    const themes = Array.isArray(req.body.theme) ? req.body.theme : [req.body.theme];
+
+    const themes = Array.isArray(req.body.theme)
+      ? req.body.theme
+      : [req.body.theme];
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase
@@ -397,8 +383,8 @@ router.get("/sent", (req, res) => {
 
 router.get("/form", async (req, res) => {
   const { data: themeData, error: themeError } = await supabase
-        .from("theme")
-        .select();
+    .from("theme")
+    .select();
   res.render("form", {
     title: "Formulier",
     themes: themeData,
