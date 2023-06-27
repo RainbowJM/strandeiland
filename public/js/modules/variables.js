@@ -46,6 +46,7 @@ const votersIconValue = document.querySelectorAll(".statistics li:nth-child(3) s
 const titleInput = document.getElementById("title");
 const descriptionTextarea = document.getElementById("description");
 const closeDialogButton = document.getElementById('closeDialog');
+const imgCloseDialogButton = document.getElementById('imgCloseDialog');
 const uploadDialog = document.querySelector('dialog');
 
 export {
@@ -82,6 +83,7 @@ export {
   titleInput,
   descriptionTextarea,
   closeDialogButton,
+  imgCloseDialogButton,
   uploadDialog,
   helperIconValue,
   votersIconValue,

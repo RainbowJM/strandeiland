@@ -1,22 +1,38 @@
 :root {
   --yellow: #ffe700;
+
   --light-yellow: #FFF48C;
+
   --white: #ffffff;
+
   --black: #000000;
+
   --blue: #009ce0;
+
   --light-blue: #94DFFF;
+
   --light-grey: #f0f0eb;
+
   --dark-grey: #333333;
+
   --gray: #E9E9E9;
+
   --font: 'Poppins', sans-serif;
 
   --border-radius-small: 0.5em;
+
   --border-radius-medium: 2em;
+
   --border-radius-large: 4em;
 }
 
+/*****************/
+/* BACK BUTTON */
+/*****************/
+
 .back {
-  margin: 2em 0 1em 5vw;
+  margin: 10em 0 1em 5vw;
+
 }
 
 .back a {
@@ -25,40 +41,33 @@
 }
 
 
-/*****************/
-/* Validation */
-/*****************/
-input:required:invalid {
-  border: 2px solid red;
-}
-
-input:required:valid {
-  border: 2px solid green;
-}
-
-textarea:required:invalid {
-  border: 2px solid red;
-}
-
-textarea:required:valid {
-  border: 2px solid green;
-}
-
-/*****************/
-/* PLACEHOLDER */
-/*****************/
-
-textarea#description::placeholder,
-textarea#title::placeholder {
-  font-style: var(--font);
-  color: var(--dark-grey);
-  font-size: 15px;
-}
 
 h1 {
   text-align: center;
   margin-bottom: 1em;
   margin-top: .5em;
+}
+
+
+p{
+  position: relative;
+  left: 20%;
+  top: 10%;
+  font-family: var(--font);
+  margin-left: 1em;
+  margin-top: 1em;
+  color: var(--black);
+  font-size: 16px;
+}
+
+
+/*****************/
+/* FORM */
+/*****************/
+
+form {
+  width: 60%;
+  margin: auto;
 }
 
 
@@ -74,16 +83,30 @@ h1 {
 }
 
 /*****************/
-/* FORM */
+/*  VALIDATION   */
 /*****************/
-form {
-  width: 60%;
-  margin: auto;
+
+input:required:invalid {
+  border: 2px solid #f6a192;
 }
+
+input:required:valid {
+  border: 2px solid green;
+}
+
+textarea:required:invalid {
+  border: 2px solid #f6a192;
+}
+
+textarea:required:valid {
+  border: 2px solid green;
+}
+
 
 /*****************/
 /*  FIELDSET */
 /*****************/
+
 fieldset {
   background-color: var(--white);
   display: flex;
@@ -119,19 +142,14 @@ fieldset .file-input-container:focus
   box-shadow: 0 0 4px var(--black);
 }
 
-input#title::placeholder,
-#imageLink::placeholder{
-    font-family: var(--font);
-    color: var(--dark-grey);
-    font-size: 15px;
-  }
-
 
 fieldset label {
   font-weight: bold;
   font-size: 1em;
   font-family: var(--font);
+
 }
+
 
 fieldset input[type="text"],
 fieldset input[type="url"] {
@@ -142,6 +160,8 @@ fieldset input[type="url"] {
   border: none;
 }
 
+
+
 input[type="text"],
 textarea {
   width: 100%;
@@ -151,6 +171,7 @@ textarea {
   border: none;
 }
 
+
 input[type="text"]:focus,
 textarea:focus{
   outline: none;
@@ -158,40 +179,69 @@ textarea:focus{
 }
 
 #title{
-    margin-bottom: 10px;
-    width: 40%;
-    position: relative;
-    left: 5%;
-}
-
-#sendButton {
-  background-color: var(--black);
-  color: var(--white);
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 2em;
-}
-
-
-#uploadButton {
-  background-color: var(--black);
-  color: var(--white);
-  padding: 5px 10px; /* Adjust the padding as needed */
-  font-size: 14px; /* Adjust the font size as needed */
-  border: none;
-  cursor: pointer;
-  width: auto;
-  height: 3em;
-  display: inline-block;
-  width: fit-content;
+  margin-bottom: 10px;
+  width: 40%;
   position: relative;
   left: 5%;
-  font-weight: bold;
+
 }
 
-#closeDialog {
+
+/*****************/
+/* PLACEHOLDER */
+/*****************/
+textarea#description::placeholder,
+textarea#title::placeholder {
+  font-style: var(--font);
+  color: var(--dark-grey);
+  font-size: 15px;
+}
+
+
+input#title::placeholder,
+#imageLink::placeholder{
+    font-family: var(--font);
+    color: var(--dark-grey);
+    font-size: 15px;
+  }
+
+
+  textarea#description::placeholder {
+    font-family: var(--font);
+    color: var(--dark-grey);
+   }
+ 
+ 
+ 
+
+
+/*****************/
+/* BUTTONS */
+/*****************/
+#sendButton {
+  background-color: var(--black);
+
+  color: var(--white);
+
+  padding: 10px 20px;
+
+  font-size: 16px;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+
+#sendButton:hover {
+  background-color: var(--blue);
+  font-weight: bold;
+  color: var(--black);
+  box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+
+}
+
+#uploadButton {
   background-color: var(--black);
   color: var(--white);
   padding: 5px 10px; /* Adjust the padding as needed */
@@ -215,104 +265,114 @@ textarea:focus{
     box-shadow: 0 0 3em rgba(0, 0, 1, 1);
 }
 
-textarea#description::placeholder {
-   font-family: var(--font);
-   color: var(--dark-grey);
-  }
+#imgCloseDialog {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5px 10px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 3em;
+  display: inline-block;
+  width: fit-content;
+  position: relative;
+  left: 5%;
+  font-weight: bold;
+}
 
-/* vanaf hier begint de dropdown menu  */
+#imgCloseDialog:hover {
+  background-color: var(--blue);
+  font-weight: bold;
+  color: var(--black);
+  box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+}
+
+
+
+/*****************/
+/* DIALOG / POPUP */
+/*****************/
+
+dialog {
+  width: 40em;
+
+  padding: 20px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+dialog[open] {
+  display: block;
+}
+
+
+.dialog-form-container {
+  position: relative;
+  z-index: 99999;
+}
+
+
+#closeDialog {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5px 10px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 3em;
+  display: inline-block;
+  width: fit-content;
+  position: relative;
+  left: 5%;
+  font-weight: bold;
+}
+
+
+
+/*****************/
+/* THEME MENU*/
+/*****************/
 .dropdown {
     margin-bottom: 10px;
     width: 85%;
     position: relative;
-
-
-
-
     left: 5%;
-
-
-
-
     padding: 0;
-
-
-
-
   }
 
-
-
-
-  
-
-
-
-
-  .selected-option {
-
-
-
-
+.selected-option {
     cursor: pointer;
-
-
-
-
     padding: 10px;
-
-
-
-
     background-color: var(--gray);
-
-
-
-
     color: var(--dark-grey);
-
-
-
-
     border: none;
-
-
-
-
     position: relative;
-
-
-
-
     font-family: var(--font);
-
-
-
-
     font-size: 15px;
-
-
-
-
     font-weight: normal;
-
-
-
-
     display: flex;
-
-
-
-
     align-items: center;
-
-
-
-
   }
-
-
-
 
   .selected-option::after {
     content: "\2304";
@@ -326,138 +386,63 @@ textarea#description::placeholder {
 
   }
 
-
-
-
-  
-
-
-
-
-  .selected-option.open::after {
-
-
-
-
-    content: "×";
-
-
-
-
-    font-size: 18px; /* Adjust the font size as needed */
-
-
-
-
-    
-
-
-
-
-    transform: translateY(-50%);
-
-
-
-
-    line-height: 1;
-
-
-
-
-  }
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-  .dropdown-container {
-
-
-
-
-    display: none;
-
-
-
-
-    margin-top: 10px;
-
-
-
-
-  }
-
-
-
-
-
-
-
-.dropdown-menu {
-
-
-
-
-  font-family: var(--font);
-
-
-
-
-  display: grid;
-
-
-
-
-  grid-template-columns: 1fr 1fr;
-
-
-
-
-  background-color: var(--gray);
-
-
-
-
-  min-width: 200px;
-
-
-
-
-  border: border;
-
-
-
-
-  padding: 10px;
-
-
-
-
-  gap: 10px;
-
-  animation: smooth-dropdown 0.3s ease-in-out both alternate;
-
+.selected-option.open::after {
+  content: "×";
+  font-size: 18px; 
+  transform: translateY(-50%);
+  line-height: 1;
 }
 
+
+.dropdown-container {
+  display: none;
+  margin-top: 10px;
+  }
+
+.dropdown-menu {
+  font-family: var(--font);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--gray);
+  min-width: 200px;
+  border: border;
+  padding: 10px;
+  gap: 10px;
+  animation: smooth-dropdown 0.3s ease-in-out both alternate;
+}
+
+.dropdown-menu li {
+  align-items: center;
+  font-weight: normal;
+  background-color: var(--white);
+  word-wrap: wrap;
+  height: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--black);
+}
+
+.dropdown-menu label input[type="checkbox"] {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+
+
+/*****************/
+/* ANIMATION DROPDOWN MENU*/
+/*****************/
 
 @keyframes smooth-dropdown {
   from {
@@ -470,582 +455,102 @@ textarea#description::placeholder {
 }
 
 
-
-
-
-
-
-
-
-.dropdown-menu li {
-  align-items: center;
-  font-weight: normal;
-  background-color: var(--white);
-  word-wrap: wrap;
-  height: 2em;
-  width: 100%;
-  text-align: center;
-}
-
-
-
-
-
-
-
-.dropdown-menu li:hover {
-  background-color: var(--dark-grey);
-  color: var(--white);
-  cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid var(--black);
-}
-
-
-
-.dropdown-menu label input[type="checkbox"] {
-  display: none;
-}
-
-
-
-
-
-
-
-
-.show {
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
-/* Style the file input */
-
-
-
+/*****************/
+/* FILE SELECT/
+/*****************/
 
 .file-input-container {
-
-
-
-
   position: relative;
-
-
-
-
   display: inline-block;
-
-
-
-
   margin-top: 10px;
-
-
-
-
-
-
-
+  background-color: var(--gray);
+  height: 10em;
 }
-
-
-
-
-
-
 
 .file-input-container label {
-
-
-
-
   display: block;
-
-
-
-
   cursor: pointer;
-
-
-
-
   background-color: #f1f1f1;
-
-
-
-
   color: #333;
-
-
-
-
   padding: 10px;
-
-
-
-
   border: none;
-
-
-
-
   border-radius: 4px;
-
-
-
-
-    font-family: var(--font);
-
-
-
-
+  font-family: var(--font);
 }
-
-
-
-
-
-
 
 .file-input-container input[type="file"] {
-
-
-
-
   opacity: 0;
-
-
-
-
   position: absolute;
-
-
-
-
   width: 100%;
-
-
-
-
   height: 100%;
-
-
-
-
   left: 0;
-
-
-
-
   top: 0;
-
-
-
-
   cursor: pointer;
-
-
-
-
 }
-
-
-
-
-
-
-
-
-.file-input-container {
-    background-color: var(--gray);
-    height: 10em;
-}
-
-
-
-
-
-
 
 p#selectedFileName {
-
-
-
-
   position: relative;
-
-
-
-
   left: 3%;
-
-
-
-
   margin-top: 10px;
-
-
-
-
   font-family: var(--font);
-
-
-
-
   color: var(--black);
-
-
-
-
   font-size: 16px;
-
-
-
-
   margin-bottom: 20px;
-
-
-
-
 }
-
-
-
-
-
-
-
 
 img{
-
-
-
-
     width: 5em;
-
-
-
-
     height: 4.5em;
-
-
-
-
     position: relative;
-
-
-
-
     left: 40%;
-
-
-
-
     top: 15%;
-
-
-
-
 }
-
-
-
-
-p{
-
-
-
-
-    position: relative;
-
-
-
-
-    left: 20%;
-
-
-
-
-    top: 10%;
-
-
-
-
-    font-family: var(--font);
-
-
-
-
-    margin-left: 1em;
-
-
-
-
-    margin-top: 1em;
-
-
-
-
-    color: var(--black);
-
-
-
-
-    font-size: 16px;
-
-
-
-
-}
-
-
-
-
-
-
-
 
 .hierarchy{
     position: relative;
     left: 3%;
     font-size: 15px;
 
-
-
-
- 
-
-
-
-
 }
 
-
-
-
-
-
-
+/*****************/
+/* LINKS (DROPDOWN)/
+/*****************/
 #links label{
     font-size:15px;
     font-weight: bold;
-
 }
-
-
-
-
-
-
 
 .linkjes{
-
-
-
-
     position: relative;
-
-
-
-
     left: 5%;
-
-
-
-
     margin-top: 30px;
-
 }
 
-
-
-
 .linkjes a {
-
-
-
-
     padding: 5px 10px;
-
-
-
-
     background-color: var(--gray);
-
-
-
-
     color: var(--black);
-
-
-
-
     text-decoration: none;
-
-
-
-
     border-radius: 4px;
-
-
-
-
     margin-right: 10px;
-
-
-
-
     font-family: var(--font);
-
-
-
-
-    
-
-
-
-
   }
-
-
-
-
-  
-
-
-
 
   .linkjes a:last-child {
-
-
-
-
     margin-right: 0;
-
-
-
-
   }
-
-
-
-
-  
-
-
-
 
   .linkjes a:hover {
-
-
-
-
     background-color: var(--black);
-
-
-
-
     color: var(--white);
-
-
-
-
   }
 
 
 
-
-  dialog {
-
-    width: 40em;
-
-
-
-
-    padding: 20px;
-
-    background-color: #f1f1f1;
-
-    border: none;
-
-    border-radius: 4px;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    position: fixed;
-
-    top: 50%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    z-index: 9999;
-
-  }
-
-  
-
-  dialog::backdrop {
-
-    background-color: rgba(0, 0, 0, 0.5);
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-  }
-
-  dialog {
-    width: 40em;
-
-    padding: 20px;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  }
-  
-  dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  
-  dialog[open] {
-    display: block;
-  }
-  
-
-  .dialog-form-container {
-    position: relative;
-    z-index: 99999;
-  }
-
+/*****************/
+/*  RESPONSIVE  */
+/*****************/
 
   @media (max-width: 60em) {
     form {
@@ -1054,103 +559,4 @@ p{
     }
     }
 
-  dialog {
-    width: 40em;
-
-    padding: 20px;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  }
-  
-  dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  
-  dialog[open] {
-    display: block;
-  }
-  
-
-  .dialog-form-container {
-    position: relative;
-    z-index: 99999;
-  }
-
-
-/* loading state */
-#loadingState {
-  position: relative;
-}
-
-#background {
-  background-color: #fffe;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  inset: 0;
-}
-
-#loadingState h2 {
-  position: absolute;
-  bottom: 50vh;
-  left: 5vw;
-  font-size: 5em;
-  font-family: 'Poppins', sans-serif;
-  z-index: 33929929;
-}
-
-#loadingState h2:nth-child(1) {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--blue);
-}
-
-#loadingState h2:nth-child(2) {
-  color: var(--blue);
-  -webkit-text-stroke: 2px var(--blue);
-  animation: animate 4s ease-in-out infinite;
-}
-
-@keyframes animate {
-
-  0%,
-  100% {
-    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
-  }
-
-  20% {
-    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
-  }
-
-}
-
-p {
-  color: var(--blue);
-  position: absolute;
-  bottom: 8em;
-  left: 40vh;
-}
-
-.hidden {
-  display: none;
-}
-
-
-@media (max-width: 60em) {
-form {
-  width: 80%;
-  margin: auto;
-}
-}
+ 
