@@ -342,6 +342,26 @@ socket.on('typing', (typing) => {
 // });
 
 
+
+function add(message, name, time, id) {
+  messages.appendChild(
+    Object.assign(document.createElement("li"), {
+      innerHTML: `<section id='message'>
+      <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+      <div class="message-name-time">
+      <p class="name">${name}</p> 
+      <span class="message">${message}</span>
+      <span class="time">${time}</span> 
+      </div>
+      </section>`,
+    })
+  )
+  messages.scrollTop = messages.scrollHeight;
+  last = id;
+};
+  
+
+
 boxes.forEach(box => {
   box.addEventListener('click', function() {
     const boxElement = box.querySelector('.box');
