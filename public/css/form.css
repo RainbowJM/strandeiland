@@ -43,7 +43,9 @@
 
 
 h1 {
-  text-align: center;
+  font-family: var(--font);
+  position: relative;
+  left: 25%;
   margin-bottom: 1em;
   margin-top: .5em;
 }
@@ -87,19 +89,19 @@ form {
 /*****************/
 
 input:required:invalid {
-  border: 2px solid #f6a192;
+  border: .2em solid #f6a192;
 }
 
 input:required:valid {
-  border: 2px solid green;
+  border: .2em solid green;
 }
 
 textarea:required:invalid {
-  border: 2px solid #f6a192;
+  border: .2em solid #f6a192;
 }
 
 textarea:required:valid {
-  border: 2px solid green;
+  border: .2em solid green;
 }
 
 
@@ -546,6 +548,8 @@ img{
     color: var(--white);
   }
 
+
+  
 
 
 /*****************/

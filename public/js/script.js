@@ -14,7 +14,7 @@ let last;
 if (localStorage.getItem(localStorageKey)) {
   const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
 
-  // Populate the form fields with saved data
+
   if (titleInput) {
     titleInput.value = savedFormData.title;
   }
@@ -34,9 +34,12 @@ if (localStorage.getItem(localStorageKey)) {
     selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : "Geen bestand geselecteerd";
     customImagePreview.innerHTML = savedFormData.file ? `<img src="${URL.createObjectURL(savedFormData.file)}" alt="Selected Image">` : "";
   }
+
+  const selectedOption = document.querySelector('.selected-option');
+  selectedOption.textContent = savedFormData.themes.length > 0 ? savedFormData.themes.join(", ") : "Selecteer de passende thema's";
 }
 
-// Save form data to localStorage whenever there is a change in the form fields
+
 function saveFormData() {
   const formData = {
     title: titleInput.value,
@@ -55,9 +58,14 @@ function saveFormData() {
   }
 
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
+
+
+  const selectedOption = document.querySelector('.selected-option');
+  selectedOption.textContent = formData.themes.length > 0 ? formData.themes.join(", ") : "Selecteer de passende thema's";
 }
 
-// Add event listeners to form fields for saving form data
+
+
 if (titleInput) {
   titleInput.addEventListener("input", saveFormData);
 }
@@ -105,11 +113,10 @@ function updateFormData() {
   const selectedOption = document.querySelector('.selected-option');
   selectedOption.textContent = selectedCheckboxes.length > 0 ? selectedCheckboxes.join(", ") : "Selecteer de passende thema's";
 
-  // Call the saveFormData function to update the saved form data in localStorage
   saveFormData();
 }
 
-// Add event listeners to checkboxes for updating form data
+
 if (themeCheckboxes) {
   themeCheckboxes.forEach(function(checkbox) {
     checkbox.addEventListener("change", updateFormData);
@@ -147,7 +154,6 @@ themeCheckboxes.forEach(function(checkbox) {
 
 
 if (uploadButton) {
-  event.preventDefault()
   uploadButton.addEventListener("click", handleUploadButtonClick);
   }
 
@@ -392,7 +398,10 @@ function handleSelectedOptionClick() {
   selectedOption.classList.toggle('open');
 }
 
+function handleUploadButtonClick(event) {
+  event.preventDefault(); 
 
+}
 
 
 function handleCheckboxChange() {

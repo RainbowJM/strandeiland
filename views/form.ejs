@@ -29,6 +29,7 @@
                 <textarea name="description" id="description" cols="30" rows="10"
                     placeholder="Beschrijf je wens zo duidelijk mogelijk" minlength="2" maxlength="200"
                     required></textarea>
+
                 <label for="theme">Thema's</label>
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption" >Selecteer de passende thema's</div>
@@ -37,12 +38,11 @@
                             <% themes.forEach(theme =>{ %>
                                 <li>
                                   <label>
-                                    <input type="checkbox" value="<%= theme.label %>" name="theme">
+                                    <input type="checkbox" value="<%= theme.id %>" name="theme">
                                     <%= theme.label %>
                                   </label>
                                 </li>
                               <% }); %>
-                            
                         </ul>
                     </div>
                 </fieldset>
