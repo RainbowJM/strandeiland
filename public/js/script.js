@@ -1,6 +1,6 @@
 // ------------------ variables -------------------------------------------------------
 import { messages, submitMessage, input, tabs, filterMenu, themeFilterBtn, themeSelect, asideItems, theMenuButton, typingElement, selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, 
-  customImagePreview, selectedFileName, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue, uploadDialog, closeDialogButton} from "./modules/variables.js";
+  customImagePreview, selectedFileName, savedFormData, imageLinkInput, imagePreview, filterThemeBtn, uploadButton, boxes, titleInput, descriptionTextarea, helperIconValue, votersIconValue, ambassadorsIconValue, uploadDialog, closeDialogButton, imgCloseDialogButton} from "./modules/variables.js";
 import { toggleFilterMenu } from "./modules/filter.js";
 import { toggleMenu } from "./modules/navigationMenu.js";
 import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./modules/dynamicIconData.js";
@@ -9,15 +9,126 @@ import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./m
 const socket = io();
 let last;
 
-console.log('hello world')
+
 // ------------------ logic -------------------------------------------------------
-if (uploadDialog) {
-  uploadButton.addEventListener("click", showDialog);
-  closeDialogButton.addEventListener("click", closeDialog);
+if (localStorage.getItem(localStorageKey)) {
+  const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
+
+  // Populate the form fields with saved data
+  if (titleInput) {
+    titleInput.value = savedFormData.title;
+  }
+  if (descriptionTextarea) {
+    descriptionTextarea.value = savedFormData.description;
+  }
+  if (themeCheckboxes) {
+    themeCheckboxes.forEach((checkbox) => {
+      checkbox.checked = savedFormData.themes.includes(checkbox.value);
+    });
+  }
+  if (imageLinkInput) {
+    imageLinkInput.value = savedFormData.imageLink;
+    imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
+  }
+  if (fileInput) {
+    selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : "Geen bestand geselecteerd";
+    customImagePreview.innerHTML = savedFormData.file ? `<img src="${URL.createObjectURL(savedFormData.file)}" alt="Selected Image">` : "";
+  }
+}
+
+// Save form data to localStorage whenever there is a change in the form fields
+function saveFormData() {
+  const formData = {
+    title: titleInput.value,
+    description: descriptionTextarea.value,
+    themes: [],
+    imageLink: imageLinkInput.value,
+    file: fileInput.files[0]
+  };
+
+  if (themeCheckboxes) {
+    themeCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+        formData.themes.push(checkbox.value);
+      }
+    });
+  }
+
+  localStorage.setItem(localStorageKey, JSON.stringify(formData));
+}
+
+// Add event listeners to form fields for saving form data
+if (titleInput) {
+  titleInput.addEventListener("input", saveFormData);
+}
+if (descriptionTextarea) {
+  descriptionTextarea.addEventListener("input", saveFormData);
+}
+if (themeCheckboxes) {
+  themeCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", saveFormData);
+  });
+}
+if (imageLinkInput) {
+  imageLinkInput.addEventListener("input", () => {
+    saveFormData();
+    imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
+  });
+}
+if (fileInput) {
+  fileInput.addEventListener("change", () => {
+    saveFormData();
+    const file = fileInput.files[0];
+    if (file) {
+      selectedFileName.textContent = file.name;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.alt = "Selected Image";
+        customImagePreview.innerHTML = "";
+        customImagePreview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      selectedFileName.textContent = "Geen bestand geselecteerd";
+      customImagePreview.innerHTML = "";
+    }
+  });
+}
+
+function updateFormData() {
+  const selectedCheckboxes = Array.from(themeCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  const selectedOption = document.querySelector('.selected-option');
+  selectedOption.textContent = selectedCheckboxes.length > 0 ? selectedCheckboxes.join(", ") : "Selecteer de passende thema's";
+
+  // Call the saveFormData function to update the saved form data in localStorage
+  saveFormData();
+}
+
+// Add event listeners to checkboxes for updating form data
+if (themeCheckboxes) {
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", updateFormData);
+  });
 }
 
 
-console.log(selectedOption)
+
+
+
+if (uploadDialog) {
+  uploadButton.addEventListener("click", showDialog);
+  closeDialogButton.addEventListener("click", closeDialog);
+  imgCloseDialogButton.addEventListener("click", imgCloseDialog);
+
+}
+
+
+
 
 if (selectedOption) {
   console.log(selectedOption)
@@ -38,24 +149,12 @@ themeCheckboxes.forEach(function(checkbox) {
 
 
 if (uploadButton) {
-  preventDefault()
+  event.preventDefault()
   uploadButton.addEventListener("click", handleUploadButtonClick);
   }
 
-if (savedFormData) {
-  const parsedFormData = JSON.parse(savedFormData);
 
-  document.getElementById("title").value = parsedFormData.title;
-  document.getElementById("description").value = parsedFormData.description;
 
-  parsedFormData.themas.forEach(function(theme) {
-    const checkbox = document.querySelector(`#themeDropdownMenu input[type='checkbox'][value='${theme}']`);
-    if (checkbox) {
-      checkbox.checked = true;
-    }
-  });
-  updateFormData();
-}
 
 if (imageLinkInput) {
   imageLinkInput.addEventListener('input', () => {
@@ -261,6 +360,26 @@ socket.on('typing', (typing) => {
 // });
 
 
+
+function add(message, name, time, id) {
+  messages.appendChild(
+    Object.assign(document.createElement("li"), {
+      innerHTML: `<section id='message'>
+      <img src="/images/bob.jpeg" alt="avatar" class="avatar">
+      <div class="message-name-time">
+      <p class="name">${name}</p> 
+      <span class="message">${message}</span>
+      <span class="time">${time}</span> 
+      </div>
+      </section>`,
+    })
+  )
+  messages.scrollTop = messages.scrollHeight;
+  last = id;
+};
+  
+
+
 boxes.forEach(box => {
   box.addEventListener('click', function() {
     const boxElement = box.querySelector('.box');
@@ -287,43 +406,12 @@ function displaySelectedOption(selectElement) {
   selectElement.value = selectedOption;
 }
 
-function add(message, name, time, id) {
-  messages.appendChild(
-    Object.assign(document.createElement("li"), {
-      innerHTML: `<section id='message'>
-      <img src="/images/bob.jpeg" alt="avatar" class="avatar">
-      <div class="message-name-time">
-      <p class="name">${name}</p> 
-      <span class="message">${message}</span>
-      <span class="time">${time}</span> 
-      </div>
-      </section>`,
-    })
-  )
-  messages.scrollTop = messages.scrollHeight;
-  last = id;
-};
     
-function updateFormData() {
-  const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
-  const selectedThemes = [];
+// const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
+//   const selectedThemes = [];
+// selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
 
-  checkboxes.forEach(function(checkbox) {
-    if (checkbox.checked) {
-      selectedThemes.push(checkbox.value);
-    }
-  });
 
-  selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
-
-  const formData = {
-    title: document.getElementById("title").value,
-    description: document.getElementById("description").value,
-    themes: selectedThemes
-  };
-
-  localStorage.setItem(localStorageKey, JSON.stringify(formData));
-}
 
 
 function showDialog() {
@@ -333,5 +421,11 @@ function showDialog() {
 function closeDialog() {
   uploadDialog.close();
 }
+
+
+function imgCloseDialog() {
+  uploadDialog.close();
+}
+
 
 
