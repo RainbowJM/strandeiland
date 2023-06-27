@@ -52,7 +52,7 @@
                 </h3>
                 <ul class="suggestion-items">
                     <% suggestions.forEach(suggestion=> { %>
-                        <%- include('./partials/article.ejs', {suggestion: suggestion, themes: themes})%>
+                        <%- include('./partials/article.ejs', {suggestion: suggestion})%>
                             <% }) %>
                 </ul>
             </div>
