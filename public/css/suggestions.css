@@ -217,7 +217,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(transparent 10px, white);
+  background: linear-gradient(transparent 10px, var(--white));
 }
 
 .thumbnail-container article h2 {
