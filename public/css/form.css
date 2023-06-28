@@ -59,7 +59,7 @@ h1 {
 
 p{
   position: relative;
-  left: 20%;
+  left: 25%;
   top: 10%;
   font-family: var(--font);
   margin-left: 1em;
@@ -282,7 +282,6 @@ input#title::placeholder,
     background-color: var(--blue);
     font-weight: bold;
     color: var(--white);
-    
 }
 
 #imgCloseDialog {
@@ -298,6 +297,7 @@ input#title::placeholder,
   width: fit-content;
   position: relative;
   left: 5%;
+  top: 6em;
   font-weight: bold;
 }
 
@@ -499,6 +499,7 @@ button#closeDialog:hover{
   margin-top: 10px;
   background-color: var(--gray);
   height: 10em;
+  top: 7em;
 }
 
 .file-input-container label {
@@ -525,7 +526,7 @@ button#closeDialog:hover{
 p#selectedFileName {
   position: relative;
   left: 3%;
-  margin-top: 10px;
+  top: 3em;
   font-family: var(--font);
   color: var(--black);
   font-size: 16px;
@@ -543,6 +544,7 @@ img{
 .hierarchy{
     position: relative;
     left: 3%;
+    top: 6.5em;
     font-size: 15px;
 
 }
@@ -550,6 +552,7 @@ img{
 /*****************/
 /* LINKS (DROPDOWN)/
 /*****************/
+
 #links label{
     font-size:15px;
     font-weight: bold;
@@ -581,7 +584,23 @@ img{
   }
 
 
+  .link-preview{
+    position: relative;
+    top: 3em;
+  }
 
+
+  label[for="or"]{
+    position: relative;
+    top: 5em;
+    left: 5%;
+  }
+
+
+  .title-link{
+    position: relative;
+    left: 3%;
+  }
 
 
 /*****************/
@@ -598,6 +617,22 @@ img{
 
     .hidden-id {
       display: none;
+    }
+    
+
+
+    .close-button {
+      border: none;
+      background-color: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 3em;
+      cursor: pointer;
+      z-index: 9999; 
+    }
+    
+    .close-button:hover {
+      background-color: #f1f1f1;
     }
     
 

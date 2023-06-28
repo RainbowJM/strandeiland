@@ -206,7 +206,7 @@ if (fileInput) {
         img.alt = "Selected Image";
         customImagePreview.innerHTML = "";
   
-        const closeButton = document.getElementById("button");
+        const closeButton = document.querySelector("button");
         closeButton.classList.add("close-button");
         closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
   
