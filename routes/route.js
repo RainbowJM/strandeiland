@@ -57,7 +57,7 @@ router.get("/", async (req, res) => {
     for (let j = 0; j < themeSuggestions.length; j++) {
       const item = themeSuggestions[j];
       if (item.suggestionId === suggestion.id) {
-        themeIds.push(item.themaId);
+        themeIds.push(item.themeId);
       }
     }
     const themes = [];
@@ -88,7 +88,7 @@ router.get("/", async (req, res) => {
     for (let j = 0; j < themeSuggestions.length; j++) {
       const item = themeSuggestions[j];
       if (item.suggestionId === suggestion.id) {
-        themeIds.push(item.themaId);
+        themeIds.push(item.themeId);
       }
     }
     const themes = [];
@@ -192,7 +192,7 @@ router.get("/wens/:id", async (req, res) => {
     }
     for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
-        if (t.id === relatedTheme.themaId) {
+        if (t.id === relatedTheme.themeId) {
           theme.push(t);
         }
       }
@@ -278,7 +278,7 @@ router.get("/user/:first_name", async (req, res) => {
     label = []
     for (const relatedTheme of relatedThemes) {
       for (const theme of themeData) {
-        if (relatedTheme.themaId === theme.id) {
+        if (relatedTheme.themeId === theme.id) {
           label.push(theme.label);
         }
       }
