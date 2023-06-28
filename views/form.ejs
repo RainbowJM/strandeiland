@@ -17,8 +17,8 @@
         <a href="/">Terug</a>
     </div>
 
+
     <div class="form-container">
-       
 
         <form action="/form" method="post">
             <h1>Maak een wens</h1>
@@ -27,19 +27,25 @@
                 <input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2"
                     maxlength="40" required>
                 <label for="description">Wens beschrijving</label>
+
                 <textarea name="description" id="description" cols="30" rows="10"
                     placeholder="Beschrijf je wens zo duidelijk mogelijk" minlength="2" maxlength="200"
                     required></textarea>
+
                 <label for="theme">Thema's</label>
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption" >Selecteer de passende thema's</div>
+                    <p class="valid">Kies maximaal uit 4 thema's</p>
                     <div class="dropdown-container" id="themeDropdownMenu" >
                         <ul class="dropdown-menu" >
                             <% themes.forEach(theme =>{ %>
                                 <li>
                                   <label>
-                                    <input type="checkbox" value="<%= theme.label %>" name="theme">
-                                    <%= theme.label %>
+                                    <input type="checkbox" value="<%= theme.id %>" name="theme">
+                                    <span>
+                                     <%= theme.label %>
+                                    </span>
+                                    
                                   </label>
                                 </li>
                               <% }); %>
@@ -47,12 +53,13 @@
                         </ul>
                     </div>
                 </fieldset>
-                <label for="imagelabel" required>Afbeelding</label>
-                <button id="uploadButton" aria-label="upload foto">afbeelding toevoegen</button>
+
+                <label for="imagelabel">Afbeelding</label>
+                <button id="uploadButton">afbeelding toevoegen</button>
 
                 <dialog class="no-js">
                 
-                    <button id="closeDialog" aria-label="sluit venster">sluiten</button>  
+                    <button id="closeDialog">sluiten</button>  
 
                 <div id="links">
 
@@ -68,9 +75,12 @@
 
                     </div>
 
-                    <p class="hierarchy">Link</p>
-                    <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier je link">
-                    <div id="imagePreview"></div>
+                    <div class="link-preview">
+                        <p class="title-link">Link</p>
+                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier je link">
+                        <div id="imagePreview"></div>
+                    </div>
+                   
 
                     <label for="or">Of</label>
 
@@ -90,9 +100,10 @@
                     <div id="customImagePreview"></div>
 
                     <p id="selectedFileName">Geen bestand geselecteerd</p>
-                    <div id="closeButton" class="hidden">&#10006;</div>
 
-                    <button id="imgCloseDialog" aria-label="upload foto">afbeelding uploaden</button>
+                    <!-- <div id="closeButton" >&#10006;</div> -->
+
+                    <button id="imgCloseDialog">afbeelding uploaden</button>
 
                 </div>
 
