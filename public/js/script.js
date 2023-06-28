@@ -23,7 +23,7 @@ const themes = [
   { id: '11', label: 'verkeer' },
   { id: '12', label: 'strand' },
   { id: '13', label: 'onderwijs' },
-  { id: '13', label: 'over' }
+  { id: '14', label: 'over' }
 ];
 
 
@@ -53,7 +53,6 @@ if (localStorage.getItem(localStorageKey)) {
   }
 
   const selectedOption = document.querySelector('.selected-option');
-  // selectedOption.textContent = savedFormData.themes.length > 0 ? savedFormData.themes.join(", ") : "Selecteer de passende thema's";
   
 }
 
@@ -79,7 +78,6 @@ function saveFormData() {
 
 
   const selectedOption = document.querySelector('.selected-option');
-  // selectedOption.textContent = formData.themes.length > 0 ? formData.themes.join(", ") : "Selecteer de passende thema's";
 }
 
 
@@ -208,15 +206,15 @@ if (fileInput) {
   
         const closeButton = document.querySelector("button");
         closeButton.classList.add("close-button");
-        closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
+        closeButton.innerHTML = "&times;"; 
   
 
         closeButton.addEventListener("click", function() {
-          // Clear the file input value
+  
 
           fileInput.value = "";
   
-          // Clear the image preview
+        
           customImagePreview.innerHTML = "";
           selectedFileName.textContent = "Geen bestand geselecteerd";
   
@@ -306,15 +304,7 @@ if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
 }
 
-// if (titleInput) {
-//   titleInput.addEventListener('input', function() {
-//     if (titleInput.value.trim() === '') {
-//       titleInput.setCustomValidity('Please enter a title');
-//     } else {
-//       titleInput.setCustomValidity('');
-//     }
-//   });
-// }
+
 
 if (helperIconValue || votersIconValue || ambassadorsIconValue) {
   addRandomHelperValue();
@@ -477,12 +467,12 @@ if (themeCheckboxes) {
   themeCheckboxes.forEach(function(checkbox) {
     checkbox.addEventListener('change', function() {
       updateSelectedOptionText();
-      // Additional logic or validations can be added here if needed
+    
     });
   });
 }
 
-// Initial update when the page loads
+
 updateSelectedOptionText();
 
 
