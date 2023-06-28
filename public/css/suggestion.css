@@ -250,6 +250,7 @@ main {
   margin: 0.3em 0;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 #sharers ul li img {
@@ -272,14 +273,18 @@ main {
 }
 
 .box.show {
+  top: 0;
   display: block;
-  margin-left: 10em;
+  margin-left: 3em;
   z-index: 10000;
   border: none;
+  position: absolute;
+  height: 3em;
 }
 
 #box-left.show {
-  margin-right: 22vw;
+  position: absolute;
+  right: 4.5em;
 }
 
 .box h3 {
@@ -287,7 +292,11 @@ main {
   font-size: 0.875em;
   width: max-content;
   position: absolute;
-  top: 1em;
+}
+
+.box h4 {
+  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 .box a {
@@ -357,6 +366,6 @@ main {
   }
 
   #box-left.show {
-    margin-right: 33vw;
+    right: 3.8em;
   }
 }
