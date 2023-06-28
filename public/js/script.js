@@ -113,7 +113,7 @@ if (fileInput && savedFormData && savedFormData.file) {
     }
   };
   reader.readAsDataURL(savedFormData.file);
-} else {
+} else if (selectedFileName) {
   selectedFileName.textContent = "Geen bestand geselecteerd";
   
   if (customImagePreview) {
@@ -412,21 +412,25 @@ function handleCheckboxChange() {
   updateFormData();
 }
 
+
 function displaySelectedOption(selectElement) {
   const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
   const selectedOptionElement = document.querySelector('.selected-option');
 
-  if (savedFormData && savedFormData.themes.length > 0) {
-    const selectedThemes = themes
-      .filter((theme) => savedFormData.themes.includes(theme.id))
-      .map((theme) => theme.label);
+  if (selectedOptionElement) {
+    if (savedFormData && savedFormData.themes.length > 0) {
+      const selectedThemes = themes
+        .filter((theme) => savedFormData.themes.includes(theme.id))
+        .map((theme) => theme.label);
 
-    selectedOptionElement.textContent = selectedThemes.join(", ");
+      selectedOptionElement.textContent = selectedThemes.join(", ");
+    } else {
+      selectedOptionElement.textContent = "Selecteer de passende thema's";
+    }
   } else {
-    selectedOptionElement.textContent = "Selecteer de passende thema's";
+    console.error("Selected option element not found.");
   }
 }
-displaySelectedOption(themeSelect);
 
 const maxThemes = 4;
 
