@@ -53,7 +53,6 @@ textarea#description:focus {
 
 h1 {
  margin: .5em 0 .5em 10em;
-
 }
 
 
@@ -558,11 +557,11 @@ img{
 }
 
 .linkjes a {
-    padding: 1em .5em;
+    padding: .5em .5em;
     background-color: var(--gray);
     color: var(--black);
     text-decoration: none;
-    border-radius: .25em;
+    border-radius: .1em;
     margin-right: .625em;
     font-family: var(--font);
   }
@@ -596,6 +595,18 @@ img{
     font-size: 1em;
   }
 
+  
+  .close-button {
+    border: none;
+    background-color: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 3em;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+  
+ 
 
 /*****************/
 /*  RESPONSIVE  */
@@ -609,23 +620,6 @@ img{
     }
 
 
-    .hidden-id {
-      display: none;
-    }
-    
-
-
-    .close-button {
-      border: none;
-      background-color: none;
-      color: #000;
-      font-weight: bold;
-      font-size: 3em;
-      cursor: pointer;
-      z-index: 9999; 
-    }
-    
-   
     
 
 
