@@ -317,7 +317,7 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
-  try {
+  {
     const { data, error } = await supabase
       .from("suggestion")
       .insert([
@@ -364,17 +364,18 @@ router.post("/form", async (req, res) => {
     });
 
     await Promise.all(themeInsertPromises);
-    res.render("sent", {
-      title: "sent",
-    });
-  } catch (error) {
-    res.status(500).json({
-      error: "Het toevoegen van de wens ging fout, probeer opnieuw",
-    });
-    console.log(error);
-    return;
+    res.render("sent", { title: "sent" });
   }
-});
+  });
+
+  // } catch (error) {
+  //   res.status(500).json({
+  //     error: "Het toevoegen van de wens ging fout, probeer opnieuw",
+  //   });
+  //   console.log(error);
+  //   return;
+  // }
+// });
 
 router.get("/sent", (req, res) => {
   res.render("sent", {
