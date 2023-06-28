@@ -299,6 +299,10 @@ main {
   bottom: 0;
 }
 
+.box-click button{
+  background-color: var(--white);
+  border: none;
+}
 
 @media (max-width: 50em) {
   main {
@@ -346,12 +350,10 @@ main {
 
   aside {
     grid-template-columns: minmax(0, 1fr);
-
   }
 
   #joiners{
     margin: 0;
-    
   }
 
   #box-left.show {

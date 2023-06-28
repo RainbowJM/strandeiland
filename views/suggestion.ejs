@@ -21,14 +21,14 @@
     <main>
         <section class="wish">
             <div id="img-container">
-                <img src="<%= suggestion.image%> " alt="Vanuit de natuur" >
+                <img src="<%= suggestion.image%> " alt="Vanuit de natuur">
             </div>
             <article>
                 <h2> <%= suggestion.title %> </h2>
                 <section class="join" id="suggestion-label">
                     <% themes.forEach(theme => { %>
-                        <h3> <%= theme.label %> </h3>
-                          <% }) %>
+                    <h3> <%= theme.label %> </h3>
+                    <% }) %>
                 </section>
                 <p id="time"> Geplaatst op <%= time %></p>
                 <p> <%= suggestion.description %> </p>
@@ -45,7 +45,8 @@
                 <p id="typing"></p>
                 <form class="message-input">
                     <input type="text" id="message-input" autocomplete="off" placeholder="Type your message..">
-                    <button type="submit" id="message-button" aria-label="verstuur bericht"><i class="fa-regular fa-paper-plane" style="color: #000000"></i></button>
+                    <button type="submit" id="message-button" aria-label="verstuur bericht"><i
+                            class="fa-regular fa-paper-plane" style="color: #000000"></i></button>
                 </form>
             </section>
         </section>
@@ -108,196 +109,244 @@
                 <h3>20 personen delen deze wens</h3>
                 <ul>
                     <li class="box-click">
-                        <img src="/images/mia.png" alt="mia">
-                        <button class="box" aria-label="profiel van mia thompson">
-                            <h3>Mia Thomps</h3>
-                            <h4>docent</h4>
-                            <a href="/user/Mia">Bekijk profiel</a>
+                        <button>
+                            <img src="/images/mia.png" alt="mia">
+                            <div class="box" aria-label="profiel van mia thompson">
+                                <h3>Mia Thomps</h3>
+                                <h4>docent</h4>
+                                <a href="/user/Mia">Bekijk profiel</a>
+                            </div>
                         </button>
                     </li>
                     <li class="box-click">
-                        <img src="/images/jaap.png" alt="jaap">
-                        <button class="box" aria-label="profiel van Jaap Erts">
-                            <h3>Jaap Erts</h3>
-                            <h4>Docent</h4>
-                            <a href="/user/Jaap">Bekijk profiel</a>
+                        <button>
+                            <img src="/images/jaap.png" alt="jaap">
+                            <div class="box" aria-label="profiel van Jaap Erts">
+                                <h3>Jaap Erts</h3>
+                                <h4>Docent</h4>
+                                <a href="/user/Jaap">Bekijk profiel</a>
+                            </div>
                         </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van Davind Nguyen">
+                        <div class="box" aria-label="profiel van Davind Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="#/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/mia.png" alt="mia">
-                        <button class="box" aria-label="profiel van mia thompson">
+                        <div class="box" aria-label="profiel van mia thompson">
                             <h3>Mia Thomps</h3>
                             <h4>Docent</h4>
                             <a href="/user/Mia">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van Emma Johnson">
+                        <div class="box" aria-label="profiel van Emma Johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van David Nguyen">
+                        <div class="box" aria-label="profiel van David Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" id="box-left" aria-label="profiel van Emma Johnson">
+                        <div class="box" id="box-left" aria-label="profiel van Emma Johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/jaap.png" alt="jaap">
-                        <button class="box" aria-label="profiel van jaap erts">
+                        <div class="box" aria-label="profiel van jaap erts">
                             <h3>Jaap Erts</h3>
                             <h4>Docent</h4>
                             <a href="/user/Jaap">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van David Nguyen">
+                        <div class="box" aria-label="profiel van David Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma Johnson">
+                        <div class="box" aria-label="profiel van emma Johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma johnson">
+                        <div class="box" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma johnson">
+                        <div class="box" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/mia.png" alt="mia">
-                        <button class="box" aria-label="profiel van mia thompson">
+                        <div class="box" aria-label="profiel van mia thompson">
                             <h3>Mia Thomps</h3>
                             <h4>Docent</h4>
                             <a href="/user/Mia">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" id="box-left" aria-label="profiel van emma johnson">
+                        <div class="box" id="box-left" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/mia.png" alt="mia">
-                        <button class="box" aria-label="profiel van mia thompson">
+                        <div class="box" aria-label="profiel van mia thompson">
                             <h3>Mia Thomps</h3>
                             <h4>Docent</h4>
                             <a href="/user/Mia">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van david Nguyen">
+                        <div class="box" aria-label="profiel van david Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma johnson">
+                        <div class="box" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van david Nguyen">
+                        <div class="box" aria-label="profiel van david Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma johnson">
+                        <div class="box" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/jaap.png" alt="jaap">
-                        <button class="box" aria-label="profiel van jaap erts">
+                        <div class="box" aria-label="profiel van jaap erts">
                             <h3>Jaap Erts</h3>
                             <h4>Docent</h4>
                             <a href="/user/Jaap">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" id="box-left" aria-label="profiel van emma johnson">
+                        <div class="box" id="box-left" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
+                        </div>
                         </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/david.png" alt="david">
-                        <button class="box" aria-label="profiel van david Nguyen">
+                        <div class="box" aria-label="profiel van david Nguyen">
                             <h3>David Nguyen</h3>
                             <h4>Docent</h4>
                             <a href="/user/David">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/emma.png" alt="emma">
-                        <button class="box" aria-label="profiel van emma johnson">
+                        <div class="box" aria-label="profiel van emma johnson">
                             <h3>Emma John</h3>
                             <h4>Docent</h4>
                             <a href="/user/Emma">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                     <li class="box-click">
+                        <button>
                         <img src="/images/mia.png" alt="mia">
-                        <button class="box" aria-label="profiel van mia thompson">
+                        <div class="box" aria-label="profiel van mia thompson">
                             <h3>Mia Thomps</h3>
                             <h4>Docent</h4>
                             <a href="/user/Mia">Bekijk profiel</a>
-                        </button>
+                        </div>
+                    </button>
                     </li>
                 </ul>
             </div>
