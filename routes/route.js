@@ -57,7 +57,7 @@ router.get("/", async (req, res) => {
     for (let j = 0; j < themeSuggestions.length; j++) {
       const item = themeSuggestions[j];
       if (item.suggestionId === suggestion.id) {
-        themeIds.push(item.themaId);
+        themeIds.push(item.themeId);
       }
     }
     const themes = [];
@@ -88,7 +88,7 @@ router.get("/", async (req, res) => {
     for (let j = 0; j < themeSuggestions.length; j++) {
       const item = themeSuggestions[j];
       if (item.suggestionId === suggestion.id) {
-        themeIds.push(item.themaId);
+        themeIds.push(item.themeId);
       }
     }
     const themes = [];
@@ -112,11 +112,6 @@ router.get("/", async (req, res) => {
     });
   }
 
-  // const themeLabels = [];
-  // for (let i = 0; i < themeData.length; i++) {
-  //   const theme = themeData[i];
-  //   themeLabels.push(theme.label);
-  // }
   
 
   shuffleArray(suggestionsWithThemes);
@@ -197,7 +192,7 @@ router.get("/wens/:id", async (req, res) => {
     }
     for (const relatedTheme of relatedThemes) {
       for (const t of themeData) {
-        if (t.id === relatedTheme.themaId) {
+        if (t.id === relatedTheme.themeId) {
           theme.push(t);
         }
       }
@@ -283,7 +278,7 @@ router.get("/user/:first_name", async (req, res) => {
     label = []
     for (const relatedTheme of relatedThemes) {
       for (const theme of themeData) {
-        if (relatedTheme.themaId === theme.id) {
+        if (relatedTheme.themeId === theme.id) {
           label.push(theme.label);
         }
       }
@@ -317,7 +312,7 @@ router.get("/user/:first_name", async (req, res) => {
 });
 
 router.post("/form", async (req, res) => {
-  try {
+  {
     const { data, error } = await supabase
       .from("suggestion")
       .insert([
@@ -355,26 +350,19 @@ router.post("/form", async (req, res) => {
         .insert([
           {
             suggestionId: insertId,
-            themaId: themeData.id,
+            themeId: themeData.id,
           },
         ]);
       if (suggestionThemeError) {
-        throw suggestionThemeError;
+        console.error("Error:", themeError || suggestionThemeError);
       }
     });
 
     await Promise.all(themeInsertPromises);
-    res.render("sent", {
-      title: "sent",
-    });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
-    console.log(error);
-    return;
+    res.render("sent", { title: "sent" });
   }
-});
+  });
+
 
 router.get("/sent", (req, res) => {
   res.render("sent", {
