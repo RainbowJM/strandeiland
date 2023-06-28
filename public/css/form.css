@@ -65,7 +65,7 @@ p{
   margin-left: 1em;
   margin-top: 1em;
   color: var(--black);
-  font-size: 16px;
+  font-size: 1em;
 }
 
 
@@ -128,8 +128,8 @@ fieldset {
   display: flex;
   flex-direction: column;
   border-style: none;
-  margin-bottom: 20px;
-  padding: 40px 20px;
+  margin-bottom: 1.5em;
+  padding: 2.5em 1.25em;
   border-radius: var(--border-radius-large);
 }
 
@@ -138,7 +138,7 @@ fieldset textarea,
 fieldset .file-input-container,
 #imageLink
 {
-  margin-bottom: 10px;
+  margin-bottom: 0.63em;
   width: 85%;
   position: relative;
   left: 5%;
@@ -150,13 +150,7 @@ fieldset .dropdown-menu label{
     cursor: pointer;
 }
 
-fieldset label:focus,
-fieldset textarea:focus,
-fieldset .file-input-container:focus
-{
-  outline: none;
-  box-shadow: 0 0 4px var(--black);
-}
+
 
 
 fieldset label {
@@ -170,7 +164,7 @@ fieldset label {
 fieldset input[type="text"],
 fieldset input[type="url"] {
   width: 100%;
-  padding: 10px;
+  padding: 0.63em;
   background-color: var(--gray);
   box-sizing: border-box;
   border: none;
@@ -181,7 +175,7 @@ fieldset input[type="url"] {
 input[type="text"],
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 0.63em;
   background-color: var(--gray);
   box-sizing: border-box;
   border: none;
@@ -195,7 +189,7 @@ textarea:focus{
 }
 
 #title{
-  margin-bottom: 10px;
+  margin-bottom: 0.63em;
   width: 40%;
   position: relative;
   left: 5%;
@@ -210,7 +204,7 @@ textarea#description::placeholder,
 textarea#title::placeholder {
   font-style: var(--font);
   color: var(--dark-grey);
-  font-size: 15px;
+  font-size: 1em;
 }
 
 
@@ -218,7 +212,7 @@ input#title::placeholder,
 #imageLink::placeholder{
     font-family: var(--font);
     color: var(--dark-grey);
-    font-size: 15px;
+    font-size: 1em;
   }
 
 
@@ -239,14 +233,15 @@ input#title::placeholder,
 
   color: var(--white);
 
-  padding: 10px 20px;
+  padding: 1em 1.2em;
 
-  font-size: 16px;
+  font-size: 1em;
 
   border: none;
 
   cursor: pointer;
 
+  font-weight: bold;
   margin-bottom: 2em;
   margin-left: 1em;
   transition: all 0.5s ease-in-out;
@@ -263,8 +258,8 @@ input#title::placeholder,
 #uploadButton {
   background-color: var(--black);
   color: var(--white);
-  padding: 5px 10px;
-  font-size: 14px;
+  padding: 1em 1.2em;
+  font-size: 1em;
   border: none;
   cursor: pointer;
   width: auto;
@@ -287,8 +282,8 @@ input#title::placeholder,
 #imgCloseDialog {
   background-color: var(--black);
   color: var(--white);
-  padding: 5px 10px; 
-  font-size: 14px; 
+  padding: 1em 1.2em;
+  font-size: 1em; 
   border: none;
   cursor: pointer;
   width: auto;
@@ -317,11 +312,11 @@ input#title::placeholder,
 dialog {
   width: 40em;
   height: 60em;
-  padding: 20px;
+  padding: 1.25em;
   background-color: #f1f1f1;
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: .25em;
+  box-shadow: 0 .125em .25em rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -354,8 +349,8 @@ dialog[open] {
 button#closeDialog {
   background-color: var(--black);
   color: var(--white);
-  padding: 5px 10px;
-  font-size: 14px; 
+  padding: 1em 1.2em;
+  font-size: 1em; 
   border: none;
   cursor: pointer;
   width: auto;
@@ -363,8 +358,9 @@ button#closeDialog {
   display: inline-block;
   width: fit-content;
   position: relative;
-  left: 90%;
+  left: 85%;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
 }
 
 button#closeDialog:hover{
@@ -378,7 +374,7 @@ button#closeDialog:hover{
 /* THEME MENU*/
 /*****************/
 .dropdown {
-    margin-bottom: 10px;
+    margin-bottom: .625em;
     width: 85%;
     position: relative;
     left: 5%;
@@ -387,13 +383,13 @@ button#closeDialog:hover{
 
 .selected-option {
     cursor: pointer;
-    padding: 10px;
+    padding: .625em;
     background-color: var(--gray);
     color: var(--dark-grey);
     border: none;
     position: relative;
     font-family: var(--font);
-    font-size: 15px;
+    font-size: 1em;
     font-weight: normal;
     display: flex;
     align-items: center;
@@ -403,9 +399,9 @@ button#closeDialog:hover{
     content: "\2304";
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: .625em;
     transform: translateY(-50%);
-    font-size: 18px; 
+    font-size: .5em; 
     font-weight: bold; 
     line-height: 1;
 
@@ -413,7 +409,7 @@ button#closeDialog:hover{
 
 .selected-option.open::after {
   content: "×";
-  font-size: 18px; 
+  font-size: .5em; 
   transform: translateY(-50%);
   line-height: 1;
 }
@@ -421,23 +417,23 @@ button#closeDialog:hover{
 
 .dropdown-container {
   display: none;
-  margin-top: 10px;
-  }
+  margin-top: .625em;
+}
 
 .dropdown-menu {
   font-family: var(--font);
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--gray);
-  min-width: 200px;
+  min-width: 12.5em;
   border: border;
-  padding: 10px;
-  gap: 10px;
+  padding:  .625em;
+  gap: .625em;
   animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
 .dropdown-menu li {
-    border-radius: 4px;
+  border-radius: .25em;
   position: relative;
   align-items: center;
   font-weight: normal;
@@ -452,14 +448,13 @@ button#closeDialog:hover{
   display: inline-block;
   width: 100%;
   height: 2em;
-
 }
 .dropdown-menu input:checked + span {
     background-color: var(--dark-grey);
   color: var(--white);
   cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid var(--black);
+  border-radius: .25em;
+  border:  solid var(--black);
 }
 
 
@@ -496,7 +491,7 @@ button#closeDialog:hover{
 .file-input-container {
   position: relative;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: .625em;
   background-color: var(--gray);
   height: 10em;
   top: 5.5em;
@@ -507,9 +502,9 @@ button#closeDialog:hover{
   cursor: pointer;
   background-color: #f1f1f1;
   color: #333;
-  padding: 10px;
+  padding: .625em;
   border: none;
-  border-radius: 4px;
+  border-radius: .25em;
   font-family: var(--font);
 }
 
@@ -529,7 +524,7 @@ p#selectedFileName {
   top: 3em;
   font-family: var(--font);
   color: var(--black);
-  font-size: 16px;
+  font-size: 1em;
 
 }
 
@@ -545,7 +540,7 @@ img{
     position: relative;
     left: 3%;
     top: 6.5em;
-    font-size: 15px;
+    font-size: 1em;
 
 }
 
@@ -554,23 +549,23 @@ img{
 /*****************/
 
 #links label{
-    font-size:15px;
+    font-size: 1em;
     font-weight: bold;
 }
 
 .linkjes{
     position: relative;
     left: 5%;
-    margin-top: 30px;
+    margin-top: 1.875em;
 }
 
 .linkjes a {
-    padding: 5px 10px;
+    padding: 1em 1.2em;
     background-color: var(--gray);
     color: var(--black);
     text-decoration: none;
-    border-radius: 4px;
-    margin-right: 10px;
+    border-radius: .25em;
+    margin-right: .625em;
     font-family: var(--font);
   }
 
@@ -600,7 +595,7 @@ img{
   .title-link{
     position: relative;
     left: 3%;
-    font-size: 15px;
+    font-size: 1em;
   }
 
 
