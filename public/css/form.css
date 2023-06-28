@@ -249,14 +249,14 @@ input#title::placeholder,
 
   margin-bottom: 2em;
   margin-left: 1em;
+  transition: all 0.5s ease-in-out;
 }
 
 
 #sendButton:hover {
   background-color: var(--blue);
   font-weight: bold;
-  color: var(--black);
-  box-shadow: 0 0 3em rgba(0, 0, 1, 1);
+  color: var(--white);
 
 }
 
@@ -296,9 +296,9 @@ input#title::placeholder,
   display: inline-block;
   width: fit-content;
   position: relative;
-
   top: 6em;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
 }
 
 #imgCloseDialog:hover {
@@ -632,9 +632,7 @@ img{
       z-index: 9999; 
     }
     
-    .close-button:hover {
-      background-color: #f1f1f1;
-    }
+   
     
 
 
