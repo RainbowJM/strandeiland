@@ -313,8 +313,16 @@ main {
     width: 100%;
   }
 
+  .wish article {
+    transform: translateY(-40%);
+  }
+
   .wish img {
     max-width: 100%;
+  }
+
+  #img-container {
+    height: 24em;
   }
 
   .joiners {
