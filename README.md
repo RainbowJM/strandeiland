@@ -10,14 +10,8 @@
 # Strandeiland
 De komende jaren ontstaat een compleet nieuwe wijk aan de oostkant van Amsterdam: Strandeiland. Ambities zijn hoog: de wijk moet energieleverend zijn, groener dan de eerste versie van IJburg, bewoners moeten plezierig met elkaar kunnen samenwonen en de kansengelijkheid moet verbeterd worden.
 
-
-
 ## Live link 
-Hier is het live prototype te zien:
-
-**Nog deployen**
-
-
+Hier is het live prototype te zien: [Live link](https://strandeiland-production.up.railway.app/)
 
 ## Inhoudsopgave
 
@@ -28,12 +22,8 @@ Hier is het live prototype te zien:
 - [Installatie](#installatie)
   * [Repository clone](#repository-clone)
   * [Dependencies](#dependencies)
-  * [server](#server)
+  * [Server](#server)
 - [Licentie](#licentie)
-
-
-
-
 
 ## Case
 Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostrandeiland.nl website waar IJburg bewoners nieuwe voorstellen kunnen insturen voor de nieuwe wijk van Strandeiland. Hiermee wordt de communicatie tussen toekomstige bewoners van Strandeiland en de projectleiders van de gemeente Amsterdam bevorderd. Het doel is om via Hallo Strandeiland goede ideeën en voorstellen te verzamelen, te verbeteren en de mooie en haalbare ideeën/voorstellen gerealiseerd te krijgen. 
@@ -48,7 +38,6 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 
 3. Als projectmanager van de gemeente, wil ik voorstellen van toekomstige bewoners kunnen filteren op thema's, zodat ik per thema kan bekijken of er ideeën bijzitten die kunnen bijdragen aan een lagere ecologische footprint, of betere sociale cohesie van de wijk.
 
-
 ## Functionaliteiten 
 - Wensen kunnen filtreren op populariteit
 - Wensen kunnen filtreren van oud tot nieuw
@@ -56,30 +45,17 @@ Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostra
 - Het formulier van wensen opslaan in localstorage
 - Een real time chat, zodat de gebruikers tot elkaar kunnen praten 
 
-
-
 ## Tools 
 - EJS 
-- CSS
-- JavaScript
 - Supabase 
 - NPM
 - NodeJs
 - Express
-- Service worker 
-- Minify
-- Uglify,js
-
-
-
-
-
-
+- Gulp
 
 ## Installatie
 
 ### Repository clone
-
 Dit repository clonen:
 
 ```bash
@@ -93,28 +69,12 @@ De depenencies installeren:
 $ npm install
 ```
 
-### server 
+### Server 
 De server opstarten:
 
 ```bash
 $ npm run dev
 ```
 
-
-
-
 ## Licentie
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
-
-
-
-
-
-
-
-
-
-
-

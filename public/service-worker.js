@@ -60,7 +60,7 @@ self.addEventListener("fetch", (event) => {
           fetch(event.request).then((fetchRes) => {
             return caches.open(runtimeCacheName).then((cache) => {
               cache.put(event.request.url, fetchRes.clone());
-              // limitCacheSize(cacheName,5);
+             // limitCacheSize(cacheName,5);
               return fetchRes;
             });
           })
