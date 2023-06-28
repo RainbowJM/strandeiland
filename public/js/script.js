@@ -391,7 +391,6 @@ boxes.forEach(box => {
   box.addEventListener('click', function() {
     const boxElement = box.querySelector('.box');
     boxElement.classList.toggle('show');
-    console.log('click')
   });
 });
 
