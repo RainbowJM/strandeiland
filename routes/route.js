@@ -112,11 +112,12 @@ router.get("/", async (req, res) => {
     });
   }
 
-  const themeLabels = [];
-  for (let i = 0; i < themeData.length; i++) {
-    const theme = themeData[i];
-    themeLabels.push(theme.label);
-  }
+  // const themeLabels = [];
+  // for (let i = 0; i < themeData.length; i++) {
+  //   const theme = themeData[i];
+  //   themeLabels.push(theme.label);
+  // }
+  
 
   shuffleArray(suggestionsWithThemes);
 
@@ -136,7 +137,7 @@ router.get("/", async (req, res) => {
   } else {
     res.render("index", {
       title: "Wensen",
-      themes: themeLabels,
+      themes: themeData,
       suggestions: suggestionsWithThemes,
       latestSuggestions: latestsuggestionsWithThemes,
       totalSuggestions: count,
