@@ -26,10 +26,9 @@ Hier is het live prototype te zien: [Live link](https://strandeiland-production.
 - [Licentie](#licentie)
 
 ## Case
-Het bedrijf CrossmarX wil een nieuwe functionaliteit toevoegen voor de hallostrandeiland.nl website waar IJburg bewoners nieuwe voorstellen kunnen insturen voor de nieuwe wijk van Strandeiland. Hiermee wordt de communicatie tussen toekomstige bewoners van Strandeiland en de projectleiders van de gemeente Amsterdam bevorderd. Het doel is om via Hallo Strandeiland goede ideeën en voorstellen te verzamelen, te verbeteren en de mooie en haalbare ideeën/voorstellen gerealiseerd te krijgen. 
-
-
-
+Het participatieteam wil een nieuwe functionaliteit toevoegen aan de `hallostrandeiland.nl` website, waar mensen nieuwe voorstellen voor de nieuwe wijk Strandeiland kunnen indienen. 
+Dit bevordert de communicatie tussen toekomstige bewoners van Strandeiland en de projectleiders van de gemeente Amsterdam. 
+Het doel is om via Hallo Strandeiland goede ideeën en voorstellen te verzamelen, te verbeteren en de mooie en haalbare voorstellen gerealiseerd te krijgen.
 
 ## User stories 
 1. Als toekomstig bewoner, wil ik mijn voorstel voor een duurzamer, groener en socialer strandeiland kunnen delen, zodat dit onderzocht en hopelijk gerealiseerd kan worden.
