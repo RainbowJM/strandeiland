@@ -112,11 +112,6 @@ router.get("/", async (req, res) => {
     });
   }
 
-  // const themeLabels = [];
-  // for (let i = 0; i < themeData.length; i++) {
-  //   const theme = themeData[i];
-  //   themeLabels.push(theme.label);
-  // }
   
 
   shuffleArray(suggestionsWithThemes);
@@ -368,14 +363,6 @@ router.post("/form", async (req, res) => {
   }
   });
 
-  // } catch (error) {
-  //   res.status(500).json({
-  //     error: "Het toevoegen van de wens ging fout, probeer opnieuw",
-  //   });
-  //   console.log(error);
-  //   return;
-  // }
-// });
 
 router.get("/sent", (req, res) => {
   res.render("sent", {
