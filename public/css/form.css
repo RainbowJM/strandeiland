@@ -397,7 +397,7 @@ button#closeDialog:hover{
     top: 50%;
     right: .625em;
     transform: translateY(-50%);
-    font-size: .5em; 
+    font-size: 1.5em; 
     font-weight: bold; 
     line-height: 1;
 
@@ -405,7 +405,7 @@ button#closeDialog:hover{
 
 .selected-option.open::after {
   content: "×";
-  font-size: .5em; 
+  font-size: 1.5em; 
   transform: translateY(-50%);
   line-height: 1;
 }

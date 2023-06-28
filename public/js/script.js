@@ -56,7 +56,6 @@ if (localStorage.getItem(localStorageKey)) {
   
 }
 
-
 function saveFormData() {
   const formData = {
     title: titleInput.value,
@@ -388,12 +387,10 @@ function add(message, name, time, id) {
 };
   
 
-
 boxes.forEach(box => {
   box.addEventListener('click', function() {
     const boxElement = box.querySelector('.box');
     boxElement.classList.toggle('show');
-  
   });
 });
 
