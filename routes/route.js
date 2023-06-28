@@ -329,11 +329,33 @@ router.post("/form", async (req, res) => {
       throw error;
     }
 
-    console.log([parseInt(req.body.theme)]);
-
     const themes = Array.isArray(req.body.theme)
       ? req.body.theme
       : [req.body.theme];
+
+      const {data: residentData, error: residentError} = await supabase
+      .from("resident")
+      .select()
+    if (residentError) {
+      console.error("Error:", residentError);
+    } else {
+      let random = Math.floor(Math.random() * residentData.length);
+      for (const resident of residentData) {
+        if (random === resident.id) {
+          const { error: residentSuggestionError } = await supabase
+            .from("resident_suggestion")
+            .insert([
+              {
+                resident_id: random,
+                suggestion_id: insertId,
+              },
+            ]);
+          if (residentSuggestionError) {
+            console.error("Error:", residentSuggestionError);
+          }
+        }
+      }
+    }
 
     const themeInsertPromises = themes.map(async (theme) => {
       const { data: themeData, error: themeError } = await supabase
