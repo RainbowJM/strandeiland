@@ -17,15 +17,16 @@
         <a href="/">Terug</a>
     </div>
 
-    <h1>Maak een wens</h1>
-    <div class="form-container">
 
+    <div class="form-container">
+        <h1>Maak een wens</h1>
         <form action="/form" method="post">
             <fieldset>
                 <label for="title">Titel</label>
                 <input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2"
                     maxlength="40" required>
                 <label for="description">Wens beschrijving</label>
+
                 <textarea name="description" id="description" cols="30" rows="10"
                     placeholder="Beschrijf je wens zo duidelijk mogelijk" minlength="2" maxlength="200"
                     required></textarea>
@@ -33,13 +34,17 @@
                 <label for="theme">Thema's</label>
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption" >Selecteer de passende thema's</div>
+                    <p class="valid">Kies maximaal uit 4 thema's</p>
                     <div class="dropdown-container" id="themeDropdownMenu" >
                         <ul class="dropdown-menu" >
                             <% themes.forEach(theme =>{ %>
                                 <li>
                                   <label>
                                     <input type="checkbox" value="<%= theme.id %>" name="theme">
-                                    <%= theme.label %>
+                                    <span>
+                                     <%= theme.label %>
+                                    </span>
+                                    
                                   </label>
                                 </li>
                               <% }); %>
@@ -47,7 +52,8 @@
                         </ul>
                     </div>
                 </fieldset>
-                <label for="imagelabel" required>Afbeelding</label>
+
+                <label for="imagelabel">Afbeelding</label>
                 <button id="uploadButton">afbeelding toevoegen</button>
 
                 <dialog class="no-js">
@@ -90,6 +96,7 @@
                     <div id="customImagePreview"></div>
 
                     <p id="selectedFileName">Geen bestand geselecteerd</p>
+
                     <div id="closeButton" class="hidden">&#10006;</div>
 
                     <button id="imgCloseDialog">afbeelding uploaden</button>

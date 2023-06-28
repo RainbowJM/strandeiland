@@ -354,11 +354,11 @@ router.post("/form", async (req, res) => {
         .insert([
           {
             suggestionId: insertId,
-            themaId: themeData.id,
+            themeId: themeData.id,
           },
         ]);
       if (suggestionThemeError) {
-        throw suggestionThemeError;
+        console.error("Error:", themeError || suggestionThemeError);
       }
     });
 
@@ -367,9 +367,9 @@ router.post("/form", async (req, res) => {
       title: "sent",
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Het toevoegen van de wens ging fout, probeer opnieuw" });
+    res.status(500).json({
+      error: "Het toevoegen van de wens ging fout, probeer opnieuw",
+    });
     console.log(error);
     return;
   }

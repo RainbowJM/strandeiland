@@ -9,6 +9,23 @@ import { addRandomHelperValue, addRandomVoters, addRandomAmbassadors } from "./m
 const socket = io();
 let last;
 
+const themes = [
+  { id: '1', label: 'recreatie' },
+  { id: '2', label: 'infrastructuur' },
+  { id: '3', label: 'sport' },
+  { id: '4', label: 'natuur' },
+  { id: '5', label: 'winkel' },
+  { id: '6', label: 'milieu' },
+  { id: '7', label: 'jeugd' },
+  { id: '8', label: 'cultuur' },
+  { id: '9', label: 'huisvesting' },
+  { id: '10', label: 'veiligheid' },
+  { id: '11', label: 'verkeer' },
+  { id: '12', label: 'strand' },
+  { id: '13', label: 'onderwijs' },
+  { id: '13', label: 'over' }
+];
+
 
 // ------------------ logic -------------------------------------------------------
 if (localStorage.getItem(localStorageKey)) {
@@ -36,7 +53,8 @@ if (localStorage.getItem(localStorageKey)) {
   }
 
   const selectedOption = document.querySelector('.selected-option');
-  selectedOption.textContent = savedFormData.themes.length > 0 ? savedFormData.themes.join(", ") : "Selecteer de passende thema's";
+  // selectedOption.textContent = savedFormData.themes.length > 0 ? savedFormData.themes.join(", ") : "Selecteer de passende thema's";
+  
 }
 
 
@@ -61,7 +79,7 @@ function saveFormData() {
 
 
   const selectedOption = document.querySelector('.selected-option');
-  selectedOption.textContent = formData.themes.length > 0 ? formData.themes.join(", ") : "Selecteer de passende thema's";
+  // selectedOption.textContent = formData.themes.length > 0 ? formData.themes.join(", ") : "Selecteer de passende thema's";
 }
 
 
@@ -83,44 +101,44 @@ if (imageLinkInput) {
     imagePreview.innerHTML = `<img src="${imageLinkInput.value}" alt="">`;
   });
 }
-if (fileInput) {
-  fileInput.addEventListener("change", () => {
-    saveFormData();
-    const file = fileInput.files[0];
-    if (file) {
-      selectedFileName.textContent = file.name;
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.result;
-        img.alt = "Selected Image";
-        customImagePreview.innerHTML = "";
-        customImagePreview.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      selectedFileName.textContent = "Geen bestand geselecteerd";
+if (fileInput && savedFormData && savedFormData.file) {
+  selectedFileName.textContent = savedFormData.file.name;
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const img = document.createElement("img");
+    img.src = e.target.result;
+    img.alt = "Selected Image";
+    
+    if (customImagePreview) {
       customImagePreview.innerHTML = "";
+      customImagePreview.appendChild(img);
     }
-  });
+  };
+  reader.readAsDataURL(savedFormData.file);
+} else {
+  selectedFileName.textContent = "Geen bestand geselecteerd";
+  
+  if (customImagePreview) {
+    customImagePreview.innerHTML = "";
+  }
 }
 
-console.log(selectedCheckboxes);
+
+
+
 
 function updateFormData() {
   const selectedCheckboxes = Array.from(themeCheckboxes)
   .filter((checkbox) => checkbox.checked)
   .map((checkbox) => checkbox.value);
   
-  console.log(selectedCheckboxes);
+  
   const selectedThemes = themes
-    .filter((theme) => selectedCheckboxes.includes(theme.id))
-    .map((theme) => theme.label);
+  .filter((theme) => selectedCheckboxes.includes(theme.id))
+  .map((theme) => theme.label);
 
   const selectedOption = document.querySelector('.selected-option');
   selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
-
-  saveFormData();
 }
 
 
@@ -188,7 +206,7 @@ if (fileInput) {
         img.alt = "Selected Image";
         customImagePreview.innerHTML = "";
   
-        const closeButton = document.createElement("button");
+        const closeButton = document.getElementById("button");
         closeButton.classList.add("close-button");
         closeButton.innerHTML = "&times;"; // Use × symbol as the close icon
   
@@ -226,8 +244,6 @@ if (asideItems.length > 0) {
 }
 
 if (filterThemeBtn) {
-
-
   toggleFilterMenu();
 }
 
@@ -290,24 +306,15 @@ if (theMenuButton) {
   theMenuButton.addEventListener("click", toggleMenu);
 }
 
-if (titleInput) {
-  titleInput.addEventListener('input', function() {
-    if (titleInput.value.trim() === '') {
-      titleInput.setCustomValidity('Please enter a title');
-    } else {
-      titleInput.setCustomValidity('');
-    }
-  });
-}
-if (descriptionTextarea) {
-  descriptionTextarea.addEventListener('input', function() {
-    if (descriptionTextarea.value.trim() === '') {
-      descriptionTextarea.setCustomValidity('Please enter a description');
-    } else {
-      descriptionTextarea.setCustomValidity('');
-    }
-  });
-}
+// if (titleInput) {
+//   titleInput.addEventListener('input', function() {
+//     if (titleInput.value.trim() === '') {
+//       titleInput.setCustomValidity('Please enter a title');
+//     } else {
+//       titleInput.setCustomValidity('');
+//     }
+//   });
+// }
 
 if (helperIconValue || votersIconValue || ambassadorsIconValue) {
   addRandomHelperValue();
@@ -408,7 +415,6 @@ function handleSelectedOptionClick() {
 
 function handleUploadButtonClick(event) {
   event.preventDefault(); 
-
 }
 
 
@@ -417,28 +423,81 @@ function handleCheckboxChange() {
 }
 
 function displaySelectedOption(selectElement) {
-  let selectedOption = selectElement.options[selectElement.selectedIndex].text;
-  selectElement.value = selectedOption;
+  const savedFormData = JSON.parse(localStorage.getItem(localStorageKey));
+  const selectedOptionElement = document.querySelector('.selected-option');
+
+  if (savedFormData && savedFormData.themes.length > 0) {
+    const selectedThemes = themes
+      .filter((theme) => savedFormData.themes.includes(theme.id))
+      .map((theme) => theme.label);
+
+    selectedOptionElement.textContent = selectedThemes.join(", ");
+  } else {
+    selectedOptionElement.textContent = "Selecteer de passende thema's";
+  }
+}
+displaySelectedOption(themeSelect);
+
+const maxThemes = 4;
+
+let selectedThemes = [];
+
+function updateSelectedOptionText() {
+  selectedThemes = Array.from(themeCheckboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+  themeCheckboxes.forEach(checkbox => {
+    checkbox.disabled = selectedThemes.length >= maxThemes && !checkbox.checked;
+  });
 }
 
-    
-// const checkboxes = document.querySelectorAll("#themeDropdownMenu input[type='checkbox']");
-//   const selectedThemes = [];
-// selectedOption.textContent = selectedThemes.length > 0 ? selectedThemes.join(", ") : "Selecteer de passende thema's";
+if (themeCheckboxes && themeCheckboxes.length > 0) {
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      updateSelectedOptionText();
+    });
+  });
+}
+
+updateSelectedOptionText();
 
 
+if (themeCheckboxes) {
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      updateSelectedOptionText();
+    });
+  });
+}
+
+updateSelectedOptionText();
+
+if (themeCheckboxes) {
+  themeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      updateSelectedOptionText();
+      // Additional logic or validations can be added here if needed
+    });
+  });
+}
+
+// Initial update when the page loads
+updateSelectedOptionText();
 
 
-function showDialog() {
+function showDialog(event) {
+  event.preventDefault();
   uploadDialog.showModal();
 }
 
-function closeDialog() {
+function closeDialog(event) {
+  event.preventDefault();
   uploadDialog.close();
 }
 
-
-function imgCloseDialog() {
+function imgCloseDialog(event) {
+  event.preventDefault();
   uploadDialog.close();
 }
 
