@@ -15,15 +15,18 @@ Hier is het live prototype te zien: [Live link](https://strandeiland-production.
 
 ## Inhoudsopgave
 
-- [Case](#case)
-- [User stories](#user-stories)
-- [Functionaliteiten](#functionaliteiten)
-- [Tools](#tools)
-- [Installatie](#installatie)
-  * [Repository clone](#repository-clone)
-  * [Dependencies](#dependencies)
-  * [Server](#server)
-- [Licentie](#licentie)
+- [Strandeiland](#strandeiland)
+  - [Live link](#live-link)
+  - [Inhoudsopgave](#inhoudsopgave)
+  - [Case](#case)
+  - [User stories](#user-stories)
+  - [Functionaliteiten](#functionaliteiten)
+  - [Tools](#tools)
+  - [Installatie](#installatie)
+    - [Repository clone](#repository-clone)
+    - [Dependencies](#dependencies)
+    - [Server](#server)
+  - [Licentie](#licentie)
 
 ## Case
 Het participatieteam wil een nieuwe functionaliteit toevoegen aan de `hallostrandeiland.nl` website, waar mensen nieuwe voorstellen voor de nieuwe wijk Strandeiland kunnen indienen. 
@@ -38,11 +41,13 @@ Het doel is om via Hallo Strandeiland goede ideeën en voorstellen te verzamelen
 3. Als projectmanager van de gemeente, wil ik voorstellen van toekomstige bewoners kunnen filteren op thema's, zodat ik per thema kan bekijken of er ideeën bijzitten die kunnen bijdragen aan een lagere ecologische footprint, of betere sociale cohesie van de wijk.
 
 ## Functionaliteiten 
-- Wensen kunnen filtreren op populariteit
-- Wensen kunnen filtreren van oud tot nieuw
-- Wensen kunnen filtreren op thema's
-- Het formulier van wensen opslaan in localstorage
-- Een real time chat, zodat de gebruikers tot elkaar kunnen praten 
+- Gebruikers kunnen wensen bekijken
+- Gebruikers kunnen hun wensen op het platform plaatsen
+- Gebruikers kunnen real time op wensen reageren
+- Gebruikers kunnen bekijken wie de trekkers, helpers en de delers zijn en hun profiel bekijken
+- Gebruikers kunnen de wensen van anderen lezen 
+- Het formulier van wensen opslaan in localstorage en later doorgaan met schrijven
+- Vernieuwd design
 
 ## Tools 
 - EJS 
@@ -55,7 +60,7 @@ Het doel is om via Hallo Strandeiland goede ideeën en voorstellen te verzamelen
 ## Installatie
 
 ### Repository clone
-Dit repository clonen:
+De repository clonen:
 
 ```bash
 $ git clone git@github.com:RainbowJM/strandeiland.git
