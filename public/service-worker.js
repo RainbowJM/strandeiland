@@ -3,7 +3,7 @@ const runtimeCacheName = "runtime-cache";
 const assets = [
   "/",
   "/css/suggestion.css",
-  "/css/form.min.css",
+  "/css/form.css",
   "/css/global.min.css",
   "/css/suggestions.min.css",
   "/css/sent.min.css",
