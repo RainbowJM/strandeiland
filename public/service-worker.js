@@ -1,14 +1,14 @@
-const cacheName = "cache-v1";
+const cacheName = "cache-v4";
 const runtimeCacheName = "runtime-cache";
 const assets = [
   "/",
   "/css/suggestion.css",
-  "/css/form.css",
-  "/css/global.css",
-  "/css/suggestions.css",
-  "/css/sent.css",
-  "/css/offline.css",
-  "/css/user.css",
+  "/css/form.min.css",
+  "/css/global.min.css",
+  "/css/suggestions.min.css",
+  "/css/sent.min.css",
+  "/css/offline.min.css",
+  "/css/user.min.css",
   "/images/favicon.ico",
   "/images/strand-eiland.jpg",
   "/offline",

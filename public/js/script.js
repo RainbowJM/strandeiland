@@ -166,7 +166,6 @@ selectedOption.addEventListener("click", handleSelectedOptionClick);
 }
 
 if (themeCheckboxes) {
-
 themeCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", handleCheckboxChange);
 });

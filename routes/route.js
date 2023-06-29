@@ -111,7 +111,6 @@ router.get("/", async (req, res) => {
       themes: themes,
     });
   }
-
   
 
   shuffleArray(suggestionsWithThemes);
