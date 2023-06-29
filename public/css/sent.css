@@ -1,3 +1,6 @@
+/**************/
+/* PROPERTIES */
+/**************/
 :root {
   --yellow: #ffe700;
   --light-yellow: #FFF48C;
@@ -9,7 +12,6 @@
   --dark-grey: #333333;
   --grey: #E9E9E9;
   --font: 'Poppins', sans-serif;
-
   --border-radius-small: 0.5em;
   --border-radius-medium: 2em;
   --border-radius-large: 4em;
@@ -21,9 +23,11 @@ main {
   place-items: center;
   justify-content: center;
   height: 70vh;
-
 }
 
+/*********************/
+/* FORM CONFIRMATION */
+/*********************/
 .sent {
   display: inline-block;
 }
@@ -44,7 +48,6 @@ main {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.125, 0.995, 1, 1);
-
 }
 
 .sent span:nth-child(2) {
@@ -68,33 +71,19 @@ main {
   color: var(--white);
   transform: rotate(-5deg);
   width: max-content;
-
 } 
 
 @keyframes slogan-1{
-
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-1rem);
-  }
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-1rem);}
 }
 
 @keyframes slogan-2 {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(-8deg);
-  }
+  0% {transform: rotate(0);}100% {transform: rotate(-8deg);}
 }
 
-
 .back {
-  margin: 3em 0 1em 5vw;
+margin: 3em 0 1em 5vw;
 }
 
 .back a {
