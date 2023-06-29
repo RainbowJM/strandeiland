@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <%- include('./partials/head'); %>
-
     <link rel="stylesheet" href="/css/form.css">
 </head>
-
 <body>
     <header>
         <%- include('./partials/header'); %>
     </header>
-
     <div class="back">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
         <a href="/">Terug</a>
     </div>
-
     <div class="form-container">
-       
-
         <form action="/form" method="post">
             <h1>Maak een wens</h1>
             <fieldset>
@@ -27,30 +20,27 @@
                 <input type="text" id="title" name="title" placeholder="Geef je wens een titel" minlength="2"
                     maxlength="40" required>
                 <label for="description">Wens beschrijving</label>
-
                 <textarea name="description" id="description" cols="30" rows="10"
                     placeholder="Beschrijf je wens zo duidelijk mogelijk" minlength="2" maxlength="200"
                     required></textarea>
-
                 <label for="theme">Thema's</label>
                 <fieldset class="dropdown">
                     <div class="selected-option" id="selectedOption" tabindex="0">Selecteer de passende thema's
                     </div>
                     <p class="valid">Kies maximaal uit 4 thema's</p>
-                    <div class="dropdown-container" id="themeDropdownMenu" >
-                        <ul class="dropdown-menu" >
+                    <div class="dropdown-container" id="themeDropdownMenu">
+                        <ul class="dropdown-menu">
                             <% themes.forEach(theme =>{ %>
-                                <li>
-                                  <label>
+                            <li>
+                                <label>
                                     <input type="checkbox" value="<%= theme.id %>" name="theme">
                                     <span>
-                                     <%= theme.label %>
+                                        <%= theme.label %>
                                     </span>
-                                    
-                                  </label>
-                                </li>
-                              <% }); %>
-                            
+
+                                </label>
+                            </li>
+                            <% }); %>
                         </ul>
                     </div>
                 </fieldset>
@@ -59,56 +49,56 @@
                 <button id="uploadButton">afbeelding toevoegen</button>
 
                 <dialog class="no-js">
-                
-                    <button id="closeDialog">sluiten</button>  
 
-                <div id="links">
+                    <button id="closeDialog">sluiten</button>
 
-                    <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
+                    <div id="links">
 
-                    <div class='linkjes'>
+                        <label for="links">Websites waar je rechtvrije afbeelding kan vinden</label>
 
-                        <a href="https://unsplash.com/">Unsplash</a>
+                        <div class='linkjes'>
 
-                        <a href="https://www.pexels.com/nl-nl/">Pexels</a>
+                            <a href="https://unsplash.com/">Unsplash</a>
 
-                        <a href="https://pixabay.com/nl/">Pixabay</a>
+                            <a href="https://www.pexels.com/nl-nl/">Pexels</a>
 
-                    </div>
+                            <a href="https://pixabay.com/nl/">Pixabay</a>
 
-                    <div class="link-preview">
-                        <p class="title-link">Link</p>
-                        <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier je link">
-                        <div id="imagePreview"></div>
-                    </div>
-                   
+                        </div>
 
-                    <label for="or">Of</label>
-
-                    <p class="hierarchy">Bestand</p>
-
-                    <div class="file-input-container">
-
-                        <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
-
-                        <p>Selecteer een bestand</p>
-
-                        <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
+                        <div class="link-preview">
+                            <p class="title-link">Link</p>
+                            <input type="text" name="imageLink" id="imageLink" placeholder="Plaats hier je link">
+                            <div id="imagePreview"></div>
+                        </div>
 
 
-                
+                        <label for="or">Of</label>
 
-                    <div id="customImagePreview"></div>
+                        <p class="hierarchy">Bestand</p>
 
-                    <p id="selectedFileName">Geen bestand geselecteerd</p>
+                        <div class="file-input-container">
 
-                    <!-- <div id="closeButton" >&#10006;</div> -->
+                            <img src="/images/wolkje.png" alt="een wolkje dat staat voor uploaden van een afbeelding">
 
-                    <button id="imgCloseDialog">afbeelding uploaden</button>
+                            <p>Selecteer een bestand</p>
 
-                </div>
+                            <input type="file" id="file" name="file" accept="image/jpeg, image/png, image/jpg">
 
-            </dialog>
+
+
+
+                            <div id="customImagePreview"></div>
+
+                            <p id="selectedFileName">Geen bestand geselecteerd</p>
+
+                            <!-- <div id="closeButton" >&#10006;</div> -->
+
+                            <button id="imgCloseDialog">afbeelding uploaden</button>
+
+                        </div>
+
+                </dialog>
             </fieldset>
 
             <input type="submit" value="wens aanmaken" id="sendButton" />
