@@ -1,41 +1,26 @@
-
 <section class="thumbnail-container">
     <figure>
-        <img loading="lazy" src="<%= suggestion.image %>"
-            alt="Wens afbeelding"
-            width="100" height="200">
-            
+        <img loading="lazy" src="<%= suggestion.image %>" alt="Wens afbeelding" width="100" height="200">
     </figure>
-
-
-
     <a href="/wens/<%= suggestion.id %>">
-
         <article>
             <ul class="suggestion-themes">
-                 <% suggestion.themes.forEach(theme => { %>
-                  
-                    <li><%=theme%></li>
-                 <% }) %>
-            
+                <% suggestion.themes.forEach(theme => { %>
+                <li><%=theme%></li>
+                <% }) %>
             </ul>
-
-
             <ul class="user-info">
                 <li>Pieter van der baas</li>
                 <li><%= suggestion.created_at%></li>
             </ul>
-
             <h2><%= suggestion.title%></h2>
             <p><%= suggestion.description%></p>
-
             <ul class="statistics">
-                <li>  <img src="../../images/trekkers.svg" alt="trekkers" width="100" height="40"> <span>5</span></li>
+                <li> <img src="../../images/trekkers.svg" alt="trekkers" width="100" height="40"> <span>5</span></li>
                 <li><i class="fa-regular fa-handshake fa-lg" style="color: #000000;"></i> <span>2</span></li>
-                <li><i class="fa-regular fa-thumbs-up fa-lg" style="color: #000000;"></i><span><%= suggestion.amount_vote%></span></li>
+                <li><i class="fa-regular fa-thumbs-up fa-lg"
+                       style="color: #000000;"></i><span><%= suggestion.amount_vote%></span></li>
             </ul>
         </article>
     </a>
-
-
 </section>
