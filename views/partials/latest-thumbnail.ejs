@@ -1,13 +1,8 @@
 <section class="thumbnail-container">
     <figure>
         <img loading="lazy" src="<%= suggestion.image %>" alt="Wens afbeelding" width="100" height="200">
-
     </figure>
-
-
-
     <a href="/wens/<%= suggestion.id %>">
-
         <article>
             <ul class="suggestion-themes">
                 <% suggestion.themes.forEach(theme => { %>
@@ -15,7 +10,7 @@
                     <%= theme %>
                 </li>
                 <% }) %>
-               
+            
             </ul>
 
 

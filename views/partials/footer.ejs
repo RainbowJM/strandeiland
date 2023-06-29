@@ -1,22 +1,19 @@
-
   <ul>
     <li><a href="https://www.flaticon.com/free-icons/ambassador" title="ambassador icons">Ambassador icons created by Uniconlabs-Flaticon</a></li>
     <li><a href="#">Contact</a></li>
     <li><a href="#">Privacy</a></li>
   </ul>
-
-
-<script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(function(registration) {
-            console.log('service worker registered', registration)
-            return registration.update();
-          })
-          .catch(error => console.log('service worker not registered', error))
-      });
-    }
-</script>
+  <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('service worker registered', registration)
+              return registration.update();
+            })
+            .catch(error => console.log('service worker not registered', error))
+        });
+      }
+  </script>
 <script src="/socket.io/socket.io.js"></script>
 <script type="module"src="/js/script.js" ></script>
