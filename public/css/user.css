@@ -1,3 +1,6 @@
+/********************/
+/* CUSTOM PROPERTIES */
+/********************/
 :root {
   --yellow: #ffe700;
   --white: #ffffff;
@@ -6,7 +9,6 @@
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --font: "Poppins", sans-serif;
-
   --border-radius-small: 0.5em;
   --border-radius-medium: 2em;
   --border-radius-large: 4em;
@@ -26,6 +28,10 @@ main {
   color: var(--black);
   font: var(--font);
 }
+
+/*************/
+/* USER INFO */
+/*************/
 
 .bio {
   flex-direction: column;
@@ -95,7 +101,9 @@ h1#user-name {
   width: fit-content;
 }
 
-/* helpende -----------------------------------------------------------------------------------------*/
+/*******************/
+/* USER SUGGESTION */
+/*******************/
 .joiners {
   grid-column-start: 2;
   grid-row-start: 1;
@@ -180,7 +188,6 @@ h1#user-name {
   width: fit-content;
   background-color: var(--light-grey);
   margin-right: 1em;
-
 }
 
 .suggestion-items img[alt="suggestion-items"] {
@@ -269,7 +276,9 @@ h1#user-name {
 }
 
 
-
+/******************/
+/* RESPONSIVENESS */
+/******************/
 
 @media (width < 50em) {
   main {

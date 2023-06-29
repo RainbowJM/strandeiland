@@ -1,3 +1,6 @@
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
 :root {
   --yellow: #ffe700;
   --light-yellow: #fff48c;
@@ -8,7 +11,6 @@
   --light-grey: #f0f0eb;
   --dark-grey: #333333;
   --font: "Poppins", sans-serif;
-
   --border-radius-small: 0.5em;
   --border-radius-medium: 2em;
   --border-radius-large: 4em;
@@ -61,7 +63,6 @@ main {
   background-color: var(--blue);
   color: var(--white);
   transform: rotate(5deg);
-
   animation-name: slogan-1;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
@@ -113,23 +114,13 @@ main {
 }
 
 @keyframes slogan-1 {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-1rem);
-  }
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-1rem);}
 }
 
 @keyframes slogan-2 {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(-8deg);
-  }
+  0% { transform: rotate(0);}
+100% {transform: rotate(-8deg);}
 }
 
 /************************/
@@ -185,7 +176,6 @@ main {
   font-weight: bold;
 }
 
-
 .user-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -208,7 +198,6 @@ main {
   height: 8em;
   overflow: hidden;
 }
-
 
 .thumbnail-container article p::before {
   content: "";
@@ -271,15 +260,14 @@ main {
   text-transform: uppercase;
 }
 
-/****************/
+/*******************************/
 /* LATEST SUGGESTION CONTAINER */
-/****************/
+/*******************************/
 
 .latest-ideas {
   grid-column: span 2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-auto-rows: minmax(24em, auto); */
   gap: 1.25em;
   width: 100%;
 }
@@ -326,7 +314,6 @@ main {
   transform: translateY(-18%);
 }
 
-
 .grid-container .thumbnail-container article h2 {
   font-size: 1.2em;
 }
@@ -359,7 +346,6 @@ main {
   width: 100%;
   object-fit: cover;
 }
-
 
 /**********/
 /* FILTER */
@@ -428,7 +414,6 @@ form a {
   padding: .5em 1em;
   background-color: var(--black);
   color: var(--white);
-
 }
 
 .filter-content button[type="submit"] {
@@ -475,13 +460,8 @@ form a:hover {
     animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 @keyframes smooth-dropdown {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0;}
+  to {opacity: 1;}
 }
 
 .active[data-filter-content] {
@@ -496,7 +476,6 @@ form a:hover {
 
 .sorting-filter-items {
   display: grid;
-
   gap: 0.4em;
 }
 
@@ -560,7 +539,6 @@ input:checked+span {
 .select-menu-sorting {
   display: none;
 }
-
 }
 
 .select-menu-sorting::part(button) {
@@ -573,7 +551,6 @@ input:checked+span {
 
 .select-menu-sorting::part(selected-value) {
   font-size: 1.2em;
-
 }
 
 .select-menu-sorting::part(listbox) {
@@ -599,7 +576,6 @@ input:checked+span {
   color: var(--white);
 }
 
-
 /**************/
 /* RESPONSIVE */
 /**************/
@@ -614,7 +590,6 @@ input:checked+span {
   .content {
     display: block;
   }
-
 
   .latest-ideas {
     display: grid;
@@ -673,12 +648,10 @@ input:checked+span {
   animation: smooth-dropdown 0.3s ease-in-out both alternate;
 }
 
-
   .latest-ideas {
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr;
-
   }
 
   .grid-container {
