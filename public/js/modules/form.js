@@ -1,23 +1,27 @@
-import {themeSelect,selectedOption,dropdownMenu,localStorageKey,themeCheckboxes, fileInput,customImagePreview,selectedFileName,
-  savedFormData,imageLinkInput,imagePreview,titleInput,descriptionTextarea,uploadDialog,closeDialogButton,imgCloseDialogButton,themes} from "./modules/variables.js";
+import { selectedOption, dropdownMenu, localStorageKey, themeCheckboxes, fileInput, customImagePreview, selectedFileName,
+  savedFormData, imageLinkInput, imagePreview, titleInput, descriptionTextarea, uploadDialog, closeDialogButton, imgCloseDialogButton, themes } from "./modules/variables.js";
 
 function loadFormData() {
   if (savedFormData) {
     if (titleInput) {
       titleInput.value = savedFormData.title;
     }
+
     if (descriptionTextarea) {
       descriptionTextarea.value = savedFormData.description;
     }
+
     if (themeCheckboxes) {
       themeCheckboxes.forEach((checkbox) => {
         checkbox.checked = savedFormData.themes.includes(checkbox.value);
       });
     }
+
     if (imageLinkInput) {
       imageLinkInput.value = savedFormData.imageLink;
       imagePreview.innerHTML = `<img src="${savedFormData.imageLink}" alt="">`;
     }
+
     if (fileInput) {
       selectedFileName.textContent = savedFormData.file ? savedFormData.file.name : "Geen bestand geselecteerd";
       customImagePreview.innerHTML = savedFormData.file ? `<img src="${URL.createObjectURL(savedFormData.file)}" alt="Selected Image">` : "";
@@ -41,7 +45,6 @@ function saveFormData() {
       }
     });
   }
-
   localStorage.setItem(localStorageKey, JSON.stringify(formData));
 }
 
@@ -91,29 +94,24 @@ function handleFileInputChange() {
 
   if (file) {
     selectedFileName.textContent = file.name;
-
     const reader = new FileReader();
     reader.onload = function (e) {
       const img = document.createElement('img');
       img.src = e.target.result;
       img.alt = 'Selected Image';
       customImagePreview.innerHTML = '';
-
       const closeButton = document.querySelector('button');
       closeButton.classList.add('close-button');
-      closeButton.innerHTML = '&times;'; // Use × symbol as the close icon
-
+      closeButton.innerHTML = '&times;'; 
       closeButton.addEventListener('click', function () {
         fileInput.value = '';
         customImagePreview.innerHTML = '';
         selectedFileName.textContent = 'Geen bestand geselecteerd';
         closeButton.remove();
       });
-
       customImagePreview.appendChild(img);
       customImagePreview.appendChild(closeButton);
     };
-
     reader.readAsDataURL(file);
   } else {
     selectedFileName.textContent = 'Geen bestand geselecteerd';
@@ -149,18 +147,9 @@ if (imgCloseDialogButton) {
   imgCloseDialogButton.addEventListener('click', imgCloseDialog);
 }
 
-// Call initial functions
 loadFormData();
 updateSelectedOptionText();
 updateFormData();
 
-// Export the necessary functions
-export {
-  showDialog,
-  closeDialog,
-  imgCloseDialog,
-  handleSelectedOptionClick,
-  handleCheckboxChange,
-  updateFormData,
-  saveFormData
-};
+export { showDialog, closeDialog, imgCloseDialog, handleSelectedOptionClick, handleCheckboxChange, updateFormData,
+  saveFormData};
