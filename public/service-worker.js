@@ -16,16 +16,6 @@ const assets = [
   "https://kit.fontawesome.com/87a1015511.js",
 ];
 
-const limitCacheSize = (name, size) => {
-    caches.open(name).then(cache => {
-        cache.keys().then(keys => {
-            if (keys.length > size){
-                cache.delete(keys[0].then(limitCacheSize(name,size)));
-            }
-        });
-    });
-};
-
 self.addEventListener("install", (event) => {
   console.log("Installed service worker");
 
@@ -60,7 +50,6 @@ self.addEventListener("fetch", (event) => {
           fetch(event.request).then((fetchRes) => {
             return caches.open(runtimeCacheName).then((cache) => {
               cache.put(event.request.url, fetchRes.clone());
-            //   limitCacheSize(cacheName,5);
               return fetchRes;
             });
           })

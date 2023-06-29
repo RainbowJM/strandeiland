@@ -50,9 +50,9 @@
                 </h2>
                 <h3>Totale wensen: <%= amount %>
                 </h3>
-                <ul class="suggestion-items">
+                <ul class="suggestion-items" tabindex="0">
                     <% suggestions.forEach(suggestion=> { %>
-                        <%- include('./partials/article.ejs', {suggestion: suggestion})%>
+                        <%- include('./partials/article.ejs', {suggestion: suggestion})%> 
                             <% }) %>
                 </ul>
             </div>
@@ -61,7 +61,7 @@
                 <h2>Geplaatste reacties</h2>
                 <h3>Totale reacties: 2</h3>
                 <ul>
-                    <li>
+                    <li tabindex="0">
                         <div>
                             <h3>Middelbare school</h2>
                             <p>Onderwijs</p>
@@ -69,7 +69,7 @@
                             <p>Geplaatst op 5 juni 2023 om 18:23</p>
                         </div>
                     </li>
-                    <li>
+                    <li tabindex="0">
                         <div>
                             <h3>Openbare vervoer</h2>
                             <p>Verkeer</p>
