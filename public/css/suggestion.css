@@ -1,3 +1,6 @@
+/********/
+/* ROOT */
+/********/
 :root {
   --yellow: #ffe700;
   --light-yellow: #fff48c;
@@ -14,6 +17,9 @@
   --border-radius-large: 4em;
 }
 
+/***********/
+/* STYLING */
+/***********/
 main {
   padding: 0 3vw 0 5vw;
   display: grid;
@@ -30,7 +36,9 @@ main {
   font: var(--font);
 }
 
-/* wish -----------------------------------------------------------------------------------------*/
+/********/
+/* WISH */
+/********/
 .wish {
   flex-direction: column;
   width: 100%;
@@ -94,7 +102,9 @@ main {
   gap: 0.2em;
 }
 
-/* join --------------------------------------------------------------------------------------- */
+/*********/
+/* JOIN  */
+/*********/
 .join {
   margin-top: 1em;
   display: flex;
@@ -117,7 +127,9 @@ main {
   color: var(--white);
 }
 
-/* helpende -----------------------------------------------------------------------------------------*/
+/***********/
+/* ASIDE */
+/***********/
 .joiners {
   grid-column-start: 2;
   grid-row-start: 1;
@@ -313,6 +325,9 @@ main {
   border: none;
 }
 
+/****************/
+/* MEDIAQUERIES */
+/****************/
 @media (max-width: 50em) {
   main {
     display: grid;
@@ -359,7 +374,6 @@ main {
 
   aside {
     grid-template-columns: minmax(0, 1fr);
-
   }
 
   #joiners{

@@ -1,3 +1,6 @@
+/********/
+/* ROOT */
+/********/
 :root {
   --yellow: #ffe700;
   --light-yellow: #FFF48C;
@@ -14,6 +17,9 @@
   --border-radius-large: 4em;
 }
 
+/***********/
+/* STYLING */
+/***********/
 #chat {
   transform: translateY(-10%);
   height: 26em;
@@ -25,16 +31,14 @@
   border-radius: var(--border-radius-medium);
 }
 
-#chat h2{
-  /* position: absolute;
-  left: 1em; */
+#chat h2 {
   text-align: left;
-    margin-left: 1em;
-    transform: translateY(-2.5em);
-    background-color: var(--blue);
-    width: max-content;
-    color: var(--white);
-    padding: 0.3em;
+  margin-left: 1em;
+  transform: translateY(-2.5em);
+  background-color: var(--blue);
+  width: max-content;
+  color: var(--white);
+  padding: 0.3em;
 }
 
 .chat-section {
@@ -46,13 +50,15 @@
   display: none;
 }
 
+/********/
+/* FORM */
+/********/
 form {
   position: absolute;
   bottom: 0;
   width: 100%;
   margin: 0 1em 0.5em 1em;
   padding: 0 1em 1em 0;
-
 }
 
 form input[type="text"] {
@@ -101,7 +107,7 @@ form button {
   display: flex;
 }
 
-div.message-name-time{
+div.message-name-time {
   display: flex;
   flex-direction: column;
 }
@@ -138,10 +144,9 @@ div.message-name-time{
 
 #chat li.self #message .time {
   color: grey;
-
 }
 
-img.avatar{
+img.avatar {
   height: 4em;
   width: 4em;
   border-radius: 5em;
@@ -157,12 +162,6 @@ img.avatar{
   bottom: 5em;
 }
 
-.message-input{
+.message-input {
   display: flex;
 }
-
-/* @media (max-width: 50em) {
-  form input[type="text"] {
-    width: 80%;
-  }
-} */
