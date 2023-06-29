@@ -3,9 +3,8 @@
 
 <head>
     <%- include('./partials/head'); %>
-        <link rel="stylesheet" href="/css/user.min.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/user.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -21,12 +20,12 @@
             <article>
                 <div class="head">
                     <div class="image">
-                        <img src="<%= user.image%>"  alt="avatar" class="user-avatar" width="100">
+                        <img src="<%= user.image%>" alt="avatar" class="user-avatar" width="100">
                     </div>
                     <div class="head-name">
                         <h1 id="user-name">
                             <%= user.first_name %>
-                                <%= user.last_name %>
+                            <%= user.last_name %>
                         </h1>
                         <p>
                             <%= user.bio %>
@@ -44,14 +43,12 @@
 
         <aside id="joiners" class="joiners">
             <div id="suggestion">
-                <h2>Wensen van <%= user.first_name %>
-                </h2>
-                <h3>Totale wensen: <%= amount %>
-                </h3>
+                <h2>Wensen van <%= user.first_name %></h2>
+                <h3>Totale wensen: <%= amount %></h3>
                 <ul class="suggestion-items" tabindex="0">
                     <% suggestions.forEach(suggestion=> { %>
-                        <%- include('./partials/article.ejs', {suggestion: suggestion})%> 
-                            <% }) %>
+                    <%- include('./partials/article.ejs', {suggestion: suggestion})%>
+                    <% }) %>
                 </ul>
             </div>
 
@@ -62,17 +59,17 @@
                     <li tabindex="0">
                         <div>
                             <h3>Middelbare school</h2>
-                            <p>Onderwijs</p>
-                            <p>Ben het ermee eens, ik heb me aangegeven als deler</p>
-                            <p>Geplaatst op 5 juni 2023 om 18:23</p>
+                                <p>Onderwijs</p>
+                                <p>Ben het ermee eens, ik heb me aangegeven als deler</p>
+                                <p>Geplaatst op 5 juni 2023 om 18:23</p>
                         </div>
                     </li>
                     <li tabindex="0">
                         <div>
                             <h3>Openbare vervoer</h2>
-                            <p>Verkeer</p>
-                            <p> Misschien moeten we niet alleen aan trams denken, maar ook bussen en ook metro</p>
-                            <p>op 5 juni 2023 om 18:23</p>
+                                <p>Verkeer</p>
+                                <p> Misschien moeten we niet alleen aan trams denken, maar ook bussen en ook metro</p>
+                                <p>op 5 juni 2023 om 18:23</p>
                         </div>
                     </li>
                 </ul>
@@ -86,5 +83,4 @@
     <script src="/socket.io/socket.io.js"></script>
     <script type="module" src="/js/script.js"></script>
 </body>
-
 </html>

@@ -1,3 +1,6 @@
+/********/
+/* CUSTOM PROPERTIES */
+/********/
 :root {
   --yellow: #ffe700;
   --light-yellow: #fff48c;
@@ -14,6 +17,9 @@
   --border-radius-large: 4em;
 }
 
+/***********/
+/* STYLING */
+/***********/
 body {
   height: 70vh;
   overflow: hidden;
@@ -24,15 +30,15 @@ body {
 
 main {
   display: grid;
-place-items: center;
-height: 100%;
-justify-content: center;
+  place-items: center;
+  height: 100%;
+  justify-content: center;
 }
 
 .content {
   position: relative;
-width: 100%;
-text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .content h2 {
@@ -44,39 +50,41 @@ text-align: center;
   color: transparent;
   -webkit-text-stroke: 0.02em var(--blue);
 }
+
 .content h2:nth-child(2) {
   color: var(--blue);
   -webkit-text-stroke: 0.02em var(--blue);
   animation: animate 4s ease-in-out infinite;
 }
 
+/*************/
+/* KEYFRAMES */
+/*************/
 @keyframes animate {
+
   0%,
   100% {
-    clip-path: polygon(
-      0% 45%,
-      15% 44%,
-      32% 50%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
+    clip-path: polygon(0% 45%,
+        15% 44%,
+        32% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%);
   }
+
   20% {
-    clip-path: polygon(
-      0% 60%,
-      16% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
+    clip-path: polygon(0% 60%,
+        16% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%);
   }
 }
 

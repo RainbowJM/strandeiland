@@ -4,30 +4,35 @@
 <head>
   <%- include('./partials/head'); %>
   <link rel="stylesheet" href="/css/sent.min.css">
+  <link rel="stylesheet" href="/css/sent.min.css">
 </head>
 <body>
   <header>
     <%- include('./partials/header'); %>
   </header>
-  <body>
-    <div class="back">
-      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
-      <a href="/">Terug</a>
+
+  <div class="back">
+    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    <a href="/">Terug</a>
+  </div>
+
+  <main>
+    <div class="sent">
+      <h1>
+        <span>Bedankt</span>
+        <span>voor uw</span>
+        <span>Bijdrage</span>
+        <span>Uw ideeën, <br> ons toekomst!</span>
+      </h1>
     </div>
-    <main>
-      <div class="sent">
-        <h1>
-          <span>Bedankt</span>
-          <span>voor uw</span>
-          <span>Bijdrage</span>
-          <span>Uw ideeën, <br> ons toekomst!</span>
-        </h1>
-      </div>
-    </main>
-    <footer>
-      <%- include('./partials/footer'); %>
-    </footer>
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="module" src="/js/script.js"></script>
-  </body>
+  </main>
+
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/script.js"></script>
+</body>
+
 </html>
